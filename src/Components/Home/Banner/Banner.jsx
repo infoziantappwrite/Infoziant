@@ -5,7 +5,7 @@ import itsolutionImage from "../../../assests/Images/Banner/it&solution.png";
 
 const slides = [
   {
-    heading: "Innovative Tech & Business Services / Digital Acceleration Services",
+    heading: "Innovative Tech & Business Services",
     text: "Empowering growth through innovative tech solutions and digital acceleration services tailored for modern businesses.",
     image: collaborationImage,
   },

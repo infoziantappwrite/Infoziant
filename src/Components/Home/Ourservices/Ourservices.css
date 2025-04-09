@@ -72,10 +72,10 @@
 .our-services-title::after {
     content: '';
     display: block;
-    width: 40%;
+    width: 30%;
     height: 3px;
     background: linear-gradient(90deg, #15f5ba, #06f);
-    margin-top:3%;  /* Adjust this value to move it further down */
+    margin-top:2%;  /* Adjust this value to move it further down */
     margin-left: 0;  /* Ensures it aligns to the left */
 }
 
@@ -87,7 +87,8 @@
   }
   
   .explore-button {
-    display: flex;
+    display: inline-flex; /* Keeps it inline while using flex properties */
+   
     margin-top: 1rem;
     padding: 6px 12px;
     background: linear-gradient(90deg, #15f5ba, #06f);
@@ -100,6 +101,9 @@
     opacity: 0;
     animation: fadeInUp 0.5s ease-out forwards;
     animation-delay: 1s;
+  }
+  .explore-button p{
+    padding: 2px 0px; /* Adjusted padding for better button size */
   }
   
   .explore-button:hover {
@@ -156,21 +160,22 @@
   @media (max-width: 850px) {
     .our-services-content {
         flex-direction: column; /* Stack text and image */
-        align-items: center; /* Center content */
+        align-items: left; /* Center content */
         text-align: center; /* Center text */
         padding: 0 20px; /* Prevent touching screen edges */
     }
 
     .our-services-text {
         max-width: 90%; /* Maintain readability */
+        text-align: left;
     }
     .our-services-title{
-        text-align: center;
+        text-align: left;
         
     }
     .our-services-title::after{
-        margin-top: 5%;
-        margin-left: 30%;
+        margin-top: 4%;
+        margin-left: 0%;
     }
 
     .our-services-image {
