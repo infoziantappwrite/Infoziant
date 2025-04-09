@@ -49,6 +49,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 100px;
+  align-items: left;
   color: white;
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -95,9 +96,36 @@
   background: linear-gradient(90deg, #06f, #15f5ba);
 }
 
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .home-banner {
+    max-height: 50vh; /* Adjust height for tablets */
+  }
+  
+
+  .home-banner-content {
+    padding: 0 50px;
+    align-items: center;
+  }
+
+  .home-banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-banner-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .home-banner-content p {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .home-banner {
-    height: 70vh;
+    min-height: 50vh; /* Smaller height for mobile */
+    height: auto; /* Adjust based on content */
   }
 
   .home-banner-content {
@@ -107,10 +135,10 @@
 
   .home-banner-content h1,
   .home-banner-content h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .home-banner-content p {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
