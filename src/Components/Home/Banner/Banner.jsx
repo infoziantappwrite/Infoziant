@@ -5,12 +5,12 @@ import itsolutionImage from "../../../assests/Images/Banner/it&solution.png";
 
 const slides = [
   {
-    heading: "Innovative Tech &    Business Services/Digital Acceleration Services",
+    heading: "Innovative Tech & Business Services / Digital Acceleration Services",
     text: "Empowering growth through innovative tech solutions and digital acceleration services tailored for modern businesses.",
     image: collaborationImage,
   },
   {
-    heading: "Campus to     Corporate Services",
+    heading: "Campus to Corporate Services",
     text: "Bridging the gap between academia and industry with tailored programs that prepare students for corporate success.",
     image: itsolutionImage,
   },
@@ -31,33 +31,29 @@ const Banner = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 5000); // 5 seconds per slide
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="home-banner">
-      <div
-        className="slider"
-        style={{
-          transform: `translateX(-${index * 100}%)`,
-        }}
-      >
-        {slides.map((slide, i) => {
-          const { firstHalf, secondHalf } = splitHeading(slide.heading);
-          return (
-            <div className="slide" key={i}>
-              <img src={slide.image} alt={`Slide ${i}`} className="slide-image" />
-              <div className="home-banner-content">
-                <h1>{firstHalf}</h1>
-                <h2>{secondHalf}</h2>
-                <p>{slide.text}</p>
-                <a href="#">Discover More →</a>
-              </div>
+      {slides.map((slide, i) => {
+        const { firstHalf, secondHalf } = splitHeading(slide.heading);
+        return (
+          <div
+            key={i}
+            className={`fade-slide ${index === i ? "active" : ""}`}
+          >
+            <img src={slide.image} alt={`Slide ${i}`} className="slide-image" />
+            <div className="home-banner-content">
+              <h1>{firstHalf}</h1>
+              <h2>{secondHalf}</h2>
+              <p>{slide.text}</p>
+              <a href="#">Discover More →</a>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </section>
   );
 };
