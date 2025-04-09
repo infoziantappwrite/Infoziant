@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from './Banner/Banner';
 import Ourservices from './Ourservices/Ourservices';
 import AboutUsSection from './AboutSection/AboutUsSection';
+import Services from './Services/Services';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         {/* <BlogSection /> */}
         {/* <ContactSection /> */}
         <Ourservices />
+        <Services />
       
     </>
   )
