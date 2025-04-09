@@ -1,0 +1,188 @@
+/* Our services start */
+/* Section Animation */
+/* Section Animation */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Section Styling */
+  .our-services-section {
+    background-color: #010a13;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .our-services-container {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Content Styling */
+  .our-services-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Left-side Text with One-by-One Animation */
+  .our-services-text {
+    color: #ffffff;
+    max-width: 600px;
+
+  }
+  
+  .our-services-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #15f5ba, #06f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 1rem;
+    text-align: left;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.our-services-title::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #15f5ba, #06f);
+    margin-top:3%;  /* Adjust this value to move it further down */
+    margin-left: 0;  /* Ensures it aligns to the left */
+}
+
+  
+  .our-services-text p {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .explore-button {
+    display: flex;
+    margin-top: 1rem;
+    padding: 6px 12px;
+    background: linear-gradient(90deg, #15f5ba, #06f);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 1s;
+  }
+  
+  .explore-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #06f, #15f5ba);
+  }
+  
+  /* Right-side Image with Animation */
+  .our-services-image {
+    opacity: 0;
+    animation: fadeInRight 1s ease-out forwards;
+    animation-delay: 1.5s;
+  }
+  
+  .our-services-image img {
+    max-width: 400px;
+    height: auto;
+  }
+  @media (min-width: 850px) {
+    .our-services-content {
+        display: flex;
+        flex-direction: row; /* Ensures text is on the left, image on the right */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        max-width: 90%; /* Prevents content from touching screen edges */
+        margin: 0 auto; /* Centers the section */
+    }
+    
+
+    .our-services-text {
+        flex: 2; /* Takes 2/3 of the width */
+        max-width: 700px;
+    }
+
+    .our-services-image {
+        flex: 1; /* Takes 1/3 of the width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .our-services-image img {
+        max-width: 100%; /* Ensures image fits within the container */
+        height: auto;
+    }
+}
+
+  
+  /* Responsive */
+
+
+
+  @media (max-width: 850px) {
+    .our-services-content {
+        flex-direction: column; /* Stack text and image */
+        align-items: center; /* Center content */
+        text-align: center; /* Center text */
+        padding: 0 20px; /* Prevent touching screen edges */
+    }
+
+    .our-services-text {
+        max-width: 90%; /* Maintain readability */
+    }
+    .our-services-title{
+        text-align: center;
+        
+    }
+    .our-services-title::after{
+        margin-top: 5%;
+        margin-left: 30%;
+    }
+
+    .our-services-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Full width for centering */
+        margin-top: 1rem;
+    }
+
+    .our-services-image img {
+        max-width: 60%; /* Adjust image size */
+        height: auto;
+    }
+}

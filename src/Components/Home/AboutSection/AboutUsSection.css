@@ -1,0 +1,81 @@
+.about-us-section {
+    background: #fff;
+    padding: 40px 10%;
+  }
+  
+  .about-us-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  
+  /* Left Side - Image */
+  .about-us-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .about-us-image img {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Right Side - Text */
+  .about-us-text {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  /* Gradient Title */
+  .gradient-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(0deg, #15f5ba, #06f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+
+  
+  /* Description */
+  .about-description {
+    font-size: 1rem;
+    color: #444;
+    margin: 15px 0;
+  }
+  
+  /* Bullet Points */
+  .about-points {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-points li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .about-points li strong {
+    color: #06f;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .about-us-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-us-image img {
+      max-width: 350px;
+    }
+  }
+  
