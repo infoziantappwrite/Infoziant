@@ -60,7 +60,7 @@
 }
 
 .home-banner-content h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 600;
   -webkit-text-stroke: 1px white;
   color: transparent;
@@ -69,14 +69,14 @@
 }
 
 .home-banner-content h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: #15f5ba;
   margin: 15px 0;
 }
 
 .home-banner-content p {
-  font-size: 1rem;
+  font-size: 1.12rem;
   margin-bottom: 30px;
   color: #e0e0e0;
 }
@@ -141,4 +141,31 @@
   .home-banner-content p {
     font-size: 1rem;
   }
+}
+
+
+
+@media (max-width: 480px) {
+  .grid-abtNew {
+      grid-template-columns: 1fr;
+  }
+  .grid-abtNew{
+    display: block;
+  }
+  .image-box-abtNew img{
+    margin-bottom: 10px;
+  }
+  .intro-box-abtNew{
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Adding transition delay for grid items */
+.about-abtNew .image-box-abtNew:nth-child(odd) {
+animation-delay: 0.5s; /* Delay for odd elements */
+}
+
+.about-abtNew .image-box-abtNew:nth-child(even) {
+animation-delay: 0.7s; /* Delay for even elements */
 }
