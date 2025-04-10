@@ -2,6 +2,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
+
 import { useState } from "react";
 
 export default function Footer() {
@@ -9,12 +10,12 @@ export default function Footer() {
     const [openCampus, setOpenCampus] = useState(false);
 
   return (
-    <footer className="bg-[#1b1b1b] text-white py-8 sm:py-12">
+    <footer className="bg-gray-800 text-white py-8 sm:py-12">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 sm:gap-10">
           {/* Left: Company Info */}
           <div className="w-full md:w-[40%] space-y-4 md:ml-8 text-center md:text-left">
-            <img src="/logo.png" alt="Infoziant Logo" className="w-40 mx-auto sm:w-60 md:w-60 mx-auto md:mx-0" />
+            <img src="/Logo.png" alt="Infoziant Logo" className="w-40 mx-auto sm:w-60 md:w-60 mx-auto md:mx-0" />
             <div className="flex items-start gap-2 justify-center md:justify-start text-xs sm:text-sm">
               <FaPhoneAlt className="mt-1" />
               <span>+1 (314) 732 0300, +91 96000 85988</span>
