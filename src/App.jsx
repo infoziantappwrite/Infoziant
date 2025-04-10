@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Header';
+import Header from './Components/Header';
+import Home from './Components/Home/Home';
 
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
@@ -13,7 +14,7 @@ const App = () => {
     <Router>
       <Header />
       <Routes>
-      <Route path="/" element={<Page title="Home" />} />
+      <Route path="/" element={<Home/>} />
       <Route path="/about" element={<Page title="About Us" />} />
       <Route path="/product" element={<Page title="Product" />} />
       <Route path="/contact" element={<Page title="Contact Us" />} />
