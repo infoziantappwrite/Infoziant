@@ -1,46 +1,83 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./AboutUsSection.css";
-import image from "../../../assests/Images/image.png"
+
+import img1 from "../../../assests/Images/HomeAbout/1.png";
+import img2 from "../../../assests/Images/HomeAbout/2.png";
+import img3 from "../../../assests/Images/HomeAbout/3.png";
+import img4 from "../../../assests/Images/HomeAbout/4.png";
+import img5 from "../../../assests/Images/HomeAbout/5.png";
+import img6 from "../../../assests/Images/HomeAbout/6.png";
+import img7 from "../../../assests/Images/HomeAbout/7.jpeg";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const AboutUsSection = () => {
   return (
-    <section className="about-us-section">
-      <div className="about-us-container">
-        {/* Left Side - Image */}
-        <div className="about-us-image">
-          <img src={image} alt="About Infoziant" />
-        </div>
+    <section className="about-abtNew">
+      <div className="grid-abtNew">
+        <motion.div
+          className="image-box-abtNew large-abtNew"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <img src={img1} alt="Client 1" loading="lazy" />
+        </motion.div>
 
-        {/* Right Side - Text Content */}
-        <div className="about-us-text">
-          <motion.h2
-            className="gradient-title"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-             <span className="underline">About</span> Infoziant
-          </motion.h2>
-          <p className="about-description">
-            Established in <strong>2015</strong>, Infoziant provides 
-            <strong> Cybersecurity, IT solutions, and Staffing services</strong>,
-            safeguarding digital landscapes worldwide.
+        <motion.div className="image-box-abtNew small-abtNew" {...motionProps(0.1)}>
+          <img src={img2} alt="Client 2" loading="lazy" />
+        </motion.div>
+
+        <motion.div className="image-box-abtNew medium-abtNew" {...motionProps(0.2)}>
+          <img src={img3} alt="Client 3" loading="lazy" />
+        </motion.div>
+
+        <motion.div className="intro-box-abtNew" {...motionProps(0.3)}>
+          <h2>Welcome to Infoziant</h2>
+          <p>
+            Infoziant, based in India and the UAE, delivers global enterprise-level deep-tech
+            solutions. We focus on quality delivery, end-to-end IT transformation, and providing
+            innovative solutions in digital transformation, cybersecurity, and IT services.
           </p>
+        </motion.div>
 
-          {/* Bullet Points */}
-          <ul className="about-points">
-            <li>🌍 Operations across <strong>APAC, EMEA, LATAM</strong>.</li>
-            <li>🔍 <strong>51+ global clients</strong>, identified <strong>47,400+</strong> vulnerabilities.</li>
-            <li>💰 Saved up to <strong>$12.7M</strong> for leading organizations.</li>
-            <li>👨‍💻 <strong>400+ domain experts</strong> & successful staffing solutions.</li>
-            <li>⚡ Expertise across <strong>11+ locations</strong> worldwide.</li>
-          </ul>
-        </div>
+        <motion.div className="image-box-abtNew small-abtNew" {...motionProps(0.4)}>
+          <img src={img4} alt="Client 4" loading="lazy" />
+        </motion.div>
+
+        <motion.div className="image-box-abtNew medium-abtNew" {...motionProps(0.5)}>
+          <img src={img5} alt="Client 5" loading="lazy" />
+        </motion.div>
+
+        <motion.div className="image-box-abtNew large-abtNew" {...motionProps(0.6)}>
+          <img src={img6} alt="Client 6" loading="lazy" />
+        </motion.div>
+
+        <motion.div className="image-box-abtNew large-abtNew" {...motionProps(0.7)}>
+          <img src={img7} alt="Client 7" loading="lazy" />
+        </motion.div>
       </div>
     </section>
   );
 };
 
+const motionProps = (delay = 0) => ({
+  initial: "hidden",
+  whileInView: "visible",
+  viewport: { once: true, amount: 0.2 },
+  variants: {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay },
+    },
+  },
+});
 
 export default AboutUsSection;
