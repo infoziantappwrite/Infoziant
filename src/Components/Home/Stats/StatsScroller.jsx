@@ -75,7 +75,7 @@ export default function StatsScroller() {
 
   const renderStatCard = (stat, index, type = "row1") => {
     const base =
-      "group relative overflow-hidden rounded-xl text-gray-800 transition-all duration-300 cursor-pointer";
+      "group relative overflow-hidden rounded-xl bg-white text-gray-800 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer";
     const widthClass =
       type === "row1"
         ? "w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-0.75rem)]"
@@ -92,7 +92,7 @@ export default function StatsScroller() {
       >
         <div className="relative p-3 sm:p-5 flex flex-col items-center text-center h-full">
           <div
-            className={`relative mb-2 w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-gradient-to-br ${stat.color}   transition-all duration-300 transform group-hover:scale-110`}
+            className={`relative mb-2 w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-gradient-to-br ${stat.color} shadow-md group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-110`}
           >
             <stat.icon size={18} className="text-white sm:size-[22px]" strokeWidth={2} />
           </div>
