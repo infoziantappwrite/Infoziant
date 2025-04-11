@@ -40,9 +40,10 @@ const AboutUsSection = () => {
         <motion.div className="intro-box-abtNew" {...motionProps(0.3)}>
           <h2>Welcome to Infoziant</h2>
           <p>
-            Infoziant, based in India and the UAE, delivers global enterprise-level deep-tech
-            solutions. We focus on quality delivery, end-to-end IT transformation, and providing
-            innovative solutions in digital transformation, cybersecurity, and IT services.
+          Where skilling meets innovation, and education transforms into opportunity.
+Founded by seasoned tech leaders from top global firms, Infoziant has evolved into a trusted partner for institutions and industries — empowering students, enabling careers, and delivering impactful digital solutions.
+From shaping college campuses into career-ready ecosystems to supporting Fortune 100 companies — we build, we train, we connect, and we elevate.
+With end-to-end solutions in education, tech, and talent, we collaborate to nurture future professionals — all under one roof.
           </p>
         </motion.div>
 
