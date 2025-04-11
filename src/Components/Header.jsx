@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, ChevronUp, Menu } from "lucide-react";
+import { ChevronDown, ChevronUp, ChevronLeft } from "lucide-react";
 
 const Header = () => {
   const location = useLocation();
   const [showServices, setShowServices] = useState(false);
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
 
   const toggleCategory = (index) => {
     setExpandedCategory((prev) => (prev === index ? null : index));
@@ -20,32 +21,29 @@ const Header = () => {
 
   const dropdownMenu = [
     {
-      title: "IT & Software Solutions",
+      title: "Innovative Tech & Business Services",
       index: 0,
       items: [
         { name: "Cybersecurity Services", path: "/cybersecurity" },
-        { name: "Web Development", path: "/web-development" },
-        { name: "Testing", path: "/testing" },
+        { name: "Web & App Development", path: "/web-development" },
+        { name: "Software Testing", path: "/testing" },
+        { name: "Tech Talent Hiring (Staffing Services)", path: "/talent-services" },
       ],
     },
     {
-      title: "Career Development & Industry Readiness",
+      title: "Campus to Corporate Services",
       index: 1,
       items: [
-        { name: "Placement", path: "/placement" },
-        { name: "Internship", path: "/internship" },
-        { name: "Training", path: "/training" },
+        { name: "Placement Support", path: "/placement" },
+        { name: "Internship Programs", path: "/internship" },
+        { name: "Industry-Academia Collaboration (CoE)", path: "/coe" },
+        { name: "Training & Upskilling", path: "/training" },
+        { name: "CodeChef Training", path: "/codechef" },
+        { name: "Edutech Solutions", path: "/edutech" },
       ],
     },
   ];
-
-  const directLinks = [
-    { title: "CoE", path: "/coe" },
-    { title: "Edutech", path: "/edutech" },
-    { title: "CodeChef", path: "/codechef" },
-    { title: "Tech Talent Services", path: "/talent-services" },
-  ];
-
+  
   const navLinks = [
     { title: "Home", path: "/" },
     { title: "About", path: "/about" },
@@ -61,16 +59,37 @@ const Header = () => {
   return (
     <header className="bg-white shadow-[0_0_15px_rgba(255,255,255,0.7)] sticky top-0 z-50 px-6 py-4">
       <div className="flex justify-between items-center">
-        <div className="flex items-center text-2xl font-bold text-blue-900 gap-2">
-          <Link to="/">
-            <img src="/Logo.png" alt="Logo" className="h-11 -mt-1 mb-1" />
-          </Link>
-        </div>
+      <div>
+        <Link to="/">
+          <img 
+            src="/Logo.png" 
+            alt="Logo" 
+            className="h-9 w-auto -mt-1 mb-1 sm:h-8 sm:w-auto md:h-10 lg:h-11" 
+          />
+        </Link>
+      </div>
 
         <div className="md:hidden">
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <Menu className="w-6 h-6 text-blue-900" />
-          </button>
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="relative z-50 flex flex-col justify-center items-center w-6 h-6 md:hidden"
+        >
+          <span
+            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform mb-1 ${
+              mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 mb-1 ${
+              mobileMenuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 transform ${
+              mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+            }`}
+          ></span>
+        </button>
         </div>
 
         {/* Desktop Navigation */}
@@ -110,33 +129,49 @@ const Header = () => {
               )}
             </button>
 
+            {/* Services Dropdown (Desktop Only) */}
             {showServices && (
-              <div className="absolute top-full -left-10 mt-6 w-[320px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50">
+              <div className="absolute top-full left-0 mt-6 w-[320px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50">
                 {dropdownMenu.map((menu) => (
                   <div
-                    key={menu.index}
-                    className="mb-3 border-b border-gray-300 pb-3"
-                  >
+                  key={menu.index}
+                  className={`mb-3 relative group ${
+                    menu.index === 0 ? "border-b border-gray-300 pb-3" : ""
+                  }`}
+                  onMouseEnter={() => {
+                    if (hoverTimeout) clearTimeout(hoverTimeout);
+                    setExpandedCategory(menu.index);
+                  }}
+                  onMouseLeave={() => {
+                    const timeout = setTimeout(() => {
+                      setExpandedCategory(null);
+                    }, 300); 
+                    setHoverTimeout(timeout);
+                  }}
+                >
+                
                     <button
-                      onClick={() => toggleCategory(menu.index)}
-                      className="flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-blue-900 text-base"
-                    >
+                      onClick={() =>
+                        setExpandedCategory((prev) =>
+                          prev === menu.index ? null : menu.index
+                        )
+                      }
+                      
+                      className="flex items-center gap-2 text-left font-semibold text-gray-800 hover:text-blue-900 text-base"
+                    >  
+                      <ChevronLeft className="w-4 h-4" />
                       {menu.title}
-                      {expandedCategory === menu.index ? (
-                        <ChevronUp className="w-4 h-4" />
-                      ) : (
-                        <ChevronDown className="w-4 h-4" />
-                      )}
                     </button>
 
+                    {/* Subcategories Panel */}
                     {expandedCategory === menu.index && (
-                      <div className="ml-4 mt-2 space-y-2">
+                      <div className="absolute top-0 -left-[340px] w-[320px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50">
                         {menu.items.map((item, idx) => (
                           <React.Fragment key={idx}>
                             <Link
                               to={item.path}
                               onClick={closeAllMenus}
-                              className="block text-[15px] text-gray-700 hover:text-blue-900 hover:underline transition text-left"
+                              className="block text-[15px] text-gray-700 hover:text-blue-900 hover:underline transition"
                             >
                               {item.name}
                             </Link>
@@ -149,29 +184,9 @@ const Header = () => {
                     )}
                   </div>
                 ))}
-
-                <div className="space-y-2 pt-2">
-                  {directLinks.map((link, idx) => (
-                    <React.Fragment key={idx}>
-                      <Link
-                        to={link.path}
-                        onClick={closeAllMenus}
-                        className={`block text-base text-gray-800 hover:text-blue-900 hover:underline transition text-left ${
-                          isActive(link.path)
-                            ? "text-blue-900 font-semibold underline"
-                            : ""
-                        }`}
-                      >
-                        {link.title}
-                      </Link>
-                      {idx !== directLinks.length - 1 && (
-                        <hr className="border-gray-300" />
-                      )}
-                    </React.Fragment>
-                  ))}
-                </div>
               </div>
             )}
+
           </div>
 
           {/* Remaining nav links */}
@@ -220,13 +235,17 @@ const Header = () => {
             >
               Services
               {showServices ? (
-                <ChevronUp className="w-4 h-4" />
+                <ChevronUp className="w-4 h-4 transition-transform duration-300" />
               ) : (
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-4 h-4 transition-transform duration-300" />
               )}
             </button>
 
-            {showServices && (
+            <div
+              className={`${
+                showServices ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+              } transition-all duration-500 overflow-hidden`}
+            >
               <div className="mt-2 space-y-4 ml-2 sm:-ml-4">
                 {dropdownMenu.map((menu) => (
                   <div key={menu.index}>
@@ -262,29 +281,8 @@ const Header = () => {
                     )}
                   </div>
                 ))}
-
-                <div className="space-y-2 mt-4">
-                  {directLinks.map((link, idx) => (
-                    <React.Fragment key={idx}>
-                      <Link
-                        to={link.path}
-                        onClick={closeAllMenus}
-                        className={`block text-base text-gray-800 hover:text-blue-900 hover:underline ${
-                          isActive(link.path)
-                            ? "text-blue-900 font-semibold underline"
-                            : ""
-                        }`}
-                      >
-                        {link.title}
-                      </Link>
-                      {idx !== directLinks.length - 1 && (
-                        <hr className="border-gray-300" />
-                      )}
-                    </React.Fragment>
-                  ))}
-                </div>
               </div>
-            )}
+            </div>
           </div>
 
           <hr className="my-2 border-gray-300" />

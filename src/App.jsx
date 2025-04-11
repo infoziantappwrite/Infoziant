@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 import Home from './Components/Home/Home';
 
 const Page = () => (
@@ -31,6 +32,7 @@ const App = () => {
       <Route path="/web-development" element={<Page title="Web Development" />} />
       <Route path="/testing" element={<Page title="Testing" />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
