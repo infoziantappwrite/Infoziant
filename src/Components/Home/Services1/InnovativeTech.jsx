@@ -1,12 +1,13 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom"; // Import navigation hook
+import { motion, useInView } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   ShieldCheck,
   MonitorSmartphone,
   BugPlay,
   UsersRound,
 } from "lucide-react";
+import { useRef } from "react";
 import "./InnovativeTech.css";
 
 const services = [
@@ -42,13 +43,16 @@ const services = [
 
 const InnovativeTech = () => {
   const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section className="our-services">
-      <motion.div 
+    <section ref={ref} className="our-services">
+      {/* Left Section: Animated Text */}
+      <motion.div
         className="services-left"
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <h5>OUR CORE SERVICES</h5>
@@ -60,30 +64,38 @@ const InnovativeTech = () => {
         </p>
       </motion.div>
 
+      {/* Right Section: Cards */}
       <motion.div 
         className="services-right"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {services.map((service, index) => (
           <motion.div
-            className="service-card"
             key={index}
+            className="service-card"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
             whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            onClick={() => navigate(service.link)}
           >
             <div className="icon">{service.icon}</div>
             <h3 className="text-xl font-medium mb-2">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
                 {service.title.split(" ")[0]}
               </span>{" "}
-              <span className="text-white">{service.title.split(" ").slice(1).join(" ")}</span>
-              
+              <span className="text-white">
+                {service.title.split(" ").slice(1).join(" ")}
+              </span>
             </h3>
             <p>{service.description}</p>
-            <button className="learn-more-btn">Learn More →</button>
+            <button
+              className="learn-more-btn"
+              onClick={() => navigate(service.link)}
+            >
+              Learn More →
+            </button>
           </motion.div>
         ))}
       </motion.div>
