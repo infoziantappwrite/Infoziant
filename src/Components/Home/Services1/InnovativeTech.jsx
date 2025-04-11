@@ -75,11 +75,12 @@ const InnovativeTech = () => {
             onClick={() => navigate(service.link)}
           >
             <div className="icon">{service.icon}</div>
-            <h3 className="text-lg font-medium mb-2">
+            <h3 className="text-xl font-medium mb-2">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
                 {service.title.split(" ")[0]}
               </span>{" "}
-              {service.title.split(" ").slice(1).join(" ")}
+              <span className="text-white">{service.title.split(" ").slice(1).join(" ")}</span>
+              
             </h3>
             <p>{service.description}</p>
             <button className="learn-more-btn">Learn More →</button>

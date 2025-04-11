@@ -4,6 +4,7 @@ import Ourservices from './Ourservices/Ourservices';
 import AboutUsSection from './AboutSection/AboutUsSection';
 import ServicesSection from './Services1/ServicesSection';
 import InnovativeTech from './Services1/InnovativeTech';
+import CollegeClients from './Clients/CollegeClients';
 
 
 const Home = () => {
@@ -17,9 +18,13 @@ const Home = () => {
         {/* <BlogSection /> */}
         {/* <ContactSection /> */}
         <Ourservices />
+        
 
         <ServicesSection />
         <InnovativeTech />
+        <CollegeClients />
+        {/* <ContactSection /> */}
+        {/* <Footer /> */}
   
       
     </>
