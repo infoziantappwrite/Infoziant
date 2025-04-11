@@ -5,10 +5,10 @@ import "./AboutUsSection.css";
 import img1 from "../../../assests/Images/HomeAbout/1.png";
 import img2 from "../../../assests/Images/HomeAbout/2.png";
 import img3 from "../../../assests/Images/HomeAbout/3.png";
-import img4 from "../../../assests/Images/HomeAbout/4.png";
+import img4 from "../../../assests/Images/HomeAbout/9.png";
 import img5 from "../../../assests/Images/HomeAbout/5.png";
 import img6 from "../../../assests/Images/HomeAbout/6.png";
-import img7 from "../../../assests/Images/HomeAbout/7.jpeg";
+import img7 from "../../../assests/Images/HomeAbout/7.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
@@ -33,27 +33,31 @@ const AboutUsSection = () => {
           <img src={img2} alt="Client 2" loading="lazy" />
         </motion.div>
 
-        <motion.div className="image-box-abtNew medium-abtNew" {...motionProps(0.2)}>
+        <motion.div className="image-box-abtNew medium-abtNew  md:block" {...motionProps(0.2)}>
           <img src={img3} alt="Client 3" loading="lazy" />
         </motion.div>
 
         <motion.div className="intro-box-abtNew" {...motionProps(0.3)}>
           <h2>Welcome to Infoziant</h2>
           <p>
-          Where skilling meets innovation, and education transforms into opportunity.
-Founded by seasoned tech leaders from top global firms, Infoziant has evolved into a trusted partner for institutions and industries — empowering students, enabling careers, and delivering impactful digital solutions.
-From shaping college campuses into career-ready ecosystems to supporting Fortune 100 companies — we build, we train, we connect, and we elevate.
-With end-to-end solutions in education, tech, and talent, we collaborate to nurture future professionals — all under one roof.
-          </p>
+  Where <strong>skilling meets innovation</strong>, and <strong>education transforms into opportunity</strong>.<br /><br />
+  Founded by seasoned tech leaders from top global firms, <strong>Infoziant</strong> has evolved into a trusted partner for institutions and industries —<br />
+  <em>empowering students, enabling careers, and delivering impactful digital solutions.</em><br /><br />
+  From shaping college campuses into <strong>career-ready ecosystems</strong> to supporting <strong>Fortune 100 companies</strong> —<br />
+  <strong>we build, we train, we connect, and we elevate.</strong><br /><br />
+  With end-to-end solutions in <strong>education, tech, and talent</strong>,<br />
+  we collaborate to nurture future professionals — <em>all under one roof.</em>
+</p>
+
         </motion.div>
 
-        <motion.div className="image-box-abtNew small-abtNew" {...motionProps(0.4)}>
+        <motion.div className="image-box-abtNew4 small-abtNew" {...motionProps(0.4)}>
           <img src={img4} alt="Client 4" loading="lazy" />
         </motion.div>
 
-        <motion.div className="image-box-abtNew medium-abtNew" {...motionProps(0.5)}>
-          <img src={img5} alt="Client 5" loading="lazy" />
-        </motion.div>
+        <motion.div className="image-box-abtNew medium-abtNew hidden md:block" {...motionProps(0.5)}>
+  <img src={img5} alt="Client 5" loading="lazy" />
+</motion.div>
 
         <motion.div className="image-box-abtNew large-abtNew" {...motionProps(0.6)}>
           <img src={img6} alt="Client 6" loading="lazy" />
