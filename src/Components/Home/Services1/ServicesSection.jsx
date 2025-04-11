@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 const services = [
   {
     title: "Placement Support",
-    description: "Get expert career counseling, resume-building, and interview preparation. Unlock exclusive job opportunities with top recruiters.",
-    features: ["Resume review & enhancement", "Mock interviews with experts", "Direct placement assistance"],
+    description: "Boost placements with exclusive hiring drives and company tie-ups.",
+    features: ["Curated drives with top recruiters", "Interview coordination & support", "End-to-end placement management"],
     icon: Briefcase,
     link: "/services/placement-support",
     gradient: "from-yellow-400 to-orange-500",
@@ -37,16 +37,16 @@ const services = [
   },
   {
     title: "CodeChef Training",
-    description: "Improve your coding skills with structured training and challenges. Learn problem-solving strategies and excel in competitions.",
-    features: ["Competitive coding sessions", "Problem-solving strategies", "CodeChef challenges & hackathons"],
+    description: "We enable your students to gain global visibility and practical coding mastery.",
+    features: ["Weekly coding contests & hackathons", "Company-specific coding practice", "AI-based feedback & expert mentorship","Global leaderboard & verifiable certificates"],
     icon: Code,
     link: "/services/codechef-training",
     gradient: "from-gray-700 to-black",
   },
   {
-    title: "Edutech Solutions",
-    description: "Transform learning with AI-driven tools and interactive platforms. Enhance engagement with digital assessments and analytics.",
-    features: ["AI-based learning platforms", "Interactive educational tools", "Digital assessments & analytics"],
+    title: "Smart Edutech ",
+    description: "Revolutionize learning with AI dashboards & analytics.",
+    features: ["Personalized learning journeys", "Real-time performance tracking", "Interactive assessments & insights"],
     icon: BookOpen,
     link: "/services/edutech",
     gradient: "from-green-400 to-teal-500",
