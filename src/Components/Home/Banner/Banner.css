@@ -71,7 +71,9 @@
 .home-banner-content h2 {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #15f5ba;
+  background: linear-gradient(0deg, #15f5ba, #06f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 15px 0;
 }
 

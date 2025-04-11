@@ -44,6 +44,18 @@
   transform: scale(1.05);
 }
 
+.image-box-abtNew4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.image-box-abtNew4:hover img {
+  transform: scale(1.05);
+}
+
 .intro-box-abtNew {
   grid-column: 1 / span 2;
   padding: 3%;
@@ -88,6 +100,17 @@
   color: #555;
   text-align: center;
 }
+
+.intro-box-abtNew p strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.intro-box-abtNew p em {
+  font-style: italic;
+  color: #333;
+}
+
 
 /* Decorative element if needed */
 .decorative-element-abtNew {
