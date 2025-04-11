@@ -4,7 +4,7 @@ import Ourservices from './Ourservices/Ourservices';
 import AboutUsSection from './AboutSection/AboutUsSection';
 import ServicesSection from './Services1/ServicesSection';
 import InnovativeTech from './Services1/InnovativeTech';
-
+import StatsScroller from './Stats/StatsScroller';
 
 const Home = () => {
   return (
@@ -20,6 +20,8 @@ const Home = () => {
 
         <ServicesSection />
         <InnovativeTech />
+
+        <StatsScroller />
   
       
     </>
