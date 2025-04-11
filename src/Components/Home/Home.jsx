@@ -4,6 +4,7 @@ import Ourservices from './Ourservices/Ourservices';
 import AboutUsSection from './AboutSection/AboutUsSection';
 import ServicesSection from './Services1/ServicesSection';
 import InnovativeTech from './Services1/InnovativeTech';
+import TestimonialSection from './StudentTestimonials/Testimonials';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
 
         <ServicesSection />
         <InnovativeTech />
+        <TestimonialSection />
   
       
     </>
