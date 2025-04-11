@@ -4,8 +4,10 @@ import Ourservices from './Ourservices/Ourservices';
 import AboutUsSection from './AboutSection/AboutUsSection';
 import ServicesSection from './Services1/ServicesSection';
 import InnovativeTech from './Services1/InnovativeTech';
+import TestimonialSection from './StudentTestimonials/Testimonials';
 import StatsScroller from './Stats/StatsScroller';
 import CollegeClients from './Clients/CollegeClients';
+
 
 
 const Home = () => {
@@ -21,11 +23,12 @@ const Home = () => {
         <Ourservices />
         <ServicesSection />
         <InnovativeTech />
+       
         <StatsScroller />
         <CollegeClients />
+        <TestimonialSection />
         {/* <ContactSection /> */}
         {/* <Footer /> */}
-
   
       
     </>
