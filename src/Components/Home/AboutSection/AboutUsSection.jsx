@@ -26,11 +26,11 @@ const AboutUsSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeIn}
         >
-          <img src={img1} alt="Client 1" loading="lazy" />
+          <img src={img2} alt="Client 1" loading="lazy" />
         </motion.div>
 
         <motion.div className="image-box-abtNew small-abtNew" {...motionProps(0.1)}>
-          <img src={img2} alt="Client 2" loading="lazy" />
+          <img src={img1} alt="Client 2" loading="lazy" />
         </motion.div>
 
         <motion.div className="image-box-abtNew medium-abtNew  md:block" {...motionProps(0.2)}>
