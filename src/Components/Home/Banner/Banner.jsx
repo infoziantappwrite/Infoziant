@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
-import collaborationImage from "../../../assests/Images/Banner/Collaboration.png";
-import itsolutionImage from "../../../assests/Images/Banner/it&solution.png";
+import collaborationImage from "../../../assests/Images/Banner/banner1.jpeg";
+import itsolutionImage from "../../../assests/Images/Banner/banner2.jpg";
 
 const slides = [
   {
