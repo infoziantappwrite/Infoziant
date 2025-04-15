@@ -1,22 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import collaborationImage from "../../../assests/Images/Banner/WebDev.jpg";
-import itsolutionImage from "../../../assests/Images/Banner/WebDev2.png";
 
-const slides = [
-  {
-    heading: "Strong & Business-Focused",
-    text: "Transforming Ideas into Powerful Digital Solutions.",
-    image: collaborationImage,
-  },
-  {
-    heading: "Enterprise-Grade Web Solutions",
-    text: "Build Scalable, Secure & High-Performance Web App Solutions with Our Expert Team.",
-    image: itsolutionImage,
-  },
-];
 
-const Banner = () => {
+
+
+const Banner = ({slides}) => {
   const [index, setIndex] = useState(0);
 
   const nextSlide = () => {
@@ -46,7 +34,7 @@ const Banner = () => {
         alt={`Slide ${i}`}
         className="w-full h-full object-cover absolute inset-0 blur-[1px] brightness-75"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-800 to-blue-800  z-10" />
       <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white max-w-4xl mx-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
           {slide.heading}
