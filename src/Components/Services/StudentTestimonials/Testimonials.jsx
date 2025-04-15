@@ -1,34 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
+import image1 from "../../../assests/Images/Ourservice/webdevtest1.png"
 
 const testimonials = [
   {
-    name: "Alper Tornaci",
-    role: "User Experience | Istanbul",
-    quote: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Krishna",
+    role: "AVP | SMI Technology LLC, Dubai",
+    quote: "Infoziant has been an exceptional technology partner for us. Their team demonstrated remarkable creativity, technical expertise, and a deep understanding of our brand to deliver a website that is not only visually stunning but also functionally robust. The entire experience—from planning to deployment—was seamless and professional. Highly impressed with their commitment to quality.",
+    image: image1,
     color: "from-pink-500 to-rose-400"
   },
-  {
-    name: "Melten Karahan",
-    role: "User Research | Nairobi",
-    quote: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-    color: "from-purple-500 to-indigo-400"
-  },
-  {
-    name: "Zara Noor",
-    role: "Design Lead | Dubai",
-    quote: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
-    color: "from-blue-500 to-cyan-400"
-  },
-  {
-    name: "Marco Patel",
-    role: "Product Manager | Singapore",
-    quote: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-    image: "https://randomuser.me/api/portraits/men/76.jpg",
-    color: "from-emerald-500 to-teal-400"
-  }
+  
 ];
 
 const TestimonialSection = () => {

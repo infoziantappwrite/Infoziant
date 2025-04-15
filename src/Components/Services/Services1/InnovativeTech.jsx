@@ -59,7 +59,7 @@ const IndustriesWeServe = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-slate-900 to-slate-950 py-20 px-4 text-white font-sans"
+      className="bg-gradient-to-b from-slate-900 to-slate-950 py-20 px-4 text-white"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
