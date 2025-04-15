@@ -57,7 +57,7 @@ export default function ServicesSection() {
   const navigate = useNavigate();
 
   return (
-    <div className="p-8 bg-gray-800 text-white" id="services-section">
+    <div className="p-8 bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-white" id="services-section">
       <motion.section 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
