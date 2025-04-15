@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Testimonials.css"; // Import the CSS file
+import Azar from "../../../assests/Images/Testimonials/Azar.jpeg";
 
 const testimonials = [
   {
-    name: "Alper Tornaci",
-    role: "User Experience | Istanbul",
+    name: "Azar",
+    role: "Placement Officer | Karpagam College of Engineering | Coimbatore",
     quote:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+      "Infoziant has been a great support for our students, both in training and placements. Their sessions are practical and engaging, and the team is always approachable. We’ve seen real results, and we’re happy to keep working with them.",
+    image: Azar,
     color: "pink",
   },
   {
