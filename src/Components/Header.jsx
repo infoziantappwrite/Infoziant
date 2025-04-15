@@ -25,7 +25,7 @@ const Header = () => {
       index: 0,
       items: [
         { name: "Cybersecurity Services", path: "/cybersecurity" },
-        { name: "Web & App Development", path: "/web-development" },
+        { name: "Web & App Development", path: "/web-app-development" },
         { name: "Software Testing", path: "/testing" },
         { name: "Tech Talent Hiring (Staffing Services)", path: "/talent-services" },
       ],
