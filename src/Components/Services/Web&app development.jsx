@@ -7,13 +7,25 @@ import InnovativeTech from './Services1/InnovativeTech';
 import TestimonialSection from './StudentTestimonials/Testimonials';
 import StatsScroller from './Stats/StatsScroller';
 import CollegeClients from './Clients/CollegeClients';
+import collaborationImage from "../../assests/Images/Banner/WebDev.jpg";
+import itsolutionImage from "../../assests/Images/Banner/WebDev2.png";
+const slides = [
+  {
+    heading: "Strong & Business-Focused",
+    text: "Transforming Ideas into Powerful Digital Solutions.",
+    image: collaborationImage,
+  },
+  {
+    heading: "Enterprise-Grade Web Solutions",
+    text: "Build Scalable, Secure & High-Performance Web App Solutions with Our Expert Team.",
+    image: itsolutionImage,
+  },
+];
 
-
-
-const Home = () => {
+const WebandApp = () => {
   return (
     <>
-        <Banner />
+        <Banner slides={slides} />
         <AboutUsSection />
       
         {/* <CounterSection /> */}
@@ -24,8 +36,7 @@ const Home = () => {
         <ServicesSection />
         <InnovativeTech />
        
-        <StatsScroller />
-        <CollegeClients />
+      
         <TestimonialSection />
         {/* <ContactSection /> */}
         {/* <Footer /> */}
@@ -35,4 +46,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default WebandApp;

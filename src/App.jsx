@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './Components/Home/Home';
-import Services from './Components/Services/Services';
+import WebandApp from './Components/Services/Web&app development';
 
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
@@ -30,7 +30,7 @@ const App = () => {
       <Route path="/codechef" element={<Page title="CodeChef" />} />
       <Route path="/talent-services" element={<Page title="Talent Services" />} />
       <Route path="/cybersecurity" element={<Page title="Cybersecurity" />} />
-      <Route path="/web-app-development" element={<Services />} />
+      <Route path="/web-app-development" element={<WebandApp />} />
       <Route path="/testing" element={<Page title="Testing" />} />
       </Routes>
       <Footer />
