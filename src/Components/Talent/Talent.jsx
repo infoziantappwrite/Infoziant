@@ -24,7 +24,7 @@ const Home = () => {
        
         <StatsScroller />
         {/* <CollegeClients /> */}
-        {/* <TestimonialSection /> */}
+        <TestimonialSection />
         {/* <ContactSection /> */}
         {/* <Footer /> */}
   

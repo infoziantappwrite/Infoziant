@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import {
   MdAccountBalance,
@@ -57,16 +57,34 @@ const industries = [
 
 const IndustriesWeServe = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-4 text-gray-800 font-sans">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto"
-      >
+    <motion.section
+      ref={sectionRef}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, y: 60 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.8 }
+        }
+      }}
+      className="bg-gradient-to-b from-gray-50 to-white py-20 px-4 text-gray-800 font-sans"
+    >
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-gray-600 tracking-wider uppercase">
             Expertise Across Sectors
@@ -84,83 +102,75 @@ const IndustriesWeServe = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
             <div
-            key={index}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            className="relative transition-all duration-300 ease-in-out"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="relative bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg cursor-pointer overflow-hidden"
+              key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="relative transition-all duration-300 ease-in-out"
             >
-              {/* Top Static Content */}
-              <div className="p-6">
-                <div className="flex justify-between items-center space-x-4">
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r ${industry.gradient} text-white`}
-                    >
-                      {industry.icon}
-                    </div>
-                    <h3 className="font-semibold text-gray-800 text-lg">
-                      {industry.title}
-                    </h3>
-                  </div>
-                  <ChevronDown
-                    size={22}
-                    className={`transition-transform duration-300 transform ${
-                      hoveredIndex === index ? "rotate-180" : "rotate-0"
-                    }`}
-                  />
-                </div>
-              </div>
-          
-              {/* Expanding section absolutely positioned inside card */}
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={
-                  hoveredIndex === index
-                    ? { height: "auto", opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.3 }}
-                className="px-6 overflow-hidden"
-              >
-                <div className="text-gray-600 text-sm">
-                  {industry.description}
-                </div>
-                <motion.div
-                  className="mt-3 flex items-center text-sm font-medium"
-                  style={{
-                    background: `linear-gradient(to right, ${getGradientColors(
-                      industry.gradient
-                    )})`,
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent"
-                  }}
-                >
-                 
-                </motion.div>
-              </motion.div>
-          
-              {/* Bottom Accent Line */}
-              <motion.div
-                className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${industry.gradient} transition-all duration-500`}
-                animate={{
-                  width: hoveredIndex === index ? "100%" : "25%"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: index * 0.1, duration: 0.5 }
+                  }
                 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-          </div>
-          
+                initial="hidden"
+                animate={controls}
+                className="relative bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg cursor-pointer overflow-hidden"
+              >
+                <div className="p-6">
+                  <div className="flex justify-between items-center space-x-4">
+                    <div className="flex items-center space-x-3">
+                      <div
+                        className={`w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r ${industry.gradient} text-white`}
+                      >
+                        {industry.icon}
+                      </div>
+                      <h3 className="font-semibold text-gray-800 text-lg">
+                        {industry.title}
+                      </h3>
+                    </div>
+                    <ChevronDown
+                      size={22}
+                      className={`transition-transform duration-300 transform ${
+                        hoveredIndex === index ? "rotate-180" : "rotate-0"
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                {/* Expandable Description */}
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={
+                    hoveredIndex === index
+                      ? { height: "auto", opacity: 1 }
+                      : { height: 0, opacity: 0 }
+                  }
+                  transition={{ duration: 0.3 }}
+                  className="px-6 overflow-hidden"
+                >
+                  <div className="text-gray-600 text-sm">
+                    {industry.description}
+                  </div>
+                </motion.div>
+
+                {/* Bottom Line Glow */}
+                <motion.div
+                  className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${industry.gradient}`}
+                  animate={{
+                    width: hoveredIndex === index ? "100%" : "25%"
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 };
 
