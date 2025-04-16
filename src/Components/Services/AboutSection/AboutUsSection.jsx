@@ -5,21 +5,21 @@ import imageabout from "../../../assests/Images/Ourservice/about.png";
 
 const stats = [
   {
-    number: 50,
+    number: 57,
     suffix: "+",
     title: "Successful Projects",
     color: "from-purple-500 to-pink-500",
     icon: Briefcase,
   },
   {
-    number: 30,
+    number: 34,
     suffix: "+",
     title: "Clients Across Industries",
     color: "from-yellow-400 to-orange-500",
     icon: Users,
   },
   {
-    number: 10,
+    number: 16,
     suffix: "+",
     title: "Years of Experience",
     color: "from-green-400 to-emerald-600",
