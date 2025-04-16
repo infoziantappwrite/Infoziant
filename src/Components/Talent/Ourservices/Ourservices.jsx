@@ -1,11 +1,6 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Users,
-  Layers,
-  Globe,
-  DollarSign,
-} from "lucide-react";
+import React, { useRef, useEffect } from "react";
+import { motion, AnimatePresence, useInView, useAnimation } from "framer-motion";
+import { Users, Layers, Globe, DollarSign } from "lucide-react";
 import SmilingTeam from "../../../assests/Images/Banner/staffing.gif";
 
 const reasons = [
@@ -43,24 +38,48 @@ const reasons = [
   },
 ];
 
-// Scroll animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.15 }
+  }),
   exit: { opacity: 0, y: -20, transition: { duration: 0.4 } },
 };
 
 const WhyChoose = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
   return (
-    <section className="bg-white text-gray-800 py-24 px-4 sm:px-6 lg:px-12 relative w-full" id="why-smi">
+    <motion.section
+      ref={sectionRef}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+      }}
+      className="bg-white text-gray-800 py-24 px-4 sm:px-6 lg:px-12 relative w-full"
+      id="why-smi"
+    >
       <div className="relative z-10 w-full">
         {/* Header */}
         <motion.div
           variants={fadeInUp}
+          custom={0}
           initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true, amount: 0.4 }}
+          animate={controls}
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -73,30 +92,27 @@ const WhyChoose = () => {
           </p>
         </motion.div>
 
-        {/* Two-column layout */}
+        {/* Content */}
         <div className="grid md:grid-cols-2 gap-12 items-center w-full">
-          {/* Left: Cards */}
+          {/* Cards */}
           <div className="grid grid-cols-1 gap-4 w-full">
             <AnimatePresence>
               {reasons.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.15 }}
+                  variants={fadeInUp}
+                  custom={index}
+                  initial="hidden"
+                  animate={controls}
+                  exit="exit"
                   className="group relative w-full"
                 >
                   <div
                     className={`rounded-2xl p-6 shadow-md bg-gradient-to-br ${item.hoverGradient} transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 relative overflow-hidden`}
                   >
-                    <div className="absolute inset-0 bg-white/20 rounded-2xl pointer-events-none"></div>
-
+                    <div className="absolute inset-0 bg-white/20 rounded-2xl pointer-events-none" />
                     <div className="flex items-start space-x-4 relative z-10">
-                      <div
-                        className={`flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md ${item.iconColor}`}
-                      >
+                      <div className={`flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md ${item.iconColor}`}>
                         <item.icon size={24} />
                       </div>
                       <div className="flex-1">
@@ -114,13 +130,12 @@ const WhyChoose = () => {
             </AnimatePresence>
           </div>
 
-          {/* Right: GIF */}
+          {/* Image */}
           <motion.div
             variants={fadeInUp}
+            custom={1}
             initial="hidden"
-            whileInView="visible"
-            exit="exit"
-            viewport={{ once: true }}
+            animate={controls}
             className="mx-auto md:mx-0"
           >
             <img
@@ -131,14 +146,12 @@ const WhyChoose = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Text Bubble */}
+        {/* Bottom Text */}
         <motion.div
           variants={fadeInUp}
+          custom={2}
           initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
+          animate={controls}
           className="text-center mt-16 text-gray-600"
         >
           <div className="inline-block py-2 px-6 bg-gray-50 border border-gray-200 rounded-full shadow-sm">
@@ -148,7 +161,7 @@ const WhyChoose = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
