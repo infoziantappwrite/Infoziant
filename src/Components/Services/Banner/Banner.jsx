@@ -34,24 +34,25 @@ const Banner = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-[linear-gradient(90deg,_#15f5ba,_#06f)] bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 bg-[linear-gradient(90deg,_#15f5ba,_#06f)] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Transforming Ideas into Powerful Digital Solutions
+            Web & App Development Service
           </motion.h1>
 
           <motion.p
-            className="text-sm sm:text-base md:text-lg text-gray-300 mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            Build Scalable, Secure & High-Performance Web & App Solutions with Our Expert Team
-          </motion.p>
+  className="text-sm sm:text-base md:text-lg text-gray-300 mb-6"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.7, delay: 0.3 }}
+>
+  Turning Ideas into Impactful Digital Experiences — Our expert team delivers scalable, secure, and high-performance web and app solutions tailored to your needs.
+</motion.p>
+
 
           <motion.div
             className="flex gap-4 flex-wrap"
