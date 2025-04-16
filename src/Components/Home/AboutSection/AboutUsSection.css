@@ -55,6 +55,20 @@
 .image-box-abtNew4:hover img {
   transform: scale(1.05);
 }
+.card-abtNew-sec {
+  border: 2px solid transparent;
+  background-image: linear-gradient(#ffffff, #ffffff),
+    linear-gradient(to right, #15f5ba, #06f);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
 
 .intro-box-abtNew {
   grid-column: 1 / span 2;

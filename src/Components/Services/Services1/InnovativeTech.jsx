@@ -2,23 +2,26 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Sample from "../../../assests/Images/Banner/Sample.png";
+import  healtcare from "../../../assests/Images/Ourservice/webdev/healthcare.png"
+import ecommerce from "../../../assests/Images/Ourservice/webdev/ecommerce.png";
+import banking from "../../../assests/Images/Ourservice/webdev/banking.png";
 
 const industries = [
   {
     title: "Healthcare",
-    image: Sample,
+    image: healtcare,
     description:
       "Transformative solutions for patient care and medical management systems.",
   },
   {
     title: "E-Commerce",
-    image: Sample,
+    image: ecommerce,
     description:
       "Scalable platforms that drive conversions and enhance customer experience.",
   },
   {
     title: "Finance",
-    image: Sample,
+    image: banking,
     description:
       "Secure and innovative fintech solutions for modern banking needs.",
   },

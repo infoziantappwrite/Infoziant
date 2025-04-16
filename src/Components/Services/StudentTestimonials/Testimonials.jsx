@@ -7,12 +7,12 @@ const testimonials = [
   {
     name: "Krishna",
     role: "AVP | SMI Technology LLC, Dubai",
-    quote: "Infoziant has been an exceptional technology partner for us. Their team demonstrated remarkable creativity, technical expertise, and a deep understanding of our brand to deliver a website that is not only visually stunning but also functionally robust. The entire experience—from planning to deployment—was seamless and professional. Highly impressed with their commitment to quality.",
+    quote: "Infoziant has been an exceptional technology partner. Their team brought creativity, technical expertise, and a deep understanding of our brand, delivering a website that’s both visually stunning and functionally robust. The journey from planning to deployment was seamless and professional. Truly impressed by their commitment to quality.",
     image: image3,
     color: "from-blue-500 to-cyan-400",
   },
   {
-    name: "Marco Patel",
+    name: "Mahalakshmi",
     role: "Founder | Meeyal Designer",
     quote:"Working with Infoziant was a game-changer for our boutique brand. They understood our aesthetic and turned it into a beautiful, user-friendly e-commerce site that truly reflects Meeyal Designer’s identity. The team was responsive, creative, and made the whole process smooth from start to finish. We’re thrilled with the outcome!",
     image: image4,
@@ -38,11 +38,11 @@ const TestimonialSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-xl p-4 sm:p-6 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              className="bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-xl p-6 sm:p-8 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
               <div
                 className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r ${testimonial.color} flex items-center justify-center mb-4 sm:mb-6`}
