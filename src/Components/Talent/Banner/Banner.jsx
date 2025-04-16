@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import sampleGif from "../../../assests/Images/Banner/WebAPI.png"; // Transparent GIF
+import sampleGif from "../../../assests/Images/Banner/recruiting-professionals-studying-candidate-profiles.png"; // Transparent GIF
 
 const Banner = () => {
   const [isGifVisible, setIsGifVisible] = useState(false);
@@ -12,7 +12,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full text-white font-sans overflow-hidden">
+    <section className="relative p-12 w-full text-white font-sans overflow-hidden">
       {/* Background gradient and glow shapes */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-[#0e223f] to-[#102e56]">
         {/* Soft animated shapes */}
@@ -33,25 +33,26 @@ const Banner = () => {
 
           <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
             <span className="block bg-gradient-to-r from-teal-300 to-blue-500 bg-clip-text text-transparent">
-              Transforming Ideas
+            Tech talent services
             </span>
-            <span className="block">Into Digital Reality</span>
+            
           </h1>
+          <span className="block text-xl">One Stop IT Staffing and Solutioning Vendors</span>
 
-          <p className="text-gray-300 text-lg max-w-lg">
-            Our expert team builds scalable, secure solutions that drive business growth and enhance user experience.
+          <p className="text-gray-300 text-md max-w-lg">
+          At Infoziant, we specialize in providing top-tier talents for businesses enabling them to enhance productivity, drive innovation, and scale efficiently
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#get-started"
-              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-400 text-white font-semibold rounded-lg shadow-lg hover:shadow-blue-500/20 transition-all duration-300 text-center"
+              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-400 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-500/20 transition-all duration-300 text-center"
             >
               Start Your Project
             </a>
             <a
               href="#contact"
-              className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 text-center"
+              className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
             >
               Schedule a Call
             </a>
@@ -63,7 +64,7 @@ const Banner = () => {
           <img
             src={sampleGif}
             alt="Digital Solutions Illustration"
-            className={`w-full max-w-md h-auto transition-all duration-1000 ease-in-out ${
+            className={`w-full max-w-lg h-auto transition-all duration-1000 ease-in-out ${
               isGifVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           />

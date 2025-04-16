@@ -98,7 +98,7 @@ const IndustriesWeServe = () => {
             >
               {/* Top Static Content */}
               <div className="p-6">
-                <div className="flex justify-between items-center space-x-4 mb-4">
+                <div className="flex justify-between items-center space-x-4">
                   <div className="flex items-center space-x-3">
                     <div
                       className={`w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r ${industry.gradient} text-white`}
@@ -127,7 +127,7 @@ const IndustriesWeServe = () => {
                     : { height: 0, opacity: 0 }
                 }
                 transition={{ duration: 0.3 }}
-                className="px-6 pb-6 overflow-hidden"
+                className="px-6 overflow-hidden"
               >
                 <div className="text-gray-600 text-sm">
                   {industry.description}
@@ -142,8 +142,7 @@ const IndustriesWeServe = () => {
                     WebkitTextFillColor: "transparent"
                   }}
                 >
-                  <span>Explore solutions</span>
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                 
                 </motion.div>
               </motion.div>
           
