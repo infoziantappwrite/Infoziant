@@ -67,10 +67,7 @@ const IndustriesWeServe = () => {
       className="bg-gradient-to-b from-slate-900 to-slate-950 py-20 px-4 text-white"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-gray-200 tracking-wider uppercase">
@@ -84,11 +81,11 @@ const IndustriesWeServe = () => {
             We deliver tailored digital solutions that address the unique
             challenges and opportunities in each industry.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
-            <motion.div
+            <div
               key={index}
               variants={cardVariants}
               initial="hidden"
@@ -140,20 +137,17 @@ const IndustriesWeServe = () => {
                   hoveredIndex === index ? "w-full" : "w-16"
                 }`}
               ></div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+        <div
           className="mt-16 text-center"
         >
           <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1">
             Discuss Your Industry Needs
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

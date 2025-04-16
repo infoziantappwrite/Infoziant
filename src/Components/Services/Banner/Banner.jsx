@@ -14,7 +14,7 @@ const Banner = () => {
 
   return (
     <section
-      className="relative h-auto min-h-[90vh] w-full text-white flex items-center"
+      className="relative h-auto min-h-[80vh] lg:min-h-[90vh] w-full text-white flex items-center"
       style={{
         background: `radial-gradient(circle at center, #2563eb 0%, #0f172a 70%, #000000 100%)`,
       }}
@@ -23,18 +23,17 @@ const Banner = () => {
       <div className="absolute inset-0 bg-black/80" />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col sm:flex-row items-center justify-between w-full px-6 sm:px-16 max-w-7xl mx-auto py-5 sm:py-0">
-        
+      <div className="relative z-20 flex flex-col-reverse lg:flex-row items-center justify-between  gap-10 w-full px-6 sm:px-10 md:px-16 max-w-7xl mx-auto py-10 md:py-20">
         {/* Left: Text & Buttons */}
         <motion.div
-          className="text-white text-left max-w-xl mt-8 sm:mt-0"
+          className="text-white text-center lg:text-left max-w-2xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 bg-[linear-gradient(90deg,_#15f5ba,_#06f)] bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-[#15f5ba] to-[#06f] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -44,18 +43,17 @@ const Banner = () => {
           </motion.h1>
 
           <motion.p
-  className="text-sm sm:text-base md:text-lg text-gray-300 mb-6"
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.7, delay: 0.3 }}
->
-  Turning Ideas into Impactful Digital Experiences — Our expert team delivers scalable, secure, and high-performance web and app solutions tailored to your needs.
-</motion.p>
-
+            className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 px-2 sm:px-0"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            Turning Ideas into Impactful Digital Experiences — Our expert team delivers scalable, secure, and high-performance web and app solutions tailored to your needs.
+          </motion.p>
 
           <motion.div
-            className="flex gap-4 flex-wrap"
+            className="flex flex-wrap justify-center lg:justify-start gap-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,9 +74,9 @@ const Banner = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right: GIF */}
+        {/* Right: GIF/Image */}
         <motion.div
-          className="relative w-full sm:w-1/2 max-w-xs sm:max-w-md"
+          className="relative w-full sm:w-2/3 md:w-1/2 max-w-xs sm:max-w-md md:max-w-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.5 }}
