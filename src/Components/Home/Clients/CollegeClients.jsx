@@ -88,7 +88,7 @@ const CollegeClients = () => {
             </p>
           </div>
   
-          <div className="relative max-w-6xl mx-auto">
+          <div className="relative max-w-5xl mx-auto">
             {/* Slider */}
             <Slider ref={sliderRef} {...settings} className="client-slider px-6">
               {clients.map((client, index) => (
@@ -100,26 +100,21 @@ const CollegeClients = () => {
                       'bg-blue-900/20 transform scale-95'}
                   `}>
                     <div className={`
-                      p-5 flex flex-col items-center transition-all duration-700
+                      flex flex-col items-center transition-all duration-700
                       ${index === centerIndex ? 'scale-100 opacity-100' : 'scale-90 opacity-70'}
                     `}>
-                      <div className="h-24 w-24 mb-4 relative rounded-full overflow-hidden bg-gradient-to-br from-blue-800/50 to-teal-700/30 p-[2px]">
-                        <div className="rounded-full overflow-hidden w-full h-full flex items-center justify-center bg-blue-950">
-                          <img
-                            src={client.src}
-                            alt={client.name}
-                            className={`h-24 w-24 object-contain transition-all duration-700 ${
-                              index === centerIndex ? 'scale-110' : 'scale-100'
-                            }`}
-                          />
-                        </div>
-                      </div>
-                      <h3 className={`
-                        text-center font-medium transition-all duration-700
-                        ${index === centerIndex ? 'text-xl text-teal-300' : 'text-lg text-blue-300/70'}
-                      `}>
-                        {client.name}
-                      </h3>
+                    <div className="h-40 w-40 relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-800/50 to-teal-700/30 p-[3px]">
+  <div className="w-full h-full overflow-hidden flex items-center justify-center bg-blue-950 rounded-lg">
+    <img
+      src={client.src}
+      alt={`College image ${index + 1}`}
+      className={`h-full w-full object-cover transition-all duration-700 ${
+        index === centerIndex ? 'scale-105' : 'scale-100'
+      }`}
+    />
+  </div>
+</div>
+
   
                       {/* {index === centerIndex && (
                         <div className="mt-3 flex items-center opacity-0 animate-fadeIn" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
