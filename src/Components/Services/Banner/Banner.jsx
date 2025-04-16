@@ -40,7 +40,7 @@ const Banner = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Web & App Development Service
+            Web & App Solutions
           </motion.h1>
 
           <motion.p
