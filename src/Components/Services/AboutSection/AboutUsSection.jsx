@@ -74,7 +74,10 @@ export default function AboutUsSection() {
   }, [inView]);
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-white">
+    <section
+      ref={ref}
+      className="py-20 px-6 bg-white overflow-x-hidden"
+    >
       <motion.div
         animate={inView ? "visible" : "hidden"}
         initial="hidden"
@@ -82,26 +85,26 @@ export default function AboutUsSection() {
           hidden: { opacity: 0, y: 50 },
           visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
         }}
-        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12"
+        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12"
       >
-        {/* Image Area - 1/3 */}
+        {/* Image Area */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8 }}
           className="w-full md:w-1/3 flex justify-center"
         >
           <img
             src={imageabout}
             alt="App Preview"
-            className="max-h-[500px] w-auto rounded-3xl"
+            className="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto rounded-3xl object-contain"
           />
         </motion.div>
 
-        {/* Text Content - 2/3 */}
+        {/* Text Content */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8 }}
           className="w-full md:w-2/3"
         >
@@ -132,26 +135,18 @@ export default function AboutUsSection() {
             custom={2}
             className="text-gray-600 text-md mb-8 space-y-4 list-none"
           >
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-teal-500 mt-1" size={20} />
-              At Infoziant, we specialize in developing innovative web and mobile applications that drive business growth.
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-teal-500 mt-1" size={20} />
-              Our expertise spans custom web solutions, e-commerce platforms, enterprise applications, and mobile-friendly websites.
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-teal-500 mt-1" size={20} />
-              We ensure every project meets the highest standards of security, performance, and user experience.
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-teal-500 mt-1" size={20} />
-              From startups to large enterprises, we deliver solutions that enhance digital presence and operational efficiency.
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-teal-500 mt-1" size={20} />
-              With a team of experienced developers, we ensure quality, security, and performance standards are met to drive success.
-            </li>
+            {[
+              "At Infoziant, we specialize in developing innovative web and mobile applications that drive business growth.",
+              "Our expertise spans custom web solutions, e-commerce platforms, enterprise applications, and mobile-friendly websites.",
+              "We ensure every project meets the highest standards of security, performance, and user experience.",
+              "From startups to large enterprises, we deliver solutions that enhance digital presence and operational efficiency.",
+              "With a team of experienced developers, we ensure quality, security, and performance standards are met to drive success.",
+            ].map((text, idx) => (
+              <li key={idx} className="flex items-start gap-3">
+                <CheckCircle className="text-teal-500 mt-1" size={20} />
+                {text}
+              </li>
+            ))}
           </motion.ul>
 
           <motion.div
@@ -162,7 +157,10 @@ export default function AboutUsSection() {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6"
           >
             {stats.map((stat, index) => (
-              <div key={index} className="flex flex-col items-center md:items-start">
+              <div
+                key={index}
+                className="flex flex-col items-center md:items-start"
+              >
                 <div className="flex items-center gap-2">
                   <stat.icon
                     className={`text-2xl bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
