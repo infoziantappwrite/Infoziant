@@ -7,7 +7,7 @@ import {
   DollarSign,
   ChevronRight,
 } from "lucide-react";
-import SmilingTeam from "../../../assests/Images/Ourservice/WebDevs.gif";
+import SmilingTeam from "../../../assests/Images/Banner/staffing.gif";
 
 const reasons = [
   {
@@ -62,7 +62,7 @@ const WhyChoose = () => {
               Why Choose our Talent Tech?
             </span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
             Discover how we empower businesses with agile, tech-enabled staffing and scalable IT solutions.
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ const WhyChoose = () => {
         {/* Two-column layout */}
         <div className="grid md:grid-cols-2 gap-12 items-center w-full">
           {/* Left: Cards */}
-          <div className="grid grid-cols-1 gap-8 w-full">
+          <div className="grid grid-cols-1 gap-4 w-full">
           {reasons.map((item, index) => (
             <motion.div
               key={index}
@@ -102,13 +102,6 @@ const WhyChoose = () => {
                   </div>
                 </div>
 
-                {/* Learn More Link */}
-                <div className="mt-4 flex justify-end">
-                  <span className="text-sm font-medium text-white flex items-center transition-all duration-300">
-                    Learn more
-                    <ChevronRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </div>
               </div>
             </motion.div>
           ))}
