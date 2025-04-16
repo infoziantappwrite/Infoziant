@@ -18,7 +18,7 @@ const Header = () => {
     setExpandedCategory(null);
     setMobileMenuOpen(false);
   };
-
+  
   const dropdownMenu = [
     {
       title: "Innovative Tech & Business Services",
@@ -27,7 +27,7 @@ const Header = () => {
         { name: "Cybersecurity Services", path: "/cybersecurity" },
         { name: "Web & App Development", path: "/web-app-development" },
         { name: "Software Testing", path: "/testing" },
-        { name: "Tech Talent Hiring (Staffing Services)", path: "/talent-services" },
+        { name: "Tech Talent", path: "/tech-talent" },
       ],
     },
     {
