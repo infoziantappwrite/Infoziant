@@ -5,6 +5,9 @@ import Sample from "../../../assests/Images/Banner/Sample.png";
 import  healtcare from "../../../assests/Images/Ourservice/webdev/healthcare.png"
 import ecommerce from "../../../assests/Images/Ourservice/webdev/ecommerce.png";
 import banking from "../../../assests/Images/Ourservice/webdev/banking.png";
+import elearn from "../../../assests/Images/Ourservice/webdev/elearn.jpg";
+import fitness from "../../../assests/Images/Ourservice/webdev/fitness.jpg";
+import Travel from "../../../assests/Images/Ourservice/webdev/travel.jpg";
 
 const industries = [
   {
@@ -27,19 +30,19 @@ const industries = [
   },
   {
     title: "Education & E-Learning",
-    image: Sample,
+    image: elearn,
     description:
       "Interactive platforms that revolutionize the learning experience.",
   },
   {
     title: "Sports & Fitness",
-    image: Sample,
+    image: fitness,
     description:
       "Digital tools that enhance performance tracking and engagement.",
   },
   {
     title: "Hospitality & Travel",
-    image: Sample,
+    image: Travel,
     description:
       "Seamless booking systems and guest experience enhancement.",
   },
