@@ -64,7 +64,7 @@ const CoreTechnologyExpertise = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-[3.0rem] font-bold mb-4 text-center bg-gradient-to-r from-blue-600 via-teal-400 to-teal-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold pb-4 bg-gradient-to-r from-blue-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
             Core Technology Expertise
           </h2>
 

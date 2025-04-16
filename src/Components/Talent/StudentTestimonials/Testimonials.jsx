@@ -44,11 +44,11 @@ const GlobalReachMap = () => {
           }}
           className="text-center mb-16"
         >
-          <h2 className="text-[3.0rem] font-bold mb-4 text-center bg-gradient-to-r from-blue-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold pb-4 bg-gradient-to-r from-blue-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
             Global Reach
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-8 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 mt-8 max-w-4xl mx-auto text-lg">
             Delivering digital solutions and talent across borders – from the US to the Middle East and beyond.
           </p>
         </motion.div>
