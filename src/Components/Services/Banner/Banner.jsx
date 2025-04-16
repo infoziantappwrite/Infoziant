@@ -14,7 +14,7 @@ const Banner = () => {
 
   return (
     <section
-      className="relative h-auto min-h-[80vh] lg:min-h-[90vh] w-full text-white flex items-center"
+      className="relative h-auto min-h-[80vh] lg:min-h-[90vh]  text-white flex items-center"
       style={{
         background: `radial-gradient(circle at center, #2563eb 0%, #0f172a 70%, #000000 100%)`,
       }}
