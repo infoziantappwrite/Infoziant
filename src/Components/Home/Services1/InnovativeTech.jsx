@@ -81,7 +81,7 @@ const InnovativeTech = () => {
             whileHover={{ scale: 1.05 }}
           >
             <div className="icon">{service.icon}</div>
-            <h3 className="text-xl font-medium mb-2">
+            <h3 className="text-2xl font-medium mb-2">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
                 {service.title.split(" ")[0]}
               </span>{" "}
