@@ -1,3 +1,4 @@
+
 import React from "react";
 import image3 from "../../../assests/Images/Testimonials/Krishna.jpeg";
 import image4 from "../../../assests/Images/Testimonials/Meeyal.jpeg";
@@ -6,19 +7,18 @@ const testimonials = [
   {
     name: "Krishna",
     role: "AVP | SMI Technology LLC, Dubai",
-    quote:
-      "Infoziant has been an exceptional technology partner for us. Their team demonstrated remarkable creativity, technical expertise, and a deep understanding of our brand to deliver a website that is not only visually stunning but also functionally robust. The entire experience—from planning to deployment—was seamless and professional. Highly impressed with their commitment to quality.",
+    quote: "Infoziant has been an exceptional technology partner for us. Their team demonstrated remarkable creativity, technical expertise, and a deep understanding of our brand to deliver a website that is not only visually stunning but also functionally robust. The entire experience—from planning to deployment—was seamless and professional. Highly impressed with their commitment to quality.",
     image: image3,
     color: "from-blue-500 to-cyan-400",
   },
   {
     name: "Marco Patel",
     role: "Founder | Meeyal Designer",
-    quote:
-      "Working with Infoziant was a game-changer for our boutique brand. They understood our aesthetic and turned it into a beautiful, user-friendly e-commerce site that truly reflects Meeyal Designer’s identity. The team was responsive, creative, and made the whole process smooth from start to finish. We’re thrilled with the outcome!",
+    quote:"Working with Infoziant was a game-changer for our boutique brand. They understood our aesthetic and turned it into a beautiful, user-friendly e-commerce site that truly reflects Meeyal Designer’s identity. The team was responsive, creative, and made the whole process smooth from start to finish. We’re thrilled with the outcome!",
     image: image4,
     color: "from-emerald-500 to-teal-400",
   },
+
 ];
 
 const TestimonialSection = () => {
