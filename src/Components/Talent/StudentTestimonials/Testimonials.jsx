@@ -66,7 +66,7 @@ const GlobalReachMap = () => {
           }}
           className="flex items-center justify-center"
         >
-          <div className="max-w-5xl w-full overflow-hidden rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
+          <div className="max-w-3xl w-full overflow-hidden rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
             <img
               src={map}
               alt="Global Reach Map"
