@@ -72,75 +72,82 @@ const services = [
 
 const CoreServicesSection = () => {
   return (
-      <section className="bg-gradient-to-b from-[#0a192f] via-[#0e223f] to-[#102e56] text-white py-24 px-4 sm:px-6 lg:px-8" id="services">
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
-                Our Core Services
-              </span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto rounded-full"></div>
-          </motion.div>
+    <section className="bg-gradient-to-b from-[#0a192f] via-[#0e223f] to-[#102e56] text-white py-24 px-4 sm:px-6 lg:px-8" id="services">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+              Our Core Services
+            </span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto rounded-full"></div>
+        </motion.div>
 
-          <div className="flex flex-col space-y-20">
-            {services.map((serviceCategory, categoryIndex) => (
-              <div key={categoryIndex}>
-                <motion.h3
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="text-xl font-bold text-gray-100 mb-6 text-center"
-                >
-                  {serviceCategory.title}
-                </motion.h3>
+        <div className="flex flex-col space-y-20">
+          {services.map((serviceCategory, categoryIndex) => (
+            <motion.div
+              key={categoryIndex}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-12"
+            >
+              <motion.h3
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-xl font-bold text-gray-100 mb-6 text-center"
+              >
+                {serviceCategory.title}
+              </motion.h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {serviceCategory.items.map((item, index) => {
-                    const Icon = item.icon;
-                    return (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex items-start space-x-4 group"
-                      >
-                        {/* Icon circle */}
-                        <div className={`flex-shrink-0 w-16 h-16 rounded-full ${item.iconColor} bg-gray-900/80 shadow-lg flex items-center justify-center border border-gray-700 group-hover:scale-110 transition-transform duration-300`}>
-                          <Icon size={28} />
-                        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {serviceCategory.items.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="flex items-start space-x-4 group"
+                    >
+                      {/* Icon circle */}
+                      <div className={`flex-shrink-0 w-16 h-16 rounded-full ${item.iconColor} bg-gray-900/80 shadow-lg flex items-center justify-center border border-gray-700 group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon size={28} />
+                      </div>
 
-                        {/* Content capsule */}
-                        <div className="flex-1 bg-gray-900/40 backdrop-blur-lg rounded-xl px-6 py-4 shadow-sm border border-gray-800 group-hover:shadow-lg hover:ring-1 hover:ring-offset-2 hover:ring-offset-[#0a192f] hover:ring-[rgba(255,255,255,0.1)] transition-all duration-300 relative overflow-hidden">
-                          {/* Gradient side stripe */}
-                          <div className={`absolute top-0 bottom-0 right-0 w-2 rounded-r-lg bg-gradient-to-b ${item.gradient}`}></div>
+                      {/* Content capsule */}
+                      <div className="flex-1 bg-gray-900/40 backdrop-blur-lg rounded-xl px-6 py-4 shadow-sm border border-gray-800 group-hover:shadow-lg hover:ring-1 hover:ring-offset-2 hover:ring-offset-[#0a192f] hover:ring-[rgba(255,255,255,0.1)] transition-all duration-300 relative overflow-hidden">
+                        {/* Gradient side stripe */}
+                        <div className={`absolute top-0 bottom-0 right-0 w-2 rounded-r-lg bg-gradient-to-b ${item.gradient}`}></div>
 
-                          <h4 className="font-semibold text-white mb-1">{item.subtitle}</h4>
-                          <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+                        <h4 className="font-semibold text-white mb-1">{item.subtitle}</h4>
+                        <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
 
-                          {/* Gradient glow on hover */}
-                          <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 -z-10`} />
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
+                        {/* Gradient glow on hover */}
+                        <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 -z-10`} />
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
-
+      </div>
+    </section>
   );
 };
 

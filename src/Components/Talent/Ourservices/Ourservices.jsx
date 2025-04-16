@@ -1,12 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import {
-  Users,
-  Layers,
-  Globe,
-  DollarSign,
-  ChevronRight,
-} from "lucide-react";
+import React, { useRef, useEffect } from "react";
+import { motion, AnimatePresence, useInView, useAnimation } from "framer-motion";
+import { Users, Layers, Globe, DollarSign } from "lucide-react";
 import SmilingTeam from "../../../assests/Images/Banner/staffing.gif";
 
 const reasons = [
@@ -44,17 +38,48 @@ const reasons = [
   },
 ];
 
-const WhyChoose = () => {
-  return (
-    <section className="bg-white text-gray-800 py-24 px-4 sm:px-6 lg:px-12 relative w-full" id="why-smi">
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.15 }
+  }),
+  exit: { opacity: 0, y: -20, transition: { duration: 0.4 } },
+};
 
+const WhyChoose = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.section
+      ref={sectionRef}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+      }}
+      className="bg-white text-gray-800 py-24 px-4 sm:px-6 lg:px-12 relative w-full"
+      id="why-smi"
+    >
       <div className="relative z-10 w-full">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.8 }}
+          variants={fadeInUp}
+          custom={0}
+          initial="hidden"
+          animate={controls}
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -67,52 +92,50 @@ const WhyChoose = () => {
           </p>
         </motion.div>
 
-        {/* Two-column layout */}
+        {/* Content */}
         <div className="grid md:grid-cols-2 gap-12 items-center w-full">
-          {/* Left: Cards */}
+          {/* Cards */}
           <div className="grid grid-cols-1 gap-4 w-full">
-          {reasons.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="group relative w-full"
-            >
-              <div
-                className={`rounded-2xl p-6 shadow-md bg-gradient-to-br ${item.hoverGradient} transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 relative overflow-hidden`}
-              >
-                {/* Translucent white overlay to soften the gradient but still vibrant */}
-                <div className="absolute inset-0 bg-white/20 rounded-2xl pointer-events-none"></div>
-
-                <div className="flex items-start space-x-4 relative z-10">
+            <AnimatePresence>
+              {reasons.map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  custom={index}
+                  initial="hidden"
+                  animate={controls}
+                  exit="exit"
+                  className="group relative w-full"
+                >
                   <div
-                    className={`flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md ${item.iconColor}`}
+                    className={`rounded-2xl p-6 shadow-md bg-gradient-to-br ${item.hoverGradient} transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 relative overflow-hidden`}
                   >
-                    <item.icon size={24} />
+                    <div className="absolute inset-0 bg-white/20 rounded-2xl pointer-events-none" />
+                    <div className="flex items-start space-x-4 relative z-10">
+                      <div className={`flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md ${item.iconColor}`}>
+                        <item.icon size={24} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-white">
+                          {item.title}
+                        </h3>
+                        <p className="text-white/90 text-sm mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white">
-                      {item.title}
-                    </h3>
-                    <p className="text-white/90 text-sm mt-1">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </motion.div>
-          ))}
-
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
 
-          {/* Right: GIF */}
+          {/* Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeInUp}
+            custom={1}
+            initial="hidden"
+            animate={controls}
             className="mx-auto md:mx-0"
           >
             <img
@@ -121,17 +144,15 @@ const WhyChoose = () => {
               className="object-cover w-full h-auto"
             />
           </motion.div>
-
-
         </div>
 
-        {/* Bottom Text Bubble */}
+        {/* Bottom Text */}
         <motion.div
+          variants={fadeInUp}
+          custom={2}
+          initial="hidden"
+          animate={controls}
           className="text-center mt-16 text-gray-600"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
         >
           <div className="inline-block py-2 px-6 bg-gray-50 border border-gray-200 rounded-full shadow-sm">
             We connect you with the right talent powered by{" "}
@@ -140,7 +161,7 @@ const WhyChoose = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
