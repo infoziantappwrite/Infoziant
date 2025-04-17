@@ -1,13 +1,13 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import Whatweoffer from './Whatweoffer/Whatweoffer';
-import placementImage from "../../assests/Images/Ourservice/placement/placement.gif";
+import placementImage from "../../assests/Images/Banner/workplace.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import CollegeClients from './TrustedBy/TrustedBy';
 import CompaniesEngaged from './Companies/Companies';
 import TestimonialSection from './Testimonials/Testimonials';
 
-const Placement_Support = () => {
+const Intership_Programs = () => {
     const offerHeading = "What We Offer";
     const offerPoints = [
       "Internship facilitation with top-tier & partner companies",
@@ -31,7 +31,7 @@ const Placement_Support = () => {
         badgeText="Campus to Corporate Services"
         title="Internship Programs"
         subtitle="Bridging Students with the Right Industry Opportunities"
-        description="At Infoziant, we don’t just offer in-house internships—we help colleges and students connect with top companies to access meaningful, real-world internship experiences. Through our strong industry network and trusted partnerships, we bring corporate internship opportunities right to your campus. Whether it’s tech, non-tech, core engineering, or business roles, we enable students to explore internships across multiple domains—powered by reputed companies and industry mentors."
+        description="Infoziant connects colleges and students with top companies for real-world internships. Through our industry network, we bring corporate opportunities to your campus in tech, non-tech, engineering, and business roles, powered by renowned companies and mentors."
         primaryBtnText="Get Internship Support"
         primaryBtnLink="#get-started"
         secondaryBtnText="Contact Us"
@@ -128,4 +128,4 @@ const Placement_Support = () => {
   );
 };
 
-export default Placement_Support;
+export default Intership_Programs;
