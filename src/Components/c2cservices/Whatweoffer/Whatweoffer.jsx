@@ -1,29 +1,60 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 const Whatweoffer = ({ heading, points }) => {
+  const itemsCount = points.length;
+  const isFiveCards = itemsCount === 5;
+
   return (
-    <section className="w-full px-4 sm:px-6 md:px-10 lg:px-24 py-20 bg-gradient-to-b from-[#0a192f] via-[#0e223f] to-[#102e56] text-white font-sans">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="w-full py-20 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a365d] text-white font-sans relative overflow-hidden">
+      {/* Background Blurs */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-purple-400 blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-blue-400 blur-3xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-teal-300 via-blue-400 to-blue-600 bg-clip-text text-transparent">
-          {heading}
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-teal-300 via-teal-500 to-blue-600 bg-clip-text text-transparent py-2">
+            {heading}
+          </h2>
+        </div>
 
-        {/* Centered gradient underline */}
-        <div className="mx-auto mt-4 mb-12 h-1 w-24 rounded-full bg-gradient-to-r from-teal-400 via-blue-400 to-blue-600" />
+        {/* Grid */}
+        <div
+          className={`grid gap-6 ${
+            isFiveCards ? "md:grid-cols-3" : "sm:grid-cols-2"
+          }`}
+        >
+          {points.map((point, index) => {
+            const isFourth = isFiveCards && index === 3;
+            const isFifth = isFiveCards && index === 4;
 
-        {/* Offer Points */}
-        <div className="grid gap-6 sm:grid-cols-2 mt-8">
-          {points.map((point, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-4 p-5 bg-white/5 border border-white/10 hover:border-white/20 rounded-xl transition"
-            >
-              <FaCheckCircle className="text-teal-300 text-xl mt-1 shrink-0" />
-              <span className="text-md sm:text-lg text-gray-100">{point}</span>
-            </div>
-          ))}
+            return (
+              <div
+                key={index}
+                className={`group p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 
+                  hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-left
+                  ${isFourth ? "md:col-start-2" : ""}
+                  ${isFifth ? "md:col-start-3" : ""}
+                `}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-gradient-to-br from-teal-400 to-blue-500 text-indigo-950">
+                    <FaStar className="text-base" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Point {index + 1}
+                  </h3>
+                </div>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  {point}
+                </p>
+                <div className="h-1 w-0 group-hover:w-full mt-4 bg-gradient-to-r from-teal-400 to-blue-500 transition-all duration-300" />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

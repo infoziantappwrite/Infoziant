@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
@@ -7,6 +6,7 @@ import Home from './Components/Home/Home';
 import WebandApp from './Components/Services/Web&app development';
 import Talent from './Components/Talent/Talent';
 import Placement_Support from './Components/c2cservices/Placement_Support';
+import Internship_Programs from './Components/c2cservices/Intership_Programs';
 import Testing from './Components/Testing/Testing';
 import PageNotFound from './Components/PageNotFound';
 
@@ -29,7 +29,7 @@ const App = () => {
       <Route path="/awards" element={<Page title="Awards" />} />
       <Route path="/blog" element={<Page title="Blog" />} />  
       <Route path="/services/placement" element={<Placement_Support/>} />
-      <Route path="/services/internship" element={<Page title="Internship" />} />
+      <Route path="/services/internship" element={<Internship_Programs />} />
       <Route path="/services/training" element={<Page title="Training" />} />
       <Route path="/services/coe" element={<Page title="CoE" />} />
       <Route path="/services/edutech" element={<Page title="Edutech" />} />
