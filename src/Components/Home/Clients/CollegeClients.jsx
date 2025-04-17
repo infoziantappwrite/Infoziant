@@ -15,16 +15,16 @@ import image10 from "../../../assests/Images/Colleges/1 (10).jpg";
 
 const CollegeClients = () => {
   const clients = [
-    { id: 1, src: image1, name: "College A" },
-    { id: 2, src: image2, name: "College B" },
-    { id: 3, src: image3, name: "College C" },
-    { id: 4, src: image4, name: "College D" },
-    { id: 5, src: image5, name: "College E" },
-    { id: 6, src: image6, name: "College F" },
-    { id: 7, src: image7, name: "College G" },
-    { id: 8, src: image8, name: "College H" },
-    { id: 9, src: image9, name: "College I" },
-    { id: 10, src: image10, name: "College J" },
+    { id: 1, src: image1 },
+    { id: 2, src: image2 },
+    { id: 3, src: image3 },
+    { id: 4, src: image4 },
+    { id: 5, src: image5 },
+    { id: 6, src: image6 },
+    { id: 7, src: image7 },
+    { id: 8, src: image8 },
+    { id: 9, src: image9 },
+    { id: 10, src: image10},
   ];
   const [centerIndex, setCenterIndex] = useState(1); // Track center logo
   const sliderRef = useRef(null);
