@@ -7,6 +7,7 @@ import Home from './Components/Home/Home';
 import WebandApp from './Components/Services/Web&app development';
 import Talent from './Components/Talent/Talent';
 import Placement_Support from './Components/c2cservices/Placement_Support';
+import Testing from './Components/Testing/Testing';
 
 
 const Page = () => (
@@ -35,7 +36,7 @@ const App = () => {
       <Route path="/tech-talent" element={<Talent/>} />
       <Route path="/cybersecurity" element={<Page title="Cybersecurity" />} />
       <Route path="/web-app-development" element={<WebandApp />} />
-      <Route path="/testing" element={<Page title="Testing" />} />
+      <Route path="/testing" element={<Testing />} />
       </Routes>
       <Footer />
     </Router>
