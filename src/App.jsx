@@ -8,6 +8,7 @@ import WebandApp from './Components/Services/Web&app development';
 import Talent from './Components/Talent/Talent';
 import Placement_Support from './Components/c2cservices/Placement_Support';
 import Testing from './Components/Testing/Testing';
+import PageNotFound from './Components/PageNotFound';
 
 
 const Page = () => (
@@ -27,16 +28,17 @@ const App = () => {
       <Route path="/contact" element={<Page title="Contact Us" />} />
       <Route path="/awards" element={<Page title="Awards" />} />
       <Route path="/blog" element={<Page title="Blog" />} />  
-      <Route path="/placement" element={<Placement_Support/>} />
-      <Route path="/internship" element={<Page title="Internship" />} />
-      <Route path="/training" element={<Page title="Training" />} />
-      <Route path="/coe" element={<Page title="CoE" />} />
-      <Route path="/edutech" element={<Page title="Edutech" />} />
-      <Route path="/codechef" element={<Page title="CodeChef" />} />
-      <Route path="/tech-talent" element={<Talent/>} />
-      <Route path="/cybersecurity" element={<Page title="Cybersecurity" />} />
-      <Route path="/web-app-development" element={<WebandApp />} />
-      <Route path="/testing" element={<Testing />} />
+      <Route path="/services/placement" element={<Placement_Support/>} />
+      <Route path="/services/internship" element={<Page title="Internship" />} />
+      <Route path="/services/training" element={<Page title="Training" />} />
+      <Route path="/services/coe" element={<Page title="CoE" />} />
+      <Route path="/services/edutech" element={<Page title="Edutech" />} />
+      <Route path="/services/codechef" element={<Page title="CodeChef" />} />
+      <Route path="/services/tech-talent" element={<Talent/>} />
+      <Route path="/services/cybersecurity" element={<Page title="Cybersecurity" />} />
+      <Route path="/services/web-app-development" element={<WebandApp />} />
+      <Route path="/services/testing" element={<Testing />} />
+      <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </Router>
