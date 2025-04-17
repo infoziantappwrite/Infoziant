@@ -21,12 +21,12 @@ const Banner = () => {
   return (
     <section
       ref={ref}
-      className="relative px-4 sm:px-6 md:px-12 w-full text-white font-sans overflow-hidden"
+      className="relative px-4 min py-16 sm:px-6 md:px-12 w-full text-white  overflow-hidden"
     >
       {/* Background gradient with glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#050d1f] via-[#0f1b3f] to-[#180f4a]">
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-blue-500 opacity-20 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-pink-400 opacity-20 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-teal-400 opacity-20 blur-3xl animate-pulse"></div>
       </div>
 
       {/* Main content */}
@@ -39,7 +39,7 @@ const Banner = () => {
         {/* Left Section */}
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <div className="inline-block px-4 py-1 bg-blue-600/20 rounded-full border border-blue-400/30 mb-2">
-            <span className="text-blue-300 text-sm font-medium">Development & Testing</span>
+            <span className="text-blue-300 text-sm font-medium">Innovative Tech & Business Services</span>
           </div>
 
           <div>
@@ -48,7 +48,7 @@ const Banner = () => {
                 Software Testing Services
               </span>
             </h1>
-            <p className="text-gray-300 text-sm sm:text-base mt-4 max-w-lg mx-auto lg:mx-0">
+            <p className="text-gray-300 text-sm sm:text-base mt-4 max-w-2xl mx-auto lg:mx-0">
               Ensure quality, performance, and security of your applications with our expert QA solutions tailored for modern businesses.
               Our testing services cover functional, automation, performance, security, and usability testing — enabling faster releases with confidence.
             </p>
@@ -60,6 +60,12 @@ const Banner = () => {
               className="px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-400 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-500/20 transition-all duration-300 text-center"
             >
               Explore Now
+            </a>
+            <a
+              href="#contact"
+              className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
+            >
+              Schedule a Call
             </a>
           </div>
         </div>

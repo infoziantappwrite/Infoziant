@@ -1,100 +1,92 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import sampleGif from "../../../assests/Images/Ourservice/banner.png";
 
 const Banner = () => {
   const [isGifVisible, setIsGifVisible] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsGifVisible(true);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+    if (isInView) {
+      const timer = setTimeout(() => {
+        setIsGifVisible(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    } else {
+      setIsGifVisible(false);
+    }
+  }, [isInView]);
 
   return (
     <section
-      className="relative h-auto min-h-[80vh] lg:min-h-[90vh]  text-white flex items-center"
-      style={{
-        background: `radial-gradient(circle at center, #2563eb 0%, #0f172a 70%, #000000 100%)`,
-      }}
+      ref={ref}
+      className="relative px-8 sm:px-8 md:px-12 lg:px-20 lg:py-32 py-12 w-full text-white overflow-hidden"
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/80" />
+      {/* Background gradient and glow shapes */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-[#0e223f] to-[#102e56]">
+        <div className="absolute top-20 left-10 w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-blue-500 opacity-10 blur-3xl animate-pulse"></div>
+        <div
+          className="absolute bottom-20 right-10 w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-teal-300 opacity-10 blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+      </div>
 
-      {/* Content */}
-      <div className="relative z-20 flex flex-col-reverse lg:flex-row items-center justify-between  gap-10 w-full px-6 sm:px-10 md:px-16 max-w-7xl mx-auto py-10 md:py-20">
-        {/* Left: Text & Buttons */}
-        <motion.div
-          className="text-white text-center lg:text-left max-w-2xl"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-[#15f5ba] to-[#06f] bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          >
+      {/* Main content */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full h-full max-w-7xl mx-auto"
+      >
+        {/* Left Text Section */}
+        <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6 mb-10 lg:mb-0">
+          <div className="inline-block px-4 py-1 bg-blue-600/20 rounded-full border border-blue-400/30">
+            <span className="text-blue-300 text-sm font-medium">Innovative Tech & Business Services</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
+            <span className="block bg-gradient-to-r pb-6 from-teal-300 to-blue-500 bg-clip-text text-transparent">
             Web & App Solutions
-          </motion.h1>
+            </span>
+          </h1>
 
-          <motion.p
-            className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 px-2 sm:px-0"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            Turning Ideas into Impactful Digital Experiences — Our expert team delivers scalable, secure, and high-performance web and app solutions tailored to your needs.
-          </motion.p>
+          
 
-          <motion.div
-            className="flex flex-wrap justify-center lg:justify-start gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-          >
+          <p className="text-gray-300 text-md max-w-xl mx-auto lg:mx-0">
+          Turning Ideas into Impactful Digital Experiences — Our expert team delivers scalable, secure, and high-performance web and app solutions tailored to your needs.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="#get-started"
-              className="px-5 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-teal-400 to-blue-600 text-white font-semibold rounded-full shadow-lg hover:from-blue-600 hover:to-teal-400 transition-all duration-300"
+              className="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-400 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-500/20 transition-all duration-300 text-center"
             >
-              Get Started
+                Get Started
             </a>
             <a
               href="#contact"
-              className="px-5 sm:px-6 py-2 sm:py-3 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300"
+              className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
             >
-              Contact Us
+              Schedule a Call
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        {/* Right: GIF/Image */}
+        {/* Right: Animated GIF */}
         <motion.div
-          className="relative w-full sm:w-2/3 md:w-1/2 max-w-xs sm:max-w-md md:max-w-lg"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={isGifVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="w-full lg:w-1/3 flex justify-center mr-20 lg:mr-0" 
         >
-          {/* Glow Background */}
-          <div className="absolute inset-0 z-0 rounded-xl blur-3xl opacity-30 bg-[radial-gradient(circle_at_center,_#15f5ba,_#06f)]"></div>
-
-          {/* Actual Image */}
           <img
             src={sampleGif}
-            alt="Illustration"
-            className={`relative z-10 w-full h-auto transition-opacity duration-1000 ${
-              isGifVisible ? "opacity-100" : "opacity-0"
-            }`}
+            alt="Digital Solutions Illustration"
+            className="w-full max-w-xs sm:max-w-md md:max-w-lg h-auto"
           />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

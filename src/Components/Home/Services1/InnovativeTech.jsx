@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import { useRef } from "react";
 import "./InnovativeTech.css";
-import image1 from "../../../assests/Images/Ourservice/Home/1.png"
 
 const services = [
   {
@@ -18,7 +17,6 @@ const services = [
       "Protect your digital assets with our advanced Infoziant DAST – real-time vulnerability detection and security assessments.",
     icon: <ShieldCheck size={32} color="#15f5ba" />,
     link: "/services/cybersecurity",
-    image: image1,
   },
   {
     title: "Web & App Development",
