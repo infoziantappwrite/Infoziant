@@ -2,8 +2,28 @@ import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import image1 from "../../../assests/Images/Colleges/1 (1).jpg";
+import image2 from "../../../assests/Images/Colleges/1 (2).jpg";
+import image3 from "../../../assests/Images/Colleges/1 (3).jpg";
+import image4 from "../../../assests/Images/Colleges/1 (4).jpg";
+import image5 from "../../../assests/Images/Colleges/1 (5).jpg";
+import image6 from "../../../assests/Images/Colleges/1 (6).jpg";
+import image7 from "../../../assests/Images/Colleges/1 (7).jpg";
+import image8 from "../../../assests/Images/Colleges/1 (8).jpg";
+import image9 from "../../../assests/Images/Colleges/1 (9).jpg";
 
-const CollegeClients = ({ clients }) => {
+const CollegeClients = () => {
+  const clients = [
+    { id: 1, src: image1 },
+    { id: 2, src: image2 },
+    { id: 3, src: image3 },
+    { id: 4, src: image4 },
+    { id: 5, src: image5 },
+    { id: 6, src: image6 },
+    { id: 7, src: image7 },
+    { id: 8, src: image8 },
+    { id: 9, src: image9 },
+  ];
   const [centerIndex, setCenterIndex] = useState(1); // Track center logo
   const sliderRef = useRef(null);
 
@@ -72,25 +92,33 @@ const CollegeClients = ({ clients }) => {
             {clients.map((client, index) => (
               <div key={client.id} className="px-4 py-6">
                 <div className={`
-                  relative overflow-hidden rounded-xl transition-all duration-700
-                  ${index === centerIndex ? 
-                    'bg-gradient-to-b from-blue-800/30 to-teal-800/20 shadow-lg shadow-teal-900/20 transform scale-105' : 
-                    'bg-blue-900/20 transform scale-95'}`}
-                >
-                  <div className={`flex flex-col items-center transition-all duration-700
-                    ${index === centerIndex ? 'scale-100 opacity-100' : 'scale-90 opacity-70'}`}
-                  >
+                    relative overflow-hidden rounded-xl transition-all duration-700
+                    ${index === centerIndex ?
+                    'bg-gradient-to-b from-blue-800/30 to-teal-800/20 shadow-lg shadow-teal-900/20 transform scale-105' :
+                    'bg-blue-900/20 transform scale-95'}
+                  `}>
+                  <div className={`
+                      flex flex-col items-center transition-all duration-700
+                      ${index === centerIndex ? 'scale-100 opacity-100' : 'scale-90 opacity-70'}
+                    `}>
                     <div className="h-40 w-40 relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-800/50 to-teal-700/30 p-[3px]">
                       <div className="w-full h-full overflow-hidden flex items-center justify-center bg-blue-950 rounded-lg">
                         <img
                           src={client.src}
                           alt={`College image ${index + 1}`}
-                          className={`h-full w-full object-cover transition-all duration-700 ${
-                            index === centerIndex ? 'scale-105' : 'scale-100'
-                          }`}
+                          className={`h-full w-full object-cover transition-all duration-700 ${index === centerIndex ? 'scale-105' : 'scale-100'
+                            }`}
                         />
                       </div>
                     </div>
+
+
+                    {/* {index === centerIndex && (
+                        <div className="mt-3 flex items-center opacity-0 animate-fadeIn" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+                          <span className="inline-block w-2 h-2 rounded-full bg-teal-400 animate-pulse mr-2"></span>
+                          <span className="text-teal-300/90 text-sm">Active Partner</span>
+                        </div>
+                      )} */}
                   </div>
                 </div>
               </div>
@@ -103,11 +131,10 @@ const CollegeClients = ({ clients }) => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`h-2 rounded-full transition-all duration-500 ${
-                  index === centerIndex ? 
-                  'bg-teal-400 w-6' : 
-                  'bg-blue-600/40 hover:bg-blue-500/60 w-2'
-                }`}
+                className={`h-2 rounded-full transition-all duration-500 ${index === centerIndex ?
+                    'bg-teal-400 w-6' :
+                    'bg-blue-600/40 hover:bg-blue-500/60 w-2'
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
@@ -117,14 +144,14 @@ const CollegeClients = ({ clients }) => {
 
       {/* Fade-in Animation */}
       <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease forwards;
-        }
-      `}</style>
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+          }
+        `}</style>
     </section>
   );
 };
