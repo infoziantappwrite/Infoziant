@@ -21,7 +21,7 @@ const Banner = () => {
   return (
     <section
       ref={ref}
-      className="relative px-8 sm:px-8 md:px-12 lg:px-20 lg:py-32 py-12 w-full text-white font-sans overflow-hidden"
+      className="relative px-8 sm:px-8 md:px-12 lg:px-20 lg:py-32 py-12 w-full text-white overflow-hidden"
     >
       {/* Background gradient and glow shapes */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-[#0e223f] to-[#102e56]">
@@ -46,7 +46,7 @@ const Banner = () => {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
-            <span className="block bg-gradient-to-r from-teal-300 to-blue-500 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r pb-6 from-teal-300 to-blue-500 bg-clip-text text-transparent">
             Web & App Solutions
             </span>
           </h1>
@@ -78,7 +78,7 @@ const Banner = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isGifVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="w-full lg:w-1/2 flex justify-center mr-20 lg:mr-0" 
+          className="w-full lg:w-1/3 flex justify-center mr-20 lg:mr-0" 
         >
           <img
             src={sampleGif}
