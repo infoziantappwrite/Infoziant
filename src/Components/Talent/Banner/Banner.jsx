@@ -21,7 +21,7 @@ const Banner = () => {
   return (
     <section
       ref={ref}
-      className="relative px-8 sm:px-8 md:px-12 lg:px-20 lg:py-32 py-12 w-full text-white font-sans overflow-hidden"
+      className="relative px-8 sm:px-8 md:px-12 lg:px-20 lg:py-32 py-12 w-full text-white  overflow-hidden"
     >
       {/* Background gradient and glow shapes */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-[#0e223f] to-[#102e56]">
@@ -41,8 +41,8 @@ const Banner = () => {
       >
         {/* Left Text Section */}
         <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6 mb-10 lg:mb-0">
-          <div className="inline-block px-4 py-1 bg-blue-600/20 rounded-full border border-blue-400/30">
-            <span className="text-blue-300 text-sm font-medium">Digital Excellence</span>
+        <div className="inline-block px-4 py-1 bg-blue-600/20 rounded-full border border-blue-400/30">
+            <span className="text-blue-300 text-sm font-medium">Innovative Tech & Business Services</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
