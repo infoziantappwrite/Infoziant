@@ -8,6 +8,7 @@ import WebandApp from './Components/Services/Web&app development';
 import Talent from './Components/Talent/Talent';
 import Placement_Support from './Components/c2cservices/Placement_Support';
 import Testing from './Components/Testing/Testing';
+import PageNotFound from './Components/PageNotFound';
 
 
 const Page = () => (
@@ -37,6 +38,7 @@ const App = () => {
       <Route path="/cybersecurity" element={<Page title="Cybersecurity" />} />
       <Route path="/web-app-development" element={<WebandApp />} />
       <Route path="/testing" element={<Testing />} />
+      <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </Router>

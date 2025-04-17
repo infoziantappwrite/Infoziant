@@ -18,7 +18,11 @@ const Whatweoffer = ({ heading, points }) => {
           {points.map((point, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-5 bg-white/5 border border-white/10 hover:border-white/20 rounded-xl transition"
+              className={`flex items-start gap-4 p-5 bg-white/5 border border-white/10 hover:border-white/20 rounded-xl transition ${
+                points.length === 5 && index === points.length - 1
+                  ? "col-span-2 justify-self-center"
+                  : ""
+              }`}
             >
               <FaCheckCircle className="text-teal-300 text-xl mt-1 shrink-0" />
               <span className="text-md sm:text-lg text-gray-100">{point}</span>
