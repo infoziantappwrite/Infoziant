@@ -33,8 +33,9 @@ const AboutUsSection = () => {
   return (
     <section className="about-abtNew">
       <div className="grid-abtNew">
+        {/* img2: Hidden on mobile */}
         <motion.div
-          className="image-box-abtNew large-abtNew"
+          className="image-box-abtNew large-abtNew hidden md:block"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -43,45 +44,51 @@ const AboutUsSection = () => {
           <img src={img2} alt="Client 1" loading="lazy" />
         </motion.div>
 
-        <motion.div className="image-box-abtNew small-abtNew" {...motionProps(0.1)}>
+        {/* img1: Visible on all */}
+        <motion.div className="image-box-abtNew4 small-abtNew hidden md:block" {...motionProps(0.1)}>
           <img src={img1} alt="Client 2" loading="lazy" />
         </motion.div>
 
-        <motion.div className="image-box-abtNew medium-abtNew md:block" {...motionProps(0.2)}>
+        {/* img3: Hidden on mobile */}
+        <motion.div className="image-box-abtNew medium-abtNew hidden md:block" {...motionProps(0.2)}>
           <img src={img3} alt="Client 3" loading="lazy" />
         </motion.div>
 
-        {/* ✅ Replaced Intro Text with Tailwind-based Design */}
-        <motion.div
-          {...motionProps(0.3)}
-          className=" card-abtNew-sec md:col-span-2 "
-        >
+        {/* Content: Visible on all */}
+        <motion.div {...motionProps(0.3)} className="card-abtNew-sec md:col-span-2">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-center bg-gradient-to-r from-blue-600 via-teal-500 to-teal-400 bg-clip-text text-transparent tracking-tight">
             Welcome to Infoziant
           </h2>
           <p className="text-base sm:text-lg text-gray-700">
-            Where <span className="text-gray-900 font-medium">skilling meets innovation</span>, and <span className="text-gray-900 font-medium">education transforms into opportunity</span>. Founded by seasoned tech leaders from top global firms, <span className="text-gray-900 font-medium">Infoziant</span> has evolved into a trusted partner for institutions and industries — empowering students, enabling careers, and delivering impactful digital solutions. From shaping college campuses into career-ready ecosystems to supporting <span className="text-gray-900 font-medium">Fortune 100 companies</span> we <span className="text-gray-900 font-medium">build</span>, <span className="text-gray-900 font-medium">train</span>, <span className="text-gray-900 font-medium">connect</span>, and <span className="text-gray-900 font-medium">elevate</span>. With end-to-end solutions in <span className="text-gray-900 font-medium">education, tech, and talent</span>, we collaborate to nurture future professionals — all under one roof.
+            Where <span className="text-gray-900 font-medium">skilling meets innovation</span>, and{" "}
+            <span className="text-gray-900 font-medium">education transforms into opportunity</span>. Founded by seasoned tech leaders from top global firms,{" "}
+            <span className="text-gray-900 font-medium">Infoziant</span> has evolved into a trusted partner for institutions and industries — empowering students, enabling careers, and delivering impactful digital solutions. From shaping college campuses into career-ready ecosystems to supporting{" "}
+            <span className="text-gray-900 font-medium">Fortune 100 companies</span> we{" "}
+            <span className="text-gray-900 font-medium">build</span>,{" "}
+            <span className="text-gray-900 font-medium">train</span>,{" "}
+            <span className="text-gray-900 font-medium">connect</span>, and{" "}
+            <span className="text-gray-900 font-medium">elevate</span>. With end-to-end solutions in{" "}
+            <span className="text-gray-900 font-medium">education, tech, and talent</span>, we collaborate to nurture future professionals — all under one roof.
           </p>
         </motion.div>
 
-
-
-
-
-
-        <motion.div className="image-box-abtNew4 small-abtNew" {...motionProps(0.4)}>
+        {/* img4: Hidden on mobile */}
+        <motion.div className="image-box-abtNew4 small-abtNew hidden md:block" {...motionProps(0.4)}>
           <img src={img4} alt="Client 4" loading="lazy" />
         </motion.div>
 
-        <motion.div className="image-box-abtNew medium-abtNew hidden md:block" {...motionProps(0.5)}>
+        {/* img5: Visible on all */}
+        <motion.div className="image-box-abtNew medium-abtNew block" {...motionProps(0.5)}>
           <img src={img5} alt="Client 5" loading="lazy" />
         </motion.div>
 
-        <motion.div className="image-box-abtNew large-abtNew" {...motionProps(0.6)}>
+        {/* img6: Hidden on mobile */}
+        <motion.div className="image-box-abtNew4 small-abtNew hidden md:block" {...motionProps(0.6)}>
           <img src={img6} alt="Client 6" loading="lazy" />
         </motion.div>
 
-        <motion.div className="image-box-abtNew large-abtNew" {...motionProps(0.7)}>
+        {/* img7: Hidden on mobile */}
+        <motion.div className="image-box-abtNew large-abtNew hidden md:block" {...motionProps(0.7)}>
           <img src={img7} alt="Client 7" loading="lazy" />
         </motion.div>
       </div>
