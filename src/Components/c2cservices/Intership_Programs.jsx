@@ -42,7 +42,7 @@ const Intership_Programs = () => {
 
        <WhyChoose
           heading="Why Choose Infoziant"
-          description="With our expansive industry network and agile coordination, we bring in companies offering CTCs up to ₹1.02 Cr and align them with your drive schedule. Your students gain access to curated placement opportunities that match their skillsets, while your institution stays ahead with a strong placement track record."
+          description="Internship Programs are a crucial part of a student's academic journey. We ensure that students gain practical experience and exposure to the industry, enhancing their employability and skill set."
           points={[
            "Pan-India partner company network",
             "Centralized internship management & coordination",
