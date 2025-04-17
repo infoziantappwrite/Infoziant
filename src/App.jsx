@@ -5,7 +5,7 @@ import Footer from './Components/Footer';
 import Home from './Components/Home/Home';
 import WebandApp from './Components/Services/Web&app development';
 import Talent from './Components/Talent/Talent';
-
+import Testing from './Components/Testing/Testing';
 
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
@@ -33,7 +33,7 @@ const App = () => {
       <Route path="/tech-talent" element={<Talent/>} />
       <Route path="/cybersecurity" element={<Page title="Cybersecurity" />} />
       <Route path="/web-app-development" element={<WebandApp />} />
-      <Route path="/testing" element={<Page title="Testing" />} />
+      <Route path="/testing" element={<Testing />} />
       </Routes>
       <Footer />
     </Router>
