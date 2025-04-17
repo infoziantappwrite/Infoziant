@@ -84,7 +84,7 @@ export default function WhyChooseUsSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-10 items-start">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-start">
           {/* Left Section */}
           <div className="grid grid-cols-1 sm:grid-cols-1 gap-6">
             {benefits.map((item, idx) => {
@@ -144,7 +144,7 @@ export default function WhyChooseUsSection() {
             <img
               src={SmilingTeam}
               alt="Smiling team"
-              className="rounded-xl w-full h-auto max-h-[400px] object-cover"
+              className="rounded-xl w-full h-auto max-h-[600px] object-cover"
             />
           </motion.div>
         </div>

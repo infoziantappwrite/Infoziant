@@ -23,7 +23,7 @@ const industries = [
     icon: <MdGavel size={24} />,
     description:
       "Digital transformation solutions for public sector agencies to improve citizen services and operational efficiency.",
-    gradient: "from-purple-500 to-pink-500"
+    gradient: "from-green-400 to-emerald-600"
   },
   {
     title: "IT",
@@ -51,7 +51,8 @@ const industries = [
     icon: <MdFactory size={24} />,
     description:
       "Smart manufacturing solutions to optimize production processes and supply chain management.",
-    gradient: "from-green-400 to-emerald-600"
+   
+     gradient: "from-purple-500 to-pink-500"
   }
 ];
 
@@ -69,6 +70,10 @@ const IndustriesWeServe = () => {
     }
   }, [isInView, controls]);
 
+  const handleToggle = (index) => {
+    setHoveredIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <motion.section
       ref={sectionRef}
@@ -82,29 +87,30 @@ const IndustriesWeServe = () => {
           transition: { duration: 0.8 }
         }
       }}
-      className="bg-gradient-to-b from-gray-50 to-white py-20 px-4 text-gray-800 font-sans"
+      className="bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8 text-gray-800 font-sans"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <span className="text-sm font-medium text-gray-600 tracking-wider uppercase">
             Expertise Across Sectors
           </span>
-          <h2 className="text-[3.0rem] font-bold mb-4 text-center bg-gradient-to-r from-blue-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold pb-4 bg-gradient-to-r from-blue-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
             Core Verticals Supported
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-8 max-w-2xl mx-auto text-lg">
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto rounded-full" />
+          <p className="text-gray-600 mt-6 sm:mt-8 max-w-2xl mx-auto text-base sm:text-lg">
             We deliver tailored digital solutions that address the unique
             challenges and opportunities in each industry.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {industries.map((industry, index) => (
             <div
               key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => window.innerWidth > 768 && setHoveredIndex(index)}
+              onMouseLeave={() => window.innerWidth > 768 && setHoveredIndex(null)}
+              onClick={() => window.innerWidth <= 768 && handleToggle(index)}
               className="relative transition-all duration-300 ease-in-out"
             >
               <motion.div
@@ -118,9 +124,9 @@ const IndustriesWeServe = () => {
                 }}
                 initial="hidden"
                 animate={controls}
-                className="relative bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg cursor-pointer overflow-hidden"
+                className="relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md cursor-pointer overflow-hidden"
               >
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   <div className="flex justify-between items-center space-x-4">
                     <div className="flex items-center space-x-3">
                       <div
@@ -128,7 +134,7 @@ const IndustriesWeServe = () => {
                       >
                         {industry.icon}
                       </div>
-                      <h3 className="font-semibold text-gray-800 text-lg">
+                      <h3 className="font-semibold text-gray-800 text-base sm:text-lg">
                         {industry.title}
                       </h3>
                     </div>
@@ -150,9 +156,9 @@ const IndustriesWeServe = () => {
                       : { height: 0, opacity: 0 }
                   }
                   transition={{ duration: 0.3 }}
-                  className="px-6 overflow-hidden"
+                  className="px-5 sm:px-6 overflow-hidden"
                 >
-                  <div className="text-gray-600 text-sm">
+                  <div className="text-gray-600 text-sm pb-4">
                     {industry.description}
                   </div>
                 </motion.div>
@@ -172,19 +178,6 @@ const IndustriesWeServe = () => {
       </div>
     </motion.section>
   );
-};
-
-const getGradientColors = (gradientClass) => {
-  const colorMap = {
-    "from-indigo-500 to-fuchsia-600": "#6366f1, #c026d3",
-    "from-purple-500 to-pink-500": "#a855f7, #ec4899",
-    "from-cyan-400 to-blue-600": "#22d3ee, #2563eb",
-    "from-rose-500 to-pink-600": "#f43f5e, #db2777",
-    "from-yellow-400 to-orange-500": "#facc15, #f97316",
-    "from-green-400 to-emerald-600": "#34d399, #059669"
-  };
-
-  return colorMap[gradientClass] || "#6366f1, #c026d3";
 };
 
 export default IndustriesWeServe;

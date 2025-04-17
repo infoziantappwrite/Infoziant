@@ -59,16 +59,9 @@ const AboutUsSection = () => {
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-center bg-gradient-to-r from-blue-600 via-teal-500 to-teal-400 bg-clip-text text-transparent tracking-tight">
             Welcome to Infoziant
           </h2>
-          <p className="text-base sm:text-lg text-gray-700">
-            Where <span className="text-gray-900 font-medium">skilling meets innovation</span>, and{" "}
-            <span className="text-gray-900 font-medium">education transforms into opportunity</span>. Founded by seasoned tech leaders from top global firms,{" "}
-            <span className="text-gray-900 font-medium">Infoziant</span> has evolved into a trusted partner for institutions and industries — empowering students, enabling careers, and delivering impactful digital solutions. From shaping college campuses into career-ready ecosystems to supporting{" "}
-            <span className="text-gray-900 font-medium">Fortune 100 companies</span> we{" "}
-            <span className="text-gray-900 font-medium">build</span>,{" "}
-            <span className="text-gray-900 font-medium">train</span>,{" "}
-            <span className="text-gray-900 font-medium">connect</span>, and{" "}
-            <span className="text-gray-900 font-medium">elevate</span>. With end-to-end solutions in{" "}
-            <span className="text-gray-900 font-medium">education, tech, and talent</span>, we collaborate to nurture future professionals — all under one roof.
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-center bg-gradient-to-r from-blue-600 via-blue-600 to-teal-400 bg-clip-text text-transparent  tracking-tight"> Where Skilling Meets Innovation & Education Transforms into Opportunity</h3>
+          <p className="text-base sm:text-lg text-gray-600">
+          Founded by seasoned tech leaders from global firms like<span className="text-gray-800 font-medium"> Symantec, McAfee, and EMC,</span> we’ve grown into a trusted partner for institutions and industries — empowering students, enabling careers, and delivering impactful digital solutions. From shaping college campuses into career-ready ecosystems to supporting <span className="text-gray-800 font-medium">Fortune 100 companies</span> we <span className="text-gray-800 font-medium">build</span>, <span className="text-gray-800 font-medium">train</span>, <span className="text-gray-800 font-medium">connect</span>, and <span className="text-gray-800 font-medium">elevate</span>. With end-to-end solutions in <span className="text-gray-800 font-medium">education, tech, and talent</span>, we collaborate to nurture future professionals — all under one roof.
           </p>
         </motion.div>
 
