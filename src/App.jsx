@@ -33,8 +33,8 @@ import Blog5Detail from './Components/c2cservices/Blog/Blog5Detail';
 import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
 
 
-
-
+import Awards from './Components/Pages/Awards';
+import Contact from './Components/Pages/Contact';
 
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
@@ -61,8 +61,8 @@ const App = () => {
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<Page title="About Us" />} />
       <Route path="/product" element={<Products/>} />
-      <Route path="/contact" element={<Page title="Contact Us" />} />
-      <Route path="/awards" element={<Page title="Awards" />} /> 
+      <Route path="/contact" element={<Contact/>} />
+      <Route path="/awards" element={<Awards />} />
       <Route path="/services/placement" element={<Placement_Support/>} />
       <Route path="/services/internship" element={<Internship_Programs />} />
       <Route path="/services/training" element={<Page title="Training" />} />
