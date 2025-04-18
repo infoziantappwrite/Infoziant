@@ -10,6 +10,7 @@ const Banner = ({
   secondaryBtnText,
   secondaryBtnLink,
   image,
+  subtitle
 }) => {
   const [isGifVisible, setIsGifVisible] = useState(false);
   const ref = useRef(null);
@@ -140,6 +141,18 @@ const Banner = ({
               </span>
             </span>
           </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-md sm:text-lg lg:text-xl font-bold leading-tight"
+          >
+            <span className="relative inline-block">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
+                {subtitle}
+              </span>
+            </span>
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -194,7 +207,7 @@ const Banner = ({
                 <img
                   src={image}
                   alt={title}
-                  className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto object-contain rounded-xl shadow-2xl shadow-blue-100/50"
+                  className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto object-contain rounded-xl    shadow-blue-100/100"
                 />
               </motion.div>
             )}

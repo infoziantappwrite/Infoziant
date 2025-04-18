@@ -4,11 +4,10 @@ import Whatweoffer from './Whatweoffer/Whatweoffer';
 import placementImage from "../../assests/Images/Banner/Coes.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
-import CollegeClients from './TrustedBy/TrustedBy';
-import CompaniesEngaged from './Companies/Companies';
 
 
-const Placement_Support = () => {
+
+const COE = () => {
     const offerHeading = "What We Do";
     const offerPoints = [
       "Set up CoEs with industry-standard tools & infra",
@@ -83,4 +82,4 @@ const Placement_Support = () => {
   );
 };
 
-export default Placement_Support;
+export default COE;
