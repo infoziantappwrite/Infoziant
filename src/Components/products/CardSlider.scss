@@ -1,0 +1,116 @@
+.slider-section {
+    width: 100%;
+    padding: 100px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.slick-slide {
+    padding: 0 30px;  /* Add padding to create gap between slides */
+}
+
+.card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 20px rgba(21, 245, 186, 0.6), 0 0 20px rgba(0, 102, 255, 0.6);
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 10px; /* Horizontal margin between cards */
+    overflow: hidden; /* Ensure the text stays within the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Card shadow */
+}
+
+.card-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    filter: brightness(0.8); /* Slightly darkens the image to enhance text readability */
+}
+
+/* Style for text inside the image at the bottom left */
+.card-text {
+    position: absolute;
+    bottom: 10px; /* Position text 10px from the bottom */
+    left: 8px;    /* Position text 10px from the left */
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Strong shadow for text clarity */
+    transition: background-color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect to brighten the image and give a more dynamic feel */
+.card:hover .card-image {
+    filter: brightness(1);
+}
+
+.card:hover .card-text {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the overlay on hover */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); /* Stronger shadow on hover */
+}
+
+/* Slick dots customization */
+.slick-dots li button:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #15F5BA, #0066ff);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button:before {
+    width: 14px;  /* Slightly larger for active dot */
+    height: 14px;
+    background: linear-gradient(90deg, #0066ff, #15F5BA);  /* Reverse gradient on active */
+    box-shadow: 0 0 5px rgba(21, 245, 186, 0.6), 0 0 5px rgba(0, 102, 255, 0.6);  /* Glow effect */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .slider-section {
+        padding: 10%; /* Adjust padding for smaller screens */
+    }
+
+    .card-image {
+        height: 250px; /* Reduce height of images on smaller screens */
+    }
+
+    .card-text {
+        font-size: 20px; /* Reduce text size */
+    }
+    .slider-section h1{
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-section {
+        padding: 10%; /* Further reduce padding for very small screens */
+        margin-bottom: 5%;
+    }
+
+    .card-image {
+        height: 200px; /* Further reduce height of images */
+    }
+
+    .card-text {
+        font-size: 16px; /* Further reduce text size */
+    }
+    .slider-section h1{
+        font-size: 2rem;
+    }
+}
