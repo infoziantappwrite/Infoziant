@@ -12,6 +12,7 @@ import COE from './Components/c2cservices/COE';
 import Testing from './Components/Testing/Testing';
 import CodeChef from './Components/c2cservices/CodeChef';
 import PageNotFound from './Components/PageNotFound';
+import HomeBanner from './Components/Services/Cyber/HomeBanner';
 
 
 const Page = () => (
@@ -38,7 +39,7 @@ const App = () => {
       <Route path="/services/edutech" element={<Page title="Edutech" />} />
       <Route path="/services/codechef" element={<CodeChef/>} />
       <Route path="/services/tech-talent" element={<Talent/>} />
-      <Route path="/services/cybersecurity" element={<Page title="Cybersecurity" />} />
+      <Route path="/services/cybersecurity" element={< HomeBanner/>} />
       <Route path="/services/web-app-development" element={<WebandApp />} />
       <Route path="/services/testing" element={<Testing />} />
       <Route path="*" element={<PageNotFound />} />
