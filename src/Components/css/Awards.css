@@ -3,6 +3,12 @@
   padding-left: 20px;
 }
 
+.sb-intro h1{
+  background: linear-gradient(0deg, #15F5BA, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
 
 .awards_page {
   display: flex;
