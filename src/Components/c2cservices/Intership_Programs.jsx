@@ -1,13 +1,16 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import Whatweoffer from './Whatweoffer/Whatweoffer';
-import placementImage from "../../assests/Images/Ourservice/placement/placement.gif";
+import placementImage from "../../assests/Images/Banner/workplace.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import CollegeClients from './TrustedBy/TrustedBy';
 import CompaniesEngaged from './Companies/Companies';
 import TestimonialSection from './Testimonials/Testimonials';
+import KeyHighlights from './KeyHighlights/KeyHighlights';
+import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
+import WhatImage from "../../assests/Images/Banner/Shop.jpg";
 
-const Placement_Support = () => {
+const Intership_Programs = () => {
     const offerHeading = "What We Offer";
     const offerPoints = [
       "Internship facilitation with top-tier & partner companies",
@@ -31,18 +34,18 @@ const Placement_Support = () => {
         badgeText="Campus to Corporate Services"
         title="Internship Programs"
         subtitle="Bridging Students with the Right Industry Opportunities"
-        description="At Infoziant, we don’t just offer in-house internships—we help colleges and students connect with top companies to access meaningful, real-world internship experiences. Through our strong industry network and trusted partnerships, we bring corporate internship opportunities right to your campus. Whether it’s tech, non-tech, core engineering, or business roles, we enable students to explore internships across multiple domains—powered by reputed companies and industry mentors."
+        description="Infoziant connects colleges and students with top companies for real-world internships. Through our industry network, we bring corporate opportunities to your campus in tech, non-tech, engineering, and business roles, powered by renowned companies and mentors."
         primaryBtnText="Get Internship Support"
         primaryBtnLink="#get-started"
         secondaryBtnText="Contact Us"
         secondaryBtnLink="#contact"
-        image={placementImage} // ✅ pass image here
+        image={placementImage}
       />
-       <Whatweoffer heading={offerHeading} points={offerPoints} />
+       <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage} />
 
        <WhyChoose
           heading="Why Choose Infoziant"
-          description="With our expansive industry network and agile coordination, we bring in companies offering CTCs up to ₹1.02 Cr and align them with your drive schedule. Your students gain access to curated placement opportunities that match their skillsets, while your institution stays ahead with a strong placement track record."
+          description="Internship Programs are a crucial part of a student's academic journey. We ensure that students gain practical experience and exposure to the industry, enhancing their employability and skill set."
           points={[
            "Pan-India partner company network",
             "Centralized internship management & coordination",
@@ -50,9 +53,10 @@ const Placement_Support = () => {
             "Track record of facilitating 6800+ internships across sectors",
             "Pre-Internship training (if needed) to ensure success",
           ]}
+          image = {WhyChooseImage} // ✅ pass image here
         />
 
-        <Whatweoffer heading={highlights} points={points} />
+        <KeyHighlights heading={highlights} points={points} />
 
         <CompaniesEngaged
               heading="Our Engaged Companies"
@@ -128,4 +132,4 @@ const Placement_Support = () => {
   );
 };
 
-export default Placement_Support;
+export default Intership_Programs;

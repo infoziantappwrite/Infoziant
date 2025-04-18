@@ -1,11 +1,13 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import Whatweoffer from './Whatweoffer/Whatweoffer';
-import placementImage from "../../assests/Images/Ourservice/placement/placement.gif";
+import placementImage from "../../assests/Images/Banner/18-1.webp";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
 import CollegeClients from './TrustedBy/TrustedBy';
 import CompaniesEngaged from './Companies/Companies';
+import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
+import WhatImage from "../../assests/Images/Banner/Shop.jpg";
 
 
 const Placement_Support = () => {
@@ -29,7 +31,7 @@ const Placement_Support = () => {
         secondaryBtnLink="#contact"
         image={placementImage} // ✅ pass image here
       />
-       <Whatweoffer heading={offerHeading} points={offerPoints} />
+       <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage} />
 
        <WhyChoose
           heading="Why Choose Infoziant"
@@ -44,6 +46,7 @@ const Placement_Support = () => {
             "Agile coordination for optimal placement timing",
             "Curated placement opportunities aligned with student skills"
           ]}
+          image = {WhyChooseImage} 
         />
 
           <CollegeClients
