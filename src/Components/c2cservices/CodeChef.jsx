@@ -1,16 +1,16 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import Whatweoffer from './Whatweoffer/Whatweoffer';
-import placementImage from "../../assests/Images/Banner/Coes.png";
+import placementImage from "../../assests/Images/Banner/codchef.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
 
 
 
-const COE = () => {
+const CodeChef = () => {
     const offerHeading = "What We Do";
     const offerPoints = [
-      "Set up CoEs with industry-standard tools & infra",
+      "Set up CodeChefs with industry-standard tools & infra",
       "Curriculum design in sync with job roles",
       "Training by real-world practitioners",
       "Hands-on use cases & labs",
@@ -31,10 +31,10 @@ const COE = () => {
     <div>
       <Banner
         badgeText="Campus to Corporate Services"
-        title="Centre Of Excellence"
-        subtitle="Turning Campuses into Innovation Hubs"
-        description="Our Centre of Excellence (CoE) initiative is a strategic industry-academia collaboration where we empower colleges to build self-sustained, skill-driven learning environments in emerging domains like Cybersecurity & AI."
-        primaryBtnText="Explore CoE"
+        title="CodeChef Training "
+        subtitle="Empower Students with CodeChef – Powered by Infoziant (CodeChef). "
+        description="As a licensed partner of CodeChef, Infoziant brings a global learning platform to your institution."
+        primaryBtnText="Explore CodeChef"
         primaryBtnLink="#get-started"
         secondaryBtnText="Contact Us"
         secondaryBtnLink="#contact"
@@ -43,8 +43,8 @@ const COE = () => {
        <Whatweoffer heading={offerHeading} points={offerPoints} />
 
        <WhyChoose
-          heading="Why Infoziant CoEs?"
-          description="We are committed to building a self-sustained CoE that not only meets the immediate needs of students but also prepares them for future challenges. Our approach is designed to ensure that your institution remains at the forefront of technological advancements."
+          heading="Why Infoziant CodeChefs?"
+          description="We are committed to building a self-sustained CodeChef that not only meets the immediate needs of students but also prepares them for future challenges. Our approach is designed to ensure that your institution remains at the forefront of technological advancements."
           points={[
             "Designed by domain experts (Ex-Symantec, EMC, McAfee)",
             "Industry-mapped curriculum and tools",
@@ -63,14 +63,14 @@ const COE = () => {
             {
               name: "CSE HOD –  PSNA",
               role: "PSNA College of Engineering and Technology",
-              quote: "The Centre of Excellence established in collaboration with Infoziant has been a game changer for our students. It provides them with exposure to real-world cybersecurity challenges and hands-on tools that are usually available only in top-tier companies. Our students are more confident and industry-ready than ever before.",
+              quote: "The Empower Students with CodeChef – Powered by Infoziant established in collaboration with Infoziant has been a game changer for our students. It provides them with exposure to real-world cybersecurity challenges and hands-on tools that are usually available only in top-tier companies. Our students are more confident and industry-ready than ever before.",
               image: "path/to/image1.jpg",
               color: "from-rose-500 to-pink-400"
             },
             {
               name: "Principal, Kalasalingam University",
               role: "Kalasalingam Academy of Research and Education",
-              quote: "Partnering with Infoziant to set up a CoE in AI and Cybersecurity has significantly elevated our academic offerings. The customized labs, expert sessions, and project-based learning approach have bridged the gap between academia and industry. We truly value this partnership.",
+              quote: "Partnering with Infoziant to set up a CodeChef in AI and Cybersecurity has significantly elevated our academic offerings. The customized labs, expert sessions, and project-based learning approach have bridged the gap between academia and industry. We truly value this partnership.",
               image: "path/to/image2.jpg",
               color: "from-violet-500 to-fuchsia-400"
             },
@@ -82,4 +82,4 @@ const COE = () => {
   );
 };
 
-export default COE;
+export default CodeChef;
