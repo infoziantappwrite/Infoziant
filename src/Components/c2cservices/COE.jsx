@@ -4,7 +4,9 @@ import Whatweoffer from './Whatweoffer/Whatweoffer';
 import placementImage from "../../assests/Images/Banner/Coes.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
-
+import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
+import WhatImage from "../../assests/Images/Banner/Shop.jpg";
+import KeyHighlights from './KeyHighlights/KeyHighlights';
 
 
 const COE = () => {
@@ -38,9 +40,9 @@ const COE = () => {
         primaryBtnLink="#get-started"
         secondaryBtnText="Contact Us"
         secondaryBtnLink="#contact"
-        image={placementImage} // ✅ pass image here
+        image={placementImage}
       />
-       <Whatweoffer heading={offerHeading} points={offerPoints} />
+       <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage} />
 
        <WhyChoose
           heading="Why Infoziant CoEs?"
@@ -52,9 +54,10 @@ const COE = () => {
             "Customizable delivery (hybrid/fully offline)",
             "Proven success across 30+ institutions",
           ]}
+          image = {WhyChooseImage} // ✅ pass image here
         />
 
-            <Whatweoffer heading={highlights} points={points} />
+            <KeyHighlights heading={highlights} points={points}/>
 
         <TestimonialSection
           heading="What Our Clients Say About Us"

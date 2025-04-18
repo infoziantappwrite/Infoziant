@@ -6,6 +6,9 @@ import WhyChoose from './WhyChoose/WhyChoose';
 import CollegeClients from './TrustedBy/TrustedBy';
 import CompaniesEngaged from './Companies/Companies';
 import TestimonialSection from './Testimonials/Testimonials';
+import KeyHighlights from './KeyHighlights/KeyHighlights';
+import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
+import WhatImage from "../../assests/Images/Banner/Shop.jpg";
 
 const Intership_Programs = () => {
     const offerHeading = "What We Offer";
@@ -36,9 +39,9 @@ const Intership_Programs = () => {
         primaryBtnLink="#get-started"
         secondaryBtnText="Contact Us"
         secondaryBtnLink="#contact"
-        image={placementImage} // ✅ pass image here
+        image={placementImage}
       />
-       <Whatweoffer heading={offerHeading} points={offerPoints} />
+       <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage} />
 
        <WhyChoose
           heading="Why Choose Infoziant"
@@ -50,9 +53,10 @@ const Intership_Programs = () => {
             "Track record of facilitating 6800+ internships across sectors",
             "Pre-Internship training (if needed) to ensure success",
           ]}
+          image = {WhyChooseImage} // ✅ pass image here
         />
 
-        <Whatweoffer heading={highlights} points={points} />
+        <KeyHighlights heading={highlights} points={points} />
 
         <CompaniesEngaged
               heading="Our Engaged Companies"
