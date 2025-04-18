@@ -17,6 +17,8 @@ import Loader from './Components/Loader';
 import Layout from './Components/Cyber/Layout';
 import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
+import Awards from './Components/Pages/Awards';
+import Contact from './Components/Pages/Contact';
 
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
@@ -43,8 +45,8 @@ const App = () => {
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<Page title="About Us" />} />
       <Route path="/product" element={<Products/>} />
-      <Route path="/contact" element={<Page title="Contact Us" />} />
-      <Route path="/awards" element={<Page title="Awards" />} />
+      <Route path="/contact" element={<Contact/>} />
+      <Route path="/awards" element={<Awards />} />
       <Route path="/blog" element={<Page title="Blog" />} />  
       <Route path="/services/placement" element={<Placement_Support/>} />
       <Route path="/services/internship" element={<Internship_Programs />} />
