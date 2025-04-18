@@ -17,6 +17,22 @@ import Loader from './Components/Loader';
 import Layout from './Components/Cyber/Layout';
 import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
+import Blog from './Components/c2cservices/Blog/Blog';
+
+
+// CSS imports
+import './Components/css/Awards.css';
+import './Components/css/BlogDetail.css';
+import './Components/css/Blogs.css';
+import './Components/css/ServicesList.css';
+import Blog1Detail from './Components/c2cservices/Blog/Blog1Detail';
+import Blog2Detail from './Components/c2cservices/Blog/Blog2Detail';
+import Blog3Detail from './Components/c2cservices/Blog/Blog3Detail';
+import Blog4Detail from './Components/c2cservices/Blog/Blog4Detail';
+import Blog5Detail from './Components/c2cservices/Blog/Blog5Detail';
+import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
+
+
 import Awards from './Components/Pages/Awards';
 import Contact from './Components/Pages/Contact';
 
@@ -47,7 +63,6 @@ const App = () => {
       <Route path="/product" element={<Products/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/awards" element={<Awards />} />
-      <Route path="/blog" element={<Page title="Blog" />} />  
       <Route path="/services/placement" element={<Placement_Support/>} />
       <Route path="/services/internship" element={<Internship_Programs />} />
       <Route path="/services/training" element={<Page title="Training" />} />
@@ -58,6 +73,15 @@ const App = () => {
       <Route path="/services/cybersecurity" element={<Layout />} />
       <Route path="/services/web-app-development" element={<WebandApp />} />
       <Route path="/services/testing" element={<Testing />} />
+      <Route path="/blog" element={<Blog />} /> 
+      <Route path="/fortifying-mobile-app-security" element={<Blog1Detail />} />
+      <Route path="/why-strong-passwords-matter-and-how-to-create" element={<Blog2Detail />} />
+      <Route path="/phishing-beware-of-fake-emails-and-messages" element={<Blog3Detail />} />
+      <Route path="/strengthening-your-digital-fortress" element={<Blog4Detail />} />
+      <Route path="/elevating-security-with-firewalls" element={<Blog5Detail />} />
+      <Route path="/top-5-effective-website-security-tips-for-2024" element={<Blog6Detail />} />
+      
+
       <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
