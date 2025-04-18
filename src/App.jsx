@@ -9,6 +9,7 @@ import Talent from './Components/Talent/Talent';
 import Placement_Support from './Components/c2cservices/Placement_Support';
 import Testing from './Components/Testing/Testing';
 import PageNotFound from './Components/PageNotFound';
+import HomeBanner from './Components/Services/Cyber/HomeBanner';
 
 
 const Page = () => (
@@ -35,7 +36,7 @@ const App = () => {
       <Route path="/services/edutech" element={<Page title="Edutech" />} />
       <Route path="/services/codechef" element={<Page title="CodeChef" />} />
       <Route path="/services/tech-talent" element={<Talent/>} />
-      <Route path="/services/cybersecurity" element={<Page title="Cybersecurity" />} />
+      <Route path="/services/cybersecurity" element={< HomeBanner/>} />
       <Route path="/services/web-app-development" element={<WebandApp />} />
       <Route path="/services/testing" element={<Testing />} />
       <Route path="*" element={<PageNotFound />} />
