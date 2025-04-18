@@ -10,12 +10,11 @@ import HowItWorks from './HowItworks/HowItWorks';
 import KeyHighlights from './KeyHighlights/KeyHighlights';
 import WhatIsCodeChef from './WhatIs/WhatIs';
 
-
 const CodeChef = () => {
 
     const highlights = "Key Highlights";
     const points = [
-        "Weekly Global Hackathons – Every Wednesday 8 PM IST",
+        "Weekly Global Hackathons Every Wednesday 8 PM IST",
         "7000+ Practice Problems across 3 Difficulty Levels",
         "100+ Lesson Modules",
         "Department-wise & Year-wise Curriculum Mapping",
@@ -28,22 +27,22 @@ const CodeChef = () => {
       {
         title: "Step 1: Learn from Courses",
         description: "Start your journey by learning from a wide variety of courses designed to help you master the skills you need.",
-        icon: <FaBook />, // Icon for this step
+        icon: <FaBook />, 
       },
       {
         title: "Step 2: Practice Daily",
         description: "Engage with daily exercises and get real-time feedback to improve your skills as you practice.",
-        icon: <FaPen />, // Icon for this step
+        icon: <FaPen />, 
       },
       {
         title: "Step 3: Take Assessments",
         description: "Test your knowledge with assessments and quizzes to track your progress and identify areas to improve.",
-        icon: <FaFlask />, // Icon for this step
+        icon: <FaFlask />, 
       },
       {
         title: "Step 4: Share Your Achievements",
         description: "Share your achievements and milestones with the world to showcase your new skills.",
-        icon: <FaRocket />, // Icon for this step
+        icon: <FaRocket />, 
       },
     ];
 
@@ -52,7 +51,7 @@ const CodeChef = () => {
       subheading: "Your Gateway to Competitive Programming Excellence",
       description: `CodeChef is India’s premier competitive programming platform, used by over 1 million coders worldwide. With structured, curriculum-aligned courses and a vibrant coding community, students gain valuable exposure and build confidence through hands-on coding and problem-solving.`,
       ctaText: "Start Coding Today",
-      ctaLink: "#cta", // Link for CTA button
+      ctaLink: "#cta",
     };
 
 
