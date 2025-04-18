@@ -29,6 +29,18 @@ const WhatIsCodeChef = ({ heading, subheading, description, image, ctaText, ctaL
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+
+           {/* Left-side Image */}
+          <div className="flex justify-center">
+            <img
+              src={image} 
+              alt="CodeChef"
+              className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-xl shadow-xl transform transition-transform hover:scale-105 hover:shadow-2xl"
+            />
+          </div>
+
+
           {/* Text Content */}
           <div>
             <p className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8">
@@ -44,14 +56,7 @@ const WhatIsCodeChef = ({ heading, subheading, description, image, ctaText, ctaL
             )}
           </div>
 
-          {/* Right-side Image */}
-          <div className="flex justify-center">
-            <img
-              src={image} 
-              alt="CodeChef"
-              className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-xl shadow-xl transform transition-transform hover:scale-105 hover:shadow-2xl"
-            />
-          </div>
+          
         </div>
       </div>
     </section>

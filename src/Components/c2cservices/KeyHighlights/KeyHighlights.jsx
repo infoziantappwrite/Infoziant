@@ -25,11 +25,10 @@ const KeyHighlights = ({ heading, points }) => {
         {/* Grid */}
         <div
           className={`grid gap-6 ${
-            isFiveCards ? "md:grid-cols-3" : "sm:grid-cols-2"
+            isFiveCards ? "grid-cols-2 md:grid-cols-2" : "sm:grid-cols-2"
           }`}
         >
           {points.map((point, index) => {
-            const isFourth = isFiveCards && index === 3;
             const isFifth = isFiveCards && index === 4;
 
             return (
@@ -37,8 +36,7 @@ const KeyHighlights = ({ heading, points }) => {
                 key={index}
                 className={`group p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 
                   hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-left
-                  ${isFourth ? "md:col-start-2" : ""}
-                  ${isFifth ? "md:col-start-3" : ""}
+                  ${isFifth ? "col-span-2 md:col-span-2 md:mx-auto md:w-1/2" : ""}
                 `}
               >
                 <div className="flex items-center gap-3 mb-3">
