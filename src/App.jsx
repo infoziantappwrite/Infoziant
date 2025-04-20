@@ -1,93 +1,69 @@
-/* eslint-disable react/jsx-pascal-case */
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './Components/Home/Home';
-import WebandApp from './Components/Services/Web&app development';
-import Talent from './Components/Talent/Talent';
-import Placement_Support from './Components/c2cservices/Placement_Support';
-import Internship_Programs from './Components/c2cservices/Intership_Programs';
-import COE from './Components/c2cservices/COE';
-import Testing from './Components/Testing/Testing';
-import CodeChef from './Components/c2cservices/CodeChef';
-import PageNotFound from './Components/PageNotFound';
-import ScrollToTop from './Components/ScrollToTop';
+import Login from './Components/Auth/Login';
+import Register from './Components/Auth/Register';
+// import ForgotPassword from './Components/Auth/ForgotPassword';
+// import ResetPassword from './Components/Auth/ResetPassword';
+import AllCourses from './Components/Courses/AllCourses';
+import CourseDetail from './Components/Courses/CourseDetail';
+import MyCourses from './Components/Courses/MyCourses';
+import About from './Components/Pages/About'; // Import the About component
+import Contact from './Components/Pages/Contact'; // Import the Contact component
+import Dashboard from './Components/Dashboard/Dashboard'; // Import the Dashboard component
+ import PageNotFound from './Components/PageNotFound';
+ import ScrollToTop from './Components/ScrollToTop';
+ import { authService } from './services/appwrite';
 import Loader from './Components/Loader';
-import Layout from './Components/Cyber/Layout';
-import Products from './Components/products/Product';
-import Edutech_Platform from './Components/c2cservices/Edutech';
-import Blog from './Components/c2cservices/Blog/Blog';
+// import './App.css';
 
+function App() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-// CSS imports
-import './Components/css/Awards.css';
-import './Components/css/BlogDetail.css';
-import './Components/css/Blogs.css';
-import './Components/css/ServicesList.css';
-import Blog1Detail from './Components/c2cservices/Blog/Blog1Detail';
-import Blog2Detail from './Components/c2cservices/Blog/Blog2Detail';
-import Blog3Detail from './Components/c2cservices/Blog/Blog3Detail';
-import Blog4Detail from './Components/c2cservices/Blog/Blog4Detail';
-import Blog5Detail from './Components/c2cservices/Blog/Blog5Detail';
-import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
+  useEffect(() => {
+    const checkUser = async () => {
+      try {
+        const currentUser = await authService.getCurrentUser();
+        setUser(currentUser);
+      } catch (error) {
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    checkUser();
+  }, []);
 
+  if (loading) {
+    return <Loader />;
+  }
 
-import Awards from './Components/Pages/Awards';
-import Contact from './Components/Pages/Contact';
-
-const Page = () => (
-  <div className="w-screen h-full flex items-center justify-center bg-white">
-    <img src="/Test.jpg" alt="Coming Soon" className="w-full h-full object-contain" />
-  </div>
-);
-
-const App = () => {
-  
-  const fetchData = async () => {
-    // Replace with your actual data fetching logic (e.g., API call)
-    const response = await fetch('https://api.example.com/data');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  };
   return (
     <Router>
-       <ScrollToTop />
-       <Loader fetchData={fetchData}>
-      <Header />
-      <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/about" element={<Page title="About Us" />} />
-      <Route path="/product" element={<Products/>} />
-      <Route path="/contact" element={<Contact/>} />
-      <Route path="/awards" element={<Awards />} />
-      <Route path="/services/placement" element={<Placement_Support/>} />
-      <Route path="/services/internship" element={<Internship_Programs />} />
-      <Route path="/services/training" element={<Page title="Training" />} />
-      <Route path="/services/coe" element={<COE />} />
-      <Route path="/services/edutech" element={<Edutech_Platform/>} />
-      <Route path="/services/codechef" element={<CodeChef/>} />
-      <Route path="/services/tech-talent" element={<Talent/>} />
-      <Route path="/services/cybersecurity" element={<Layout />} />
-      <Route path="/services/web-app-development" element={<WebandApp />} />
-      <Route path="/services/testing" element={<Testing />} />
-      <Route path="/blog" element={<Blog />} /> 
-      <Route path="/fortifying-mobile-app-security" element={<Blog1Detail />} />
-      <Route path="/why-strong-passwords-matter-and-how-to-create" element={<Blog2Detail />} />
-      <Route path="/phishing-beware-of-fake-emails-and-messages" element={<Blog3Detail />} />
-      <Route path="/strengthening-your-digital-fortress" element={<Blog4Detail />} />
-      <Route path="/elevating-security-with-firewalls" element={<Blog5Detail />} />
-      <Route path="/top-5-effective-website-security-tips-for-2024" element={<Blog6Detail />} />
-      
-
-      <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      <ScrollToTop />
+      <Header user={user} setUser={setUser} />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          {/* <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} /> */}
+          <Route path="/courses" element={<AllCourses />} />
+          <Route path="/courses/:id" element={<CourseDetail />} />
+          <Route path="/my-courses" element={user ? <MyCourses /> : <Navigate to="/login" replace />} />
++          <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" replace />} /> {/* Add protected route for Dashboard */}
+           <Route path="/about" element={<About />} /> {/* Add route for About page */}
+           <Route path="/contact" element={<Contact />} /> {/* Add route for Contact page */}
+           <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </main>
       <Footer />
-      </Loader>
     </Router>
   );
-};
+}
 
 export default App;
