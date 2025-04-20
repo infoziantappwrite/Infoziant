@@ -19,6 +19,16 @@ import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
 import Blog from './Components/c2cservices/Blog/Blog';
 
+// Course and Auth components
+import CoursesList from './Components/Courses/CoursesList';
+import CourseDetail from './Components/Courses/CourseDetail';
+import Login from './Components/Auth/Login';
+import Register from './Components/Auth/Register';
+import PurchasedCourses from './Components/Dashboard/PurchasedCourses';
+import OrderSummary from './Components/Payment/OrderSummary';
+import Checkout from './Components/Payment/Checkout';
+import PaymentStatus from './Components/Payment/PaymentStatus';
+
 
 // CSS imports
 import './Components/css/Awards.css';
@@ -35,6 +45,7 @@ import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
 
 import Awards from './Components/Pages/Awards';
 import Contact from './Components/Pages/Contact';
+import { LogOut } from 'lucide-react';
 
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
@@ -81,6 +92,22 @@ const App = () => {
       <Route path="/elevating-security-with-firewalls" element={<Blog5Detail />} />
       <Route path="/top-5-effective-website-security-tips-for-2024" element={<Blog6Detail />} />
       
+      {/* Course routes */}
+      <Route path="/courses" element={<CoursesList />} />
+      <Route path="/courses/:courseId" element={<CourseDetail />} />
+      
+      {/* Payment routes */}
+      <Route path="/order-summary/:courseId" element={<OrderSummary />} />
+      <Route path="/checkout/:courseId" element={<Checkout />} />
+      <Route path="/payment/status" element={<PaymentStatus />} />
+      
+      {/* Authentication routes */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      {/* <Route path="/logout" element={<Logout />} /> */}
+      
+      {/* Dashboard routes */}
+      <Route path="/dashboard/courses" element={<PurchasedCourses />} />
 
       <Route path="*" element={<PageNotFound />} />
       </Routes>
