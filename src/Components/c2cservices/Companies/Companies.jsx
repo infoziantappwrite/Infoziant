@@ -3,9 +3,31 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const CompaniesEngaged = ({ heading, description, companies = [] }) => {
+import image1 from "../../../assests/Images/Colleges/1 (1).jpg";
+import image2 from "../../../assests/Images/Colleges/1 (2).jpg";
+import image3 from "../../../assests/Images/Colleges/1 (3).jpg";
+import image4 from "../../../assests/Images/Colleges/1 (4).jpg";
+import image5 from "../../../assests/Images/Colleges/1 (5).jpg";
+import image6 from "../../../assests/Images/Colleges/1 (6).jpg";
+import image7 from "../../../assests/Images/Colleges/1 (7).jpg";
+import image8 from "../../../assests/Images/Colleges/1 (8).jpg";
+import image9 from "../../../assests/Images/Colleges/1 (9).jpg";
+
+const CompaniesEngaged = ({ heading, description }) => {
   const [centerIndex, setCenterIndex] = useState(1);
   const sliderRef = useRef(null);
+
+  const companies = [
+    { id: 1, src: image1 },
+    { id: 2, src: image2 },
+    { id: 3, src: image3 },
+    { id: 4, src: image4 },
+    { id: 5, src: image5 },
+    { id: 6, src: image6 },
+    { id: 7, src: image7 },
+    { id: 8, src: image8 },
+    { id: 9, src: image9 },
+  ];
 
   const settings = {
     infinite: true,
@@ -19,7 +41,7 @@ const CompaniesEngaged = ({ heading, description, companies = [] }) => {
     arrows: false,
     cssEase: "ease-in-out",
     beforeChange: (current, next) =>
-      setCenterIndex(next % (companies.length || 1)),
+      setCenterIndex(next % companies.length),
     pauseOnHover: false,
     responsive: [
       {
@@ -75,23 +97,39 @@ const CompaniesEngaged = ({ heading, description, companies = [] }) => {
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Slider */}
           <Slider ref={sliderRef} {...settings} className="px-6">
             {companies.map((company, index) => (
               <div key={company.id} className="px-4 py-6">
                 <div
-                  className={`transition-all duration-700 transform rounded-2xl shadow-md border ${
+                  className={`relative overflow-hidden rounded-xl transition-all duration-700 ${
                     index === centerIndex
-                      ? "bg-white/80 backdrop-blur-md border-gray-200 scale-105 shadow-xl"
-                      : "bg-white/60 border-transparent scale-95 opacity-80"
+                      ? "bg-white/90 shadow-lg transform scale-110"
+                      : "bg-white/50 transform scale-95 opacity-70"
                   }`}
+                  style={{
+                    width: "150px",
+                    height: "150px",
+                  }}
                 >
-                  <div className="flex items-center justify-center h-40 w-40 mx-auto p-3">
-                    <img
-                      src={company.logo}
-                      alt={`Company logo ${index + 1}`}
-                      className="h-full w-full object-contain transition-transform duration-500 hover:scale-110"
-                    />
+                  <div
+                    className="relative overflow-hidden rounded-xl border border-gray-200 p-[3px] bg-white"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <div className="w-full h-full overflow-hidden flex items-center justify-center rounded-lg bg-gray-100">
+                      <img
+                        src={company.src}
+                        alt={`Company logo ${index + 1}`}
+                        className={`h-full w-full object-cover transition-all duration-700 ${
+                          index === centerIndex ? "scale-110" : "scale-100"
+                        }`}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

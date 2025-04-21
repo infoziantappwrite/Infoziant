@@ -4,8 +4,8 @@ import Whatweoffer from './Whatweoffer/Whatweoffer';
 import placementImage from "../../assests/Images/Banner/Coes.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
-import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
-import WhatImage from "../../assests/Images/Banner/Shop.jpg";
+import WhyChooseImage from "../../assests/Images/Banner/whycoe3.png";
+import WhatImage from "../../assests/Images/Banner/whatwedo3.png";
 import KeyHighlights from './KeyHighlights/KeyHighlights';
 
 
