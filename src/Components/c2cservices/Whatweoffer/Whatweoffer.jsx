@@ -34,20 +34,20 @@ const Whatweoffer = ({ heading, points, image }) => {
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-          {/* Points List */}
-          <div className="space-y-6 md:space-y-8">
-            {points.map((point, index) => (
-              <PointItem key={index} point={point} index={index} />
-            ))}
-          </div>
-
-          {/* Right-side Image */}
+          {/* Left-side Image */}
           <div className="flex items-center justify-center">
             <img
               src={image} 
               alt="What we offer"
               className="w-full max-w-sm md:max-w-md lg:max-w-lg rounded-xl shadow-xl transform transition-transform hover:scale-105 hover:shadow-2xl"
             />
+          </div>
+
+          {/* Points List */}
+          <div className="space-y-6 md:space-y-8">
+            {points.map((point, index) => (
+              <PointItem key={index} point={point} index={index} />
+            ))}
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@ import CollegeClients from './TrustedBy/TrustedBy';
 import CompaniesEngaged from './Companies/Companies';
 import TestimonialSection from './Testimonials/Testimonials';
 import KeyHighlights from './KeyHighlights/KeyHighlights';
-import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
-import WhatImage from "../../assests/Images/Banner/Shop.jpg";
+import WhyChooseImage from "../../assests/Images/Banner/Choose2.png";
+import WhatImage from "../../assests/Images/Banner/offer2.png";
 
 const Intership_Programs = () => {
     const offerHeading = "What We Offer";

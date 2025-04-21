@@ -6,6 +6,7 @@ import WhatweImage from '../../assests/Images/edutech/whatWedo.jpg';
 import { CheckCircle, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 import InfoziantJourney from './InfoziantJourney/InfoziantJourney';
+import WhatImage from "../../assests/Images/Banner/offer6.png";
 
 
 const Edutech_Platform = () => {
@@ -58,7 +59,7 @@ const Edutech_Platform = () => {
                 image={edutechImage}
             />
 
-            <Whatweoffer heading={offerHeading} points={offerPoints} />
+            <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage}  />
 
 
             <section className="bg-[#0f172a] py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
