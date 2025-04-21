@@ -101,22 +101,26 @@ const CollegeClients = () => {
                     ${index === centerIndex ? 
                       'bg-gradient-to-b from-blue-800/30 to-teal-800/20 shadow-lg shadow-teal-900/20 transform scale-105' : 
                       'bg-blue-900/20 transform scale-95'}
-                  `}>
+                  `}
+                  style={{
+                    width: "150px", // increased width
+                    height: "150px", // increased height
+                  }}>
                     <div className={`
                       flex flex-col items-center transition-all duration-700
                       ${index === centerIndex ? 'scale-100 opacity-100' : 'scale-90 opacity-70'}
                     `}>
                     <div className="h-40 w-40 relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-800/50 to-teal-700/30 p-[3px]">
-  <div className="w-full h-full overflow-hidden flex items-center justify-center bg-blue-950 rounded-lg">
-    <img
-      src={client.src}
-      alt={`College image ${index + 1}`}
-      className={`h-full w-full object-cover transition-all duration-700 ${
-        index === centerIndex ? 'scale-105' : 'scale-100'
-      }`}
-    />
-  </div>
-</div>
+                      <div className="w-full h-full overflow-hidden flex items-center justify-center bg-blue-950 rounded-lg">
+                        <img
+                          src={client.src}
+                          alt={`College image ${index + 1}`}
+                          className={`h-full w-full object-cover transition-all duration-700 ${
+                            index === centerIndex ? 'scale-105' : 'scale-100'
+                          }`}
+                        />
+                      </div>
+                    </div>
 
   
                       {/* {index === centerIndex && (
