@@ -35,6 +35,7 @@ import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
 
 import Awards from './Components/Pages/Awards';
 import Contact from './Components/Pages/Contact';
+import Vapt from './Components/VAPT/Vapt';
 
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
@@ -80,7 +81,8 @@ const App = () => {
       <Route path="/strengthening-your-digital-fortress" element={<Blog4Detail />} />
       <Route path="/elevating-security-with-firewalls" element={<Blog5Detail />} />
       <Route path="/top-5-effective-website-security-tips-for-2024" element={<Blog6Detail />} />
-      
+      <Route path="/vapt" element={<Vapt />} />
+
 
       <Route path="*" element={<PageNotFound />} />
       </Routes>
