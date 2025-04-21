@@ -8,6 +8,7 @@ import CollegeClients from './TrustedBy/TrustedBy';
 import CompaniesEngaged from './Companies/Companies';
 import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
 import WhatImage from "../../assests/Images/Banner/offer1.png";
+import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 
 
 const Placement_Support = () => {
@@ -95,6 +96,8 @@ const Placement_Support = () => {
                     ]}
           />
 
+
+          <ConsultationFormForCo />
 
 
         
