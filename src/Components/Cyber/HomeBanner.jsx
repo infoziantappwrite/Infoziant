@@ -2,14 +2,19 @@ import { motion } from "framer-motion";
 import "../css/HomeBanner.css";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import QuickScan from "./QuickScan";
+
 // import Services from "./Services";
 // import Footer from "./Footer";
- import WhyInfoziant from "./WhyInfoziant";
-// import Partnership from "./Partnership";
+import WhyInfoziant from "./WhyInfoziant";
+import WhyChooseUs from "./WhyChooseUs";
+import Partnership from "./Partnership";
+import Accreditations from "../Home/Accreditations/Accreditations";
+import Portfolio from "./portfolio";
+import Services from "./Services";
 // import InquiryForm from "./InquiryForm";
 // import Awardsection from "./Awardsection";
-// import TestimonialSlider from "./Testimonials";
+import TestimonialSlider from "./Testimonials";
+import Honors from "./Honors";
 import img1 from "../../assests/Images/Cyber/scan-gif-1.gif";
 import img2 from "../../assests/Images/Cyber/scan-gif-2.gif"; 
 import img3 from "../../assests/Images/Cyber/scan-gif-3.gif";
@@ -19,6 +24,7 @@ import img6 from "../../assests/Images/Cyber/ai-scan.png";
 import img7 from "../../assests/Images/Cyber/seamless_integrations.png";
 import img8 from "../../assests/Images/Cyber/vulnerability_detectors.png";
 import img9 from "../../assests/Images/Cyber/audit_report.png";
+
 
 
 
@@ -296,15 +302,17 @@ export default function HomeBanner() {
         </ul>
         {/* functionalities ends */}
       </section>
-
-      <QuickScan />
+      <WhyChooseUs/>  
       <WhyInfoziant />
-      {/* <Partnership/>
+      <Partnership/>
+      <Accreditations />
+      <Portfolio />
       <Services />
-      <Awardsection/>
+     
       <TestimonialSlider />
-      <Footer />
-      {isFormOpen && <InquiryForm closeModal={toggleForm} />} */}
+      <Honors />
+     
+      {/* {isFormOpen && <InquiryForm closeModal={toggleForm} />} */} 
 
     </div>
   );

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import './css/Testimonials.css';
+import '../css/Testimonials.css';
 import { GrNext } from "react-icons/gr";
+import image1 from "../../assests/Images/testimonial-1.jpg";
+import image2 from "../../assests/Images/testimonial-2.jpg";
+import image3 from "../../assests/Images/testimonial-3.jpg";
 
 // Testimonial Data
 const testimonials = [
@@ -9,19 +12,19 @@ const testimonials = [
     name: "Mr. Senthil Kumar",
     title: "CEO , Vasa infotech",
     content: "Infoziant security testing was crucial in finding the security flaws at vasaits educational portal. There were several applications inside vasaits and Infoziant team organzised the metrics for security checks in stages. The remediations provided by infoziant is highly helpful for the development team to fix the security bugs.",
-    image:"./testimonial-1.jpg"
+    image:image1
   },
   {
     name: "Mr. Ilanghovan K R",
     title: "Managing Director, Oasys",
     content: "Infoziant and Oasys is engaged for more than 3 years in various security testing projects, as oasys we work on several government of India projects- Infoziant places a vital role in protecting them against cyber security threats. Tony and the team makes quick resolutions for the queries raised.",
-    image:"./testimonial-2.jpg"  
+    image:image2
   },
   {
     name: "Mr. Bharat Saoji",
     title: "Vice President IT, Keenan &amp; Associates",
     content: "Infoziant is been associated with Keenan &amp; Associates for more than 5 years and the security testing services provided by them makes our application free from security threats. Tony and team is very supportive as they respond to us any time round the clock",
-    image:"./testimonial-3.jpg"  
+    image:image3
   },
 ];
 
