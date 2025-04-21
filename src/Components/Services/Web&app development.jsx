@@ -9,6 +9,7 @@ import StatsScroller from './Stats/StatsScroller';
 import CollegeClients from './Clients/CollegeClients';
 import collaborationImage from "../../assests/Images/Banner/WebDev.jpg";
 import itsolutionImage from "../../assests/Images/Banner/WebDev2.png";
+import ConsultationForm from '../Pages/ConsultationForm';
 const slides = [
   {
     heading: "Strong & Business-Focused",
@@ -38,6 +39,7 @@ const WebandApp = () => {
        
       
         <TestimonialSection />
+          <ConsultationForm />
         {/* <ContactSection /> */}
         {/* <Footer /> */}
   
