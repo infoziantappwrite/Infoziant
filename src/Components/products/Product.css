@@ -1,0 +1,499 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mark+Pro:wght@400;700&display=swap');
+
+
+.product-page{
+  background: url('../../assests/Images/info-bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Section styling */
+.first-section {
+  padding: 10% 10% 5% 10%;
+  text-align: left;
+  position: relative;
+  min-height: auto;
+}
+
+.first-section h1,
+.second-section h1,
+.sixth-section h1,
+.fifth-section h1,
+.slider-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(0deg, #15F5BA, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  margin-bottom: 40px;
+}
+
+/* Container for text and image */
+.first-section .contain {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 10px;
+
+}
+
+
+
+.first-section .desc,
+.scanners {
+  padding-right: 0px;
+  font-size: 50px;
+  line-height: 1.5;
+ 
+  text-align: left;
+  
+}
+.first-section .desc{
+  background: linear-gradient(0deg, #15F5BA, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-size: 50px;
+  font-weight: bolder;
+
+}
+
+.first-section .hightlights{
+  background: linear-gradient(180deg, #15F5BA, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-size: 50px;
+}
+
+.first-section .para-inside-desc{
+  font-size: 18px;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.first-section .scanners {
+  position: relative;
+  /* Ensure the pseudo-element is positioned relative to the .scanners div */
+  padding: 1% 1% 1% 5%;
+  /* Add left padding to accommodate the border */
+}
+
+/* Create the gradient border using a pseudo-element */
+.first-section .scanners::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  /* Width of the "border" */
+  background: linear-gradient(180deg, #15F5BA, #0066ff);
+  /* Gradient for border-left */
+}
+
+.first-section .scanners ul {
+  list-style-type: disc;
+  margin-left: 10px;
+}
+
+.first-section .product-image-container {
+  flex: 1;
+  text-align: justify;
+  /* Align image to the right */
+}
+
+.first-section .product-image {
+  max-width: 380px;
+  animation: shake 8s infinite ease-in-out;
+  position: relative;
+}
+
+/* Simulate gradient shadow using pseudo-element */
+.first-section .product-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(8px);
+  border-radius: 10px;
+  background: linear-gradient(45deg, #15F5BA, #0066ff);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  /* Soft shadow for extra effect */
+}
+
+.first-section .animated_icons{
+  display: flex;
+  margin-top: 55px;
+}
+
+/* Shake animation in all directions */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-3px, -3px);
+    /* Move left and up */
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(3px, 3px);
+    /* Move right and down */
+  }
+}
+
+@media (max-width: 1020px) {
+  .first-section .contain {
+    flex-direction: column;
+    /* Stack text and image on top of each other */
+    text-align: center;
+  }
+  .first-section .product-image {
+    max-width: 50%;
+    animation: shake 8s infinite;
+    margin-left: 175px;
+  }
+}
+
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .first-section .contain {
+    flex-direction: column;
+    /* Stack text and image on top of each other */
+    text-align: center;
+  }
+
+  .first-section .scanners {
+    position: relative;
+    /* Ensure the pseudo-element is positioned relative to the .scanners div */
+    padding: 0% 0% 0% 5%;
+    /* Add left padding to accommodate the border */
+  }
+
+  .first-section .text {
+    margin-bottom: 20px;
+  }
+
+  .first-section h1,
+  .second-section h1,
+  .fifth-section h1,
+  .sixth-section h1,
+  .slider-section h1{
+    font-size: 1.2rem;
+  }
+
+ 
+  .first-section .product-image-container {
+    text-align: center;
+  }
+
+  .first-section .product-image {
+    max-width: 80%;
+    animation: shake 8s infinite;
+  }
+  .first-section .hightlights{
+    background: linear-gradient(0deg, #15F5BA, #0066ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-size: 30px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .first-section h1,
+  .second-section h1,
+  .fifth-section h1,
+  .sixth-section h1,
+  .slider-section h1{
+    font-size: 1.3rem;
+  }
+  .first-section{
+    
+  }
+  .first-section .contain{
+    padding: 5%;
+    margin-top: 15%;
+    gap: 0px;
+   
+  }
+
+  .first-section .scanners {
+    position: relative;
+    /* Ensure the pseudo-element is positioned relative to the .scanners div */
+    padding: 1% 1% 1% 5%;
+    /* Add left padding to accommodate the border */
+  }
+
+  .first-section .product-image {
+    max-width: 80%;
+    animation: shake 8s infinite;
+  }
+}
+
+/* Fade-in animation for the text */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Slightly translate the text upwards */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* Back to its original position */
+  }
+}
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.first-section .animated-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  animation: bounce 2s infinite;
+}
+
+
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .first-section .contain {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .first-section h1 {
+    font-size: 2rem; /* Adjusted for better readability */
+  }
+
+  .first-section .desc {
+    padding-right: 0;
+    font-size: 40px;
+  }
+
+  .first-section .para-inside-desc {
+    font-size: 16px;
+  }
+
+  .first-section .product-image {
+    max-width: 70%;
+    margin: 20px auto;
+    animation: shake 8s infinite;
+  }
+
+  .animated-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .first-section {
+    padding: 20px;
+  }
+
+  .first-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .first-section .desc {
+    padding-right: 0;
+    font-size: 2rem; /* Reduced font size */
+  }
+
+  .first-section .para-inside-desc {
+    font-size: 14px;
+  }
+
+  .first-section .product-image-container {
+    text-align: center;
+  }
+
+  .first-section .product-image {
+    max-width: 90%;
+    animation: shake 8s infinite;
+  }
+
+  .first-section .contain {
+    gap: 10px;
+  }
+
+  .animated-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+/*END OF THE FIRST SECTION*/
+
+/*secong section start*/
+.product-page .second-section {
+  padding: 40px 80px 60px 80px;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+
+.product-page .second-section .you-tube-video {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.product-page .second-section .video-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.product-page .second-section .video-thumbnail {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.product-page .second-section .thumbnail-image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px rgba(21, 245, 186, 0.8), 0 0 10px rgba(0, 102, 255, 0.8);
+  border-radius: 10px;
+}
+
+.product-page .second-section .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-page .second-section .play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.product-page .second-section .play-icon {
+  font-size: 60px;
+}
+
+@media (max-width: 768px) {
+  .product-page .second-section {
+    padding: 60px 20px; /* Reduce padding for smaller screens */
+  }
+  
+  .product-page .second-section .play-button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .product-page .second-section .video-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-page .second-section {
+    padding: 40px 10px; /* Further reduce padding for extra small screens */
+  }
+  
+  .product-page .second-section .play-button {
+    width: 50px;
+    height: 50px;
+    top: 45%;
+  left: 45%;
+  }
+  .second-section h1{
+    font-size: 2rem;
+
+  }
+  
+  .product-page .second-section .video-title {
+    font-size: 2rem;
+  }
+}
+
+.product-page .video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.product-page .video-container iframe {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  border: none;
+}
+
+.product-page .video-container .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.product-page .video-container .close-button:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .product-page .video-container iframe {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-page .video-container iframe {
+    width: 95%;
+    height: 95%;
+  }
+}
