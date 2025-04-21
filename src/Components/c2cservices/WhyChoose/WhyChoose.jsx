@@ -55,7 +55,25 @@ const WhyChooseInfoziant = ({ heading, points, description, image }) => {
         </motion.p>
 
         <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Left side with all points */}
+          {/* Left side with image */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 w-full md:w-1/2 h-full"
+          >
+            <div className="w-full h-full rounded-2xl overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center">
+                <img
+                  src={image}
+                  alt="Dynamic Content"
+                  className="w-3/4 h-3/4 object-cover object-center rounded-2xl"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right side with points */}
           <div className="flex-1 space-y-6">
             {points.map((point, index) => (
               <motion.div
@@ -66,9 +84,7 @@ const WhyChooseInfoziant = ({ heading, points, description, image }) => {
                 className="flex items-center group"
               >
                 <div
-                  className={`text-white p-3 rounded-full bg-gradient-to-br ${
-                    iconColors[index % iconColors.length]
-                  } transition-all duration-300 group-hover:scale-110 shadow-md mr-4 flex-shrink-0`}
+                  className={`text-white p-3 rounded-full bg-gradient-to-br ${iconColors[index % iconColors.length]} transition-all duration-300 group-hover:scale-110 shadow-md mr-4 flex-shrink-0`}
                 >
                   {iconList[index % iconList.length]}
                 </div>
@@ -78,27 +94,6 @@ const WhyChooseInfoziant = ({ heading, points, description, image }) => {
               </motion.div>
             ))}
           </div>
-
-          {/* Right side with image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 w-full md:w-1/2 h-full"
-          >
-            <div className="w-full h-full rounded-2xl overflow-hidden">
-              {/* Image Container */}
-              <div className="w-full h-full flex items-center justify-center">
-                {/* Dynamically Render Image with Size Adjustments */}
-                <img
-                  src={image}
-                  alt="Dynamic Content"
-                  className="w-3/4 h-3/4 object-cover object-center rounded-2xl"
-                />
-              </div>
-            </div>
-
-          </motion.div>
         </div>
       </div>
 
