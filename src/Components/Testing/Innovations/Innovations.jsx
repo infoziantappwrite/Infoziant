@@ -109,13 +109,7 @@ const OurInnovationsPage = () => {
                   </div>
                 </div>
 
-                {/* Learn more */}
-                <div className="mt-6 flex justify-end">
-                  <div className="text-sm font-medium flex items-center text-gray-800 group-hover:text-white transition-all duration-300">
-                    Learn more
-                    <ChevronRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
-                </div>
+                
               </div>
 
               {/* Bottom Line */}

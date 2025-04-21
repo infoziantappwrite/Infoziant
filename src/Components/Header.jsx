@@ -94,7 +94,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 text-gray-800 font-medium relative">
-          {navLinks.slice(0, 2).map((link, index) => (
+          {navLinks.slice(0, 1).map((link, index) => (
             <div key={index}>
               <Link
                 to={link.path}
