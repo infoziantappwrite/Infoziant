@@ -12,6 +12,7 @@ import noprofile from "../../assests/noprofile.png";
 import WhatIsCodeChef from './WhatIs/WhatIs';
 import Achievements from "./WhatWeCOE/WhatWeCOE";
 import achievementImg from "./WhatWeCOE/WeOffer.gif"; 
+import JoinCoEMovement from "./JoinCoe/JoinCoe";
 import {
   FaLaptopCode,
   FaChalkboardTeacher,
@@ -151,6 +152,8 @@ const COE = () => {
                       // Add more testimonials here
                     ]}
           />
+
+          <JoinCoEMovement />
 
           <ConsultationFormForCo />
     </div>
