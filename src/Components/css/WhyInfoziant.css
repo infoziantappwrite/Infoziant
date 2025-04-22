@@ -13,20 +13,20 @@
 
 .info-div{
     display: flex;
-    gap: 2%;
+    gap: 1%;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .infoCard {
-    margin: 3% 1%;
+    margin: 2% 1%;
     padding: 20px;
     border-radius: 8px;
     background: #f9f9f9;
     position: relative;
     overflow: hidden;
-    width: 300px;
+    width: 280px;
     transition: all 0.3s ease;
     background-color: black;
     color: white;
