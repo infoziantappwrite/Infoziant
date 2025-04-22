@@ -31,12 +31,15 @@ import Blog3Detail from './Components/c2cservices/Blog/Blog3Detail';
 import Blog4Detail from './Components/c2cservices/Blog/Blog4Detail';
 import Blog5Detail from './Components/c2cservices/Blog/Blog5Detail';
 import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
-
-
+import About from './Components/About/About';
 import Awards from './Components/Pages/Awards';
 import Contact from './Components/Pages/Contact';
 import Vapt from './Components/VAPT/Vapt';
-
+import WebAndMobile from './Components/VAPTservices/WebAndMobile';
+import NetworkInfrastructure from './Components/VAPTservices/NetworkInfrastructure';
+import CloudInfrastructure from './Components/VAPTservices/CloudInfrastructure';
+import ApiVapt from './Components/VAPTservices/ApiVapt';
+import Siem from './Components/VAPTservices/Siem';
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
     <img src="/Test.jpg" alt="Coming Soon" className="w-full h-full object-contain" />
@@ -60,7 +63,7 @@ const App = () => {
       <Header />
       <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="/about" element={<Page title="About Us" />} />
+      <Route path="/about/cybersecurity-services" element={<About/>} />
       <Route path="/product" element={<Products/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/awards" element={<Awards />} />
@@ -81,9 +84,12 @@ const App = () => {
       <Route path="/strengthening-your-digital-fortress" element={<Blog4Detail />} />
       <Route path="/elevating-security-with-firewalls" element={<Blog5Detail />} />
       <Route path="/top-5-effective-website-security-tips-for-2024" element={<Blog6Detail />} />
-      <Route path="/vapt" element={<Vapt />} />
-
-
+      <Route path="/services/cybersecurity/vapt" element={<Vapt />} />
+      <Route path="/services/cybersecurity/vapt/network-infrastructure" element={<NetworkInfrastructure />}/>
+      <Route path="/services/cybersecurity/vapt/web-and-mobile-app" element={<WebAndMobile />}/>
+      <Route path="/services/cybersecurity/vapt/cloud-infrastructure" element={<CloudInfrastructure />}/>
+      <Route path="/services/cybersecurity/vapt/api-vapt" element={<ApiVapt />}/>
+      <Route path="/services/cybersecurity/vapt/siem" element={<Siem />}/>
       <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
