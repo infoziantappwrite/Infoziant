@@ -11,6 +11,7 @@ import WhatImage from "../../assests/Images/Banner/offer1.png";
 import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 
 
+
 const Placement_Support = () => {
     const offerHeading = "What We Offer";
     const offerPoints = [
