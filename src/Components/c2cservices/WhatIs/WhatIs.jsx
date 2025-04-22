@@ -21,7 +21,7 @@ const WhatIsCodeChef = ({ heading, subheading, description, image, ctaText, ctaL
           <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-teal-300 via-teal-500 to-blue-500 bg-clip-text text-transparent mb-4">
             {heading}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-teal-400 via-teal-400 to-blue-500 rounded-full mx-auto my-2"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-teal-400 via-blue-400 to-blue-500 rounded-full mx-auto my-2"></div>
           <p className="text-xl sm:text-2xl font-medium text-gray-100">
             {subheading}
           </p>

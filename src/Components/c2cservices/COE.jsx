@@ -5,10 +5,20 @@ import placementImage from "../../assests/Images/Banner/Coes.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
 import WhyChooseImage from "../../assests/Images/Banner/whycoe3.png";
-import WhatImage from "../../assests/Images/Banner/whatwedo3.png";
+import WhatImage from "../../assests/Images/Banner/empowering3.png";
 import KeyHighlights from './KeyHighlights/KeyHighlights';
 import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 import noprofile from "../../assests/noprofile.png";
+import WhatIsCodeChef from './WhatIs/WhatIs';
+import Achievements from "./WhatWeCOE/WhatWeCOE";
+import achievementImg from "./WhatWeCOE/WeOffer.gif"; 
+import {
+  FaLaptopCode,
+  FaChalkboardTeacher,
+  FaProjectDiagram,
+  FaCertificate,
+  FaTools,
+} from "react-icons/fa";
 
 
 const COE = () => {
@@ -30,6 +40,46 @@ const COE = () => {
         "Faculty Enablement Workshops",
     ];
 
+    const codechefData = {
+      heading: "Empowering Campuses. Enabling Careers",
+      description: `At Infoziant Security, our Centre of Excellence (CoE) program transforms academic institutions into innovation hubs by bridging the gap between industry and academia.
+              We equip colleges with the skills, tools, and expert training needed to build futureready
+              professionals in Cybersecurity and Artificial Intelligence.`,
+    };
+
+    const achievementData = [
+      {
+        title: "Turnkey CoE Setup",
+        desc: "Industry-grade infrastructure, labs, and licensed tools tailored to Cybersecurity and AI.",
+        icon: <FaTools />,
+        color: "from-pink-500 to-pink-700",
+      },
+      {
+        title: "Job-Oriented Curriculum",
+        desc: "Aligned with current and emerging industry roles and mapped to global standards.",
+        icon: <FaLaptopCode />,
+        color: "from-yellow-400 to-yellow-600",
+      },
+      {
+        title: "Expert-Led Training",
+        desc: "Courses delivered by seasoned professionals with real-world experience.",
+        icon: <FaChalkboardTeacher />,
+        color: "from-green-400 to-green-600",
+      },
+      {
+        title: "Project-Based Learning",
+        desc: "Practical labs, real-time use cases, and hands-on problem-solving scenarios.",
+        icon: <FaProjectDiagram />,
+        color: "from-blue-400 to-blue-600",
+      },
+      {
+        title: "Global Certification Pathway",
+        desc: "Internationally recognized certifications and internship opportunities.",
+        icon: <FaCertificate />,
+        color: "from-indigo-400 to-indigo-600",
+      },
+    ];
+
 
   return (
     <div>
@@ -44,6 +94,17 @@ const COE = () => {
         secondaryBtnLink="#contact"
         image={placementImage}
       />
+
+      <WhatIsCodeChef 
+        heading={codechefData.heading}
+        subheading={codechefData.subheading}
+        description={codechefData.description}
+        image={WhatImage}
+        ctaText={codechefData.ctaText}
+        ctaLink={codechefData.ctaLink}
+      />
+
+
        <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage} />
 
        <WhyChoose
@@ -56,7 +117,14 @@ const COE = () => {
             "Customizable delivery (hybrid/fully offline)",
             "Proven success across 30+ institutions",
           ]}
-          image = {WhyChooseImage} // ✅ pass image here
+          image = {WhyChooseImage} 
+        />
+
+        <Achievements
+          title="What Makes Our CoE Unique"
+          subtitle="Empowering talent with industry-driven excellence"
+          image={achievementImg}
+          achievements={achievementData}
         />
 
             <KeyHighlights heading={highlights} points={points}/>
