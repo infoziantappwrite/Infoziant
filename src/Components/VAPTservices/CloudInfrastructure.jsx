@@ -1,4 +1,4 @@
-import "./css/ServicesList.css";
+import "../css/ServicesList.css";
 import {
   BsDatabaseLock,
   BsShieldLock,
@@ -7,10 +7,7 @@ import {
 } from "react-icons/bs";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { BsFillOctagonFill } from "react-icons/bs";
-import ConsultationForm from "./ConsultationForm";
+import ConsultationForm from "../VAPT/ConsultationForm";
 import ServiceCards from "./ServiceCards";
 import { Helmet } from "react-helmet";
 
@@ -21,7 +18,7 @@ const serviceListData = [
       "Is your cloud ecosystem showing glaring vulnerabilities from the get-go?",
     content:
       "We’ll conduct through assessments pre, during, and post-migration and complement it by doing preemptive checks of the overall security posture as well. We’ll also perform deep-dive analytics and create gap analysis reports.",
-    image: "./assets/s3-1.jpg",
+    image: "/assets/s3-1.jpg",
     imageWidth: "900px",
   },
   {
@@ -29,7 +26,7 @@ const serviceListData = [
     title: "Are you not confident with your API’s security?",
     content:
       "We’ll help you optimize your API architecture to make it more amenable to your digital-first workflows. We’ll prevent serverless apps, shadow APIs, and API authentication concerns by ensuring continuous API discovery and maintaining deep security layers. Enjoy better distributed access, policy, and traffic controls. Reduce API vulnerabilities through auto-remediation. ",
-    image: "./assets/s3-2.jpg",
+    image: "/assets/s3-2.jpg",
   },
   {
     id: 3,
@@ -37,7 +34,7 @@ const serviceListData = [
       "Are you having problems integrating Amazon Web Services (AWS) and Azure?",
     content:
       "When integrating AWS and Azure, we’ll help you attain a single point of security ownership by tightening security controls. Expect effective and efficient solutions to AWS/Azure security architecture, automation, and compliance.",
-    image: "./assets/s3-3.jpg",
+    image: "/assets/s3-3.jpg",
   },
 ];
 
@@ -139,11 +136,11 @@ export default function CloudInfrastructure() {
           content="Leading the Next Era in Cybersecurity"
         />
       </Helmet>
-      <Navbar />
+     
       <div
         className="service-banner"
         style={{
-          backgroundImage: "url(./assets/cloud-sb.png)",
+          backgroundImage: "url(/assets/cloud-sb.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -185,7 +182,7 @@ export default function CloudInfrastructure() {
           >
             <motion.img
               className="sl-title-img"
-              src="./assets/service-banner-3.png"
+              src="/assets/service-banner-3.png"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -335,10 +332,7 @@ export default function CloudInfrastructure() {
 
       {/* service stands out */}
       <ServiceCards />
-
       <ConsultationForm />
-
-      <Footer />
     </>
   );
 }

@@ -1,14 +1,11 @@
-import "./css/ServicesList.css";
+import "../css/ServicesList.css";
 import { CiMoneyCheck1 } from "react-icons/ci";
 import { FaRegClock } from "react-icons/fa6";
 import { FaBuromobelexperte } from "react-icons/fa6";
 import { MdKeyboardOptionKey } from "react-icons/md";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { BsFillOctagonFill } from "react-icons/bs";
-import ConsultationForm from "./ConsultationForm";
+import ConsultationForm from "../VAPT/ConsultationForm";
 import ServiceCards from "./ServiceCards";
 import { Helmet } from "react-helmet";
 
@@ -18,21 +15,21 @@ const serviceListData = [
     title: "How Do Our Vulnerability Assessments Improve Security?",
     content:
       "Our vulnerability assessments dive deep into your technology architecture to identify hidden weaknesses. By analyzing each component, we enhance security at every level of your infrastructure. This ensures that critical data assets are well-protected from potential threats. Our approach strengthens your overall security posture and mitigates risks effectively.",
-    image: "./assets/s4-1.jpg",
+    image: "/assets/s4-1.jpg",
   },
   {
     id: 2,
     title: "Why Is API Vulnerability Testing Crucial?",
     content:
       "APIs are often vulnerable entry points for attackers, leading to data breaches and unauthorized access if not properly secured. Our API Vulnerability Assessment and Penetration Testing (VAPT) services detect weaknesses early on, helping prevent threats before they impact your system. By proactively addressing risks, we ensure your APIs maintain their integrity and security. This enhances protection across your digital ecosystem",
-    image: "./assets/s4-2.jpg",
+    image: "/assets/s4-2.jpg",
   },
   {
     id: 3,
     title: "What Does Our API Security Testing Involve?",
     content:
       "Our comprehensive API security testing covers key areas such as broken authentication mechanisms, sensitive data exposure, and API misuse. We conduct in-depth assessments to identify these vulnerabilities and ensure compliance with industry security standards. With a proactive focus, we help secure your APIs from potential breaches, safeguarding your operations and preventing unauthorized access.",
-    image: "./assets/s4-3.jpg",
+    image: "/assets/s4-3.jpg",
   },
 ];
 
@@ -134,11 +131,11 @@ export default function ApiVapt() {
           content="Leading the Next Era in Cybersecurity"
         />
       </Helmet>
-      <Navbar />
+      
       <div
         className="service-banner"
         style={{
-          backgroundImage: "url(./assets/api-sb.png)",
+          backgroundImage: "url(/assets/api-sb.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -180,7 +177,7 @@ export default function ApiVapt() {
           >
             <motion.img
               className="sl-title-img"
-              src="./assets/service-banner-4.png"
+              src="/assets/service-banner-4.png"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -373,7 +370,7 @@ export default function ApiVapt() {
 
       <ConsultationForm />
 
-      <Footer />
+      
     </>
   );
 }

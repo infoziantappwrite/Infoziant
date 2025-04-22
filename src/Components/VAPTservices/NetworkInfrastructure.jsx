@@ -1,4 +1,4 @@
-import "./css/ServicesList.css";
+import "../css/ServicesList.css";
 import {
   BsDatabaseLock,
   BsShieldLock,
@@ -7,10 +7,7 @@ import {
 } from "react-icons/bs";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { BsFillOctagonFill } from "react-icons/bs";
-import ConsultationForm from "./ConsultationForm";
+import ConsultationForm from "../VAPT/ConsultationForm";
 import ServiceCards from "./ServiceCards";
 import { Helmet } from "react-helmet";
 
@@ -21,21 +18,21 @@ const serviceListData = [
       "Are your web apps being plagued by security issues and other vulnerabilities?",
     content:
       "Our Application Vulnerability Testing Service pinpoints security errors that automated tools may overlook, guided by the OWASP ASVS testing framework. We conduct black-box, white-box, and grey-box testing to eliminate all types of vulnerabilities in your app. Additionally, we simulate real-world attacks to thoroughly assess overall security quality, ensuring your application is well-protected against potential threats",
-    image: "./assets/s1-1.jpg",
+    image: "/assets/s1-1.jpg",
   },
   {
     id: 2,
     title: "Are your APIs vulnerable to hackers?",
     content:
       "We’re here to perform in-depth security checks to help your app meet OWASP security standards. Our team conducts thorough analyses of your data, examining it both at rest and in transit. Additionally, we create detailed reports that identify all vulnerabilities along with their associated risk ratings, ensuring you have a clear understanding of your security posture.",
-    image: "./assets/s1-2.jpg",
+    image: "/assets/s1-2.jpg",
   },
   {
     id: 3,
     title: "Do you think your chatbots’ at risk?",
     content:
       "We’ll help clear any lingering doubts by implementing two-factor or biometric authentication for added security. Our approach includes securing user IDs and passwords in real time, ensuring sensitive information is protected. Additionally, we trigger authentication timeouts to minimize the risk of unauthorized access, enhancing the overall security of your chatbot system.",
-    image: "./assets/s1-3.jpg",
+    image: "/assets/s1-3.jpg",
   },
 ];
 
@@ -136,11 +133,11 @@ export default function NetworkInfrastructure() {
         />
       </Helmet>
       
-      <Navbar />
+      
       <div
         className="service-banner"
         style={{
-          backgroundImage: "url(./assets/network-sb.png)",
+          backgroundImage: "url(/assets/network-sb.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -181,7 +178,7 @@ export default function NetworkInfrastructure() {
           >
             <motion.img
               className="sl-title-img"
-              src="./assets/service-banner-1.png"
+              src="/assets/service-banner-1.png"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -237,8 +234,7 @@ export default function NetworkInfrastructure() {
           <span className="highlight">Network Infrastructure</span> and how we
           address them:
         </h1>
-        <br />
-
+        <br/>
         <motion.section
           ref={servicesRef}
           className="services-section-sl"
@@ -331,10 +327,8 @@ export default function NetworkInfrastructure() {
 
       {/* service stands out */}
       <ServiceCards />
-
       <ConsultationForm />
 
-      <Footer />
     </>
   );
 }

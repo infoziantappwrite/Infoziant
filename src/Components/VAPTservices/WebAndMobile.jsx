@@ -1,13 +1,11 @@
-import "./css/ServicesList.css";
+import "../css/ServicesList.css";
 import { MdGroups } from "react-icons/md";
 import { MdManageHistory } from "react-icons/md";
 import { FiClipboard } from "react-icons/fi";
 import { MdBusinessCenter } from "react-icons/md";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import ConsultationForm from "./ConsultationForm";
+import ConsultationForm from "../VAPT/ConsultationForm";
 import ServiceCards from "./ServiceCards";
 import { Helmet } from "react-helmet";
 
@@ -17,7 +15,7 @@ const serviceListData = [
     title: "Want to better fortify your Android app?",
     content:
       "By collaborating with our specialized team of VAPT experts and utilizing cutting-edge tools, we enhance your mobile app security. We identify and eradicate vulnerability flaws, ensuring robust protection for your application. Additionally, we provide regular consolidated reports on potential risks, keeping you informed and prepared to tackle any security challenges.",
-    image: "./assets/s2-1.jpg",
+    image: "/assets/s2-1.jpg",
   },
   {
     id: 2,
@@ -25,7 +23,7 @@ const serviceListData = [
       "Are you having doubts about your iOS app’s ability to address threats?",
     content:
       "Are you concerned about your iOS app's ability to address security threats? We will alleviate those doubts by identifying exploitable security issues and enabling the secure extension of business applications on iOS platforms. Our focus is on protecting the integrity and security of sensitive, business-critical data, ensuring your app remains robust against potential vulnerabilities.",
-    image: "./assets/s2-2.jpg",
+    image: "/assets/s2-2.jpg",
   },
   {
     id: 3,
@@ -33,7 +31,7 @@ const serviceListData = [
       "Want to further reinforce your app’s security and enjoy broad-spectrum protection?",
     content:
       "Do you want to further enhance your app's security and benefit from broad-spectrum protection? With OS hardening, we will develop a secure path for software upgrades and patches while tightening security configuration settings. Additionally, we create reusable OS hardening templates, ensuring a consistent and robust defense against potential threats.",
-    image: "./assets/s2-3.jpg",
+    image: "/assets/s2-3.jpg",
   },
 ];
 
@@ -135,11 +133,11 @@ export default function WebAndMobile() {
           content="Leading the Next Era in Cybersecurity"
         />
       </Helmet>
-      <Navbar />
+      
       <div
         className="service-banner"
         style={{
-          backgroundImage: "url(./assets/web-sb.png)",
+          backgroundImage: "url(/assets/web-sb.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -181,7 +179,7 @@ export default function WebAndMobile() {
           >
             <motion.img
               className="sl-title-img"
-              src="./assets/service-banner-2.png"
+              src="/assets/service-banner-2.png"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -325,15 +323,11 @@ export default function WebAndMobile() {
             ))}
           </ul>
         </section>
-        {/* slideshow feature ends */}
       </section>
 
       {/* service stand out */}
-      <ServiceCards />
-
+      <ServiceCards/>
       <ConsultationForm />
-
-      <Footer />
     </>
   );
 }
