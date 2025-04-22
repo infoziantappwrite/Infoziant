@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, ChevronUp, ChevronLeft } from "lucide-react";
 
@@ -7,8 +7,13 @@ const Header = () => {
   const [showServices, setShowServices] = useState(false);
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hoverTimeout, setHoverTimeout] = useState(null);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
+  const [showVAPT, setShowVAPT] = useState(false);
+  
+  // Use refs to track hover states
+  const categoryTimeoutRef = useRef(null);
+  const subMenuTimeoutRef = useRef(null);
+  const vaptTimeoutRef = useRef(null);
 
   const toggleCategory = (index) => {
     setExpandedCategory((prev) => (prev === index ? null : index));
@@ -23,6 +28,14 @@ const Header = () => {
     setExpandedCategory(null);
     setMobileMenuOpen(false);
     setExpandedMobileItem(null);
+    setShowVAPT(false);
+  };
+
+  // Clear all timeouts to prevent premature closing
+  const clearAllTimeouts = () => {
+    if (categoryTimeoutRef.current) clearTimeout(categoryTimeoutRef.current);
+    if (subMenuTimeoutRef.current) clearTimeout(subMenuTimeoutRef.current);
+    if (vaptTimeoutRef.current) clearTimeout(vaptTimeoutRef.current);
   };
 
   const dropdownMenu = [
@@ -128,12 +141,15 @@ const Header = () => {
                     key={menu.index}
                     className={`mb-3 relative group ${menu.index === 0 ? "border-b border-gray-300 pb-3" : ""}`}
                     onMouseEnter={() => {
-                      if (hoverTimeout) clearTimeout(hoverTimeout);
+                      clearAllTimeouts();
                       setExpandedCategory(menu.index);
                     }}
                     onMouseLeave={() => {
-                      const timeout = setTimeout(() => setExpandedCategory(null), 300);
-                      setHoverTimeout(timeout);
+                      categoryTimeoutRef.current = setTimeout(() => {
+                        if (!showVAPT) {
+                          setExpandedCategory(null);
+                        }
+                      }, 800);
                     }}
                   >
                     <button
@@ -149,12 +165,39 @@ const Header = () => {
                     </button>
 
                     {expandedCategory === menu.index && (
-                      <div className="absolute top-0 -left-[340px] w-[320px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50">
+                      <div 
+                        className="absolute top-0 -left-[340px] w-[320px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50"
+                        onMouseEnter={() => {
+                          clearAllTimeouts();
+                        }}
+                        onMouseLeave={() => {
+                          subMenuTimeoutRef.current = setTimeout(() => {
+                            if (!showVAPT) {
+                              setExpandedCategory(null);
+                            }
+                          }, 800);
+                        }}
+                      >
                         {menu.items.map((item, idx) => (
                           <div key={idx} className="group relative">
-                            <div className="relative group/item flex items-center">
-                            {/* Add < symbol only for "Cybersecurity Services" */}
-                            {item.name === "Cybersecurity Services" && <ChevronLeft className="w-4 h-4 mr-2" />}
+                            <div 
+                              className="relative group/item flex items-center"
+                              onMouseEnter={() => {
+                                clearAllTimeouts();
+                                if (item.name === "Cybersecurity Services") {
+                                  setShowVAPT(true);
+                                }
+                              }}
+                              onMouseLeave={() => {
+                                if (item.name === "Cybersecurity Services") {
+                                  vaptTimeoutRef.current = setTimeout(() => {
+                                    setShowVAPT(false);
+                                  }, 800); 
+                                }
+                              }}
+                            >
+                       
+                              {item.name === "Cybersecurity Services" && <ChevronLeft className="w-4 h-4 mr-2" />}
                               <Link
                                 to={item.path}
                                 onClick={closeAllMenus}
@@ -163,16 +206,18 @@ const Header = () => {
                                 {item.name}
                               </Link>
 
-                              {item.subItems && (
+                              {item.name === "Cybersecurity Services" && showVAPT && (
                                 <div
-                                  className="absolute -top-3 -left-[250px] ml-3 w-[220px] bg-white border border-gray-200 rounded-lg shadow-lg p-3 z-50 opacity-0 invisible group-hover/item:visible group-hover/item:opacity-100 transition-opacity duration-200"
+                                  className="absolute -top-3 -left-[210px] ml-3 w-[180px] bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-50 flex flex-col justify-center items-center"
                                   onMouseEnter={() => {
-                                    if (hoverTimeout) clearTimeout(hoverTimeout); 
-                                    setExpandedCategory(menu.index); 
+                                    clearAllTimeouts();
+                                    setShowVAPT(true);
+                                    setExpandedCategory(menu.index);
                                   }}
                                   onMouseLeave={() => {
-                                    const timeout = setTimeout(() => setExpandedCategory(null), 3000); 
-                                    setHoverTimeout(timeout); 
+                                    vaptTimeoutRef.current = setTimeout(() => {
+                                      setShowVAPT(false);
+                                    }, 800);
                                   }}
                                 >
                                   {item.subItems.map((subItem, subIdx) => (
@@ -180,7 +225,7 @@ const Header = () => {
                                       key={subIdx}
                                       to={subItem.path}
                                       onClick={closeAllMenus}
-                                      className="block text-[14px] text-gray-700 hover:text-blue-900 hover:underline"
+                                      className="block text-[14px] text-gray-700 mt-1 hover:text-blue-900 hover:underline text-center"
                                     >
                                       {subItem.name}
                                     </Link>
@@ -256,7 +301,6 @@ const Header = () => {
                       <div className="ml-4 mt-2 space-y-2">
                         {menu.items.map((item, idx) => (
                           <div key={idx}>
-                            {/* For items with subItems, make it a toggleable button */}
                             {item.subItems ? (
                               <div>
                                 <button
@@ -286,7 +330,6 @@ const Header = () => {
                                 </div>
                               </div>
                             ) : (
-                              // Regular items without subItems
                               <Link
                                 to={item.path}
                                 onClick={closeAllMenus}
