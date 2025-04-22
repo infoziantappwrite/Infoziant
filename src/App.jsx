@@ -31,6 +31,7 @@ import Blog3Detail from './Components/c2cservices/Blog/Blog3Detail';
 import Blog4Detail from './Components/c2cservices/Blog/Blog4Detail';
 import Blog5Detail from './Components/c2cservices/Blog/Blog5Detail';
 import Blog6Detail from './Components/c2cservices/Blog/Blog6Detail';
+import About from './Components/About/About';
 
 
 import Awards from './Components/Pages/Awards';
@@ -60,7 +61,7 @@ const App = () => {
       <Header />
       <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="/about" element={<Page title="About Us" />} />
+      <Route path="/about/cybersecurity-services" element={<About/>} />
       <Route path="/product" element={<Products/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/awards" element={<Awards />} />
