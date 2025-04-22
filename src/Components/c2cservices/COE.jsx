@@ -6,6 +6,7 @@ import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
 import WhyChooseImage from "../../assests/Images/Banner/whycoe3.png";
 import WhatImage from "../../assests/Images/Banner/empowering3.png";
+import carrerempowerment from "../../assests/Images/Banner/team-leader-teamwork-concept.png";
 import KeyHighlights from './KeyHighlights/KeyHighlights';
 import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 import noprofile from "../../assests/noprofile.png";
@@ -59,7 +60,7 @@ const COE = () => {
         title: "Job-Oriented Curriculum",
         desc: "Aligned with current and emerging industry roles and mapped to global standards.",
         icon: <FaLaptopCode />,
-        color: "from-yellow-400 to-yellow-600",
+        color: "from-blue-400 to-blue-600",
       },
       {
         title: "Expert-Led Training",
@@ -71,7 +72,7 @@ const COE = () => {
         title: "Project-Based Learning",
         desc: "Practical labs, real-time use cases, and hands-on problem-solving scenarios.",
         icon: <FaProjectDiagram />,
-        color: "from-blue-400 to-blue-600",
+        color: "from-yellow-400 to-yellow-600",
       },
       {
         title: "Global Certification Pathway",
@@ -100,13 +101,12 @@ const COE = () => {
         heading={codechefData.heading}
         subheading={codechefData.subheading}
         description={codechefData.description}
-        image={WhatImage}
+        image={carrerempowerment}
         ctaText={codechefData.ctaText}
         ctaLink={codechefData.ctaLink}
       />
 
 
-       <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage} />
 
        <WhyChoose
           heading="Why Infoziant CoEs?"
@@ -120,6 +120,8 @@ const COE = () => {
           ]}
           image = {WhyChooseImage} 
         />
+        
+       <Whatweoffer heading={offerHeading} points={offerPoints} image={WhatImage} />
 
         <Achievements
           title="What Makes Our CoE Unique"
