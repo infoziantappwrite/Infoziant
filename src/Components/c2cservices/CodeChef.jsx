@@ -9,6 +9,7 @@ import { FaBook, FaPen, FaFlask, FaRocket } from 'react-icons/fa';
 import HowItWorks from './HowItworks/HowItWorks';
 import KeyHighlights from './KeyHighlights/KeyHighlights';
 import WhatIsCodeChef from './WhatIs/WhatIs';
+import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 
 const CodeChef = () => {
 
@@ -132,6 +133,8 @@ const CodeChef = () => {
             
             ]}
           />
+
+          <ConsultationFormForCo />
     </div>
   );
 };

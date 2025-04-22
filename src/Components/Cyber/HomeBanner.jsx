@@ -24,6 +24,7 @@ import img6 from "../../assests/Images/Cyber/ai-scan.png";
 import img7 from "../../assests/Images/Cyber/seamless_integrations.png";
 import img8 from "../../assests/Images/Cyber/vulnerability_detectors.png";
 import img9 from "../../assests/Images/Cyber/audit_report.png";
+import ConsultationForm from "../Pages/ConsultationForm";
 
 
 
@@ -311,6 +312,7 @@ export default function HomeBanner() {
      
       <TestimonialSlider />
       <Honors />
+      <ConsultationForm />
      
       {/* {isFormOpen && <InquiryForm closeModal={toggleForm} />} */} 
 
