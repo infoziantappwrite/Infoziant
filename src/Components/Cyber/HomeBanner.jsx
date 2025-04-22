@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import "../css/HomeBanner.css";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
+
 
 // import Services from "./Services";
 // import Footer from "./Footer";
@@ -16,7 +18,7 @@ import Services from "./Services";
 import TestimonialSlider from "./Testimonials";
 import Honors from "./Honors";
 import img1 from "../../assests/Images/Cyber/scan-gif-1.gif";
-import img2 from "../../assests/Images/Cyber/scan-gif-2.gif"; 
+import img2 from "../../assests/Images/Cyber/scan-gif-2.gif";
 import img3 from "../../assests/Images/Cyber/scan-gif-3.gif";
 import img4 from "../../assests/Images/Cyber/scan-gif-4.gif";
 import img5 from "../../assests/Images/Cyber/scan-gif-5.gif";
@@ -25,12 +27,15 @@ import img7 from "../../assests/Images/Cyber/seamless_integrations.png";
 import img8 from "../../assests/Images/Cyber/vulnerability_detectors.png";
 import img9 from "../../assests/Images/Cyber/audit_report.png";
 import ConsultationForm from "../Pages/ConsultationForm";
+import InquiryForm from "../InquiryForm";
 
 
 
 
 export default function HomeBanner() {
   // intersection observer start
+  const navigate = useNavigate();
+
   const { ref: ref5, inView: inView5 } = useInView({
     triggerOnce: false,
     threshold: 0.2,
@@ -44,8 +49,8 @@ export default function HomeBanner() {
   // intersection observer end
 
   const words = ["Cybersecurity...", "Scanning...", "Vulnerabilities..."];
-  const imgWords = ["1.Discover & Crawl","2.Assess","3.Detect Risk","4.Resolve","5.Continuously secure"];
-  const images = [img1, img2, img3, img4, img5];  
+  const imgWords = ["1.Discover & Crawl", "2.Assess", "3.Detect Risk", "4.Resolve", "5.Continuously secure"];
+  const images = [img1, img2, img3, img4, img5];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -54,11 +59,11 @@ export default function HomeBanner() {
   const [typingSpeed, setTypingSpeed] = useState(150);
   const [scanningLine, setScanningLine] = useState(true);
   const [progressLoader, setProgressLoader] = useState(true);
-    const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
-    const toggleForm = () => {
-      setIsFormOpen(!isFormOpen); // Toggle form visibility
-    };
+  const toggleForm = () => {
+    setIsFormOpen(!isFormOpen); // Toggle form visibility
+  };
 
   useEffect(() => {
     const handleTyping = () => {
@@ -112,9 +117,9 @@ export default function HomeBanner() {
 
   return (
     <div className="cybarhomeBanner">
-     
+
       <section className="homeBanner-main">
-      
+
         <ul className="home-ul">
           {/* home banner intro */}
           <motion.li
@@ -162,13 +167,22 @@ export default function HomeBanner() {
             </motion.p>
             <br />
             <motion.button
-        className="gs-btn"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={toggleForm}  // Show form when clicked
-      >
-        Get Started
-      </motion.button>
+              className="gs-btn"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleForm}  // Show form when clicked
+            >
+              Get Started
+            </motion.button>
+            <motion.button
+              className="gs-btn"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => navigate("/about/cybersecurity-services")} // Navigate to About page
+            >
+              About Us
+            </motion.button>
+
           </motion.li>
 
           {/* image animation starts */}
@@ -249,7 +263,7 @@ export default function HomeBanner() {
                             : "stopProgressLoader"
                         }
                       >
-                        
+
                       </div>
                     </li>
                   </ul>
@@ -303,18 +317,20 @@ export default function HomeBanner() {
         </ul>
         {/* functionalities ends */}
       </section>
-      <WhyChooseUs/>  
+      <WhyChooseUs toggleForm={toggleForm} />
+      {isFormOpen && <InquiryForm closeModal={() => setIsFormOpen(false)} />}
       <WhyInfoziant />
-      <Partnership/>
+      <Partnership />
       <Accreditations />
       <Portfolio />
       <Services />
-     
+
       <TestimonialSlider />
       <Honors />
       <ConsultationForm />
-     
-      {/* {isFormOpen && <InquiryForm closeModal={toggleForm} />} */} 
+
+
+
 
     </div>
   );

@@ -71,7 +71,7 @@ export default function Vapt() {
         "We identify vulnerabilities in network devices through simulated attacks, strengthening defenses against real threats.",
       imgSrc: "/assets/service-image1.png",
       iconSrc: "/assets/service-icon1.png",
-      link: "/network-infrastructure",
+      link: "/services/cybersecurity/vapt/network-infrastructure",
     },
     {
       title: "Web and Mobile App",
@@ -79,7 +79,7 @@ export default function Vapt() {
         "We assess your web and mobile applications for security risks like SQL injection and XSS to ensure user safety.",
       imgSrc: "/assets/service-image2.png",
       iconSrc: "/assets/service-icon2.png",
-      link: "/web-and-mobile-app",
+      link: "/services/cybersecurity/vapt/web-and-mobile-app",
     },
     {
       title: "Cloud Infrastructure",
@@ -87,7 +87,7 @@ export default function Vapt() {
         "We assess your cloud infrastructure for vulnerabilities and implement safeguards to prevent misconfigurations.",
       imgSrc: "/assets/service-image3.png",
       iconSrc: "/assets/service-icon3.png",
-      link: "/cloud-infrastructure",
+      link: "/services/cybersecurity/vapt/cloud-infrastructure",
     },
     {
       title: "API VAPT",
@@ -95,7 +95,7 @@ export default function Vapt() {
         "We identify vulnerabilities like broken authentication and data exposure in your APIs to ensure secure system transmission.",
       imgSrc: "/assets/service-image4.png",
       iconSrc: "/assets/service-icon4.png",
-      link: "/api-vapt",
+      link: "/services/cybersecurity/vapt/api-vapt",
     },
     {
       title: "SIEM & Threat Intelligence",
@@ -103,7 +103,7 @@ export default function Vapt() {
         "We deliver proactive cybersecurity with SIEM and threat intelligence services, using cutting-edge technologies to prevent threats.",
       imgSrc: "/assets/service-image5.png",
       iconSrc: "/assets/service-icon5.png",
-      link: "/siem",
+      link: "/services/cybersecurity/vapt/siem",
     },
   ];
 

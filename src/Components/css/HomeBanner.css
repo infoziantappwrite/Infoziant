@@ -49,6 +49,7 @@ color: transparent;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  margin-left: 2%;
 
   box-sizing: border-box;
   transition: background 0.4s ease;
