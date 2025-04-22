@@ -83,20 +83,21 @@
   color: #e0e0e0;
 }
 
-.home-banner-content a {
-  text-decoration: none;
+.discover-btn {
   background: linear-gradient(90deg, #15f5ba, #06f);
   color: white;
   padding: 12px 25px;
   border-radius: 30px;
   font-weight: 600;
   transition: background 0.3s ease;
-  width: 180px;
+  border: none;
+  cursor: pointer;
+  display: inline-block; /* ensure it doesn’t stretch */
+  width: fit-content;     /* shrink to fit text */
+  max-width: 100%;        /* prevent overflow just in case */
 }
 
-.home-banner-content a:hover {
-  background: linear-gradient(90deg, #06f, #15f5ba);
-}
+
 
 
 /* Responsive Styles */
