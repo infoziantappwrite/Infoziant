@@ -1,13 +1,11 @@
-import "./css/ServicesList.css";
+import "../css/ServicesList.css";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { FcInspection } from "react-icons/fc";
 import { GrSearchAdvanced } from "react-icons/gr";
 import { SiSecurityscorecard } from "react-icons/si";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import ConsultationForm from "./ConsultationForm";
+import ConsultationForm from "../VAPT/ConsultationForm";
 import ServiceCards from "./ServiceCards";
 import { Helmet } from "react-helmet";
 
@@ -17,21 +15,21 @@ const serviceListData = [
     title: "Network design",
     content:
       "We enhance your network's security efficiency through a priority-based risk-resolution approach. Our services include in-depth vulnerability and penetration assessments, allowing us to identify potential threats. We also leverage business impact analysis to understand the implications of these vulnerabilities on your operations. Additionally, we implement proactive detection monitoring architectures to ensure ongoing protection and rapid response to emerging risks.",
-    image: "./assets/s5-1.jpg",
+    image: "/assets/s5-1.jpg",
   },
   {
     id: 2,
     title: "Firewall Configuration",
     content:
       "We ensure the security of all firewalls, switches, and routers by thoroughly checking for vulnerabilities, administrative flaws, and non-compliance. Our process includes reviewing firewall rules and configurations to identify potential weaknesses. We remediate any security vulnerabilities and resolve misconfigurations to enhance overall protection. Additionally, we align our security measures with your enterprise's specific requirements to ensure compliance and optimal performance across your network.",
-    image: "./assets/s5-2.jpg",
+    image: "/assets/s5-2.jpg",
   },
   {
     id: 3,
     title: "Patch Management",
     content:
       "We empower you to automate security patch updates across your systems and applications, significantly reducing user efforts. Our approach includes scheduling regular vulnerability scans to identify potential risks and harnessing both active and passive scanning modes for comprehensive coverage. This proactive strategy bridges security gaps while ensuring the seamless use of critical applications, enabling your organization to operate securely and efficiently.",
-    image: "./assets/s5-3.jpg",
+    image: "/assets/s5-3.jpg",
   },
 ];
 
@@ -133,11 +131,11 @@ export default function Siem() {
           content="Leading the Next Era in Cybersecurity"
         />
       </Helmet>
-      <Navbar />
+     
       <div
         className="service-banner"
         style={{
-          backgroundImage: "url(./assets/siem-sb.png)",
+          backgroundImage: "url(/assets/siem-sb.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -179,7 +177,7 @@ export default function Siem() {
           >
             <motion.img
               className="sl-title-img"
-              src="./assets/service-banner-5.png"
+              src="/assets/service-banner-5.png"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -332,7 +330,6 @@ export default function Siem() {
 
       <ConsultationForm />
 
-      <Footer />
     </>
   );
 }
