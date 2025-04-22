@@ -36,7 +36,7 @@ const WhatIsCodeChef = ({ heading, subheading, description, image, ctaText, ctaL
             <img
               src={image} 
               alt="CodeChef"
-              className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-xl shadow-xl transform transition-transform hover:scale-105 hover:shadow-2xl"
+              className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-xl  transform transition-transform hover:scale-105 "
             />
           </div>
 

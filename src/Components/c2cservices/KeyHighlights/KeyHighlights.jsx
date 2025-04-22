@@ -2,8 +2,8 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 
 const KeyHighlights = ({ heading, points }) => {
-  const itemsCount = points.length;
-  const isFiveCards = itemsCount === 5;
+  const isOdd = points.length % 2 !== 0;
+  const lastIndex = points.length - 1;
 
   return (
     <section className="w-full py-20 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a365d] text-white font-sans relative overflow-hidden">
@@ -23,20 +23,16 @@ const KeyHighlights = ({ heading, points }) => {
         </div>
 
         {/* Grid */}
-        <div
-          className={`grid gap-6 ${
-            isFiveCards ? "grid-cols-2 md:grid-cols-2" : "sm:grid-cols-2"
-          }`}
-        >
+        <div className="grid gap-6 sm:grid-cols-2">
           {points.map((point, index) => {
-            const isFifth = isFiveCards && index === 4;
+            const isLastOdd = isOdd && index === lastIndex;
 
             return (
               <div
                 key={index}
                 className={`group p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 
                   hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-left
-                  ${isFifth ? "col-span-2 md:col-span-2 md:mx-auto md:w-1/2" : ""}
+                  ${isLastOdd ? "sm:col-span-2 sm:mx-auto sm:w-1/2" : ""}
                 `}
               >
                 <div className="flex items-center gap-3 mb-3">
