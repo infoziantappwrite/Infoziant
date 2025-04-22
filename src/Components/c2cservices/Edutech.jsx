@@ -8,6 +8,10 @@ import { motion } from 'framer-motion';
 import InfoziantJourney from './InfoziantJourney/InfoziantJourney';
 import WhatImage from "../../assests/Images/Banner/offer6.png";
 
+import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
+import { FaUniversity, FaUserGraduate, FaHandshake, FaSearch } from "react-icons/fa";
+
+
 
 const Edutech_Platform = () => {
     const offerHeading = "What We Offer";
@@ -188,18 +192,18 @@ const Edutech_Platform = () => {
       </h2>
 
       <div className="space-y-6 text-gray-700 text-lg">
-        <div className="flex items-start gap-3">
-          <span className="text-2xl mt-1">🎓</span>
-          <p>Colleges & Universities looking to elevate placement outcomes</p>
-        </div>
-        <div className="flex items-start gap-3">
-          <span className="text-2xl mt-1">🧑‍🎓</span>
-          <p>Students preparing for their next big opportunity</p>
-        </div>
-        <div className="flex items-start gap-3">
-          <span className="text-2xl mt-1">🤝</span>
-          <p>Recruiters seeking verified talent without the noise</p>
-        </div>
+  <div className="flex items-start gap-3">
+    <FaUniversity className="text-2xl text-blue-500 mt-1" />
+    <p>Colleges & Universities looking to elevate placement outcomes</p>
+  </div>
+  <div className="flex items-start gap-3">
+    <FaUserGraduate className="text-2xl text-green-500 mt-1" />
+    <p>Students preparing for their next big opportunity</p>
+  </div>
+  <div className="flex items-start gap-3">
+    <FaHandshake className="text-2xl text-purple-500 mt-1" />
+    <p>Recruiters seeking verified talent without the noise</p>
+  </div>
       </div>
     </motion.div>
 
@@ -225,8 +229,7 @@ const Edutech_Platform = () => {
 
 
 
-
-
+<ConsultationFormForCo />
 
         </div>
     );

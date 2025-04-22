@@ -9,6 +9,8 @@ import { FaBook, FaPen, FaFlask, FaRocket } from 'react-icons/fa';
 import HowItWorks from './HowItworks/HowItWorks';
 import KeyHighlights from './KeyHighlights/KeyHighlights';
 import WhatIsCodeChef from './WhatIs/WhatIs';
+import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
+import noprofile from "../../assests/noprofile.png";
 
 const CodeChef = () => {
 
@@ -105,33 +107,35 @@ const CodeChef = () => {
               name: "Balaji",
               role: "Kalaisalingam Academy of Research and Education",
               quote: "During my B.Tech, I was passionate about coding but lacked a clear path until CodeChef changed everything! With beginner-friendly resources, weekly contests to track progress, and free DSA & SQL materials, my placement prep became seamless. CodeChef boosted my confidence in interviews, helping me land offers from TCS and Capgemini.",
-              image: "path/to/image1.jpg",
+              image:noprofile,
               color: "from-rose-500 to-pink-400"
             },
             {
               name: "Deepika",
               role: "Ethiraj College for Women",
               quote: "Coming from an MCA background with stepping into the tech world felt overwhelming. CodeChef provided a clear learning path with structured practice and real-time coding challenges. The competitive environment pushed me to improve, and the interview preparation resources were invaluable. Thanks to this, I successfully secured placements at EY Global.",
-              image: "path/to/image2.jpg",
+              image: noprofile,
               color: "from-blue-500 to-blue-400"
             },
             {
               name: "Poojith Reddy",
               role: "Kalaisalingam Academy of Research and Education",
               quote: "CodeChef's well-structured curriculum, challenging problems, and supportive community boosted my confidence in competitive programming and technical interviews. The platform's detailed explanations and practical approach made learning effective and enjoyable. The courses helped strengthen my foundation in coding and prepared me well for real-world challenges.",
-              image: "path/to/image2.jpg",
+              image: noprofile,
               color: "from-violet-500 to-fuchsia-400"
             },
             {
               name: "Sundar Karthick",
               role: "Panimalar Engineering College",
               quote: "CodeChef played a crucial role in my placement journey! The structured learning, coding challenges, and mock contests helped me sharpen my problem-solving skills. The platform's practice sessions and real-time assessments prepared me well for technical interviews. Thanks to CodeChef, I secured placements at Tech Mahindra and CTS.",
-              image: "path/to/image2.jpg",
+              image: noprofile,
               color: "from-teal-500 to-teal-400"
             },
             
             ]}
           />
+
+          <ConsultationFormForCo />
     </div>
   );
 };

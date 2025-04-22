@@ -5,6 +5,7 @@ import ServicesSection from './Services1/ServicesSection';
 import InnovativeTech from './Services1/InnovativeTech';
 import TestimonialSection from './StudentTestimonials/Testimonials';
 import StatsScroller from './Stats/StatsScroller';
+import ConsultationForm from '../Pages/ConsultationForm';
 
 
 
@@ -25,6 +26,7 @@ const Home = () => {
         <StatsScroller />
         {/* <CollegeClients /> */}
         <TestimonialSection />
+          <ConsultationForm />
         {/* <ContactSection /> */}
         {/* <Footer /> */}
   

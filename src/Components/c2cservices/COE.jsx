@@ -7,6 +7,8 @@ import TestimonialSection from './Testimonials/Testimonials';
 import WhyChooseImage from "../../assests/Images/Banner/whycoe3.png";
 import WhatImage from "../../assests/Images/Banner/whatwedo3.png";
 import KeyHighlights from './KeyHighlights/KeyHighlights';
+import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
+import noprofile from "../../assests/noprofile.png";
 
 
 const COE = () => {
@@ -67,20 +69,22 @@ const COE = () => {
               name: "CSE HOD –  PSNA",
               role: "PSNA College of Engineering and Technology",
               quote: "The Centre of Excellence established in collaboration with Infoziant has been a game changer for our students. It provides them with exposure to real-world cybersecurity challenges and hands-on tools that are usually available only in top-tier companies. Our students are more confident and industry-ready than ever before.",
-              image: "path/to/image1.jpg",
+              image: noprofile,
               color: "from-rose-500 to-pink-400"
             },
             {
               name: "Principal, Kalasalingam University",
               role: "Kalasalingam Academy of Research and Education",
               quote: "Partnering with Infoziant to set up a CoE in AI and Cybersecurity has significantly elevated our academic offerings. The customized labs, expert sessions, and project-based learning approach have bridged the gap between academia and industry. We truly value this partnership.",
-              image: "path/to/image2.jpg",
+              image: noprofile,
               color: "from-violet-500 to-fuchsia-400"
             },
             
                       // Add more testimonials here
                     ]}
           />
+
+          <ConsultationFormForCo />
     </div>
   );
 };

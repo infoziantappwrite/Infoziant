@@ -121,13 +121,7 @@ const AccessibilityTesting = () => {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">{item.title}</h3>
                 <p className="text-white text-opacity-90 text-sm sm:text-base mb-6">{item.desc}</p>
-                <motion.button
-                  className="px-4 py-2 rounded-full bg-white bg-opacity-20 text-white text-sm font-medium hover:bg-opacity-30 transition-all"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Learn more
-                </motion.button>
+                
               </div>
             </motion.div>
           ))}

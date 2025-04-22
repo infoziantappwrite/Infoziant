@@ -145,12 +145,7 @@ const Services = () => {
               <h3 className="text-2xl font-bold">{services[activeService].title}</h3>
             </div>
             <p className="mb-4">{services[activeService].description}</p>
-            <button className="bg-white text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all duration-300 flex items-center">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            
           </motion.div>
         </motion.div>
 
@@ -207,9 +202,7 @@ const Services = () => {
           >
             <h3 className="text-xl font-bold mb-2">Ready to elevate your testing?</h3>
             <p className="mb-4">Schedule a consultation with our experts today.</p>
-            <button className="bg-white text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all duration-300">
-              Get Started
-            </button>
+           
           </motion.div>
         </div>
       </div>
