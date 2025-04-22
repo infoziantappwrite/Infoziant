@@ -10,6 +10,7 @@ import KeyHighlights from './KeyHighlights/KeyHighlights';
 import WhyChooseImage from "../../assests/Images/Banner/Choose2.png";
 import WhatImage from "../../assests/Images/Banner/offer2.png";
 import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
+import noprofile from "../../assests/noprofile.png";
 
 const Intership_Programs = () => {
     const offerHeading = "What We Offer";
@@ -101,21 +102,21 @@ const Intership_Programs = () => {
               name: "Keerthana M., CSE - Final Yea",
               role: "Karpagam College of Engineering",
               quote: "My internship through Infoziant gave me real-time exposure to the IT industry. I got to work on practical projects that enhanced both my technical and problem-solving skills.",
-              image: "path/to/image1.jpg",
+              image: noprofile,
               color: "from-rose-500 to-pink-400"
             },
             {
               name: "Sathish R., ECE - III Year",
               role: "Sri Shanmuga College of Engineering",
               quote: "I never expected to get an internship opportunity with a reputed company so early. Thanks to Infoziant, I was able to build confidence and gain hands-on experience before even graduating!",
-              image: "path/to/image2.jpg",
+              image: noprofile,
               color: "from-violet-500 to-fuchsia-400"
             },
             {
                 name: "Boopathi R., AI & DS - II Yearr",
                 role: "RP Sarathy Institute of Technology",
                 quote: "The internship I did through Infoziant helped me understand how things work in a real corporate environment. It was a great bridge between college learning and industry expectations",
-                image: "path/to/image2.jpg",
+                image:noprofile,
                 color: "from-teal-500 to-teal-400"
               },
 
@@ -123,7 +124,7 @@ const Intership_Programs = () => {
                 name: "Priyanka S., UI/UX Intern – II Year, B.Tech",
                 role: "AVS Engineering College",
                 quote: "Being part of the internship program through Infoziant was a turning point. It helped me explore my skills and also made my resume stand out during placement interviews",
-                image: "path/to/image2.jpg",
+                image: noprofile,
                 color: "from-blue-500 to-blue-400"
               }
                     ]}

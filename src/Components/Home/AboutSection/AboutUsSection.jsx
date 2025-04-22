@@ -31,7 +31,7 @@ const motionProps = (delay = 0) => ({
 
 const AboutUsSection = () => {
   return (
-    <section className="about-abtNew">
+    <section className="about-abtNew" id="welcome-section">
       <div className="grid-abtNew">
         {/* img2: Hidden on mobile */}
         <motion.div

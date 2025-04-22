@@ -8,7 +8,7 @@ const services = [
     description: "Boost placements with exclusive hiring drives and company tie-ups.",
     features: ["Curated drives with top recruiters", "Interview coordination & support", "End-to-end placement management"],
     icon: Briefcase,
-    link: "/services/placement-support",
+    link: "/services/placement",
     gradient: "from-yellow-400 to-orange-500",
   },
   {
@@ -16,7 +16,7 @@ const services = [
     description: "Gain real-world experience with live projects and expert mentorship.",
     features: ["Industry-led mentorship", "Hands-on project experience", "Networking opportunities"],
     icon: GraduationCap,
-    link: "/services/internship-programs",
+    link: "/services/internship",
     gradient: "from-pink-500 to-purple-600",
   },
   {
@@ -24,7 +24,7 @@ const services = [
     description: "Bridging education and industry through research and innovation.",
     features: ["Research-based learning", "Industry partnerships", "Innovation labs & CoEs"],
     icon: Building2,
-    link: "/services/industry-academia",
+    link: "/services/coe",
     gradient: "from-teal-400 to-blue-500",
   },
   {
@@ -32,7 +32,7 @@ const services = [
     description: "Master in-demand skills with expert-led courses and certifications.",
     features: ["Latest tech skill training", "Soft skills development", "Certification programs"],
     icon: BarChart,
-    link: "/services/training-upskilling",
+    link: "/services/training",
     gradient: "from-blue-500 to-indigo-500",
   },
   {
@@ -40,11 +40,11 @@ const services = [
     description: "We enable your students to gain global visibility and practical coding mastery.",
     features: ["Global level Hackathons", "Company-specific coding practice", "Verifiable certificates"],
     icon: Code,
-    link: "/services/codechef-training",
+    link: "/services/codechef",
     gradient: "from-gray-700 to-black",
   },
   {
-    title: "Smart Edutech",
+    title: "Edutech Solutions",
     description: "Revolutionize learning with AI-powered dashboards and advanced analytics.",
     features: ["Personalized learning journeys", "Real-time performance tracking", "Interactive assessments & insights"],
     icon: BookOpen,

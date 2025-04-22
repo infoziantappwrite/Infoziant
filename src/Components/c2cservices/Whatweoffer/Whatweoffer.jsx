@@ -39,7 +39,7 @@ const Whatweoffer = ({ heading, points, image }) => {
             <img
               src={image} 
               alt="What we offer"
-              className="w-full max-w-sm md:max-w-md lg:max-w-lg rounded-xl shadow-xl transform transition-transform hover:scale-105 hover:shadow-2xl"
+              className="w-full max-w-sm md:max-w-md lg:max-w-lg rounded-xl transform transition-transform hover:scale-105 "
             />
           </div>
 

@@ -18,6 +18,9 @@ const slides = [
 
 const Banner = () => {
   const [index, setIndex] = useState(0);
+  const handleScroll = () => {
+    document.getElementById("welcome-section").scrollIntoView({ behavior: "smooth" });
+  };
 
   const splitHeading = (text) => {
     const words = text.split(" ");
@@ -49,7 +52,10 @@ const Banner = () => {
               <h1>{firstHalf}</h1>
               <h2>{secondHalf}</h2>
               <p>{slide.text}</p>
-              <a href="#">Discover More →</a>
+              <button onClick={handleScroll} className="discover-btn">
+  Discover More
+</button>
+
             </div>
           </div>
         );

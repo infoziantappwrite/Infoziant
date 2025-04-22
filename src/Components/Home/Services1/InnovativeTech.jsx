@@ -23,21 +23,21 @@ const services = [
     description:
       "Scalable, high-performance websites and apps using modern stacks like MERN, Django, Spring Boot, and more.",
     icon: <MonitorSmartphone size={32} color="#15f5ba" />,
-    link: "/services/web-development",
+    link: "/services/web-app-development",
   },
   {
     title: "Software Testing",
     description:
       "End-to-end testing solutions including Automation, Manual, API, and Performance testing with 100+ expert testers.",
     icon: <BugPlay size={32} color="#15f5ba" />,
-    link: "/services/software-testing",
+    link: "/services/testing",
   },
   {
     title: "Tech Talent Hiring",
     description:
       "Flexible and cost-effective IT staffing services with access to 200,000+ professionals across GCC, USA, UK, and India.",
     icon: <UsersRound size={32} color="#15f5ba" />,
-    link: "/services/tech-talent-hiring",
+    link: "/services/tech-talent",
   },
 ];
 
