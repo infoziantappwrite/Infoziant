@@ -6,6 +6,7 @@ import ManualTesting from './ManualTesting/ManualTesting';
 import AccessibilityTesting from './AccessibilityTesting/AccessibilityTesting';
 import Innovations from './Innovations/Innovations';
 import Achievements from './Achievements/Achievements';
+import ConsultationForm from '../Pages/ConsultationForm';
 
 const TestingPage = () => {
   return (
@@ -17,6 +18,7 @@ const TestingPage = () => {
       <AccessibilityTesting />
       <Innovations />
       <Achievements />
+      <ConsultationForm />
     </div>
   );
 };

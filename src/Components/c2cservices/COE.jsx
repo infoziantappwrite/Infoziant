@@ -7,6 +7,7 @@ import TestimonialSection from './Testimonials/Testimonials';
 import WhyChooseImage from "../../assests/Images/Banner/whycoe3.png";
 import WhatImage from "../../assests/Images/Banner/whatwedo3.png";
 import KeyHighlights from './KeyHighlights/KeyHighlights';
+import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 
 
 const COE = () => {
@@ -81,6 +82,8 @@ const COE = () => {
                       // Add more testimonials here
                     ]}
           />
+
+          <ConsultationFormForCo />
     </div>
   );
 };

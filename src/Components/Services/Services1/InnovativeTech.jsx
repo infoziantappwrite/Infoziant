@@ -110,24 +110,18 @@ const IndustriesWeServe = () => {
                     hoveredIndex === index ? "transform -translate-y-4" : ""
                   }`}
                 >
-                  <h3 className="text-2xl font-bold mb-3 text-white">
+                  <h3 className="text-2xl font-bold mb-2 text-white">
                     {industry.title}
                   </h3>
-                  <p
-                    className={`text-slate-300 text-sm mb-4 transition-all duration-500 ${
-                      hoveredIndex === index ? "opacity-100" : "opacity-80"
-                    }`}
-                  >
-                    {industry.description}
-                  </p>
+                  
 
                   <div
                     className={`transition-all duration-500 flex items-center text-cyan-400 text-sm font-medium ${
                       hoveredIndex === index ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <span>Explore solutions</span>
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <span>{industry.description}</span>
+                    
                   </div>
                 </div>
               </div>
@@ -141,13 +135,7 @@ const IndustriesWeServe = () => {
           ))}
         </div>
 
-        <div
-          className="mt-16 text-center"
-        >
-          <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1">
-            Discuss Your Industry Needs
-          </button>
-        </div>
+        
       </div>
     </section>
   );
