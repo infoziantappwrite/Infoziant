@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function Footer() {
     const [openTech, setOpenTech] = useState(false);
     const [openCampus, setOpenCampus] = useState(false);
+    const [openCybersecurity, setOpenCybersecurity] = useState(false); // 👈 New state
 
   return (
     <footer className="bg-gray-800 text-white py-8 sm:py-12">
@@ -89,13 +90,13 @@ export default function Footer() {
                 {openCampus && (
                   <ul className="pl-4 text-xs sm:text-sm space-y-2 mt-2 text-gray-300">
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/placement">Placement Support</Link>
+                      <Link to="/services/placement">Placement Support</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/internship">Internship Programs</Link>
+                      <Link to="/services/internship">Internship Programs</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/training">Training & Upskilling</Link>
+                      <Link to="/services/training">Training & Upskilling</Link>
                     </li>
                   </ul>
                 )}
@@ -140,16 +141,37 @@ export default function Footer() {
                   <span>Innovative Tech & Business Services</span>
                   <span className="text-xl ml-1 font-medium">{openTech ? '-' : '+'}</span>
                 </div>
+
                 {openTech && (
                   <ul className="pl-4 text-xs sm:text-sm space-y-2 mt-2 text-gray-300">
+                    {/* Cybersecurity with toggle */}
+                    <li>
+                      <div
+                        className="flex justify-center sm:justify-between items-center cursor-pointer hover:text-teal-400 font-semibold"
+                        onClick={() => setOpenCybersecurity(!openCybersecurity)}
+                      >
+                        <span>Cybersecurity Services</span>
+                        <span className="text-md ml-1">{openCybersecurity ? '-' : '+'}</span>
+                      </div>
+
+                      {openCybersecurity && (
+                        <ul className="pl-4 mt-2 space-y-1">
+                          <li className="hover:text-teal-400 font-semibold">
+                            <Link to="/services/cybersecurity">Cybersecurity Services</Link>
+                          </li>
+                          <li className="hover:text-teal-400 font-semibold">
+                            <Link to="/services/cybersecurity/vapt">VAPT Services</Link>
+                          </li>
+                        </ul>
+                      )}
+                    </li>
+
+                    {/* Other tech services */}
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/cybersecurity">Cybersecurity Services</Link>
+                      <Link to="/services/web-app-development">Web & App Development</Link>
                     </li>
                     <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/web-development">Web & App Development</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/testing">Software Testing</Link>
+                      <Link to="/services/testing">Software Testing</Link>
                     </li>
                   </ul>
                 )}

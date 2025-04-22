@@ -12,6 +12,7 @@ import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 import noprofile from "../../assests/noprofile.png";
 
 
+
 const Placement_Support = () => {
     const offerHeading = "What We Offer";
     const offerPoints = [

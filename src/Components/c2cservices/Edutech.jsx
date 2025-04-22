@@ -7,6 +7,7 @@ import { CheckCircle, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 import InfoziantJourney from './InfoziantJourney/InfoziantJourney';
 import WhatImage from "../../assests/Images/Banner/offer6.png";
+
 import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 import { FaUniversity, FaUserGraduate, FaHandshake, FaSearch } from "react-icons/fa";
 
