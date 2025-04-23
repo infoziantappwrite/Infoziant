@@ -47,6 +47,7 @@ const Header = () => {
           name: "Cybersecurity Services",
           path: "/services/cybersecurity",
           subItems: [
+            { name: "CyberSecurity Services", path: "/services/cybersecurity/vapt" },
             { name: "VAPT Services", path: "/services/cybersecurity/vapt" },
           ],
         },
@@ -196,7 +197,6 @@ const Header = () => {
                                 }
                               }}
                             >
-                       
                               {item.name === "Cybersecurity Services" && <ChevronLeft className="w-4 h-4 mr-2" />}
                               <Link
                                 to={item.path}
@@ -220,16 +220,18 @@ const Header = () => {
                                     }, 800);
                                   }}
                                 >
-                                  {item.subItems.map((subItem, subIdx) => (
-                                    <Link
-                                      key={subIdx}
-                                      to={subItem.path}
-                                      onClick={closeAllMenus}
-                                      className="block text-[14px] text-gray-700 mt-1 hover:text-blue-900 hover:underline text-center"
-                                    >
-                                      {subItem.name}
-                                    </Link>
-                                  ))}
+                                  {item.subItems
+                                    .filter((subItem) => subItem.name !== "CyberSecurity Services")
+                                    .map((subItem, subIdx) => (
+                                      <Link
+                                        key={subIdx}
+                                        to={subItem.path}
+                                        onClick={closeAllMenus}
+                                        className="block text-[14px] text-gray-700 mt-1 hover:text-blue-900 hover:underline text-center"
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    ))}
                                 </div>
                               )}
                             </div>
