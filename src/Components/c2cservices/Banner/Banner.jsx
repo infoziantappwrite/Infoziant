@@ -163,28 +163,33 @@ const Banner = ({
             {description}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
-          >
-            <a
-              href={primaryBtnLink}
-              className="group px-8 py-3.5 bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-full shadow-lg shadow-blue-200/30 hover:shadow-blue-300/40 transition-all duration-300 text-center relative overflow-hidden"
+          {/* Button Wrapper with bottom margin on mobile */}
+          <div className="mb-12 sm:mb-0">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap gap-3 justify-center sm:justify-start pt-2 sm:pt-4"
             >
-              <span className="relative z-10">{primaryBtnText}</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </a>
-            <a
-              href={secondaryBtnLink}
-              className="group px-8 py-3.5 bg-white border border-gray-200 text-gray-700 font-semibold rounded-full hover:bg-gray-50 hover:border-gray-300 shadow-sm hover:shadow transition-all duration-300 text-center"
-            >
-              <span className="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent group-hover:text-gray-800 transition-colors duration-300">
-                {secondaryBtnText}
-              </span>
-            </a>
-          </motion.div>
+              <a
+                href={primaryBtnLink}
+                className="group px-6 sm:px-8 py-3 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-full shadow-lg shadow-blue-200/30 hover:shadow-blue-300/40 transition-all duration-300 text-center relative overflow-hidden"
+              >
+                <span className="relative z-10">{primaryBtnText}</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              </a>
+              <a
+                href={secondaryBtnLink}
+                className="group px-6 sm:px-8 py-3 text-sm sm:text-base bg-white border border-gray-200 text-gray-700 font-semibold rounded-full hover:bg-gray-50 hover:border-gray-300 shadow-sm hover:shadow transition-all duration-300 text-center"
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent group-hover:text-gray-800 transition-colors duration-300">
+                  {secondaryBtnText}
+                </span>
+              </a>
+              <div className="block sm:hidden h-8"></div>
+            </motion.div>
+          </div>
+
         </div>
 
         {/* Image Section */}

@@ -44,15 +44,29 @@ const CollegeClients = () => {
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 3, centerMode: true },
+        settings: { 
+          slidesToShow: 3, 
+          centerMode: true,
+          centerPadding: "0px"
+        },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 2, centerMode: true },
+        settings: { 
+          slidesToShow: 2, 
+          centerMode: true,
+          centerPadding: "0px"
+        },
       },
       {
         breakpoint: 480,
-        settings: { slidesToShow: 1, centerMode: true },
+        settings: { 
+          slidesToShow: 1, 
+          centerMode: true,
+          centerPadding: "0px",
+          // Ensure consistent center alignment
+          slidesToScroll: 1
+        },
       },
     ],
   };
@@ -94,50 +108,53 @@ const CollegeClients = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-          <Slider ref={sliderRef} {...settings} className="client-slider px-6">
-            {clients.map((client, index) => (
-              <div key={client.id} className="px-4 py-6">
-                <div
-                  className={`relative overflow-hidden rounded-xl transition-all duration-700 ${
-                    index === centerIndex
-                      ? "bg-gradient-to-b from-blue-800/30 to-teal-800/20 shadow-lg shadow-teal-900/20 transform scale-110" // increased scale
-                      : "bg-blue-900/20 transform scale-95"
-                  }`}
-                  style={{
-                    width: "150px", // increased width
-                    height: "150px", // increased height
-                  }}
-                >
+          {/* Added classes to ensure better centering */}
+          <div className="mx-auto text-center">
+            <Slider ref={sliderRef} {...settings} className="client-slider mx-auto">
+              {clients.map((client, index) => (
+                <div key={client.id} className="px-2 py-6 flex justify-center items-center">
                   <div
-                    className={`flex flex-col items-center transition-all duration-700 ${
-                      index === centerIndex ? "scale-100 opacity-100" : "scale-90 opacity-70"
+                    className={`relative overflow-hidden rounded-xl transition-all duration-700 mx-auto ${
+                      index === centerIndex
+                        ? "bg-gradient-to-b from-blue-800/30 to-teal-800/20 shadow-lg shadow-teal-900/20 transform scale-110"
+                        : "bg-blue-900/20 transform scale-95"
                     }`}
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                    }}
                   >
                     <div
-                      className="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-800/50 to-teal-700/30 p-[3px]"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
+                      className={`flex flex-col items-center transition-all duration-700 ${
+                        index === centerIndex ? "scale-100 opacity-100" : "scale-90 opacity-70"
+                      }`}
                     >
-                      <div className="w-full h-full overflow-hidden flex items-center justify-center bg-blue-950 rounded-lg">
-                        <img
-                          src={client.src}
-                          alt={`College image ${index + 1}`}
-                          className={`h-full w-full object-cover transition-all duration-700 ${
-                            index === centerIndex ? "scale-110" : "scale-100"
-                          }`}
-                        />
+                      <div
+                        className="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-800/50 to-teal-700/30 p-[3px]"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <div className="w-full h-full overflow-hidden flex items-center justify-center bg-blue-950 rounded-lg">
+                          <img
+                            src={client.src}
+                            alt={`College image ${index + 1}`}
+                            className={`h-full w-full object-cover transition-all duration-700 ${
+                              index === centerIndex ? "scale-110" : "scale-100"
+                            }`}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
 
           {/* Dots */}
           <div className="flex justify-center mt-8 gap-1.5">
