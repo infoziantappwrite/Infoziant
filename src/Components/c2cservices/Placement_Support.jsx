@@ -5,7 +5,7 @@ import placementImage from "../../assests/Images/Banner/18-1.webp";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
 import CollegeClients from './TrustedBy/TrustedBy';
-import CompaniesEngaged from './Companies/Companies';
+import CompaniesEngaged from './Companies/Companies copy';
 import WhyChooseImage from "../../assests/Images/Banner/ChooseUsPic.png";
 import WhatImage from "../../assests/Images/Banner/offer1.png";
 import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
