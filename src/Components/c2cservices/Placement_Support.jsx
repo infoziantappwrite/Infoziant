@@ -40,9 +40,9 @@ const Placement_Support = () => {
           heading="Why Choose Infoziant"
           description="With our expansive industry network and agile coordination, we bring in companies offering CTCs up to ₹1.02 Cr and align them with your drive schedule. Your students gain access to curated placement opportunities that match their skillsets, while your institution stays ahead with a strong placement track record."
           points={[
-            "Partnered with over 57 leading colleges across the country.",
+            "Partnered with over 67+ leading colleges across the country.",
             "More than 115 reputed companies recruit from each partnered college.",
-            "Successfully placed over 750 students in top organizations.",
+            "Successfully placed over 2750+ students in top organizations.",
             "CTC packages offered go as high as ₹1.02 Cr from premier companies.",
             "Built an expansive industry network to drive top-tier placements.",
             "Ensured agile coordination with institutions for timely placements.",

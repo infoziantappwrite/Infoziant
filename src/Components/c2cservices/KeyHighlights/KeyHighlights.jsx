@@ -35,18 +35,22 @@ const KeyHighlights = ({ heading, points }) => {
                   ${isLastOdd ? "sm:col-span-2 sm:mx-auto sm:w-1/2" : ""}
                 `}
               >
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-gradient-to-br from-teal-400 to-blue-500 text-indigo-950">
                     <FaStar className="text-base" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white">
-                    Point {index + 1}
-                  </h3>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    {point}
+                  </p>
                 </div>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                {/* <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                   {point}
-                </p>
-                <div className="h-1 w-0 group-hover:w-full mt-4 bg-gradient-to-r from-teal-400 to-blue-500 transition-all duration-300" />
+                </p> */}
+                <div className="relative group">
+                  {/* Your main content here */}
+
+                  <div className="absolute left-0 h-1 w-0 group-hover:w-full mt-4 bg-gradient-to-r from-teal-400 to-blue-500 transition-all duration-300" />
+                </div>
               </div>
             );
           })}
