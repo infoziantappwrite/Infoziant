@@ -47,19 +47,20 @@ export default function ConsultationFormForCo() {
         if (validateForm()) {
             // Define email parameters for EmailJS
             const emailParams = {
-                from_name: formData.name,
-                from_email: formData.email,
-                phone_number: formData.phone,
-                selected_service: formData.services,
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,           // Optional (if used in your template)
+                services: formData.services,
                 message: formData.message,
-                college_name: formData.college,
+                college: formData.college,
                 location: formData.location,
+                time: new Date().toLocaleString(), // Optional, if your template uses {{time}}
             };
 
             // Send email using EmailJS
             emailjs.send(
-                process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                process.env.REACT_APP_EMAILJS_COO_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_COO_TEMPLATE_ID,
                 emailParams,
                 process.env.REACT_APP_EMAILJS_USER_ID
             )
