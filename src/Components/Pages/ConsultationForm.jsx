@@ -15,6 +15,12 @@ export default function ConsultationForm() {
   const [errors, setErrors] = useState({});  // State to track form field errors
   const [successMessage, setSuccessMessage] = useState("");  // Success message state
 
+  console.log(
+    process.env.REACT_APP_EMAILJS_SERVICE_ID,
+    process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    process.env.REACT_APP_EMAILJS_USER_ID
+  );
+
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,11 +51,12 @@ export default function ConsultationForm() {
     if (validateForm()) {
       // Define email parameters for EmailJS
       const emailParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone_number: formData.phone,
-        selected_service: formData.services,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone, // if you need it in your template
+        services: formData.services,
         message: formData.message,
+        time: new Date().toLocaleString(), // Optional: if you're using {{time}} in your template
       };
 
       // Send email using EmailJS
@@ -59,7 +66,7 @@ export default function ConsultationForm() {
         emailParams,
         process.env.REACT_APP_EMAILJS_USER_ID
       )
-      
+
         .then((response) => {
           if (response.status === 200) {
             // Display success message
@@ -97,7 +104,7 @@ export default function ConsultationForm() {
 
         {/* Success message display */}
         <div className="center-container">
-        {successMessage && <p className="success-message"><FaCircleCheck /> {successMessage}</p>}
+          {successMessage && <p className="success-message"><FaCircleCheck /> {successMessage}</p>}
         </div>
 
         <form onSubmit={handleSubmit} className="consultation-form">
