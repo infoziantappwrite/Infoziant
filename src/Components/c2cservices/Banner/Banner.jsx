@@ -186,7 +186,7 @@ const Banner = ({
                   {secondaryBtnText}
                 </span>
               </a>
-              <div className="block sm:hidden h-8"></div>
+              <div className="block sm:hidden w-full h-8 min-h-8"></div>
             </motion.div>
           </div>
 
