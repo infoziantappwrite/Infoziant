@@ -39,7 +39,7 @@ const chunkArray = (arr, size) => {
 
 const CompaniesEngaged = ({ heading, description }) => {
   const sliderRef = useRef(null);
-  const logoChunks = chunkArray(images, 4); // 2x2 grid
+  const logoChunks = chunkArray(images, 4); // 2x2 grid for larger screens
 
   const settings = {
     infinite: true,
@@ -51,37 +51,45 @@ const CompaniesEngaged = ({ heading, description }) => {
     arrows: false,
     dots: true,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 768, // Mobile view
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      {/* Background Circle with Blinking Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-blue-200  opacity-20 animate-blink"></div>
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Blinking Background Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-blue-200 opacity-20 animate-blink"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 rounded-full bg-gray-200 text-gray-700 text-sm font-medium mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="inline-block px-4 py-1 rounded-full bg-gray-200 text-gray-700 text-xs sm:text-sm font-medium mb-4">
             Trusted By
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">{heading}</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-400 mx-auto rounded-full mb-6" />
-          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">{description}</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">{heading}</h2>
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-400 mx-auto rounded-full mb-6" />
+          <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">{description}</p>
         </div>
 
         <Slider ref={sliderRef} {...settings}>
           {logoChunks.map((chunk, i) => (
-            <div key={i} className="p-4 flex justify-center">
-              <div className="bg-gray-100 rounded-2xl shadow-2xl p-6 max-w-md w-full min-h-[350px]">
-                <div className="grid grid-cols-2 grid-rows-2 gap-6 relative">
+            <div key={i} className="p-2 sm:p-4 flex justify-center">
+              <div className="bg-gray-100 rounded-2xl shadow-xl sm:shadow-2xl p-4 sm:p-6 w-full max-w-sm sm:max-w-md min-h-[300px] sm:min-h-[350px]">
+                <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6">
                   {chunk.map((src, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-center bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow relative"
+                      className="flex items-center justify-center bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow"
                     >
                       <img
                         src={src}
                         alt={`Partner ${i * 4 + index + 1}`}
-                        className="h-28 max-w-full object-contain relative z-10"
+                        className="h-20 sm:h-28 max-w-full object-contain"
                       />
                     </div>
                   ))}
