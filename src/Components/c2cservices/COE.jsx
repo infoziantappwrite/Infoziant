@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import Whatweoffer from './Whatweoffer/Whatweoffer';
-import placementImage from "../../assests/Images/Banner/Coes.png";
+import placementImage from "../../assests/Images/Banner/coes1.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import TestimonialSection from './Testimonials/Testimonials';
 import WhyChooseImage from "../../assests/Images/Banner/whycoe3.png";
@@ -12,7 +12,7 @@ import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 import noprofile from "../../assests/noprofile.png";
 import WhatIsCodeChef from './WhatIs/WhatIs';
 import Achievements from "./WhatWeCOE/WhatWeCOE";
-import achievementImg from "./WhatWeCOE/WeOffer.gif"; 
+import achievementImg from "./WhatWeCOE/abbookdemoanimdribbble_20221108135425.gif"; 
 import JoinCoEMovement from "./JoinCoe/JoinCoe";
 import {
   FaLaptopCode,
@@ -44,7 +44,7 @@ const COE = () => {
 
     const codechefData = {
       heading: "Empowering Campuses. Enabling Careers",
-      description: `At Infoziant Security, our Centre of Excellence (CoE) program transforms academic institutions into innovation hubs by bridging the gap between industry and academia.
+      description: `At Infoziant, our Centre of Excellence (CoE) program transforms academic institutions into innovation hubs by bridging the gap between industry and academia.
               We equip colleges with the skills, tools, and expert training needed to build futureready
               professionals in Cybersecurity and Artificial Intelligence.`,
     };

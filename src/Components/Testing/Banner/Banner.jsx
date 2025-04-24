@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import codeThemeImage from "../../../assests/Images/Banner/intelex_software_development1.gif";
+import InquiryFormSerivies from "../../Services/InquiryFormSerivies";
 
 const Banner = () => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const [showForm, setShowForm] = useState(false);
+
 
   useEffect(() => {
     if (isInView) {
@@ -61,12 +64,13 @@ const Banner = () => {
             >
               Explore Now
             </a>
-            <a
-              href="#contact"
+            <button
+              onClick={() => setShowForm(true)}
               className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
             >
               Schedule a Call
-            </a>
+            </button>
+
           </div>
         </div>
 
@@ -84,7 +88,17 @@ const Banner = () => {
           />
         </motion.div>
       </motion.div>
+
+      {showForm && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+          <InquiryFormSerivies closeModal={() => setShowForm(false)} />
+        </div>
+      )}
+
+
     </section>
+
+
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import InquiryFormSerivies from "../../Services/InquiryFormSerivies";
 
 const Banner = ({
   badgeText,
@@ -13,6 +14,8 @@ const Banner = ({
   subtitle
 }) => {
   const [isGifVisible, setIsGifVisible] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
@@ -178,19 +181,27 @@ const Banner = ({
                 <span className="relative z-10">{primaryBtnText}</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </a>
-              <a
-                href={secondaryBtnLink}
-                className="group px-6 sm:px-8 py-3 text-sm sm:text-base bg-white border border-gray-200 text-gray-700 font-semibold rounded-full hover:bg-gray-50 hover:border-gray-300 shadow-sm hover:shadow transition-all duration-300 text-center"
-              >
+              <button
+  onClick={() => setShowForm(true)}
+  className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
+>
+
                 <span className="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent group-hover:text-gray-800 transition-colors duration-300">
                   {secondaryBtnText}
                 </span>
-              </a>
+                </button>
               <div className="block sm:hidden w-full h-8 min-h-8"></div>
             </motion.div>
           </div>
 
         </div>
+
+        {showForm && (
+  <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+    <InquiryFormSerivies closeModal={() => setShowForm(false)} />
+  </div>
+)}
+
 
         {/* Image Section */}
         <div className="w-full lg:w-[48%] flex justify-center relative">

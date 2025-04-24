@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import sampleGif from "../../../assests/Images/Banner/recruiting-professionals-studying-candidate-profiles.png";
+import InquiryFormSerivies from "../../Services/InquiryFormSerivies.jsx"; // Adjust path as needed
 
 const Banner = () => {
   const [isGifVisible, setIsGifVisible] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const [showForm, setShowForm] = useState(false);
+
 
   useEffect(() => {
     if (isInView) {
@@ -66,12 +69,12 @@ const Banner = () => {
             >
               Start Your Project
             </a>
-            <a
-              href="#contact"
-              className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
-            >
-              Schedule a Call
-            </a>
+            <button
+  onClick={() => setShowForm(true)}
+  className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
+>
+  Schedule a Call
+</button>
           </div>
         </div>
 
@@ -89,6 +92,13 @@ const Banner = () => {
           />
         </motion.div>
       </motion.div>
+
+      {showForm && (
+  <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+    <InquiryFormSerivies closeModal={() => setShowForm(false)} />
+  </div>
+)}
+
     </section>
   );
 };
