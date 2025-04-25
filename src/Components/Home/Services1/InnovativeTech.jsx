@@ -47,7 +47,7 @@ const InnovativeTech = () => {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section ref={ref} className="our-services ">
+    <section id="tech-section" ref={ref} className="our-services">
       {/* Left Section: Animated Text */}
       <motion.div
         className="services-left"
@@ -65,7 +65,7 @@ const InnovativeTech = () => {
       </motion.div>
 
       {/* Right Section: Cards */}
-      <motion.div 
+      <motion.div
         className="services-right"
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}

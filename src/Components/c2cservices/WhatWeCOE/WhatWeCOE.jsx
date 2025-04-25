@@ -30,7 +30,7 @@ const Achievements = ({ title = "Our Achievements", subtitle = "Explore our key 
             <img
               src={image}
               alt="Achievements Visual"
-              className="w-[250px] sm:w-[300px] md:w-full max-w-[370px] object-contain"
+              className="w-[250px] sm:w-[300px] md:w-full  object-contain"
             />
           </div>
 

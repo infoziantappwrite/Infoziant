@@ -4,7 +4,7 @@ import Whatweoffer from './Whatweoffer/Whatweoffer';
 import placementImage from "../../assests/Images/Banner/workplace.png";
 import WhyChoose from './WhyChoose/WhyChoose';
 import CollegeClients from './TrustedBy/TrustedBy';
-import CompaniesEngaged from './Companies/Companies';
+import CompaniesEngaged from './Companies/Companies_Intern';
 import TestimonialSection from './Testimonials/Testimonials';
 import KeyHighlights from './KeyHighlights/KeyHighlights';
 import WhyChooseImage from "../../assests/Images/Banner/Choose2.png";
