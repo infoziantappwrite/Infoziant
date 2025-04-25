@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Graphic1 from "../../../assests/Images/Banner/T6.png";
+import Graphic1 from "../../../assests/Images/Banner/SE2.png";
 import Graphic2 from "../../../assests/Images/Banner/T1.png";
 
 const slides = [
