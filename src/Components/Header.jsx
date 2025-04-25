@@ -63,7 +63,7 @@ const Header = () => {
         { name: "Placement Support", path: "/services/placement" },
         { name: "Internship Programs", path: "/services/internship" },
         { name: "Centre Of Excellence", path: "/services/coe" },
-        { name: "Training & Upskilling", path: "https://learning.infoziant.com/" },
+        { name: "Training & Upskilling", path: "https://aicl.infoziant.com/" },
         { name: "CodeChef Training", path: "/services/codechef" },
         { name: "Edutech Solutions", path: "/services/edutech" },
       ],

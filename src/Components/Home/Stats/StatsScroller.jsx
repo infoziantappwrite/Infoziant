@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { label: "Partnered Colleges", value: 57, suffix: "+", icon: GraduationCap, color: "from-purple-500 to-pink-500" },
+  { label: "Partnered Colleges", value: 67, suffix: "+", icon: GraduationCap, color: "from-purple-500 to-pink-500" },
   { label: "Companies Hiring per College", value: 115, suffix: "+", icon: Briefcase, color: "from-yellow-400 to-orange-500" },
   { label: "Students Placed", value: 7510, suffix: "+", icon: Users, color: "from-green-400 to-emerald-600" },
   { label: "CTC Packages up to", value: 1.02, suffix: " Cr", decimals: 2, icon: BarChart, color: "from-indigo-500 to-fuchsia-600" },

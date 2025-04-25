@@ -143,24 +143,16 @@ export default function ConsultationForm() {
                   className="cf-inp"
                 />
                 {errors.email && <p className="error-message">{errors.email}</p>}
-                <select
+                <input
+                  type="text"
                   name="services"
                   value={formData.services}
+                  placeholder="Services*"
                   onChange={handleChange}
                   required
                   className="cf-inp"
-                >
-                  <option value="" disabled>Select Services</option>
-                  <option value="Managed Security Services">Managed Security Services</option>
-                  <option value="Vulnerability Assessment / Penetration testing">Vulnerability Assessment / Penetration testing</option>
-                  <option value="Cloud Security">Cloud Security</option>
-                  <option value="Infrastructure Security Assessment">Infrastructure Security Assessment</option>
-                  <option value="Mobile Security Assessment">Mobile Security Assessment</option>
-                  <option value="Auditing">Auditing</option>
-                  <option value="Security Incident, Event Management and Threat Intelligence">Security Incident, Event Management and Threat Intelligence</option>
-                  <option value="Email Protection System">Email Protection System</option>
-                  <option value="Application Security">Application Security</option>
-                </select>
+                />
+                  
                 {errors.services && <p className="error-message">{errors.services}</p>}
               </div>
             </div>

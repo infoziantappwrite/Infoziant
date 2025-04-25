@@ -42,7 +42,7 @@ const Placement_Support = () => {
           points={[
             "Partnered with over 67+ leading colleges across the country.",
             "More than 115 reputed companies recruit from each partnered college.",
-            "Successfully placed over 2750+ students in top organizations.",
+            "Successfully placed over 7510+ students in top organizations.",
             "CTC packages offered go as high as ₹1.02 Cr from premier companies.",
             "Built an expansive industry network to drive top-tier placements.",
             "Ensured agile coordination with institutions for timely placements.",
