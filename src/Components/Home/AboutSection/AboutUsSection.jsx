@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import "./AboutUsSection.css"; 
 import img1 from "../../../assests/Images/HomeAbout/10.png";
 import img2 from "../../../assests/Images/HomeAbout/2.png";
 import img3 from "../../../assests/Images/HomeAbout/3.png";
@@ -100,9 +101,9 @@ const AboutUsSection = () => (
           Welcome to Infoziant
         </h2>
 
-        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-blue-500 to-teal-500 bg-clip-text text-transparent mb-6">
+        {/* <h3 className="text-lg md:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-blue-500 to-teal-500 bg-clip-text text-transparent mb-6">
           Where Skilling Meets Innovation & Education Transforms into Opportunity
-        </h3>
+        </h3> */}
 
         <p className="text-gray-700 text-base md:text-lg max-w-3xl mb-8">
           Founded by seasoned tech leaders from global firms like{" "}
@@ -173,7 +174,7 @@ const AboutUsSection = () => (
       ))}
 
       {/* Desktop Grid for Bottom 3 Floating CONTAINERS */}
-      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 px-4 z-10 relative">
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 px-4 z-10 relative ithuthang">
         {[img6, img5, img7].map((img, idx) => (
           <motion.div
             key={idx}
