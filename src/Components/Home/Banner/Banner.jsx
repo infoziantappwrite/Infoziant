@@ -75,7 +75,7 @@ const Banner = () => {
       {/* Main Content */}
       <div className="mt-4 lg:mt-0 container mx-auto px-6 lg:px-20 z-10 flex flex-col lg:flex-row items-center gap-10">
         {/* Text Section */}
-        <div className="lg:w-2/3 text-center lg:text-left space-y-6">
+        <div className="lg:w-3/5 text-center lg:text-left space-y-6">
           <span className="hidden sm:inline-block bg-white/10 text-sm text-white px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm border border-white/10 shadow-lg transform hover:scale-105 transition-all">
             Our Services
           </span>
@@ -112,13 +112,13 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* Image Section */}
-        <div className="w-full lg:w-1/3">
+        {/* Image Section - Adjusted Size */}
+        <div className="w-full lg:w-2/5">
           <div className={`transform transition-all duration-1000 ${isAnimating ? 'opacity-0 translate-y-6' : 'opacity-100 translate-y-0'}`}>
             <img
               src={slides[index].image}
               alt="Slide illustration"
-              className="w-full max-w-[250px] sm:max-w-sm md:max-w-md lg:max-w-lg h-auto mx-auto animate-float rounded-lg"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto mx-auto animate-float rounded-lg"
             />
           </div>
         </div>

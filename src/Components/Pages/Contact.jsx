@@ -3,6 +3,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'; // Impo
 import '../css/Contact.css';
 import ConsultationForm from "./ConsultationForm";
 import { Helmet } from "react-helmet";
+import Img1 from "../../assests/image.png";
 
 const Contact = () => {
   return (
@@ -20,7 +21,7 @@ const Contact = () => {
       <div
         className="service-banner"
         style={{
-          backgroundImage: "url(./assets/Contact-banner.png)",
+          backgroundImage: `url(${Img1})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
