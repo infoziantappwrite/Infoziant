@@ -1,22 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
-import img1 from "../../../assests/Images/HomeAbout/1.png";
+import img1 from "../../../assests/Images/HomeAbout/10.png";
 import img2 from "../../../assests/Images/HomeAbout/2.png";
 import img3 from "../../../assests/Images/HomeAbout/3.png";
 import img4 from "../../../assests/Images/HomeAbout/9.png";
 import img5 from "../../../assests/Images/HomeAbout/5.png";
-import img6 from "../../../assests/Images/HomeAbout/6.png";
-import img7 from "../../../assests/Images/HomeAbout/7.png";
+import img6 from "../../../assests/Images/HomeAbout/11.png";
+import img7 from "../../../assests/Images/HomeAbout/12.png";
 
-// Define image positions around the center content
 const imagePositions = [
-  { img: img1, classes: "top-4 right-[-3rem] md:-top-4 md:right-[-2rem] w-32 h-32 md:w-44 md:h-44 lg:w-72 lg:h-56" },
-  { img: img2, classes: "top-4 lrgy-[-3rem] md:-top-10 md:left-[-2rem] w-36 h-36 md:w-48 md:h-48 lg:w-80 lg:h-64" },
-  { img: img3, classes: "top-1/3 left-[-4rem] md:left-[-2.9rem] w-50 h-50 md:w-50 md:h-50 lg:w-72 lg:h-72" },
-  { img: img4, classes: "top-1/3 right-[-4rem] md:right-[-2.8rem] w-50 h-50 md:w-50 md:h-50 lg:w-70 lg:h-72" },
-  { img: img6, classes: "bottom-8 left-[-3rem] md:-bottom-20 md:left-[-2rem] w-32 h-32 md:w-44 md:h-44 lg:w-96 lg:h-56" },
-  { img: img5, classes: "-bottom-20 right-[26rem] transform w-36 h-36 md:w-48 md:h-48 lg:w-96 lg:h-56" },
-  { img: img7, classes: "bottom-8 right-[-3rem] md:-bottom-20 md:right-[-2rem] w-32 h-32 md:w-44 md:h-44 lg:w-96 lg:h-56" },
+  {
+    img: img1,
+    classes:
+      "top-4 right-[-1rem] md:-top-4 md:right-[-1rem] xl:right-[-3rem] w-32 h-32 md:w-44 md:h-44 lg:w-80 lg:h-56",
+  },
+  {
+    img: img2,
+    classes:
+      "top-4 left-[-1rem] md:-top-10 md:left-[-1rem] xl:left-[-3rem] w-36 h-36 md:w-48 md:h-48 lg:w-80 lg:h-64",
+  },
+  {
+    img: img3,
+    classes:
+      "top-1/3 left-[-2rem] md:left-[-2rem] md:top-[16rem] xl:left-[-2.9rem] w-50 h-50 md:w-50 md:h-60 lg:w-80 lg:h-80",
+  },
+  {
+    img: img4,
+    classes:
+      "top-1/3 right-[-2rem] md:right-[-2rem] md:top-[16rem] xl:right-[-2.8rem] w-50 h-50 md:w-50 md:h-60 lg:w-80 lg:h-80",
+  },
 ];
 
 const fadeInScale = (delay = 0) => ({
@@ -53,10 +65,10 @@ const AboutUsSection = () => (
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-teal-100 rounded-full opacity-30"></div>
     </div>
 
-    <div className="relative max-w-7xl mx-auto min-h-[600px] md:min-h-[700px]">
+    <div className="relative max-w-7xl lg:max-w-6xl xl:max-w-7xl mx-auto min-h-[600px] md:min-h-[700px]">
       {/* Mobile: 3 full-width images above content */}
       <div className="md:hidden mb-6 flex flex-col gap-4">
-        {imagePositions.slice(0, 3).map((item, idx) => (
+        {[img1, img2, img3].map((img, idx) => (
           <motion.div
             key={idx}
             variants={fadeInScale(idx * 0.1)}
@@ -66,7 +78,7 @@ const AboutUsSection = () => (
             className="w-full rounded-lg overflow-hidden shadow-md"
           >
             <img
-              src={item.img}
+              src={img}
               alt={`Client ${idx + 1}`}
               className="w-full h-auto object-cover"
             />
@@ -80,7 +92,7 @@ const AboutUsSection = () => (
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative mx-auto max-w-2xl flex flex-col justify-center items-center text-center bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 z-20"
+        className="relative mx-auto max-w-xl flex flex-col justify-center items-center text-center bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 z-20"
       >
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-blue-600 to-teal-400 rounded-full"></div>
 
@@ -93,20 +105,20 @@ const AboutUsSection = () => (
         </h3>
 
         <p className="text-gray-700 text-base md:text-lg max-w-3xl mb-8">
-          Founded by seasoned tech leaders from global firms like{' '}
+          Founded by seasoned tech leaders from global firms like{" "}
           <span className="text-blue-600 font-medium">Symantec, McAfee, and EMC</span>, we've grown
           into a trusted partner for institutions and industries empowering students, enabling
           careers, and delivering impactful digital solutions.
         </p>
 
         <p className="text-gray-700 text-base md:text-lg max-w-3xl mb-8">
-          From shaping college campuses into career-ready ecosystems to supporting{' '}
-          <span className="text-blue-600 font-medium">Fortune 100 companies</span>, we build, train, connect and elevate
-          
+          From shaping college campuses into career-ready ecosystems to supporting{" "}
+          <span className="text-blue-600 font-medium">Fortune 100 companies</span>, we build, train,
+          connect and elevate
         </p>
 
         <p className="text-gray-700 text-base md:text-lg max-w-3xl">
-          With end-to-end solutions in{' '}
+          With end-to-end solutions in{" "}
           <span className="text-blue-600 font-medium">education, tech, and talent</span>, we
           collaborate to nurture future professionals all under one roof.
         </p>
@@ -114,19 +126,19 @@ const AboutUsSection = () => (
         <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-teal-400 to-blue-600 rounded-full"></div>
       </motion.div>
 
-      {/* Mobile: 3 full-width images below content */}
+     {/* Mobile: 3 full-width images below content */}
       <div className="md:hidden mt-6 flex flex-col gap-4">
-        {imagePositions.slice(3, 6).map((item, idx) => (
+        {[img4, img5, img6].map((img, idx) => (
           <motion.div
             key={idx + 3}
             variants={fadeInScale((idx + 3) * 0.1)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            className="w-full rounded-lg overflow-hidden shadow-md"
+            className="w-full overflow-hidden"
           >
             <img
-              src={item.img}
+              src={img}
               alt={`Client ${idx + 4}`}
               className="w-full h-auto object-cover"
             />
@@ -134,7 +146,7 @@ const AboutUsSection = () => (
         ))}
       </div>
 
-      {/* Desktop: Absolute images around content */}
+      {/* Desktop: Top floating CONTAINERS */}
       {imagePositions.map((item, idx) => (
         <motion.div
           key={idx}
@@ -148,12 +160,46 @@ const AboutUsSection = () => (
             initial="initial"
             animate="animate"
             variants={floatAnimation}
-            className="w-full h-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            className="w-full h-full rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 p-4"
           >
-            <img src={item.img} alt={`Client ${idx + 1}`} className="w-full h-full object-cover" />
+            {/* Floating container content */}
+            <img
+              src={item.img}
+              alt={`Client ${idx + 1}`}
+              className="w-full h-full object-cover rounded-md"
+            />
           </motion.div>
         </motion.div>
       ))}
+
+      {/* Desktop Grid for Bottom 3 Floating CONTAINERS */}
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 px-4 z-10 relative">
+        {[img6, img5, img7].map((img, idx) => (
+          <motion.div
+            key={idx}
+            variants={fadeInScale(idx * 0.1)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 p-4"
+          >
+            <motion.div
+              initial="initial"
+              animate="animate"
+              variants={floatAnimation}
+              className="w-full h-full relative"
+            >
+              {/* Floating container content */}
+              <img
+                src={img}
+                alt={`Grid Img ${idx + 1}`}
+                className="w-full h-full object-cover rounded-md"
+              />
+            </motion.div>
+          </motion.div>
+        ))}
+      </div>
+
     </div>
   </section>
 );
