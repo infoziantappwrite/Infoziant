@@ -109,7 +109,10 @@ export default function ServicesSection() {
                 >
                   <service.icon size={34} className="text-white" />
                 </div>
-                <h3 className="mt-10 text-xl font-semibold text-gray-900 text-left">{service.title}</h3>
+                <h3 className="mt-10 text-xl font-semibold text-gray-900 text-left whitespace-nowrap">
+                  {service.title}
+                </h3>
+
                 <p className="text-gray-600 text-sm mt-2 text-left">{service.description}</p>
                 <ul className="text-gray-700 text-sm mt-3 pl-0 space-y-2">
                   {service.features.map((feature, i) => (
