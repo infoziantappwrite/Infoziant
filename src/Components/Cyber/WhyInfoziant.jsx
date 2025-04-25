@@ -64,17 +64,7 @@ export default function WhyInfoziant() {
           >
             <h1>{item.count}+</h1>
             <h2>{item.title}</h2>
-            {hoveredIndex === index && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.3 }}
-                className="content"
-              >
-                {item.content}
-              </motion.div>
-            )}
+            
           </motion.div>
         ))}
       </motion.div>
