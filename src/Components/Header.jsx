@@ -9,7 +9,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   const [showVAPT, setShowVAPT] = useState(false);
-  
+
   // Use refs to track hover states
   const categoryTimeoutRef = useRef(null);
   const subMenuTimeoutRef = useRef(null);
@@ -72,7 +72,6 @@ const Header = () => {
 
   const navLinks = [
     { title: "Home", path: "/" },
-    { title: "About", path: "/about" },
     { title: "Services", path: "/services" },
     { title: "Product", path: "/product" },
     { title: "Awards", path: "/awards" },
@@ -248,7 +247,7 @@ const Header = () => {
           </div>
 
           {/* Remaining nav links */}
-          {navLinks.slice(3).map((link, index) => (
+          {navLinks.slice(2).map((link, index) => (
             <div key={index}>
               <Link
                 to={link.path}
@@ -264,7 +263,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t pt-4 space-y-4 z-40 md:hidden shadow-lg">
-          {navLinks.slice(0, 2).map((link, index) => (
+          {navLinks.slice(0, 1).map((link, index) => (
             <React.Fragment key={index}>
               <Link
                 to={link.path}
@@ -354,7 +353,7 @@ const Header = () => {
 
           <hr className="my-2 border-gray-300" />
 
-          {navLinks.slice(3).map((link, index) => (
+          {navLinks.slice(2).map((link, index) => (
             <React.Fragment key={index}>
               <Link
                 to={link.path}

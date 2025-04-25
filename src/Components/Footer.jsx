@@ -66,7 +66,7 @@ export default function Footer() {
                     key={item}
                     className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base"
                   >
-                    <Link to={item === "Home" ? "/" : `/${item.toLowerCase()}`}>{item}</Link>
+                    <Link to={item === "Home" ? "/" : item === "About" ? "/about/cybersecurity-services" :  `/${item.toLowerCase()}`}>{item}</Link>
                   </li>
                 ))}
               </ul>
