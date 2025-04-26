@@ -97,10 +97,11 @@ export default function ConsultationForm() {
   return (
     <div className="consultation-section">
       <div className="consultation-container">
-        <h1 className="form-title">Get A Quick Consultation</h1>
+        <h1 className="form-title">Talk to our Experts</h1>
         <p className="form-desc">
-          Are you looking for a solution to a confusing security issue? Ask our customer service team for assistance right away.
-        </p>
+  Have questions or need help with any of our services? Our customer support team is here to assist you anytime.
+</p>
+
 
         {/* Success message display */}
         <div className="center-container">
