@@ -33,25 +33,22 @@ const Banner = ({
   return (
     <section
       ref={ref}
-      className="relative px-6 min-h-[80vh] w-full overflow-hidden bg-gradient-to-br from-white via-blue-50 to-white text-gray-900 flex items-center "
+      className="relative px-6 min-h-[80vh] w-full overflow-hidden bg-gradient-to-br from-white via-blue-50 to-white text-gray-900 flex items-center"
     >
-     
+      {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none z-0">
-
         <motion.div
           animate={{ scale: [1, 1.1, 1], rotate: [0, 15, -15, 0] }}
           transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
           className="absolute top-[-60px] left-[-60px] w-72 h-72 bg-blue-300 rounded-full opacity-30 blur-3xl"
         ></motion.div>
 
-       
         <motion.div
           animate={{ scale: [1, 1.2, 1], x: [0, 10, -10, 0], y: [0, -10, 10, 0] }}
           transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
           className="absolute bottom-[-80px] right-[-60px] w-80 h-80 bg-blue-400 rounded-full opacity-30 blur-2xl mix-blend-multiply"
         ></motion.div>
 
-       
         <motion.svg
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
@@ -77,7 +74,6 @@ const Banner = ({
           </defs>
         </motion.svg>
 
-        {/* Top Right Wave */}
         <motion.svg
           animate={{ rotate: [12, 14, 10, 12] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
@@ -99,7 +95,6 @@ const Banner = ({
           </defs>
         </motion.svg>
 
-        
         <div className="absolute bottom-6 left-6 space-y-1">
           {[...Array(3)].map((_, i) => (
             <motion.div
@@ -118,118 +113,212 @@ const Banner = ({
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-7xl mx-auto">
-        {/* Text Section */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left space-y-8 mt-12 lg:mt-0">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-blue-50 to-teal-50 rounded-full border border-blue-200 text-blue-600 text-sm font-medium">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-              {badgeText}
-            </span>
-          </motion.div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
+        {/* Mobile Layout */}
+        <div className="block lg:hidden w-full pt-10 pb-10">
+          <div className="w-full text-center space-y-4 mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-blue-50 to-teal-50 rounded-full border border-blue-200 text-blue-600 text-sm font-medium">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                {badgeText}
+              </span>
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
-          >
-            <span className="relative inline-block">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl sm:text-5xl font-bold leading-tight"
+            >
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
                 {title}
               </span>
-            </span>
-          </motion.h1>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-md sm:text-lg lg:text-xl font-bold leading-tight"
-          >
-            <span className="relative inline-block">
+            </motion.h1>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-md sm:text-lg font-bold leading-tight"
+            >
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
                 {subtitle}
               </span>
-            </span>
-          </motion.h1>
+            </motion.h1>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-600 text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed"
-          >
-            {description}
-          </motion.p>
+          {/* Image Section */}
+          <div className="w-full flex justify-center relative mb-8">
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-50 via-teal-50 to-blue-50 rounded-3xl blur-xl opacity-70"></div>
 
-          {/* Button Wrapper with bottom margin on mobile */}
-          <div className="mb-12 sm:mb-0">
+            <AnimatePresence>
+              {isInView && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.92, y: 20 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: 0.2,
+                  }}
+                  className="relative z-10 w-full flex justify-center p-2"
+                >
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full max-w-sm h-auto object-contain rounded-xl shadow-blue-100/100"
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Description Section */}
+          <div className="w-full text-center space-y-6">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-gray-600 text-lg max-w-xl mx-auto leading-relaxed"
+            >
+              {description}
+            </motion.p>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-3 justify-center sm:justify-start pt-2 sm:pt-4"
+              className="flex flex-col sm:flex-row gap-4 justify-center pt-2 sm:pt-4"
             >
               <a
                 href={primaryBtnLink}
-                className="group px-6 sm:px-8 py-3 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-full shadow-lg shadow-blue-200/30 hover:shadow-blue-300/40 transition-all duration-300 text-center relative overflow-hidden"
+                className="group w-60 mx-auto flex items-center justify-center px-6 py-3 text-sm bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-300/40 transition-all duration-300 text-center"
               >
-                <span className="relative z-10">{primaryBtnText}</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                {primaryBtnText}
               </a>
-              <button
-  onClick={() => setShowForm(true)}
-  className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
->
 
-                <span className="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent group-hover:text-gray-800 transition-colors duration-300">
+              <button
+                onClick={() => setShowForm(true)}
+                className="w-60 sm:w-auto mx-auto px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-gray-800 font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">
                   {secondaryBtnText}
                 </span>
-                </button>
-              <div className="block sm:hidden w-full h-8 min-h-8"></div>
+              </button>
+
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:flex lg:flex-row items-center justify-between w-full">
+          {/* Text Section */}
+          <div className="w-1/2 text-left space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-blue-50 to-teal-50 rounded-full border border-blue-200 text-blue-600 text-sm font-medium">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                {badgeText}
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl lg:text-6xl font-bold leading-tight"
+            >
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
+                {title}
+              </span>
+            </motion.h1>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg lg:text-xl font-bold leading-tight"
+            >
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">
+                {subtitle}
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-gray-600 text-lg max-w-xl leading-relaxed"
+            >
+              {description}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex gap-3 justify-start pt-4"
+            >
+              <a
+                href={primaryBtnLink}
+                className="group px-8 py-3 text-base bg-gradient-to-r from-blue-600 to-teal-500 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-300/40 transition-all duration-300 text-center"
+              >
+                <span className="relative z-10">{primaryBtnText}</span>
+              </a>
+              <button
+                onClick={() => setShowForm(true)}
+                className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-gray-800 font-semibold rounded-full hover:bg-white/20 transition-all duration-300 text-center"
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">
+                  {secondaryBtnText}
+                </span>
+              </button>
             </motion.div>
           </div>
 
-        </div>
+          {/* Image Section */}
+          <div className="w-[48%] flex justify-center relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-50 via-teal-50 to-blue-50 rounded-3xl blur-xl opacity-70"></div>
 
-        {showForm && (
-  <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
-    <InquiryFormSerivies closeModal={() => setShowForm(false)} />
-  </div>
-)}
-
-
-        {/* Image Section */}
-        <div className="w-full lg:w-[48%] flex justify-center relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-50 via-teal-50 to-blue-50 rounded-3xl blur-xl opacity-70"></div>
-
-          <AnimatePresence>
-            {isInView && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.92, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.92, y: 20 }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: 0.2,
-                }}
-                className="relative z-10 w-full flex justify-center p-2"
-              >
-                <img
-                  src={image}
-                  alt={title}
-                  className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto object-contain rounded-xl    shadow-blue-100/100"
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <AnimatePresence>
+              {isInView && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.92, y: 20 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: 0.2,
+                  }}
+                  className="relative z-10 w-full flex justify-center p-2"
+                >
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full max-w-lg h-auto object-contain rounded-xl shadow-blue-100/100"
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
+
+      {/* Inquiry Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+          <InquiryFormSerivies closeModal={() => setShowForm(false)} />
+        </div>
+      )}
     </section>
   );
 };

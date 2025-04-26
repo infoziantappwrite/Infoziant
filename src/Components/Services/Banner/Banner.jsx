@@ -78,7 +78,7 @@ const Banner = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isGifVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="w-full lg:w-1/3 flex justify-center mr-20 lg:mr-0"
+            className="w-full lg:w-1/3 flex justify-center mx-auto lg:mx-0 lg:justify-center"
           >
             <img
               src={sampleGif}

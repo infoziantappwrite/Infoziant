@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./AboutUsSection.css"; 
-import img1 from "../../../assests/Images/HomeAbout/10.png";
+import img1 from "../../../assests/Images/HomeAbout/13.png";
 import img2 from "../../../assests/Images/HomeAbout/2.png";
 import img3 from "../../../assests/Images/HomeAbout/3.png";
 import img4 from "../../../assests/Images/HomeAbout/9.png";
@@ -13,7 +13,7 @@ const imagePositions = [
   {
     img: img1,
     classes:
-      "top-4 right-[-1rem] md:-top-4 md:right-[-1rem] xl:right-[-3rem] w-32 h-32 md:w-44 md:h-44 lg:w-80 lg:h-56",
+      "top-4 right-[-1rem] md:right-[-1rem] xl:right-[-3rem] w-32 h-32 md:w-44 md:h-44 lg:w-80 lg:h-56",
   },
   {
     img: img2,
