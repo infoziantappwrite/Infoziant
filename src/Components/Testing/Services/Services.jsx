@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import TestingGIF from "../../../assests/Images/Banner/SoftTests.gif"; // Replace with actual path
+import TestingGIF from "../../../assests/Images/Ourservice/homepage-banner-animated-2[1].gif"; // Replace with actual path
 
 const Services = () => {
   const [activeService, setActiveService] = useState(0);

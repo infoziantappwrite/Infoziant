@@ -1,5 +1,5 @@
 import { ShieldCheck, Smartphone, Wrench, Server, ChevronDown, Bolt } from "lucide-react";
-import SmilingTeam from "../../../assests/Images/Ourservice/homepage-banner-animated-2[1].gif";
+import SmilingTeam from "../../../assests/Images/Banner/SoftTests.gif";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
