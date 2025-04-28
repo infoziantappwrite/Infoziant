@@ -117,18 +117,19 @@ const Services = () => {
         <motion.div
           variants={fadeInUp}
           custom={1}
-          className="mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-xl"
+          className="mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-xl bg-transparent"
         >
-          <div className="p-12">
-          <img
-            src={TestingGIF}
-            alt="Testing Solutions"
-            className="w-full h-auto object-cover"
-          />
-
-
+          <div className="p-0">  {/* Removed padding to eliminate any background space */}
+            <img
+              src={TestingGIF}
+              alt="Testing Solutions"
+              className="w-full h-auto object-contain"
+              style={{ 
+                background: 'transparent',
+                maxWidth: '100%'
+              }}
+            />
           </div>
-         
 
           {/* Service Detail */}
           <motion.div 
