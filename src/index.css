@@ -11,4 +11,9 @@
   /* font-family: "Karla", sans-serif; */
   
 }
+.stroke-text {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
   
