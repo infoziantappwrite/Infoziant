@@ -5,9 +5,8 @@ import { Helmet } from 'react-helmet';
 import Testimonials from './components/Testimonials';
 import AboutBanner from './components/AboutBanner';
 import Achievements from './components/Achievements';
-import KeySolutions from './components/KeySolutions';
 import AboutUsSection from '../Home/AboutSection/AboutUsSection';
-import AppreciatedBy from './components/AppreciatedBy';
+import AppreciatedBy from './components/AppreciatedBydark';
 import InnovativeTech from '../Home/Services1/InnovativeTech';
 import ServicesSection from "../Home/Services1/ServicesSection";
 import StatsScroller from "../Home/Stats/StatsScroller";
@@ -31,7 +30,7 @@ const About = () => {
         <AboutUsSection></AboutUsSection>
         <InnovativeTech></InnovativeTech>
         <Achievements></Achievements>
-        <KeySolutions></KeySolutions>
+        
         <AppreciatedBy></AppreciatedBy>
         <Testimonials></Testimonials>
         <ServicesSection></ServicesSection>
