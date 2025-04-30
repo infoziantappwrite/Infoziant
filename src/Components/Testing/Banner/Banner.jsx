@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import codeThemeImage from "../../../assests/Images/Banner/intelex_software_development1.gif";
+import codeThemeImage from "../../../assests/Images/Banner/intelex_software_development1.png";
 import InquiryFormSerivies from "../../Services/InquiryFormSerivies";
 
 const Banner = () => {

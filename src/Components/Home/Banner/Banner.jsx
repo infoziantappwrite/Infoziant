@@ -1,21 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
- 
+
 const slides = [
   {
-    heading: "Innovative Tech & Business Services",
-    text: "Driving business growth through innovative technology and tailored digital solutions",
+    heading: "Transforming Talent & Technology with Grade-A Skilling and Digital Solutions",
+    text: "We deliver impact at every step",
   },
   {
-    heading: "Campus to Corporate Services",
-    text: "Connecting academia with industry through career-ready programs",
+    heading: "Transforming Talent & Technology with Grade-A Skilling and Digital Solutions",
+    text: "We deliver impact at every step",
   },
+
 ];
  
 const Banner = () => {
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const videoRef = useRef(null);
- 
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIsAnimating(true);
@@ -26,15 +27,15 @@ const Banner = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
- 
+
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5; // Slowed video
     }
   }, []);
- 
+
   const { heading, text } = slides[index];
- 
+
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center">
       {/* Background Video */}
@@ -52,47 +53,28 @@ const Banner = () => {
         />
         Your browser does not support the video tag.
       </video>
- 
- 
+
+
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 z-0" />
- 
- 
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-4xl w-full mx-auto">
+
+
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-7xl w-full mx-auto">
         <h1
-          className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-snug text-center transition-all duration-700 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
+          className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-snug  text-center transition-all duration-700 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
             }`}
         >
-          {heading.split(" ").map((word, i, arr) => {
-            const isLast = i === arr.length - 1;
-            const isStroke = word.toLowerCase() === "tech" || word.toLowerCase() === "corporate";
- 
-            if (isLast) {
-              return (
-                <div
-                  key={i}
-                  className="block mt-2 bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent"
-                >
-                  {word}
-                </div>
-              );
-            }
- 
-            return (
-              <span
-                key={i}
-                className={`mr-2 ${isStroke
-                  ? "stroke-text text-transparent font-semibold"
-                  : "text-white"
-                  }`}
-              >
-                {word}
-              </span>
-            );
-          })}
+          <span className="text-white block">Transforming  Technology </span>
+
+          <span className="stroke-text text-transparent block mt-4">
+          with Grade-A 
+          </span>
+
+          <span className="bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent block mt-4 pb-4">
+            Digital Solutions
+          </span>
         </h1>
- 
- 
+
         <div className="max-w-2xl w-full text-center">
           <p
             className={`mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 transition-all duration-700 delay-100 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
@@ -101,7 +83,7 @@ const Banner = () => {
             {text}
           </p>
         </div>
- 
+
         <div
           className={`mt-6 sm:mt-8 transition-all duration-700 delay-200 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
             }`}
@@ -117,10 +99,11 @@ const Banner = () => {
           </button>
         </div>
       </div>
- 
- 
+
+
+
     </section>
   );
 };
- 
+
 export default Banner;

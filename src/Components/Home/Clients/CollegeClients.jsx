@@ -96,7 +96,7 @@ const CollegeClients = () => {
             Trusted By
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">
-            Our Educational Partners
+            Your Trusted Partner in Tech & Talent
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto"></div>
           <p className="mt-6 text-blue-100/80 max-w-2xl mx-auto">

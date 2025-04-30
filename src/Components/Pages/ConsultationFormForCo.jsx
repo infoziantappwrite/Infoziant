@@ -95,11 +95,11 @@ export default function ConsultationFormForCo() {
     return (
         <div className="consultation-section">
             <div className="consultation-container">
-                <h1 className="form-title">Get A Quick Consultation</h1>
-                <p className="form-desc">
-                Have a question or need assistance? We're here to help — just drop us a message.
-                </p>
 
+            <h1 className="form-title">Talk to our Experts</h1>
+        <p className="form-desc">
+  Have questions or need help with any of our services? Our customer support team is here to assist you anytime.
+</p>
                 {/* Success message display */}
                 <div className="center-container">
                     {successMessage && <p className="success-message"><FaCircleCheck /> {successMessage}</p>}
