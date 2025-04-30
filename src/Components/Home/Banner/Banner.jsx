@@ -67,7 +67,7 @@ const Banner = () => {
           <span className="text-white block">Transforming  Technology </span>
 
           <span className="stroke-text text-transparent block mt-4">
-          with Grade-A 
+          with Next-Gen
           </span>
 
           <span className="bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent block mt-4 pb-4">

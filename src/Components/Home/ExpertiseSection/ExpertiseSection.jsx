@@ -114,10 +114,10 @@ const slides = [
         ],
         achievements: [
             "37+ Institutions",
-            "7,510+ students placed"
+            "7,510+ Students placed"
         ],
         tools: [
-            "companies offering CTCs up to ₹1.02 Cr",
+            "Companies offering CTCs up to ₹1.02 Cr",
             "18000+ Happy Students"
         ]
     }
@@ -133,7 +133,7 @@ const ExpertiseSection = () => {
     const next = () => setSelected((prev) => (prev + 1) % slides.length);
 
     return (
-        <section className="bg-white py-20 px-6 md:px-12">
+        <section className="bg-white py-10 px-6 md:px-12">
             {/* Header */}
             <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-transparent bg-clip-text">
