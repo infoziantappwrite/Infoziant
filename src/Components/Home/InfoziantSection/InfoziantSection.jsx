@@ -37,7 +37,7 @@ const InfoziantSection = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
         >
-           At Infoziant, we build secure tech solutions and nurture future-ready talent — where every product excels and every learner thrives. Infoziant is a trusted tech powerhouse, delivering cutting-edge Cybersecurity, Software Development, AI, and quality testing services to global clients. Founded by industry veterans, we combine innovation with deep technical expertise to build secure, scalable solutions. Alongside our core IT services, we also empower academic institutions with placement support, training, and career-enabling programs nurturing talent and bridging the gap between campus and corporate.
+           At Infoziant, we build secure tech solutions and nurture future-ready talent — where every product excels and every learner thrives. Infoziant is a trusted tech powerhouse, Delivering cutting-edge Cybersecurity, Software Development, AI, and quality testing services to global clients. Founded by industry veterans, We combine innovation with deep technical expertise to build secure, scalable solutions. Alongside our core IT services, we also empower academic institutions with Placement support, Training, and Career-enabling programs nurturing talent and bridging the gap between campus and corporate.
         </motion.p>
       </motion.div>
     </section>
