@@ -64,10 +64,10 @@ const AboutBanner = () => {
           transition={{ duration: 0.5, delay: 0.4 }} // Add delay for button
         >
           <Link
-            to="about-wwa-section"
+            to="welcome-section"
             smooth={true}
             duration={500}
-            className="learn-more-btn"
+            className="learn-more-btns"
             style={{ cursor: 'pointer' }} // Make it look like a button
           >
             Learn More

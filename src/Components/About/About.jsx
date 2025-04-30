@@ -2,12 +2,17 @@
 import React from 'react';
 import "./About.css"
 import { Helmet } from 'react-helmet';
-import Whoweare from './components/Whoweare';
 import Testimonials from './components/Testimonials';
 import AboutBanner from './components/AboutBanner';
 import Achievements from './components/Achievements';
 import KeySolutions from './components/KeySolutions';
+import AboutUsSection from '../Home/AboutSection/AboutUsSection';
 import AppreciatedBy from './components/AppreciatedBy';
+import InnovativeTech from '../Home/Services1/InnovativeTech';
+import ServicesSection from "../Home/Services1/ServicesSection";
+import StatsScroller from "../Home/Stats/StatsScroller";
+import Testimonials1 from './components/Testimonialsc2c';
+
 
 
 
@@ -22,11 +27,22 @@ const About = () => {
       <div className='about-page'>
         
         <AboutBanner></AboutBanner>
+        
+        <AboutUsSection></AboutUsSection>
+        <InnovativeTech></InnovativeTech>
         <Achievements></Achievements>
-        <Whoweare></Whoweare>
-        <Testimonials></Testimonials>
         <KeySolutions></KeySolutions>
         <AppreciatedBy></AppreciatedBy>
+        <Testimonials></Testimonials>
+        <ServicesSection></ServicesSection>
+        <StatsScroller></StatsScroller>
+        <Testimonials1></Testimonials1>
+       
+       
+
+        
+       
+        
         
         
       </div>

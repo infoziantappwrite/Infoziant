@@ -49,7 +49,7 @@
     line-height: 1.6;
 }
  
-.learn-more-btn {
+.learn-more-btns {
     display: inline-block;
     padding: 10px 25px;
     font-size: 1rem;
@@ -64,11 +64,11 @@
     text-decoration: none;
 }
  
-.learn-more-btn:hover {
+.learn-more-btns:hover {
     background: linear-gradient(150deg, #15f5b9d0, #002affc4);
 }
  
-.learn-more-btn::after {
+.learn-more-btns::after {
     content: '↓';
     font-size: 1.4rem;
     font-weight: bolder;
@@ -942,7 +942,7 @@
   }
  
   .company-logos {
-    padding: 0 150px;
+    padding: 0 250px;
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
     gap: 30px;
@@ -954,8 +954,8 @@
     border-radius: 50%;
     background: linear-gradient(200deg, #00ffbb32, #415afc3b);
     border: solid 1px rgba(21, 0, 253, 0.158);
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     padding: 5px;
     display: flex;
     align-items: left;

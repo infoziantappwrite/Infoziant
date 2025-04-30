@@ -58,7 +58,7 @@ const floatAnimation = {
 const AboutUsSection = () => (
   <section
     id="welcome-section"
-    className="relative w-full py-24 px-6 md:px-12 bg-gradient-to-b from-white to-blue-50 overflow-hidden"
+    className="welcome-section relative w-full py-24 px-6 md:px-12 bg-gradient-to-b from-white to-blue-50 overflow-hidden"
   >
     {/* Decorative background elements */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
