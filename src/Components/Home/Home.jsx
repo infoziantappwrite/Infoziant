@@ -19,21 +19,11 @@ const Home = () => {
     <>
         <Banner />
         <SectionTwo/>
-        {/* <AboutUsSection /> */}
-      
-        {/* <CounterSection /> */}
-        {/* <Testimonials /> */}
-        {/* <BlogSection /> */}
-        {/* <ContactSection /> */}
-        {/* <Ourservices />
-        <ServicesSection />
-        <InnovativeTech /> */}
         <ExpertiseSection />
         <StatsScroller />
         <Partnership />
         <Accreditation />
         <Portfolio />
-        
         <CollegeClients />
         <TestimonialSection />
         {/* <ContactSection /> */}

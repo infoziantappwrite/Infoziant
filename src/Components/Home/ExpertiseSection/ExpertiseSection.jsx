@@ -15,11 +15,11 @@ const slides = [
             "Vulnerability Assessments & Pen-Testing",
             "24×7 Monitoring & Incident Response",
             "Compliance (ISO 27001, GDPR)",
-            "Managed Security Operations"
+            "Generate Audit Reports"
         ],
         achievements: [
             "Secured 200+ systems for global clients",
-            "Saved $12.7 M for a Insurance provider"
+            "Saved $12.7 M for an Insurance provider"
         ],
         tools: [
             "Appreciated by US Environmental Protection Agency",
@@ -112,7 +112,7 @@ const ExpertiseSection = () => {
                     Our Expertise
                 </h2>
                 <div className="w-16 h-1 mx-auto bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded mt-2 mb-4" />
-                <p className="text-lg text-gray-600">Scaling digital growth across sectors</p>
+                <p className="text-lg text-gray-600">Scaling Digital Growth Across Sectors</p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-8">
