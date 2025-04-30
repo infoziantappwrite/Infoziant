@@ -63,7 +63,7 @@ const App = () => {
       <Header />
       <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="/about/cybersecurity-services" element={<About/>} />
+      <Route path="/about" element={<About/>} />
       <Route path="/product" element={<Products/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/awards" element={<Awards />} />
@@ -90,6 +90,8 @@ const App = () => {
       <Route path="/services/cybersecurity/vapt/cloud-infrastructure" element={<CloudInfrastructure />}/>
       <Route path="/services/cybersecurity/vapt/api-vapt" element={<ApiVapt />}/>
       <Route path="/services/cybersecurity/vapt/siem" element={<Siem />}/>
+    
+
       <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

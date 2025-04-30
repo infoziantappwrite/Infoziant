@@ -1,28 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import image1 from "../../../assests/Images/Testimonials/Nirmal-Sathyaraj-R.jpeg";
-import image2 from "../../../assests/Images/Testimonials/Alavudeen.png";
+
 import image3 from "../../../assests/Images/Testimonials/Krishna.jpeg";
-import image4 from "../../../assests/Images/Testimonials/Meeyal.jpeg";
-import image5 from "../../../assests/Images/Testimonials/Sundar.jpg";
-import image6 from "../../../assests/Images/Testimonials/secoundcodesoft.jpg";
-import image7 from "../../../assests/Images/Testimonials/Ilanghovan.png";
-import image8 from "../../../assests/Images/Testimonials/Bharat.png";
+import image1 from "../../../assests/Images/testimonial-1.jpg";
+import image2 from "../../../assests/Images/testimonial-2.jpg";
+import image4 from "../../../assests/Images/testimonial-3.jpg";
+
 
 const testimonials = [
-  {
-    name: "Nirmal",
-    role: "Placement Officer  | Sri Shanmugha College of Engineering and Technology",
-    quote: "Infoziant has been a great support for our students, both in training and placements. Their sessions are practical, insightful, and engaging, and the team is always approachable. We’ve seen real results, and we’re happy to keep working with them for continued success.",
-    image: image1,
-    color: "from-rose-500 to-pink-400"
-  },
-  {
-    name: "Dr Alavudeen A",
-    role: "Director-Corporate Relations | Kalasalingam University Srivilliputtur",
-    quote: "Infoziant’s training and their collaboration with CodeChef have been highly effective. The sessions are industry-focused and impactful. We appreciate their support in placements and training. It’s been a smooth, professional journey with excellent results for our students.",
-    image: image2,
-    color: "from-violet-500 to-fuchsia-400"
-  },
+  
   {
     name: "Krishna",
     role: "AVP | SMI Technology LLC, Dubai",
@@ -31,40 +16,27 @@ const testimonials = [
     color: "from-indigo-500 to-sky-400"
   },
   {
-    name: "Maha Lakshmi",
-    role: "Founder | Meeyal Designer",
-    quote: "Working with Infoziant was a game-changer for our boutique brand. They captured our design vision perfectly and built a sleek, user-friendly, and responsive e-commerce site that truly reflects Meeyal Designer’s identity. The team was highly responsive, creative, and made the entire process smooth and stress-free. We're beyond satisfied with the final result.",
-    image: image4,
+    name: "Mr. Senthil Kumar",
+    role: "CEO | Vasa infotech",
+    quote: "Infoziant security testing was crucial in finding the security flaws at vasaits educational portal. There were several applications inside vasaits and Infoziant team organzised the metrics for security checks in stages. The remediations provided by infoziant is highly helpful for the development team to fix the security bugs.",
+    image: image1,
     color: "from-lime-500 to-green-400"
   },  
   {
-    name: "Sundar Karthick",
-    role: "Student  | Panimalar Engineering College",
-    quote: "CodeChef played a crucial role in my placement journey! The structured learning, coding challenges, and mock contests helped me sharpen my problem-solving skills. The platform’s practice sessions and real-time assessments prepared me well for technical interviews. Thanks to CodeChef, I secured placements at Tech Mahindra and CTS.",
-    image: image5,
+    name: "Mr. Ilanghovan K R",
+    role: "Managing Director  | Oasys",
+    quote: "Infoziant and Oasys is engaged for more than 3 years in various security testing projects, as oasys we work on several government of India projects- Infoziant places a vital role in protecting them against cyber security threats. Tony and the team makes quick resolutions for the queries raised.",
+    image: image2,
     color: "from-cyan-500 to-teal-400"
   },
   {
-    name: "Deepika",
-    role: "Student  | Ethiraj College For Women",
+    name: "Mr. Bharat Saoji",
+    role: "Vice President IT  |  Keenan & Associates",
     quote: "Coming from an MCA background in arts, stepping into the tech world felt overwhelming. CodeChef provided a clear learning path with structured practice and real-time coding challenges. The competitive environment pushed me to improve, and the interview preparation resources were invaluable. Thanks to this, I successfully secured placements at EY Global!.",
-    image: image6,
+    image: image4,
     color: "from-orange-500 to-amber-400"
   },
-  {
-    name: "Mr. Ilanghovan K R",
-    role: "Managing Director | Oasys",
-    quote: "Infoziant and Oasys have been engaged for over 3 years in various security testing projects. Oasys works on several Government of India projects, and Infoziant plays a vital role in protecting them against cybersecurity threats. Tony and the team provide quick resolutions for any queries raised.",
-    image: image7,
-    color: "from-yellow-500 to-lime-400"
-  },
-  {
-    name: "Mr. Bharat Saoji",
-    role: "Vice President IT | Keenan Associates",
-    quote: "Infoziant has been associated with Keenan & Associates for over 5 years, providing comprehensive and reliable security testing services that make our applications completely free from potential security threats. Tony and the team are highly supportive, always responding to us promptly any time round the clock.",
-    image: image8,
-    color: "from-red-500 to-orange-400"
-  },
+  
 ];
 
 
