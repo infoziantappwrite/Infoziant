@@ -1,7 +1,7 @@
-import React from "react";
-import { ArrowRight } from "lucide-react"; // Importing an icon for the CTA
+import React, { useState } from "react";
+import { ArrowRight, X } from "lucide-react";
+import InquiryFormSerivies from "../../Services/InquiryFormSerivies";
 
-// Import BackgroundGlow from Code 2
 const BackgroundGlow = () => (
   <div className="absolute inset-0 opacity-10 pointer-events-none">
     <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-purple-400 blur-3xl"></div>
@@ -9,14 +9,14 @@ const BackgroundGlow = () => (
   </div>
 );
 
-const WhatIsCodeChef = ({ heading, subheading, description, image, ctaText, ctaLink }) => {
+const WhatIsCodeChef = ({ heading, subheading, description, image, ctaText }) => {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <section className="relative w-full py-20 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a365d] text-white font-sans overflow-hidden">
-      {/* Background Glow Effect */}
       <BackgroundGlow />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Heading and Subheading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-teal-300 via-teal-500 to-blue-500 bg-clip-text text-transparent mb-4">
             {heading}
@@ -27,38 +27,48 @@ const WhatIsCodeChef = ({ heading, subheading, description, image, ctaText, ctaL
           </p>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-
-           {/* Left-side Image */}
           <div className="flex justify-center">
             <img
-              src={image} 
+              src={image}
               alt="CodeChef"
-              className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-xl  transform transition-transform hover:scale-105 "
+              className="w-full max-w-xs md:max-w-md lg:max-w-lg rounded-xl transform transition-transform hover:scale-105"
             />
           </div>
 
-
-          {/* Text Content */}
           <div>
             <p className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8">
               {description}
             </p>
-            {ctaText && ctaLink && (
-              <a
-                href={ctaLink}
+            {ctaText && (
+              <button
+                onClick={() => setShowForm(true)}
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-teal-400 to-blue-500 text-white font-medium rounded-lg shadow-md hover:opacity-90 hover:shadow-lg transition-all duration-300"
               >
                 {ctaText} <ArrowRight className="ml-1 w-4 h-4" />
-              </a>
+              </button>
             )}
           </div>
-
-          
         </div>
       </div>
+
+      {/* Modal Inside the Same Component */}
+      {showForm && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+          <div className="relative bg-white rounded-xl shadow-lg max-w-lg w-full">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowForm(false)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Actual Form */}
+            <InquiryFormSerivies closeModal={() => setShowForm(false)} />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

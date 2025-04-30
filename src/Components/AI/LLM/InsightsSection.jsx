@@ -1,0 +1,57 @@
+import React from 'react';
+
+const insights = [
+  {
+    title: 'Comprehensive LLM Software Testing Guide',
+    description:
+      'Unsure of how to do LLM Software Testing? Here’s a complete guide that will help you get started on testing AI and LLM solutions.',
+    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/optimized/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Comprehensive-LLM-Software-Testing-Guide.png', // Use your image URL here
+    link: '#',
+  },
+  {
+    title: 'AI Testing Tutorial : The Best Strategies to Use',
+    description:
+      'New to AI testing? Fear not, in this AI Testing Tutorial we explore how to build on your existing knowledge to become an expert in no time.',
+    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/optimized/rev-ee81cca/codoid.com/wp-content/uploads/2021/08/AI-Testing-Tutorial-The-Best-Strategies-to-Use-for-Every-Use-Case-Blog.jpg', // Use your image URL here
+    link: '#',
+  },
+];
+
+const InsightsSection = () => {
+  return (
+    <section className="bg-[#e6ecf5] py-16 px-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15f5b9] to-[#3F00FF]">Our</span>{' '}
+        <span className="text-gray-900">Insights</span>
+      </h2>
+
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+        {insights.map((item, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full md:w-1/3 object-cover h-48 md:h-auto"
+            />
+            <div className="flex flex-col justify-between p-6 md:w-2/3">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
+                <p className="text-sm text-gray-700 mt-2">{item.description}</p>
+              </div>
+              <div className="mt-4">
+                <a
+                  href={item.link}
+                  className="inline-block px-4 py-2 text-white text-sm font-medium rounded bg-gradient-to-r from-[#3F00FF] to-[#15f5b9]"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default InsightsSection;

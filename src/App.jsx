@@ -18,6 +18,7 @@ import Layout from './Components/Cyber/Layout';
 import Products from './Components/products/Product';
 import Edutech_Platform from './Components/c2cservices/Edutech';
 import Blog from './Components/c2cservices/Blog/Blog';
+import LLM from "./Components/AI/LLM/LLM.jsx";
 
 
 // CSS imports
@@ -40,6 +41,7 @@ import NetworkInfrastructure from './Components/VAPTservices/NetworkInfrastructu
 import CloudInfrastructure from './Components/VAPTservices/CloudInfrastructure';
 import ApiVapt from './Components/VAPTservices/ApiVapt';
 import Siem from './Components/VAPTservices/Siem';
+import GenAI from './Components/Genai/GenAI.jsx';
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
     <img src="/Test.jpg" alt="Coming Soon" className="w-full h-full object-contain" />
@@ -90,6 +92,8 @@ const App = () => {
       <Route path="/services/cybersecurity/vapt/cloud-infrastructure" element={<CloudInfrastructure />}/>
       <Route path="/services/cybersecurity/vapt/api-vapt" element={<ApiVapt />}/>
       <Route path="/services/cybersecurity/vapt/siem" element={<Siem />}/>
+      <Route path="/llm" element={<LLM />}/>
+      <Route path="/genai" element={<GenAI />}/>
       <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

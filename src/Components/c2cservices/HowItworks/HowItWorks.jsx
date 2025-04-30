@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import InquiryFormSerivies from "../../Services/InquiryFormSerivies";
 
 const HowItWorks = ({ steps }) => {
   const iconColors = [
@@ -12,6 +13,9 @@ const HowItWorks = ({ steps }) => {
     "from-teal-400 to-cyan-500",
     "from-purple-400 to-indigo-500"
   ];
+
+  const [showForm, setShowForm] = useState(false);
+
 
   return (
     <section className="w-full py-24 bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900">
@@ -126,14 +130,30 @@ const HowItWorks = ({ steps }) => {
           <p className="text-xl text-gray-600 mb-6">
             Start from scratch. Build expertise. Win careers.
           </p>
-          <a
-            href="#enquiry-form"
+          <button
+            onClick={() => setShowForm(true)}
             className="px-8 py-3 bg-gradient-to-r from-teal-400 to-blue-500 text-white font-medium rounded-lg shadow-md hover:opacity-90 hover:shadow-lg transition-all duration-300"
           >
             Start Learning Today
-          </a>
+          </button>
         </div>
       </div>
+
+
+      {showForm && (
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
+          <div className="relative bg-white rounded-xl shadow-lg max-w-lg w-full">
+            {/* Close button */}
+            <button
+              onClick={() => setShowForm(false)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black"
+            >
+              ✕
+            </button>
+            <InquiryFormSerivies closeModal={() => setShowForm(false)} />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

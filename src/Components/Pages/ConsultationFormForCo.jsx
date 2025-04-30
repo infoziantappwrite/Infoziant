@@ -97,7 +97,7 @@ export default function ConsultationFormForCo() {
             <div className="consultation-container">
                 <h1 className="form-title">Get A Quick Consultation</h1>
                 <p className="form-desc">
-                    Are you looking for a solution to a confusing security issue? Ask our customer service team for assistance right away.
+                Have a question or need assistance? We're here to help — just drop us a message.
                 </p>
 
                 {/* Success message display */}

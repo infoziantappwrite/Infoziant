@@ -67,7 +67,7 @@ const Banner = () => {
               href="#get-started"
               className="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-600 to-teal-400 text-white font-semibold rounded-full shadow-lg hover:shadow-blue-500/20 transition-all duration-300 text-center"
             >
-              Start Your Project
+              Explore Now
             </a>
             <button
   onClick={() => setShowForm(true)}

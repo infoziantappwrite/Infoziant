@@ -146,9 +146,6 @@ const ManualTesting = () => {
           transition={{ duration: 1, delay: 1.2 }}
           className="mt-12 md:mt-16"
         >
-          <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-lg hover:opacity-90 hover:drop-shadow-xl transition duration-300 text-sm md:text-base">
-            Book Your QA Session
-          </button>
         </motion.div>
       </motion.div>
     </section>

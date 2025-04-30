@@ -12,25 +12,29 @@ import ConsultationForm from '../Pages/ConsultationForm';
 const Home = () => {
   return (
     <>
-        <Banner />
-        {/* <AboutUsSection /> */}
-      
-        {/* <CounterSection /> */}
-        {/* <Testimonials /> */}
-        {/* <BlogSection /> */}
-        {/* <ContactSection /> */}
-        <Ourservices />
+      <Banner />
+      {/* <AboutUsSection /> */}
+
+      {/* <CounterSection /> */}
+      {/* <Testimonials /> */}
+      {/* <BlogSection /> */}
+      {/* <ContactSection /> */}
+
+      <Ourservices />
+      <div id="get-started">
         <ServicesSection />
-        <InnovativeTech />
-       
-        <StatsScroller />
-        {/* <CollegeClients /> */}
-        <TestimonialSection />
-          <ConsultationForm />
-        {/* <ContactSection /> */}
-        {/* <Footer /> */}
-  
-      
+      </div>
+
+      <InnovativeTech />
+
+      <StatsScroller />
+      {/* <CollegeClients /> */}
+      <TestimonialSection />
+      <ConsultationForm />
+      {/* <ContactSection /> */}
+      {/* <Footer /> */}
+
+
     </>
   )
 }

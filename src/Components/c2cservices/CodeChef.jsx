@@ -71,6 +71,7 @@ const CodeChef = () => {
         image={placementImage} // ✅ pass image here
       />
 
+      <div id="get-started">
       <WhatIsCodeChef 
         heading={codechefData.heading}
         subheading={codechefData.subheading}
@@ -79,6 +80,8 @@ const CodeChef = () => {
         ctaText={codechefData.ctaText}
         ctaLink={codechefData.ctaLink}
       />
+      </div>
+      
 
        <WhyChoose
           heading="Why CodeChef?"
