@@ -9,11 +9,12 @@
   font-optical-sizing: auto;
   font-style: normal;
   /* font-family: "Karla", sans-serif; */
-  
+ 
 }
 .stroke-text {
   -webkit-text-stroke: 1px white;
   color: transparent;
 }
-
-  
+html {
+  scroll-behavior: smooth;
+}

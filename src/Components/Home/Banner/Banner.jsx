@@ -11,7 +11,7 @@ const slides = [
   },
 
 ];
-
+ 
 const Banner = () => {
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -75,8 +75,6 @@ const Banner = () => {
           </span>
         </h1>
 
-
-
         <div className="max-w-2xl w-full text-center">
           <p
             className={`mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 transition-all duration-700 delay-100 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
@@ -101,6 +99,7 @@ const Banner = () => {
           </button>
         </div>
       </div>
+
 
 
     </section>

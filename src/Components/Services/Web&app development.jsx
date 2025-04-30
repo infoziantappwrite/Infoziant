@@ -26,24 +26,26 @@ const slides = [
 const WebandApp = () => {
   return (
     <>
-        <Banner slides={slides} />
-        <AboutUsSection />
-      
-        {/* <CounterSection /> */}
-        {/* <Testimonials /> */}
-        {/* <BlogSection /> */}
-        {/* <ContactSection /> */}
+      <Banner slides={slides} />
+      <AboutUsSection />
+
+      {/* <CounterSection /> */}
+      {/* <Testimonials /> */}
+      {/* <BlogSection /> */}
+      {/* <ContactSection /> */}
+      <div id="get-started">
         <Ourservices />
-        <ServicesSection />
-        <InnovativeTech />
-       
-      
-        <TestimonialSection />
-          <ConsultationForm />
-        {/* <ContactSection /> */}
-        {/* <Footer /> */}
-  
-      
+      </div>
+      <ServicesSection />
+      <InnovativeTech />
+
+
+      <TestimonialSection />
+      <ConsultationForm />
+      {/* <ContactSection /> */}
+      {/* <Footer /> */}
+
+
     </>
   )
 }

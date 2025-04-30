@@ -97,6 +97,7 @@ const COE = () => {
         image={placementImage}
       />
 
+      <div id="get-started">
       <WhatIsCodeChef 
         heading={codechefData.heading}
         subheading={codechefData.subheading}
@@ -105,6 +106,8 @@ const COE = () => {
         ctaText={codechefData.ctaText}
         ctaLink={codechefData.ctaLink}
       />
+      </div>
+     
 
 
 
