@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import { TrendingUp } from "lucide-react";
 const slides = [
   {
     heading: "Transforming Talent & Technology with Grade-A Skilling and Digital Solutions",
@@ -76,13 +76,16 @@ const Banner = () => {
         </h1>
 
         <div className="max-w-2xl w-full text-center">
-          <p
-            className={`mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 transition-all duration-700 delay-100 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
-              }`}
-          >
-            {text}
-          </p>
-        </div>
+  <div
+    className={`mt-4 flex items-center justify-center gap-2 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 transition-all duration-700 delay-100 ${
+      isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
+    }`}
+  >
+    
+    <span className="capitalize">We Deliver Impact at Every Step</span>
+    <TrendingUp className="w-6 h-6 text-white" />
+  </div>
+</div>
 
         <div
           className={`mt-6 sm:mt-8 transition-all duration-700 delay-200 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"

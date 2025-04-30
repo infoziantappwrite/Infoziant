@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 const data = [
   { id: 1, count: '47,400', title: "Vulnerabilities Identified", content: "Our team of experts has identified over 23400 vulnerabilities and reported to organizations and helped them mitigate the security threats, potential losses." },
   { id: 2, count: 81, title: "Rewards and Recognition", content: "Received awards and recognitions from global players for our vulnerability assessment programs which includes $11,900 reward from Apple iCloud." },
-  { id: 3, count: 51, title: "Clients", content: "Identified vulnerabilities across top Fortune 200 companies and major organizations, including USA Department of Defense, Apple, Google, Facebook, Microsoft, Dell, CISCO and the WHO." },
+  { id: 3, count: 51, title: "Clients Globally", content: "Identified vulnerabilities across top Fortune 200 companies and major organizations, including USA Department of Defense, Apple, Google, Facebook, Microsoft, Dell, CISCO and the WHO." },
   { id: 4, count: 11, title: "Business Domains", content: "Our clients are from vast business backgrounds which includes, BFSI, Healthcare, E-Commerce, E-Governance, Edu-tech, Travel & Logistics, CRMS and many more." },
  
 ];

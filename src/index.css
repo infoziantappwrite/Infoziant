@@ -18,3 +18,10 @@
 html {
   scroll-behavior: smooth;
 }
+.highlight {
+  background: linear-gradient(90deg, #15f5b9d0, #002affc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

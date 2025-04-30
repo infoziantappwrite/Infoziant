@@ -10,7 +10,8 @@ import CollegeClients from './Clients/CollegeClients';
 import Accreditation from './Accreditations/Accreditations';
 import ExpertiseSection from './ExpertiseSection/ExpertiseSection';
 import Partnership from '../Cyber/Partnership';
-import Portfolio from "../Cyber/portfolio"
+import Portfolio from "../Cyber/portfolio";
+import WhyInfoziant from '../Cyber/WhyInfoziant';
 
 
 
@@ -20,15 +21,13 @@ const Home = () => {
         <Banner />
         <SectionTwo/>
         <ExpertiseSection />
-        <StatsScroller />
+        <WhyInfoziant />
         <Partnership />
         <Accreditation />
         <Portfolio />
         <CollegeClients />
         <TestimonialSection />
-        {/* <ContactSection /> */}
-        {/* <Footer /> */}
-  
+      
       
     </>
   )

@@ -55,8 +55,7 @@ const AboutBanner = () => {
           variants={variants}
           transition={{ duration: 0.5, delay: 0.2 }} // Add delay for paragraph
         >
-          Infoziant empowers businesses with cutting-edge cybersecurity solutions, safeguarding your digital landscape. Trust us to protect what matters most, from cloud to core!
-        </motion.p>
+          Infoziant is a tech-first company delivering cutting-edge solutions in cybersecurity, AI, development, and testing—while also nurturing future talent through training, internships, and campus programs. We blend innovation with impact for businesses and institutions alike.</motion.p>
         <motion.div
           initial="hidden"
           animate={isVisible.content ? "visible" : "hidden"}
