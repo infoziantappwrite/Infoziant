@@ -15,7 +15,7 @@ const slides = [
             "Vulnerability Assessments & Pen-Testing",
             "24×7 Monitoring & Incident Response",
             "Compliance (ISO 27001, GDPR)",
-            "Generate Audit Reports"
+            "Reliable Audit Reports"
         ],
         achievements: [
             "$12.7 M Saved for an Insurance provider",
