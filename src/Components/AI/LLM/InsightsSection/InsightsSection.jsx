@@ -1,18 +1,20 @@
 import React from 'react';
+import sampleGif1 from '../../../../assests/Images/Ourservice/GenAI/LLMTesting.jpg';
+import sampleGif2 from '../../../../assests/Images/Ourservice/GenAI/llmourinsi.jpg';
 
 const insights = [
   {
     title: 'Comprehensive LLM Software Testing Guide',
     description:
       'Unsure of how to do LLM Software Testing? Here’s a complete guide that will help you get started on testing AI and LLM solutions.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/optimized/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Comprehensive-LLM-Software-Testing-Guide.png', // Use your image URL here
+    image: sampleGif1, // Use your image URL here
     link: '#',
   },
   {
     title: 'AI Testing Tutorial : The Best Strategies to Use',
     description:
       'New to AI testing? Fear not, in this AI Testing Tutorial we explore how to build on your existing knowledge to become an expert in no time.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/optimized/rev-ee81cca/codoid.com/wp-content/uploads/2021/08/AI-Testing-Tutorial-The-Best-Strategies-to-Use-for-Every-Use-Case-Blog.jpg', // Use your image URL here
+    image: sampleGif2, // Use your image URL here
     link: '#',
   },
 ];

@@ -72,7 +72,8 @@ const Header = () => {
 
   const navLinks = [
     { title: "Home", path: "/" },
-    { title: "Services", path: "/services" },
+    { title: "About", path: "/about" },
+    // { title: "Services", path: "/services" },
     { title: "Product", path: "/product" },
     { title: "Awards", path: "/awards" },
     { title: "Blog", path: "/blog" },
@@ -113,16 +114,16 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 text-gray-800 font-medium relative">
-          {navLinks.slice(0, 1).map((link, index) => (
-            <div key={index}>
-              <Link
-                to={link.path}
-                className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "underline decoration-2 underline-offset-4 text-blue-900 font-bold" : ""}`}
-              >
-                {link.title}
-              </Link>
-            </div>
-          ))}
+        {navLinks.slice(0, 2).map((link, index) => (
+  <div key={index}>
+    <Link
+      to={link.path}
+      className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "underline decoration-2 underline-offset-4 text-blue-900 font-bold" : ""}`}
+    >
+      {link.title}
+    </Link>
+  </div>
+))}
 
           {/* Services Dropdown */}
           <div className="relative">
@@ -263,18 +264,19 @@ const Header = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t pt-4 space-y-4 z-40 md:hidden shadow-lg">
-          {navLinks.slice(0, 1).map((link, index) => (
-            <React.Fragment key={index}>
-              <Link
-                to={link.path}
-                onClick={closeAllMenus}
-                className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""}`}
-              >
-                {link.title}
-              </Link>
-              <hr className="border-gray-300" />
-            </React.Fragment>
-          ))}
+          {navLinks.slice(0, 2).map((link, index) => (
+  <React.Fragment key={index}>
+    <Link
+      to={link.path}
+      onClick={closeAllMenus}
+      className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""}`}
+    >
+      {link.title}
+    </Link>
+    <hr className="border-gray-300" />
+  </React.Fragment>
+))}
+
 
           {/* Services - Mobile */}
           <div className="px-4">

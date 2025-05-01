@@ -1,14 +1,15 @@
 import React from 'react';
+import sampleGif from '../../../../assests/Images/Ourservice/GenAI/llm_transform.jpg'; // Adjust path as needed
 
 const Transformative = () => {
     return (
         <div className="flex flex-col md:flex-row items-start justify-start py-16 bg-gray-900 text-gray-100">
             {/* Left Image Container - 30% */}
-            <div className="w-full md:w-[30%] pl-[10%]">
+            <div className="w-full  md:w-[30%] pl-[10%]">
                 <img
-                    src="https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/optimized/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Transformative-Testing-for-Advanced-AI-LLM-Models.png"
+                    src={sampleGif}
                     alt="Team working"
-                    className="w-[90%] h-auto shadow-lg rounded"
+                    className="w-[90%] h-[350px] shadow-lg rounded"
                 />
             </div>
 
