@@ -14,61 +14,79 @@ import {
   FaComments,
 } from "react-icons/fa";
 
+import Image1 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage1.jpg"
+import Image2 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage2.webp"
+import Image3 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage3.jpg"
+import Image4 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage4.avif"
+import Image5 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage5.avif"
+import Image6 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage6.jpg"
+import Image7 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage7.jpg"
+import Image8 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage8.jpg"
+import Image9 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage9.webp"
+import Image10 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage10.jpeg"
+import Image11 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage11.webp"
+
+
+
+
+
+
+
 const capabilities = [
   {
     label: "Process Automation",
     icon: <FaRobot />, 
-    image: "https://via.placeholder.com/400x300?text=Automation"
+    image: Image1
   },
   {
     label: "Speech Recognition",
     icon: <FaMicrophoneAlt />, 
-    image: "https://via.placeholder.com/400x300?text=Speech+Recognition"
+    image: Image2
   },
   {
     label: "Image Recognition",
     icon: <FaCamera />, 
-    image: "https://via.placeholder.com/400x300?text=Image+Recognition"
+    image: Image3
   },
   {
     label: "Natural Language Processing",
     icon: <FaLanguage />, 
-    image: "https://via.placeholder.com/400x300?text=NLP"
+    image: Image4
   },
   {
     label: "Data Analytics",
     icon: <FaChartLine />, 
-    image: "https://via.placeholder.com/400x300?text=Data+Analytics"
+    image: Image5
   },
   {
     label: "Data Modeling",
     icon: <FaProjectDiagram />, 
-    image: "https://via.placeholder.com/400x300?text=Data+Modeling"
+    image: Image6
   },
   {
     label: "Deep Learning",
     icon: <FaBrain />, 
-    image: "https://via.placeholder.com/400x300?text=Deep+Learning"
+    image: Image7
   },
   {
     label: "Machine Learning",
     icon: <FaCogs />, 
-    image: "https://via.placeholder.com/400x300?text=Machine+Learning"
+    image: Image8
   },
   {
     label: "Business Intelligence",
     icon: <FaChartPie />, 
-    image: "https://via.placeholder.com/400x300?text=Business+Intelligence"
+    image: Image9
   },
   {
     label: "Sentiment Analysis",
     icon: <FaSmile />, 
-    image: "https://via.placeholder.com/400x300?text=Sentiment+Analysis"
+    image: Image10
   },
   {
     label: "Chatbots",
     icon: <FaComments />, 
-    image: "https://via.placeholder.com/400x300?text=Chatbots"
+    image: Image11
   },
 ];
 

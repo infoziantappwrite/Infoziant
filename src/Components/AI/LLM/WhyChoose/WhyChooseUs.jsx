@@ -1,43 +1,50 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import sampleGif1 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmAIspl.webp';
+import sampleGif2 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmDataTesting.png';
+import sampleGif3 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmStrategies.png';
+import sampleGif4 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmPioneers.png';
+import sampleGif5 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmReporting.webp';
+import sampleGif6 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmComprehensive.png';
+
 
 const items = [
   {
     title: 'AI Specialists',
     description:
       'Our dedicated team comprises leading AI experts with deep knowledge and specialized skills in LLM testing. We leverage this expertise to ensure your model achieves top-notch performance and accuracy.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/AI-Specialist.svg',
+    image: sampleGif1,
   },
   {
     title: 'Data Testing Capabilities',
     description:
       'We provide robust tools and frameworks to assess and improve data quality. This ensures your LLM is trained on reliable, clean, and diverse datasets.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Data-Testing-Capabilities.svg',
+    image: sampleGif2
   },
   {
     title: 'Adaptive Strategies',
     description:
       'We adapt our testing strategies as your LLM evolves, ensuring ongoing quality and performance improvements.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Adaptive-Stratergy.svg',
+    image: sampleGif3,
   },
   {
     title: 'Pioneers in Testing',
     description:
       'Backed by a rich history in AI/ML validation, we pioneer LLM testing frameworks and set standards for reliability.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Pioneers-in-testing.svg',
+    image: sampleGif4,
   },
   {
     title: 'Actionable Reporting',
     description:
       'Receive comprehensive, easy-to-digest reports that provide clear next steps to resolve performance bottlenecks.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Actionable-Reporting.svg',
+    image: sampleGif5,
   },
   {
     title: 'Comprehensive Coverage',
     description:
       'Our services cover everything from data validation to post-deployment monitoring, giving you end-to-end assurance.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Comprehensive-Coverage.svg',
+    image: sampleGif6,
   },
 ];
 

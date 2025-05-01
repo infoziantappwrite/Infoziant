@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import image1 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/whyImage1.png"
+import image2 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/WhyImage2.png"
+
 
 const items = [
   {
     title: 'Tailored Solutions',
     description:
       'We understand that every business is unique, which is why we take a tailored approach in our GenAI development service. Be it web-based solutions or offline applications, we have the proficiency to deliver top-notch results.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/AI-Specialist.svg',
+    image: image1,
   },
   {
     title: 'Innovative Approach',
     description:
       'We understand that every business is unique, which is why we take a tailored approach in our GenAI development service. Be it web-based solutions or offline applications, we have the proficiency to deliver top-notch results.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Data-Testing-Capabilities.svg',
+    image: image2,
   },
   {
     title: 'End-to-End Support',

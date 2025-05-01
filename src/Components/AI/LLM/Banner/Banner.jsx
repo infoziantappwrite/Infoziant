@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import sampleGif from '../../../../assests/Images/Ourservice/Genai.png'; // Adjust path as needed
+import sampleGif from '../../../../assests/Images/Ourservice/GenAI/llmimages1.png'; // Adjust path as needed
 import InquiryFormSerivies from '../../../Genai/InquiryFormSerivies'; // Adjust path as needed
 
 const Banner = () => {
