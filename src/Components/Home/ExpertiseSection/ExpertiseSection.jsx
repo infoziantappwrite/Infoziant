@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, CheckCircle, CirclePlay, Star, Award, FileBadge2, Sparkles, Trophy } from "lucide-react";
+import { ChevronLeft, ChevronRight, CheckCircle,Laptop,Cpu, Award,Repeat, Sparkles,Trophy, Users, Globe,FileText,Banknote, Briefcase, Building2 } from "lucide-react";
+
+
 import cybersecurity from "./cybersecurity.png"
 import webandapp from "./webandapp.png"
 import aiml from "./aiml.png";
@@ -42,7 +44,7 @@ const slides = [
         achievements: [
             "40+ Happy Clients",
             "70+ Web & Mobile Apps Delivered",
-        ], 
+        ],
         tools: [
             "Highly skilled Developers",
             "Zero Defect Policy"
@@ -83,7 +85,7 @@ const slides = [
         tools: [
             "Zero Flaky Tests",
             "Accelerate Time to Market"
-        ]   
+        ]
     },
     {
         title: "CodeChef Training",
@@ -122,12 +124,27 @@ const slides = [
         ]
     }
 ];
+const getAchievementIcon = (text) => {
+    if (text.includes("Users")) return <Users size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Countries")) return <Globe size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Clients")) return <Briefcase size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Students")) return <Users size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Institutions")) return <Building2 size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Projects")) return <Award size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Insurance")) return <Banknote size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Web")) return <Laptop size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("deployed")) return <Cpu size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("LLMs")) return <FileText size={28} className="text-white mb-2 drop-shadow-sm" />;
+    if (text.includes("Automated")) return <Repeat size={28} className="text-white mb-2 drop-shadow-sm" />;
+    return <Trophy size={28} className="text-white mb-2 drop-shadow-sm" />;
+};
+
 
 
 
 const ExpertiseSection = () => {
     const [selected, setSelected] = useState(0);
-    const isOne = 0;
+
 
     const prev = () => setSelected((prev) => (prev > 0 ? prev - 1 : slides.length - 1));
     const next = () => setSelected((prev) => (prev + 1) % slides.length);
@@ -189,64 +206,65 @@ const ExpertiseSection = () => {
                                         />
                                     </div>
                                     <div className="w-full md:w-1/2 p-4 md:p-5 overflow-y-auto space-y-4 max-h-[500px]">
-                                                                            <h3 className="text-xl md:text-2xl font-bold text-blue-700">{slides[selected].title}</h3>
+                                        <h3 className="text-xl md:text-2xl font-bold text-blue-700">{slides[selected].title}</h3>
 
-                                                                            <div>
-                                                                                <ul className="space-y-2 pl-2 text-gray-700">
-                                                                                    {slides[selected].keyHighlights.map((point, i) => (
-                                                                                        <li key={i} className="flex items-start gap-2">
-                                                                                            <CheckCircle className="text-blue-500 mt-1" size={18} />
-                                                                                            <span>{point}</span>
-                                                                                        </li>
-                                                                                    ))}
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center">
-                                                                                {slides[selected].achievements.map((point, i) => (
-                                                                                    <div
-                                                                                        key={i}
-                                                                                        className="flex flex-col items-center text-center bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-white px-4 py-5 rounded-xl shadow-md text-sm font-semibold transition-transform duration-300 hover:scale-105"
-                                                                                    >
-                                                                                        <Trophy size={28} className="text-white mb-2 drop-shadow-sm" />
-                                                                                        <span>{point}</span>
-                                                                                    </div>
-                                                                                ))}
-                                                                            </div>
-
-
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <div className="text-center pb-4">
-                                                                        {slides[selected].tools && (
-                                                                            <ul className="flex flex-wrap justify-center gap-4 mt-4">
-                                                                                {slides[selected].tools.map((tool, i) => (
-                                                                                    <li
-                                                                                        key={i}
-                                                                                        className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white font-semibold text-md  shadow-lg hover:scale-105 transition-transform duration-300"
-                                                                                    >
-                                                                                        {selected === 0 ? <Award size={24} className="text-white drop-shadow-sm" /> : <Sparkles size={24} className="text-white drop-shadow-sm" />}
-
-                                                                                        {tool}
-                                                                                    </li>
-                                                                                ))}
-                                                                            </ul>
-                                                                        )}
-                                                                    </div>
-
-                                                                   
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
+                                        <div>
+                                            <ul className="space-y-2 pl-2 text-gray-700">
+                                                {slides[selected].keyHighlights.map((point, i) => (
+                                                    <li key={i} className="flex items-start gap-2">
+                                                        <CheckCircle className="text-blue-500 mt-1" size={18} />
+                                                        <span>{point}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center">
+    {slides[selected].achievements.map((point, i) => (
+        <div
+            key={i}
+            className="flex flex-col items-center text-center bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-white px-4 py-5 rounded-xl shadow-md text-sm font-semibold transition-transform duration-300 hover:scale-105"
+        >
+            {getAchievementIcon(point)}
+            <span>{point}</span>
+        </div>
+    ))}
+</div>
 
 
 
-                                                                        
 
-                                                        {/* Arrow Navigation */}
+                                    </div>
+
+                                </div>
+
+                                <div className="text-center pb-4">
+                                    {slides[selected].tools && (
+                                        <ul className="flex flex-wrap justify-center gap-4 mt-4">
+                                            {slides[selected].tools.map((tool, i) => (
+                                                <li
+                                                    key={i}
+                                                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white font-semibold text-md  shadow-lg hover:scale-105 transition-transform duration-300"
+                                                >
+                                                    {selected === 0 ? <Award size={24} className="text-white drop-shadow-sm" /> : <Sparkles size={24} className="text-white drop-shadow-sm" />}
+
+                                                    {tool}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    {/* Arrow Navigation */}
                     <div className="flex items-center gap-4 mt-4">
                         <button
                             onClick={prev}

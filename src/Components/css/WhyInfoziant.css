@@ -2,8 +2,7 @@
     padding: 3% 2%;
     color: white;
     text-align: center;
-    background: #000000;
-    background: linear-gradient(to right, #010b14, #000000);
+        background: linear-gradient(to right, #0a192f, #1a365d);
 }
 
 .whyInfz h1{
@@ -28,10 +27,10 @@
     overflow: hidden;
     width: 280px;
     transition: all 0.3s ease;
-    background-color: black;
+    background-color: rgba(19, 18, 18, 0.571);
     color: white;
     text-align: center;
-    border: 1px solid rgb(143, 141, 141);
+   
 }
 
 .infoCard h1{

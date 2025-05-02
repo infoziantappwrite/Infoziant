@@ -10,7 +10,7 @@ const data = [
  
 ];
 
-export default function WhyInfoziant() {
+export default function   WhyInfoziant() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, threshold: 0.1 });
 
@@ -38,7 +38,7 @@ export default function WhyInfoziant() {
 
   return (
     <motion.section
-      className="whyInfz"
+      className="whyInfz "
       ref={sectionRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}

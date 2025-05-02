@@ -29,11 +29,12 @@ export default function Partnership() {
         '/assets/partner-25.png',
         '/assets/partner-26.png',
         '/assets/partner-27.png',
+        
 
     ];
 
     // Duplicate the images to create a seamless loop effect
-    const doubledImages = [...images, ...images,...images, ...images,...images,...images,];
+    const doubledImages = [...images, ...images,...images, ...images,...images,...images,...images, ...images,...images, ...images,...images,...images,];
 
     return (
         <section className="partnership">
