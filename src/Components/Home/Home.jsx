@@ -12,6 +12,7 @@ import ExpertiseSection from './ExpertiseSection/ExpertiseSection';
 import Partnership from '../Cyber/Partnership';
 import Portfolio from "../Cyber/portfolio";
 import WhyInfoziant from '../Cyber/WhyInfoziant';
+import OurProducts from './OurProducts/OurProducts';
 
 
 
@@ -25,6 +26,7 @@ const Home = () => {
         <Partnership />
         <Accreditation />
         <Portfolio />
+        <OurProducts />
         <CollegeClients />
         <TestimonialSection />
       
