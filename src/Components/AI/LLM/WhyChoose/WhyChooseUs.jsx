@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import sampleGif1 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmAIspl.webp';
-import sampleGif2 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmDataTesting.png';
-import sampleGif3 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmStrategies.png';
-import sampleGif4 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmPioneers.png';
-import sampleGif5 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmReporting.webp';
-import sampleGif6 from '../../../../assests/Images/Ourservice/GenAI/WhyChooseUs/llmComprehensive.png';
+import sampleGif1 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmAIspl.webp';
+import sampleGif2 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmDataTesting.png';
+import sampleGif3 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmStrategies.png';
+import sampleGif4 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmPioneers.png';
+import sampleGif5 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmReporting.webp';
+import sampleGif6 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmComprehensive.png';
 
 
 const items = [
