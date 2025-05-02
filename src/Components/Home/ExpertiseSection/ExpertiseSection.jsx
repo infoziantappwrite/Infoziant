@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, CheckCircle,Laptop,Cpu, Award,Repeat, Sparkles,Trophy, Users, Globe,FileText,Banknote, Briefcase, Building2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, CheckCircle, Laptop, Cpu, Award, Repeat, Sparkles, Trophy, Users, Globe, FileText, Banknote, Briefcase, Building2 } from "lucide-react";
 
 
 import cybersecurity from "./cybersecurity.png"
@@ -219,16 +219,16 @@ const ExpertiseSection = () => {
                                             </ul>
                                         </div>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center">
-    {slides[selected].achievements.map((point, i) => (
-        <div
-            key={i}
-            className="flex flex-col items-center text-center bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-white px-4 py-5 rounded-xl shadow-md text-sm font-semibold transition-transform duration-300 hover:scale-105"
-        >
-            {getAchievementIcon(point)}
-            <span>{point}</span>
-        </div>
-    ))}
-</div>
+                                            {slides[selected].achievements.map((point, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="flex flex-col items-center text-center bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-white px-4 py-5 rounded-xl shadow-md text-sm font-semibold transition-transform duration-300 hover:scale-105"
+                                                >
+                                                    {getAchievementIcon(point)}
+                                                    <span>{point}</span>
+                                                </div>
+                                            ))}
+                                        </div>
 
 
 
@@ -239,20 +239,24 @@ const ExpertiseSection = () => {
 
                                 <div className="text-center pb-4">
                                     {slides[selected].tools && (
-                                        <ul className="flex flex-wrap justify-center gap-4 mt-4">
+                                        <ul className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mt-4 px-2">
                                             {slides[selected].tools.map((tool, i) => (
                                                 <li
                                                     key={i}
-                                                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white font-semibold text-md  shadow-lg hover:scale-105 transition-transform duration-300"
+                                                    className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white font-semibold text-sm sm:text-md shadow-lg hover:scale-105 transition-transform duration-300"
                                                 >
-                                                    {selected === 0 ? <Award size={24} className="text-white drop-shadow-sm" /> : <Sparkles size={24} className="text-white drop-shadow-sm" />}
-
+                                                    {selected === 0 ? (
+                                                        <Award size={18} className="text-white drop-shadow-sm sm:size-5" />
+                                                    ) : (
+                                                        <Sparkles size={18} className="text-white drop-shadow-sm sm:size-5" />
+                                                    )}
                                                     {tool}
                                                 </li>
                                             ))}
                                         </ul>
                                     )}
                                 </div>
+
 
 
                             </div>
