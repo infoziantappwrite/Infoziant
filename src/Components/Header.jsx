@@ -9,11 +9,14 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   const [showVAPT, setShowVAPT] = useState(false);
+  const [showAIML, setShowAIML] = useState(false);
+
 
   // Use refs to track hover states
   const categoryTimeoutRef = useRef(null);
   const subMenuTimeoutRef = useRef(null);
   const vaptTimeoutRef = useRef(null);
+  const aimlTimeoutRef = useRef(null); // Add this for AIML timeout
 
   const toggleCategory = (index) => {
     setExpandedCategory((prev) => (prev === index ? null : index));
@@ -36,6 +39,7 @@ const Header = () => {
     if (categoryTimeoutRef.current) clearTimeout(categoryTimeoutRef.current);
     if (subMenuTimeoutRef.current) clearTimeout(subMenuTimeoutRef.current);
     if (vaptTimeoutRef.current) clearTimeout(vaptTimeoutRef.current);
+    if (aimlTimeoutRef.current) clearTimeout(aimlTimeoutRef.current); // Add this for AIML timeout
   };
 
   const dropdownMenu = [
@@ -49,6 +53,13 @@ const Header = () => {
           subItems: [
             { name: "CyberSecurity Services", path: "/services/cybersecurity/vapt" },
             { name: "VAPT Services", path: "/services/cybersecurity/vapt" },
+          ],
+        },
+        {
+          name: "AIML Services",
+          subItems: [
+            { name: "GenAI Services", path: "/services/genai" },
+            { name: "LLM Services", path: "/services/llm" },
           ],
         },
         { name: "Web & App Development", path: "/services/web-app-development" },
@@ -114,16 +125,16 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 text-gray-800 font-medium relative">
-        {navLinks.slice(0, 2).map((link, index) => (
-  <div key={index}>
-    <Link
-      to={link.path}
-      className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "underline decoration-2 underline-offset-4 text-blue-900 font-bold" : ""}`}
-    >
-      {link.title}
-    </Link>
-  </div>
-))}
+          {navLinks.slice(0, 2).map((link, index) => (
+            <div key={index}>
+              <Link
+                to={link.path}
+                className={`hover:text-blue-900 hover:underline transition ${isActive(link.path) ? "underline decoration-2 underline-offset-4 text-blue-900 font-bold" : ""}`}
+              >
+                {link.title}
+              </Link>
+            </div>
+          ))}
 
           {/* Services Dropdown */}
           <div className="relative">
@@ -166,7 +177,7 @@ const Header = () => {
                     </button>
 
                     {expandedCategory === menu.index && (
-                      <div 
+                      <div
                         className="absolute top-0 -left-[340px] w-[320px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50"
                         onMouseEnter={() => {
                           clearAllTimeouts();
@@ -181,22 +192,29 @@ const Header = () => {
                       >
                         {menu.items.map((item, idx) => (
                           <div key={idx} className="group relative">
-                            <div 
+                            <div
                               className="relative group/item flex items-center"
                               onMouseEnter={() => {
                                 clearAllTimeouts();
-                                if (item.name === "Cybersecurity Services") {
-                                  setShowVAPT(true);
+                                if (item.name === "AIML Services") {
+                                  setShowAIML(true); // Show the AIML submenu when hovering
+                                } else if (item.name === "Cybersecurity Services") {
+                                  setShowVAPT(true); // Show the VAPT submenu when hovering over Cybersecurity Services
                                 }
                               }}
                               onMouseLeave={() => {
-                                if (item.name === "Cybersecurity Services") {
+                                if (item.name === "AIML Services") {
+                                  aimlTimeoutRef.current = setTimeout(() => {
+                                    setShowAIML(false); // Hide AIML submenu after timeout
+                                  }, 800);
+                                } else if (item.name === "Cybersecurity Services") {
                                   vaptTimeoutRef.current = setTimeout(() => {
-                                    setShowVAPT(false);
-                                  }, 800); 
+                                    setShowVAPT(false); // Hide VAPT submenu after timeout
+                                  }, 800);
                                 }
                               }}
                             >
+                              {item.name === "AIML Services" && <ChevronLeft className="w-4 h-4 mr-2" />}
                               {item.name === "Cybersecurity Services" && <ChevronLeft className="w-4 h-4 mr-2" />}
                               <Link
                                 to={item.path}
@@ -205,6 +223,39 @@ const Header = () => {
                               >
                                 {item.name}
                               </Link>
+
+
+
+
+                              {item.name === "AIML Services" && showAIML && (
+                                <div
+                                  className="absolute -top-3 -left-[210px] ml-3 w-[180px] bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-50 flex flex-col justify-center items-center"
+                                  onMouseEnter={() => {
+                                    clearAllTimeouts();
+                                    setShowAIML(true); // Keep submenu visible while hovering
+                                    setExpandedCategory(menu.index);
+                                  }}
+                                  onMouseLeave={() => {
+                                    aimlTimeoutRef.current = setTimeout(() => {
+                                      setShowAIML(false); // Hide submenu after timeout
+                                    }, 800);
+                                  }}
+                                >
+                                  {item.subItems.map((subItem, subIdx) => (
+                                    <Link
+                                      key={subIdx}
+                                      to={subItem.path}
+                                      onClick={closeAllMenus}
+                                      className="block text-[14px] text-gray-700 mt-1 hover:text-blue-900 hover:underline text-center"
+                                    >
+                                      {subItem.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+
+
+
 
                               {item.name === "Cybersecurity Services" && showVAPT && (
                                 <div
@@ -233,11 +284,14 @@ const Header = () => {
                                       </Link>
                                     ))}
                                 </div>
+
+
                               )}
                             </div>
 
                             {idx !== menu.items.length - 1 && <hr className="my-2 border-gray-300" />}
                           </div>
+
                         ))}
                       </div>
                     )}
@@ -265,17 +319,17 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t pt-4 space-y-4 z-40 md:hidden shadow-lg">
           {navLinks.slice(0, 2).map((link, index) => (
-  <React.Fragment key={index}>
-    <Link
-      to={link.path}
-      onClick={closeAllMenus}
-      className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""}`}
-    >
-      {link.title}
-    </Link>
-    <hr className="border-gray-300" />
-  </React.Fragment>
-))}
+            <React.Fragment key={index}>
+              <Link
+                to={link.path}
+                onClick={closeAllMenus}
+                className={`block px-4 py-2 text-gray-800 hover:text-blue-900 hover:underline ${isActive(link.path) ? "text-blue-900 font-bold underline" : ""}`}
+              >
+                {link.title}
+              </Link>
+              <hr className="border-gray-300" />
+            </React.Fragment>
+          ))}
 
 
           {/* Services - Mobile */}
@@ -317,7 +371,7 @@ const Header = () => {
                                     <ChevronDown className="w-4 h-4" />
                                   )}
                                 </button>
-                                
+
                                 {/* Show subItems when expanded */}
                                 <div className={`ml-4 mt-1 space-y-1 ${expandedMobileItem === item.name ? "block" : "hidden"}`}>
                                   {item.subItems.map((subItem, subIdx) => (
@@ -341,7 +395,7 @@ const Header = () => {
                                 {item.name}
                               </Link>
                             )}
-                            
+
                             {idx !== menu.items.length - 1 && <hr className="border-gray-300 my-2" />}
                           </div>
                         ))}

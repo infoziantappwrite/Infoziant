@@ -15,16 +15,16 @@ import {
 } from "react-icons/fa";
 
 import Image1 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage1.jpg"
-import Image2 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage2.webp"
+import Image2 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage2.jpg"
 import Image3 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage3.jpg"
-import Image4 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage4.avif"
-import Image5 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage5.avif"
+import Image4 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage4.png"
+import Image5 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage5.jpg"
 import Image6 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage6.jpg"
 import Image7 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage7.jpg"
 import Image8 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage8.jpg"
-import Image9 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage9.webp"
+import Image9 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage9.avif"
 import Image10 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage10.jpeg"
-import Image11 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage11.webp"
+import Image11 from "../../../assests/Images/Ourservice/GenAI/GenAIOurAI/GenaiOurAIImage11.png"
 
 
 
