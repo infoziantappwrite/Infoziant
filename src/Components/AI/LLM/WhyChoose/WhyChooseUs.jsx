@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import sampleGif1 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmAIspl.webp';
 import sampleGif2 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmDataTesting.png';
@@ -7,7 +7,6 @@ import sampleGif3 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChoose
 import sampleGif4 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmPioneers.png';
 import sampleGif5 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmReporting.webp';
 import sampleGif6 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmComprehensive.png';
-
 
 const items = [
   {
@@ -20,7 +19,7 @@ const items = [
     title: 'Data Testing Capabilities',
     description:
       'We provide robust tools and frameworks to assess and improve data quality. This ensures your LLM is trained on reliable, clean, and diverse datasets.',
-    image: sampleGif2
+    image: sampleGif2,
   },
   {
     title: 'Adaptive Strategies',
@@ -48,15 +47,61 @@ const items = [
   },
 ];
 
-const WhyChooseUs = () => {
-  const [current, setCurrent] = useState(0);
+const slideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 100 : -100,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    position: 'relative',
+  },
+  exit: (direction) => ({
+    x: direction < 0 ? 100 : -100,
+    opacity: 0,
+  }),
+};
 
-  const goToSlide = (index) => {
-    if (index >= 0 && index < items.length) setCurrent(index);
+const sectionVariants = {
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: 50, transition: { duration: 0.8, ease: 'easeIn' } },
+};
+
+const listContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const listItem = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+
+const WhyChooseUs = () => {
+  const [[current, direction], setCurrent] = useState([0, 0]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: '-100px' });
+
+  const goToSlide = (newIndex) => {
+    if (newIndex >= 0 && newIndex < items.length) {
+      setCurrent([newIndex, newIndex > current ? 1 : -1]);
+    }
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-gray-100 py-20 px-6">
+    <motion.section
+      ref={ref}
+      variants={sectionVariants}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      className="relative bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-gray-100 py-20 px-6"
+    >
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-blue-500 opacity-5"></div>
@@ -65,9 +110,9 @@ const WhyChooseUs = () => {
         <div
           className="absolute inset-0 bg-gradient-to-b from-transparent via-white to-transparent opacity-[0.03]"
           style={{
-            backgroundSize: "20px 20px",
+            backgroundSize: '20px 20px',
             backgroundImage:
-              "linear-gradient(to right, gray 1px, transparent 1px), linear-gradient(to bottom, gray 1px, transparent 1px)",
+              'linear-gradient(to right, gray 1px, transparent 1px), linear-gradient(to bottom, gray 1px, transparent 1px)',
           }}
         />
       </div>
@@ -82,40 +127,52 @@ const WhyChooseUs = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
           {/* Stepper */}
           <div className="relative w-full md:w-1/3">
-            <div className="flex flex-col space-y-6 relative z-10">
-              {items.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`flex items-center space-x-3 cursor-pointer transition-all ${
-                    current === index
-                      ? 'text-[#15f5b9] font-semibold scale-105'
-                      : 'text-gray-400 hover:text-gray-200'
-                  }`}
-                >
-                  <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                      current === index ? 'border-[#15f5b9]' : 'border-gray-500'
-                    }`}
-                  >
-                    {current === index && <div className="w-2 h-2 bg-[#15f5b9] rounded-full"></div>}
-                  </div>
-                  <span className="text-lg">{`0${index + 1}. ${item.title}`}</span>
-                </div>
-              ))}
-            </div>
+          <motion.div
+  className="flex flex-col space-y-6 relative z-10"
+  variants={listContainer}
+  initial="hidden"
+  animate={isInView ? 'visible' : 'hidden'}
+>
+  {items.map((item, index) => (
+    <motion.div
+      key={index}
+      variants={listItem}
+      onClick={() => goToSlide(index)}
+      className={`flex items-center space-x-3 cursor-pointer transition-all ${
+        current === index
+          ? 'text-[#15f5b9] font-semibold scale-105'
+          : 'text-gray-400 hover:text-gray-200'
+      }`}
+    >
+      <div
+        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+          current === index ? 'border-[#15f5b9]' : 'border-gray-500'
+        }`}
+      >
+        {current === index && <div className="w-2 h-2 bg-[#15f5b9] rounded-full"></div>}
+      </div>
+      <span className="text-lg">{`0${index + 1}. ${item.title}`}</span>
+    </motion.div>
+  ))}
+</motion.div>
+
           </div>
 
           {/* Right Content */}
-          <div className="w-full md:w-2/3 bg-gray-800 rounded-3xl shadow-2xl p-8 transition-all">
-            <AnimatePresence mode="wait">
+          <div className="w-full md:w-2/3 bg-gray-800 rounded-3xl shadow-2xl p-8 transition-all overflow-hidden relative h-[300px] md:h-auto">
+            <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={current}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.4 }}
-                className="flex flex-col md:flex-row items-center gap-6"
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: 'spring', stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                className="flex flex-col md:flex-row items-center gap-6 w-full"
               >
                 <img
                   src={items[current].image}
@@ -152,7 +209,7 @@ const WhyChooseUs = () => {
           </button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

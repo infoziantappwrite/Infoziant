@@ -92,8 +92,8 @@ const App = () => {
       <Route path="/services/cybersecurity/vapt/cloud-infrastructure" element={<CloudInfrastructure />}/>
       <Route path="/services/cybersecurity/vapt/api-vapt" element={<ApiVapt />}/>
       <Route path="/services/cybersecurity/vapt/siem" element={<Siem />}/>
-      <Route path="/llm" element={<LLM />}/>
-      <Route path="/genai" element={<GenAI />}/>
+      <Route path="/services/llm" element={<LLM />}/>
+      <Route path="/services/genai" element={<GenAI />}/>
       <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
