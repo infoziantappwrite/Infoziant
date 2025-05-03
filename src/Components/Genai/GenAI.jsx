@@ -19,7 +19,6 @@ const GenAI = () => {
         <CapabilitySection/>
         <OurApproach/>
         <OurProcess />
-        <CaseStudies />
         <WhyChooseUs />
         <FAQSection />
         <ConsultationForm />
