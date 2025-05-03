@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react'; // Ensure useEffect is imported
 import { ChevronDown } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
 
 const faqs = [
   {
@@ -29,58 +29,81 @@ const faqs = [
       "Absolutely. We specialize in developing custom AI algorithms and models tailored to the unique requirements of each project. Whether you need to solve a specific business problem, optimize a process, or extract insights from data, we have the expertise.",
   },
 ];
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2, // delay based on the index
+      duration: 0.6, // smooth animation
+    },
+  }),
+};
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
-
   const toggle = (index) => {
     setOpenIndex(index === openIndex ? null : index);
   };
 
   return (
-    <section className="relative py-20 px-4 bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d]">
-      {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-blue-500 opacity-5"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-teal-400 opacity-5"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-purple-500 opacity-5"></div>
-      </div>
-
-      <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-14 text-gray-900">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3F00FF] to-[#15f5b9]">FAQ'S</span>{' '}
+    <motion.section className="bg-gray-100 py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-center text-4xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#3F00FF] to-[#15f5b9]">
+          FAQ'S
         </h2>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
             return (
-              <div
+              <FAQItem
                 key={index}
-                className="bg-gray-900 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
-              >
-                <button
-                  onClick={() => toggle(index)}
-                  className="w-full flex justify-between items-center px-6 py-4 text-left"
-                >
-                  <span className="font-semibold text-lg text-white">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-gray-300 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''
-                      }`}
-                  />
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && <AccordionContent answer={faq.answer} />}
-                </AnimatePresence>
-              </div>
+                index={index}
+                faq={faq}
+                openIndex={openIndex}
+                toggle={toggle}
+              />
             );
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
+  );
+};
+
+// New component for individual FAQ items to use useRef and useInView
+const FAQItem = ({ index, faq, openIndex, toggle }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: '-100px' });
+
+  const isOpen = openIndex === index;
+
+  return (
+    <motion.div
+      custom={index}
+      variants={cardVariants}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      className="bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300"
+      ref={ref}
+    >
+      <button
+        onClick={() => toggle(index)}
+        className="w-full flex justify-between items-center px-6 py-4 text-left"
+      >
+        <span className="font-semibold text-lg text-gray-800">
+          {faq.question}
+        </span>
+        <ChevronDown
+          className={`h-5 w-5 text-gray-600 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && <AccordionContent answer={faq.answer} />}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
@@ -96,13 +119,13 @@ const AccordionContent = ({ answer }) => {
 
   return (
     <motion.div
-      initial={{ height: 0, opacity: 0 }}
-      animate={{ height, opacity: 1 }}
-      exit={{ height: 0, opacity: 0 }}
+      initial={{ height: 0, opacity: 0, y: -20 }}
+      animate={{ height, opacity: 1, y: 0 }}
+      exit={{ height: 0, opacity: 0, y: -20 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
       className="overflow-hidden"
     >
-      <div ref={ref} className="px-6 pb-4 text-sm text-gray-300">
+      <div ref={ref} className="px-6 pb-4 text-sm text-gray-600">
         {answer}
       </div>
     </motion.div>
