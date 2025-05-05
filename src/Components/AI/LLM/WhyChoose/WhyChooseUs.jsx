@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import sampleGif1 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmAIspl.webp';
+import sampleGif1 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/Ai.png';
 import sampleGif2 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmDataTesting.png';
 import sampleGif3 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmStrategies.png';
 import sampleGif4 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmPioneers.png';
