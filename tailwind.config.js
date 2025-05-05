@@ -9,6 +9,9 @@ module.exports = {
         'pulse-scale': 'pulseScale 3s ease-in-out infinite',
         float: 'float 3s ease-in-out infinite',
         swing: 'swing 4s ease-in-out infinite',
+        'float-slow': 'float 6s ease-in-out infinite',
+        'bounce-slow': 'bounce 4s infinite',
+        'pulse-slow': 'pulse 5s infinite'
       },
       keyframes: {
         pulseScale: {

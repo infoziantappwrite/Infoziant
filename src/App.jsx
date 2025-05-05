@@ -79,7 +79,7 @@ const App = () => {
       <Route path="/services/cybersecurity" element={<Layout />} />
       <Route path="/services/web-app-development" element={<WebandApp />} />
       <Route path="/services/testing" element={<Testing />} />
-      <Route path="/blog" element={<Blog />} /> 
+      <Route path="/blogs" element={<Blog />} /> 
       <Route path="/fortifying-mobile-app-security" element={<Blog1Detail />} />
       <Route path="/why-strong-passwords-matter-and-how-to-create" element={<Blog2Detail />} />
       <Route path="/phishing-beware-of-fake-emails-and-messages" element={<Blog3Detail />} />
