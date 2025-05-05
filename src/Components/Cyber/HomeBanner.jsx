@@ -317,7 +317,6 @@ export default function HomeBanner() {
       <Accreditations />
       <Portfolio />
       <Services />
-
       <TestimonialSlider />
       <Honors />
       <ConsultationForm />
