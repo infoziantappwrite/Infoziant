@@ -112,7 +112,7 @@ const CardSlider = () => {
     return (
         <section className="portfolio-slider-section">
            
-            <h1 className="portfolio-title">Our Latest <span>Case Studies</span></h1>
+            <h1 className="portfolio-title">Our <span>Case Studies</span></h1>
             <Slider {...settings}>
                 {Portfolio.map((card, index) => (
                     <div key={index} className="portfolio-card">
