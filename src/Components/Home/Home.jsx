@@ -35,11 +35,11 @@ const Home = () => {
         <WhyInfoziant />
         <Partnership />
         <Accreditation />
+        
+        <OurProducts />
         <div ref={portfolioRef}>
         <Portfolio />
       </div>
-        <OurProducts />
-        <Portfolio />
         <HallofFames />
         <TestimonialSection />
       
