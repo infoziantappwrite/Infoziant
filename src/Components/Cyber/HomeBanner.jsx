@@ -174,14 +174,7 @@ export default function HomeBanner() {
             >
               Get Started
             </motion.button>
-            <motion.button
-              className="gs-btn"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => navigate("/about/cybersecurity-services")} // Navigate to About page
-            >
-              About Us
-            </motion.button>
+           
 
           </motion.li>
 
