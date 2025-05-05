@@ -2,7 +2,10 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import image1 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/whyImage1.png"
-import image2 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/WhyImage2.png"
+import image2 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/hand-drawn-innovation-concept.png"
+import image3 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/end to end 2.png"
+import image4 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/expertise.png"
+import image5 from "../../assests/Images/Ourservice/GenAI/GenAIWhyChoose/collab2.png"
 
 
 const items = [
@@ -22,20 +25,20 @@ const items = [
     title: 'End-to-End Support',
     description:
       "Our commitment to excellence doesn't end with development. Thanks to our expertise in software testing and cloud computing, we ensure your AI solution works as per your expectations and enable seamless deployment.",
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Adaptive-Stratergy.svg',
+    image: image3,
   },
   {
     title: 'Expertise Beyond Measure',
     description:
       'Our seasoned AI specialists have extensive real-world experience as they have handled numerous use cases across various domains and possess the skills and knowledge necessary to tackle even the most complex AI challenges.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Pioneers-in-testing.svg',
+    image:image4 ,
   },
   {
     title: 'Collaborative Partnership',
     description:
       'We act as an extension of your team, working hand-in-hand with you in your GenAI development journey. With open communication, transparency, and dedication, we ensure that your vision is realized to its fullest potential.',
-    image: 'https://cdn-cekmh.nitrocdn.com/SlrtebQxNZbUBkfXeRIcTgUmxZsOSldb/assets/images/source/rev-ee81cca/codoid.com/wp-content/uploads/2024/08/Actionable-Reporting.svg',
-  },
+    image: image5,
+    },
 ];
 
 const slideVariants = {
