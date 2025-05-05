@@ -1,9 +1,13 @@
 import React from 'react';
 import Slider from 'react-slick';
-import image1 from './1 (1).png';
-import image2 from './1 (2).png';
-import image3 from './1 (3).png';
-import image4 from './1 (4).png';
+import image1 from './11.png';
+import image2 from './12.png';
+import image3 from './13.png';
+import image4 from './14.png';
+import image5 from './15.png';
+
+
+
 import image6 from './1.png';
 import image7 from './2.png';
 import image8 from './3.png';
@@ -16,6 +20,7 @@ const OurProducts = () => {
     { id: 2, src: image2 },
     { id: 3, src: image3 },
     { id: 4, src: image4 },
+    { id: 5, src: image5 },
   ];
   const partners2 = [
     { id: 1, src: image6 },
