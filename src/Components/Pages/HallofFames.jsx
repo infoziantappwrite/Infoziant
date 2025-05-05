@@ -18,7 +18,7 @@ const HallofFames = () => {
       title: 'US Environmental Protection Agency',
       image: image1,
       link: 'https://bugcrowd.com/engagements/epa-vdp/hall_of_fames',
-    }, 
+    },
     {
       title: 'State of California VDP',
       image: image2,
@@ -136,16 +136,16 @@ const HallofFames = () => {
                   </div>
 
                   <div className="text-center m-4">
-  <a
-    href={client.link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-blue-500 via-teal-400 to-blue-600 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl gap-2"
-  >
-    Learn More
-    <ChevronRight className="w-5 h-5 ml-2 text-white transition-transform duration-300 transform group-hover:translate-x-1" />
-  </a>
-</div>
+                    <a
+                      href={client.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-blue-500 via-teal-400 to-blue-600 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl gap-2"
+                    >
+                      Learn More
+                      <ChevronRight className="w-5 h-5 ml-2 text-white transition-transform duration-300 transform group-hover:translate-x-1" />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

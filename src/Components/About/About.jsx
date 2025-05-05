@@ -11,6 +11,7 @@ import InnovativeTech from '../Home/Services1/InnovativeTech';
 import ServicesSection from "../Home/Services1/ServicesSection";
 import StatsScroller from "../Home/Stats/StatsScroller";
 import Testimonials1 from './components/Testimonialsc2c';
+import CollegeClients from '../Home/Clients/CollegeClients';
 
 
 
@@ -33,8 +34,9 @@ const About = () => {
         
         <AppreciatedBy></AppreciatedBy>
         <Testimonials></Testimonials>
-        <ServicesSection></ServicesSection>
+        <ServicesSection></ServicesSection>   
         <StatsScroller></StatsScroller>
+        <CollegeClients></CollegeClients>
         <Testimonials1></Testimonials1>
        
        
