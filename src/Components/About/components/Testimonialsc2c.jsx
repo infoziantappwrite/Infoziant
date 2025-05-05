@@ -65,7 +65,7 @@ const Testimonials = () => {
     <section className="about-testimonials-section" ref={sectionRef}>
       <div className="testimonials-container">
         <h6>Testimonials</h6>
-        <h2>What Our Educational Partners Are Saying</h2>
+        <h2>Voices of Our Valued Partners</h2>
         <div className="testimonials-wrapper">
           {testimonials.map((testimonial) => (
             <motion.div
