@@ -25,8 +25,9 @@ const Home = () => {
         <WhyInfoziant />
         <Partnership />
         <Accreditation />
-        <Portfolio />
+       
         <OurProducts />
+        <Portfolio />
         <HallofFames />
       
         <TestimonialSection />
