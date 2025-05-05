@@ -1,4 +1,6 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
 import Banner from './Banner/Banner';
 import Ourservices from './Ourservices/Ourservices';
 import SectionTwo from './InfoziantSection/InfoziantSection';
@@ -17,6 +19,14 @@ import OurProducts from './OurProducts/OurProducts';
 
 
 const Home = () => {
+  const portfolioRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo === 'portfolio' && portfolioRef.current) {
+      portfolioRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
   return (
     <>
         <Banner />
@@ -25,7 +35,9 @@ const Home = () => {
         <WhyInfoziant />
         <Partnership />
         <Accreditation />
+        <div ref={portfolioRef}>
         <Portfolio />
+      </div>
         <OurProducts />
         <CollegeClients />
         <TestimonialSection />

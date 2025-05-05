@@ -50,20 +50,23 @@ const Transformative = () => {
         </h2>
 
         <p className="text-gray-300 mb-4">
-          Unlike conventional systems that have predefined behaviors and expected outcomes, AI models and LLMs
-          generate responses that are dynamic, less predictable, and more complex to test. This inherent
-          complexity requires innovative testing strategies that go beyond traditional methods to mitigate
-          potential issues before they impact real-world applications.
+        Unlike conventional systems that have predefined behaviors and expected outcomes, AI models and LLMs 
+        generate responses that are dynamic, less predictable, and more complex to test. This inherent complexity requires innovative 
+        testing strategies that go beyond traditional methods to mitigate potential issues before they impact real-world applications. So we have 
+        tailored an approach to address these unique challenges and ensure that your AI & LLM models are ready for the real world.
         </p>
 
         <p className="text-gray-300 mb-4">
-          The accuracy of outputs will play a great part in the success of any AI model. We focus on preventing
-          hallucinations, optimizing response times, and preventing data leakage by implementing stringent testing protocols.
+        The accuracy of outputs will play a great part in the success of any AI model. We focus on preventing 
+        hallucinations that cause the model to generate incorrect or nonsensical information. Likewise, it is equally important 
+        to optimize response times to deliver a seamless and responsive user experience. Additionally, we ensure the prevention 
+        of data leakage by implementing stringent testing protocols to protect sensitive information and comply with data privacy standards.
         </p>
 
         <p className="text-gray-300">
-          Our commitment to continuous learning ensures our strategies evolve with your models. By partnering
-          with us, you gain a trusted ally for AI and LLM success.
+        Our commitment to continuous learning & improvement will pave the path for our testing strategies to 
+        evolve as these models evolve and adapt to new data, environments, and requirements. By partnering with us, 
+        you will have a trusted ally to maximize the value and impact of your AI and LLM initiatives.
         </p>
       </motion.div>
     </div>

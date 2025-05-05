@@ -6,9 +6,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Footer() {
-    const [openTech, setOpenTech] = useState(false);
-    const [openCampus, setOpenCampus] = useState(false);
-    const [openCybersecurity, setOpenCybersecurity] = useState(false); // 👈 New state
+  const [openTech, setOpenTech] = useState(false);
+  const [openCampus, setOpenCampus] = useState(false);
+  const [openCybersecurity, setOpenCybersecurity] = useState(false); // 👈 New state
+  const [openAI, setOpenAI] = useState(false);
 
   return (
     <footer className="bg-gray-800 text-white py-8 sm:py-12">
@@ -61,12 +62,12 @@ export default function Footer() {
                 Navigation
               </h3>
               <ul className="space-y-1 sm:space-y-2 md:ml-6 md:mb-2 -mt-2">
-                {["Home", "About", "Product", "Awards", "Blog", "Contact"].map((item) => (
+                {["Home", "About", "Product", "Awards", "Blogs", "Contact"].map((item) => (
                   <li
                     key={item}
                     className="cursor-pointer font-semibold text-teal-200 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base"
                   >
-                    <Link to={item === "Home" ? "/" : item === "About" ? "/about/cybersecurity-services" :  `/${item.toLowerCase()}`}>{item}</Link>
+                    <Link to={item === "Home" ? "/" : item === "About" ? "/about" : `/${item.toLowerCase()}`}>{item}</Link>
                   </li>
                 ))}
               </ul>
@@ -78,67 +79,13 @@ export default function Footer() {
                 Services
               </h3>
 
-              {/* Campus to Corporate Services */}
-              <div className="w-full mb-2">
-                <div
-                  className="flex justify-center sm:justify-between items-center cursor-pointer text-teal-200 font-semibold text-sm sm:text-base"
-                  onClick={() => setOpenCampus(!openCampus)}
-                >
-                  <span>Campus to Corporate Services</span>
-                  <span className="text-xl ml-1 font-medium">{openCampus ? '-' : '+'}</span>
-                </div>
-                {openCampus && (
-                  <ul className="pl-4 text-xs sm:text-sm space-y-2 mt-2 text-gray-300">
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/services/placement">Placement Support</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/services/internship">Internship Programs</Link>
-                    </li>
-                    <li className="hover:text-teal-400 font-semibold">
-                      <Link to="/services/training">Training & Upskilling</Link>
-                    </li>
-                  </ul>
-                )}
-              </div>
-
-              {/* Industry-Academia Collaboration (CoE) */}
-              <div className="w-full mb-2">
-                <Link
-                  to="/coe"
-                  className="block text-teal-200 hover:text-blue-500 font-semibold text-sm sm:text-base text-center sm:text-left"
-                >
-                  Industry-Academia Collaboration (CoE)
-                </Link>
-              </div>
-
-              {/* CodeChef Training */}
-              <div className="w-full mb-2">
-                <Link
-                  to="/codechef"
-                  className="block text-teal-200 hover:text-blue-500 font-semibold text-sm sm:text-base text-center sm:text-left"
-                >
-                  CodeChef Training
-                </Link>
-              </div>
-
-              {/* Edutech Solutions */}
-              <div className="w-full mb-2">
-                <Link
-                  to="/edutech"
-                  className="block text-teal-200 hover:text-blue-500 font-semibold text-sm sm:text-base text-center sm:text-left"
-                >
-                  Edutech Solutions
-                </Link>
-              </div>
-
               {/* Innovative Tech & Business Services */}
               <div className="w-full mb-2">
                 <div
                   className="flex justify-center sm:justify-between items-center cursor-pointer text-teal-200 font-semibold text-sm sm:text-base"
                   onClick={() => setOpenTech(!openTech)}
                 >
-                  <span>Innovative Tech & Business Services</span>
+                  <span>TechEdge</span>
                   <span className="text-xl ml-1 font-medium">{openTech ? '-' : '+'}</span>
                 </div>
 
@@ -166,6 +113,30 @@ export default function Footer() {
                       )}
                     </li>
 
+
+                    {/* AI with toggle */}
+                    <li>
+                      <div
+                        className="flex justify-center sm:justify-between items-center cursor-pointer hover:text-teal-400 font-semibold"
+                        onClick={() => setOpenAI(!openAI)}
+                      >
+                        <span>AI Services</span>
+                        <span className="text-md ml-1">{openAI ? '-' : '+'}</span>
+                      </div>
+
+                      {openAI && (
+                        <ul className="pl-4 mt-2 space-y-1">
+                          <li className="hover:text-teal-400 font-semibold">
+                            <Link to="/services/genai">GenAI Servies</Link>
+                          </li>
+                          <li className="hover:text-teal-400 font-semibold">
+                            <Link to="/services/llm">LLM Servies</Link>
+                          </li>
+                        </ul>
+                      )}
+                    </li>
+
+
                     {/* Other tech services */}
                     <li className="hover:text-teal-400 font-semibold">
                       <Link to="/services/web-app-development">Web & App Development</Link>
@@ -173,19 +144,59 @@ export default function Footer() {
                     <li className="hover:text-teal-400 font-semibold">
                       <Link to="/services/testing">Software Testing</Link>
                     </li>
+                    <li className="hover:text-teal-400 font-semibold">
+                      <Link to="/talent-services">
+                        Tech Talent Hiring (Staffing Services)
+                      </Link>
+                    </li>
                   </ul>
                 )}
               </div>
 
-              {/* Tech Talent Hiring */}
+              {/* Campus to Corporate Services */}
+              <div className="w-full mb-2">
+                <div
+                  className="flex justify-center sm:justify-between items-center cursor-pointer text-teal-200 font-semibold text-sm sm:text-base"
+                  onClick={() => setOpenCampus(!openCampus)}
+                >
+                  <span>EduConnect</span>
+                  <span className="text-xl ml-1 font-medium">{openCampus ? '-' : '+'}</span>
+                </div>
+                {openCampus && (
+                  <ul className="pl-4 text-xs sm:text-sm space-y-2 mt-2 text-gray-300">
+                    <li className="hover:text-teal-400 font-semibold">
+                      <Link to="/services/placement">Placement Support</Link>
+                    </li>
+                    <li className="hover:text-teal-400 font-semibold">
+                      <Link to="/services/internship">Internship Programs</Link>
+                    </li>
+                    <li className="hover:text-teal-400 font-semibold">
+                      <Link to="/services/training">Training & Upskilling</Link>
+                    </li>
+                    <li className="hover:text-teal-400 font-semibold">
+                      <Link to="/coe">Industry-Academia Collaboration (CoE)</Link>
+                    </li>
+                    <li className="hover:text-teal-400 font-semibold">
+                      <Link to="/codechef">CodeChef Training</Link>
+                    </li>
+                    <li className="hover:text-teal-400 font-semibold">
+                      <Link to="/edutech">Edutech Solutions</Link>
+                    </li>
+                  </ul>
+                )}
+              </div>
+
+              {/* Case Studies */}
               <div className="w-full mb-2">
                 <Link
-                  to="/talent-services"
+                  to="/"
+                  state={{ scrollTo: 'portfolio' }}
                   className="block text-teal-200 hover:text-blue-500 font-semibold text-sm sm:text-base text-center sm:text-left"
                 >
-                  Tech Talent Hiring (Staffing Services)
+                  Case Studies
                 </Link>
               </div>
+
             </div>
           </div>
         </div>
