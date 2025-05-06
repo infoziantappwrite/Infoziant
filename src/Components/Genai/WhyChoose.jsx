@@ -87,14 +87,13 @@ const WhyChooseUs = () => {
       setCurrent([newIndex, newIndex > current ? 1 : -1]);
     }
   };
-
   return (
     <motion.section
       ref={ref}
       variants={sectionVariants}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
-      className="relative bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-gray-100 py-20 px-6"
+      className="relative bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-gray-100 py-12 md:py-20 px-4 md:px-6"
     >
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -112,48 +111,63 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 md:px-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+      <div className="relative z-10 px-2 md:px-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-14">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#15f5b9] to-[#3F00FF]">Why</span>{' '}
           <span className="text-white">Choose Us ?</span>
         </h2>
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
-          {/* Stepper */}
-          <div className="relative w-full md:w-1/3">
-          <motion.div
-  className="flex flex-col space-y-6 relative z-10"
-  variants={listContainer}
-  initial="hidden"
-  animate={isInView ? 'visible' : 'hidden'}
->
-  {items.map((item, index) => (
-    <motion.div
-      key={index}
-      variants={listItem}
-      onClick={() => goToSlide(index)}
-      className={`flex items-center space-x-3 cursor-pointer transition-all ${
-        current === index
-          ? 'text-[#15f5b9] font-semibold scale-105'
-          : 'text-gray-400 hover:text-gray-200'
-      }`}
-    >
-      <div
-        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-          current === index ? 'border-[#15f5b9]' : 'border-gray-500'
-        }`}
-      >
-        {current === index && <div className="w-2 h-2 bg-[#15f5b9] rounded-full"></div>}
-      </div>
-      <span className="text-lg">{`0${index + 1}. ${item.title}`}</span>
-    </motion.div>
-  ))}
-</motion.div>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10">
+          {/* Stepper - Hidden on mobile, shown on desktop */}
+          <div className="hidden md:block relative w-full md:w-1/3">
+            <motion.div
+              className="flex flex-col space-y-6 relative z-10"
+              variants={listContainer}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            >
+              {items.map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={listItem}
+                  onClick={() => goToSlide(index)}
+                  className={`flex items-center space-x-3 cursor-pointer transition-all ${
+                    current === index
+                      ? 'text-[#15f5b9] font-semibold scale-105'
+                      : 'text-gray-400 hover:text-gray-200'
+                  }`}
+                >
+                  <div
+                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                      current === index ? 'border-[#15f5b9]' : 'border-gray-500'
+                    }`}
+                  >
+                    {current === index && <div className="w-2 h-2 bg-[#15f5b9] rounded-full"></div>}
+                  </div>
+                  <span className="text-lg">{`0${index + 1}. ${item.title}`}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
 
+          {/* Mobile Stepper - Only shown on mobile */}
+          <div className="md:hidden flex justify-center mb-4">
+            <div className="flex space-x-2">
+              {items.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    current === index ? 'bg-[#15f5b9] scale-125' : 'bg-gray-500'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right Content */}
-          <div className="w-full md:w-2/3 bg-gray-800 rounded-3xl shadow-2xl p-8 transition-all overflow-hidden relative h-[300px] md:h-auto">
+          <div className="w-full md:w-2/3 bg-gray-800 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl p-4 md:p-8 transition-all overflow-hidden relative  md:h-auto">
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={current}
@@ -166,16 +180,16 @@ const WhyChooseUs = () => {
                   x: { type: 'spring', stiffness: 300, damping: 30 },
                   opacity: { duration: 0.2 },
                 }}
-                className="flex flex-col md:flex-row items-center gap-6 w-full"
+                className="flex flex-col md:flex-row items-center gap-4 md:gap-6 w-full h-full"
               >
                 <img
                   src={items[current].image}
                   alt={items[current].title}
-                  className="w-full md:w-1/2 rounded-xl object-contain max-h-64"
+                  className="w-full md:w-1/2 rounded-lg md:rounded-xl object-contain max-h-[180px] md:max-h-64"
                 />
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{items[current].title}</h3>
-                  <p className="text-gray-300 text-sm">{items[current].description}</p>
+                <div className="text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">{items[current].title}</h3>
+                  <p className="text-gray-300 text-xs md:text-sm">{items[current].description}</p>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -183,23 +197,23 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-center gap-6 mt-8">
+        <div className="flex items-center justify-center gap-4 md:gap-6 mt-6 md:mt-8">
           <button
             onClick={() => goToSlide(current - 1)}
             disabled={current === 0}
-            className="transition-all px-3 py-2 rounded-full bg-gradient-to-r from-[#15f5b9] to-[#3F00FF] text-white disabled:opacity-30"
+            className="transition-all p-2 md:px-3 md:py-2 rounded-full bg-gradient-to-r from-[#15f5b9] to-[#3F00FF] text-white disabled:opacity-30"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={18} />
           </button>
-          <span className="font-semibold text-gray-300">
+          <span className="font-semibold text-gray-300 text-sm md:text-base">
             {current + 1}/{items.length}
           </span>
           <button
             onClick={() => goToSlide(current + 1)}
             disabled={current === items.length - 1}
-            className="transition-all px-3 py-2 rounded-full bg-gradient-to-r from-[#15f5b9] to-[#3F00FF] text-white disabled:opacity-30"
+            className="transition-all p-2 md:px-3 md:py-2 rounded-full bg-gradient-to-r from-[#15f5b9] to-[#3F00FF] text-white disabled:opacity-30"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={18} />
           </button>
         </div>
       </div>
