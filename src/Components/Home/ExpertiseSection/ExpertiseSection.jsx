@@ -173,7 +173,7 @@ const ExpertiseSection = () => {
                         {slides.map((slide, index) => (
                             <div
                                 key={index}
-                                onClick={() => setSelected(index)}
+                                onMouseEnter={() => setSelected(index)}
                                 className={`relative cursor-pointer transition-all p-3 pl-8 rounded-md border-l-4 ${selected === index
                                     ? "bg-gradient-to-r from-cyan-100 via-teal-100 to-blue-100 border-blue-500 text-blue-600 font-semibold"
                                     : "bg-gray-50 border-transparent text-gray-800 hover:bg-gray-100"
