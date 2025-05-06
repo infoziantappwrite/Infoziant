@@ -5,8 +5,7 @@ import image2 from './12.png';
 import image3 from './13.png';
 import image4 from './14.png';
 import image5 from './15.png';
-
-
+import image10 from './16.png';
 
 import image6 from './1.png';
 import image7 from './2.png';
@@ -20,7 +19,8 @@ const OurProducts = () => {
     { id: 2, src: image2 },
     { id: 3, src: image3 },
     { id: 4, src: image4 },
-    { id: 5, src: image5 },
+    { id: 5, src: image5},
+    { id: 6, src: image10}
   ];
   const partners2 = [
     { id: 1, src: image6 },
