@@ -52,7 +52,15 @@ const TestimonialSlider = () => {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
         viewport={{ amount: 0.75, once: true }} 
       >
-        <h2>What Our <span className='highlight'>Clients</span> Say</h2>
+       <h2 
+  style={{
+    textAlign: 'center', 
+    marginBottom: '1.5rem',
+    fontSize: window.innerWidth <= 768 ? '1.5rem' : '2rem' // If screen width is 768px or less, font size will be 3rem
+  }}
+>
+  What Our <span className="highlight">Clients</span> Say
+</h2>
         <p>
           We are honored to share some of the feedback from our esteemed clients.
           Their satisfaction is our top priority, and here are some of their thoughts.

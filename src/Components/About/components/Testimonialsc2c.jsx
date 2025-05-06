@@ -37,10 +37,10 @@ const Testimonials = () => {
     {
       id: 1,
       stars: '⭐⭐⭐⭐⭐',
-      quote: 'Infoziant has been a great support for our students, both in training and placements. Their sessions are practical, insightful, and engaging, and the team is always approachable. We’ve seen real results, and we’re happy to keep working with them for continued success.',
+      quote: 'Infoziant has been a great support for our students in training and placements. Their sessions are practical, engaging, and the team is approachable. We’ve seen real results and are happy to keep working with them.',
       name: 'Nirmal',
       position: 'Placement Officer  | Sri Shanmugha College of Engineering and Technology',
-      profileImage: image1 // Make sure image1 is imported or defined
+      profileImage: image1
     },
     {
       id: 2,
