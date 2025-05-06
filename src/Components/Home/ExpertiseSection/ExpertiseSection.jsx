@@ -184,13 +184,13 @@ const ExpertiseSection = () => {
 
     const prev = () => setSelected((prev) => (prev > 0 ? prev - 1 : slides.length - 1));
     const next = () => setSelected((prev) => (prev + 1) % slides.length);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setSelected((prev) => (prev + 1) % slides.length);
-        }, 4000);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setSelected((prev) => (prev + 1) % slides.length);
+    //     }, 4000);
 
-        return () => clearInterval(interval);
-    }, [slides.length]);
+    //     return () => clearInterval(interval);
+    // }, [slides.length]);
 
     return (
         <section className="bg-white py-10 px-6 md:px-12">

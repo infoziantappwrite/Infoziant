@@ -53,9 +53,9 @@ const Testimonials = () => {
     {
       id: 3,
       stars: '⭐⭐⭐⭐⭐',
-      quote: 'CodeChef played a crucial role in my placement journey! Structured learning, coding challenges, and mock contests improved my problem-solving skills. Their sessions and assessments prepared me for interviews. Thanks to CodeChef, I got placed at Tech Mahindra and CTS.',
-      name: 'Sundar Karthick',
-      position: 'Student | Panimalar Engineering College',
+      quote: 'CodeChef played a crucial role in my placement journey! The structured learning, coding challenges, and mock contests helped me sharpen my problem-solving skills. Thanks to CodeChef, I secured placements at Tech Mahindra and CTS.',
+      name: 'Sundar Karthik',
+      position: 'Student  | Panimalar Engineering College',
       profileImage: image3
     }
   ];

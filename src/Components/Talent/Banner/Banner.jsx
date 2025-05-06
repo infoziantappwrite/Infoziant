@@ -50,7 +50,7 @@ const Banner = () => {
 
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
             <span className="block bg-gradient-to-r from-teal-300 to-blue-500 bg-clip-text text-transparent">
-              Tech talent services
+              Tech Talent Services
             </span>
           </h1>
 
