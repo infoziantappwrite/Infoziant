@@ -82,17 +82,29 @@ const Header = () => {
   };
 
   const dropdownMenu = [
+
+    {
+      title: "Cybersecurity",
+      key: "cyber",
+      items: [
+        {
+          name: "VAPT",
+          subItems: [
+            { name: "Network Infrastructure", path: "/services/cybersecurity/vapt/network-infrastructure" },
+            { name: "Web and Mobile Application", path: "/services/cybersecurity/vapt/web-and-mobile-app" },
+            { name: "Cloud Infrastructure", path: "/services/cybersecurity/vapt/cloud-infrastructure" },
+            { name: "API VAPT", path: "/services/cybersecurity/vapt/api-vapt" },
+            { name: "SIEM & Threat Intelligence", path: "/services/cybersecurity/vapt/siem" },
+          ],
+        },
+        { name: "Cybersecurity Services", path: "/services/cybersecurity" },
+        { name: "Prodcut", path: "/product" },
+      ],
+    },
     {
       title: "TechEdge",
       key: "tech",
       items: [
-        {
-          name: "Cybersecurity Services",
-          subItems: [
-            { name: "CyberSecurity Services", path: "/services/cybersecurity" },
-            { name: "VAPT Services", path: "/services/cybersecurity/vapt" },
-          ],
-        },
         {
           name: "AI&ML Services",
           subItems: [
@@ -122,7 +134,7 @@ const Header = () => {
   const navLinks = [
     { title: "Home", path: "/" },
     { title: "About", path: "/about" },
-    { title: "Product", path: "/product" },
+    // { title: "Product", path: "/product" },
     { title: "Awards", path: "/awards" },
     { title: "Blogs", path: "/blogs" },
     { title: "Contact", path: "/contact" },
