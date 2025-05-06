@@ -6,6 +6,10 @@ import aiml from "./aiml.png";
 import testing from "./testing.png";
 import codechef from "./train.png";
 import ctc from "./image.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const slides = [
     {
@@ -136,6 +140,40 @@ const getAchievementIcon = (text) => {
     if (text.includes("Automated")) return <Repeat size={28} className="text-white mb-2 drop-shadow-sm" />;
     return <Trophy size={28} className="text-white mb-2 drop-shadow-sm" />;
 };
+const PrevArrow = ({ onClick }) => (
+    <div
+        className="absolute left-2 top-1/3 -translate-y-1/2 z-10 cursor-pointer bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 p-2 rounded-full shadow-md hover:scale-110 transition"
+        onClick={onClick}
+    >
+        <svg
+            className="w-4 h-4 text-white"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
+        >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+    </div>
+);
+
+const NextArrow = ({ onClick }) => (
+    <div
+        className="absolute right-2 top-1/3 -translate-y-1/2 z-10 cursor-pointer bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 p-2 rounded-full shadow-md hover:scale-110 transition"
+        onClick={onClick}
+    >
+        <svg
+            className="w-4 h-4 text-white"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
+        >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+    </div>
+);
+
 
 
 
@@ -163,8 +201,8 @@ const ExpertiseSection = () => {
                 <div className="w-16 h-1 mx-auto bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded mt-2 mb-4" />
                 <p className="text-lg text-gray-600">Scaling Digital Growth Across Sectors</p>
             </div>
-            <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3 relative ">
+            <div className="flex flex-col md:flex-row gap-8 ">
+                <div className="md:w-1/3 relative hidden md:block ">
                     <div
                         className="absolute hidden md:block left-4 top-5 w-0.5 bg-gradient-to-b from-cyan-400 via-teal-400 to-blue-500 z-0"
                         style={{ height: `${slides.length * 72 - 66}px` }}
@@ -206,7 +244,7 @@ const ExpertiseSection = () => {
                     </div>
 
                 </div>
-                <div className="md:w-2/3 flex flex-col items-center rounded-sm gap-4">
+                <div className="md:w-2/3 md:flex flex-col items-center rounded-sm gap-4 hidden">
                     <div className="relative w-full max-h-[100%]">
                         <div className="p-0.5 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-500 shadow-2xl">
                             <div className="bg-white rounded-xl ">
@@ -284,8 +322,78 @@ const ExpertiseSection = () => {
                         </button>
                     </div>
                 </div>
+                <div className="md:w-2/3 flex flex-col items-center rounded-sm gap-4 md:hidden no-slick-padding">
+                    <div className="relative w-full">
+                        <Slider
+                            dots={true}
+                            infinite={true}
+                            speed={500}
+                            slidesToShow={1}
+                            slidesToScroll={1}
+                            arrows={true}
+                            nextArrow={<NextArrow />}
+                            prevArrow={<PrevArrow />}
+                            appendDots={(dots) => (
+                                <div className="pb-6">
+                                    <ul className="flex justify-center space-x-2">{dots}</ul>
+                                </div>
+                            )}
+                            customPaging={() => (
+                                <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded-full       group-hover:bg-gradient-to-l group-hover:from-cyan-500 group-hover:via-teal-500 group-hover:to-blue-500 transition" />
+                            )}
+                        >
+
+                            {slides.map((slide, selected) => (
+                                <div key={selected} className="bg-white rounded-xl p-0 m-0">
+                                    <div className="bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 p-[2px] rounded-xl ">
+                                        <div className="bg-white rounded-xl">
+                                            <div className="flex flex-col items-center justify-center overflow-hidden p-4">
+                                                <div className="w-full flex items-center justify-center h-[250px] lg:h-[400px]">
+                                                    <img
+                                                        src={slide.image}
+                                                        alt={slide.title}
+                                                        className="h-[200px] lg:h-[300px] w-auto object-cover rounded-lg"
+                                                    />
+                                                </div>
+                                                <div className="w-full px-0 py-4 space-y-4 max-h-[500px] overflow-y-auto">
+                                                    <h3 className="text-xl font-bold text-blue-700">
+                                                        {slide.title}
+                                                    </h3>
+                                                    <ul className="space-y-2 pl-2 text-gray-700">
+                                                        {slide.keyHighlights.map((point, i) => (
+                                                            <li key={i} className="flex items-start gap-2">
+                                                                <CheckCircle
+                                                                    className="text-blue-500 mt-1"
+                                                                    size={18}
+                                                                />
+                                                                <span>{point}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center">
+                                                        {slide.achievements.map((point, i) => (
+                                                            <div
+                                                                key={i}
+                                                                className="flex flex-row items-center justify-center text-center bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-white px-4 py-2 rounded-xl shadow-md text-sm font-semibold transition-transform duration-300 hover:scale-105 space-x-2"
+                                                            >
+                                                                {getAchievementIcon(point)}
+                                                                <span>{point}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                </div>
+
 
             </div>
+
 
         </section>
     );

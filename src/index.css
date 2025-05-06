@@ -25,3 +25,15 @@ html {
   background-clip: text;
   color: transparent;
 }
+/* Remove padding and margin from react-slick slides */
+.no-slick-padding .slick-slide {
+  padding: 2px !important;
+  margin: 0 !important;
+}
+
+.no-slick-padding .slick-list {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
