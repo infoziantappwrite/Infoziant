@@ -12,7 +12,7 @@ import ConsultationFormForCo from '../Pages/ConsultationFormForCo';
 import noprofile from "../../assests/noprofile.png";
 import WhatIsCodeChef from './WhatIs/WhatIs';
 import Achievements from "./WhatWeCOE/WhatWeCOE";
-import achievementImg from "./WhatWeCOE/abbookdemoanimdribbble_20221108135425.gif"; 
+import achievementImg from "./WhatWeCOE/broadcast_gif2.gif"; 
 import JoinCoEMovement from "./JoinCoe/JoinCoe";
 import {
   FaLaptopCode,
