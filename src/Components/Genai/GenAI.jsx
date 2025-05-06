@@ -14,7 +14,9 @@ const GenAI = () => {
   return (
     <div>
         <Banner/>
-        <Aiservices />
+        
+      <div id="get-started"><Aiservices /></div>
+        
         <Aimodels/>
         <CapabilitySection/>
         <OurApproach/>

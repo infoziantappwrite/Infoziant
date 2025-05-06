@@ -15,7 +15,7 @@ const Achievements = ({ title = "Our Achievements", subtitle = "Explore our key 
 
       <div className="relative z-10">
         {/* Title Section */}
-        <div className="text-center mb-6">
+        <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-transparent bg-clip-text text-center">
             {title}
           </h2>
@@ -24,7 +24,7 @@ const Achievements = ({ title = "Our Achievements", subtitle = "Explore our key 
         </div>
 
         {/* Image + Cards Section */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-y-6 lg:gap-y-0 lg:gap-x-14 max-w-[1500px] mx-auto mt-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-y-6 lg:gap-y-0 lg:gap-x-14 max-w-[1500px] mx-auto mt-2">
           {/* Image Section */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <img
@@ -37,7 +37,7 @@ const Achievements = ({ title = "Our Achievements", subtitle = "Explore our key 
           {/* Cards Section */}
           <div className="relative w-full lg:w-1/2">
             {/* Desktop View - Stair Layout */}
-            <div className="hidden lg:block relative h-[600px] overflow-visible">
+            <div className="hidden lg:block relative h-[550px] overflow-visible">
               {achievements.map((item, index) => {
                 const totalSteps = achievements.length - 1;
                 const maxOffset = 400;

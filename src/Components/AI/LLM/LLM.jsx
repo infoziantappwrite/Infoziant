@@ -18,7 +18,9 @@ const LLM = () => {
       <Transformative />  
       <ChecksSection />
       <ChallengesSolutionsSection />
-      <TestingApproach />
+      
+      <div id="get-started"><TestingApproach /></div>
+      
       <InsightsSection />
       <WhyChooseUs />
       <FAQSection />

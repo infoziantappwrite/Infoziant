@@ -20,20 +20,20 @@ const Transformative = () => {
 
   return (
     <div
-      ref={ref}
-      className="flex flex-col md:flex-row items-start justify-start py-16 bg-gray-900 text-gray-100"
-    >
+    ref={ref}
+    className="flex flex-col md:flex-row items-start justify-start py-16 px-4 sm:px-6 md:px-12 bg-gray-900 text-gray-100 overflow-hidden"
+  >
       {/* Left Image with animation */}
       <motion.div
         animate={controlsLeft}
         initial={{ opacity: 0, x: -60 }}
-        className="w-full md:w-[30%] pl-[10%]"
+        className="w-full md:w-[30%] px-4 md:px-0 flex justify-center"
       >
-        <img
-          src={sampleGif}
-          alt="Team working"
-          className="w-[90%] h-[350px] shadow-lg rounded"
-        />
+       <img
+  src={sampleGif}
+  alt="Team working"
+  className="w-full max-w-[90%] h-auto max-h-[350px] object-contain shadow-lg rounded"
+/>
       </motion.div>
 
       {/* Right Text with animation */}
@@ -49,21 +49,21 @@ const Transformative = () => {
           for Advanced AI & LLM Models
         </h2>
 
-        <p className="text-gray-300 mb-4">
+        <p className="text-gray-300 mb-4 text-left text-justify">
         Unlike conventional systems that have predefined behaviors and expected outcomes, AI models and LLMs 
         generate responses that are dynamic, less predictable, and more complex to test. This inherent complexity requires innovative 
         testing strategies that go beyond traditional methods to mitigate potential issues before they impact real-world applications. So we have 
         tailored an approach to address these unique challenges and ensure that your AI & LLM models are ready for the real world.
         </p>
 
-        <p className="text-gray-300 mb-4">
+        <p className="text-gray-300 mb-4 text-left text-justify">
         The accuracy of outputs will play a great part in the success of any AI model. We focus on preventing 
         hallucinations that cause the model to generate incorrect or nonsensical information. Likewise, it is equally important 
         to optimize response times to deliver a seamless and responsive user experience. Additionally, we ensure the prevention 
         of data leakage by implementing stringent testing protocols to protect sensitive information and comply with data privacy standards.
         </p>
 
-        <p className="text-gray-300">
+        <p className="text-gray-300 text-left text-justify">
         Our commitment to continuous learning & improvement will pave the path for our testing strategies to 
         evolve as these models evolve and adapt to new data, environments, and requirements. By partnering with us, 
         you will have a trusted ally to maximize the value and impact of your AI and LLM initiatives.
