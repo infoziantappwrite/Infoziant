@@ -37,10 +37,10 @@ const Testimonials = () => {
     {
       id: 1,
       stars: '⭐⭐⭐⭐⭐',
-      quote: 'Infoziant has been a great support for our students, both in training and placements. Their sessions are practical, insightful, and engaging, and the team is always approachable. We’ve seen real results, and we’re happy to keep working with them for continued success.',
+      quote: 'Infoziant has been a great support for our students in training and placements. Their sessions are practical, engaging, and the team is approachable. We’ve seen real results and are happy to keep working with them.',
       name: 'Nirmal',
       position: 'Placement Officer  | Sri Shanmugha College of Engineering and Technology',
-      profileImage: image1 // Make sure image1 is imported or defined
+      profileImage: image1
     },
     {
       id: 2,
@@ -53,9 +53,9 @@ const Testimonials = () => {
     {
       id: 3,
       stars: '⭐⭐⭐⭐⭐',
-      quote: 'CodeChef played a crucial role in my placement journey! The structured learning, coding challenges, and mock contests helped me sharpen my problem-solving skills. The platform’s practice sessions and real-time assessments prepared me well for technical interviews. Thanks to CodeChef, I secured placements at Tech Mahindra and CTS.',
+      quote: 'CodeChef played a crucial role in my placement journey! Structured learning, coding challenges, and mock contests improved my problem-solving skills. Their sessions and assessments prepared me for interviews. Thanks to CodeChef, I got placed at Tech Mahindra and CTS.',
       name: 'Sundar Karthick',
-      position: 'Student  | Panimalar Engineering College',
+      position: 'Student | Panimalar Engineering College',
       profileImage: image3
     }
   ];

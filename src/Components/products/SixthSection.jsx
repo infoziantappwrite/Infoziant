@@ -47,13 +47,18 @@ const SixthSection = () => {
     <section className="chooseus_section_6_unique" ref={sectionRef}>
       <div className="chooseus_section_6_content">
       <motion.h2
-          className="section_title"
-          initial={{ y: "100px", opacity: 0 }}
-          animate={{ y: isVisible ? 0 : "50px", opacity: isVisible ? 1 : 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          Infoziant’s free version has garnered over 70,000 downloads worldwide.
-        </motion.h2>
+  className="section_title"
+  initial={{ y: "100px", opacity: 0 }}
+  animate={{ y: isVisible ? 0 : "50px", opacity: isVisible ? 1 : 0 }}
+  transition={{ duration: 0.5, delay: 0.3 }}
+  style={{
+    fontSize: window.innerWidth <= 768 ? '1.5rem' : '2.3rem', // Reduce font size for mobile
+    textAlign: 'center', // Centering the text
+  }}
+>
+  Infoziant’s free version has garnered over 70,000 downloads worldwide.
+</motion.h2>
+
         <motion.div 
           className="tabs" 
           initial={{ y: "100px", opacity: 0 }}
