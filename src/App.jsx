@@ -42,6 +42,7 @@ import CloudInfrastructure from './Components/VAPTservices/CloudInfrastructure';
 import ApiVapt from './Components/VAPTservices/ApiVapt';
 import Siem from './Components/VAPTservices/Siem';
 import GenAI from './Components/Genai/GenAI.jsx';
+import RedirectAicl from './Components/RedirectAicl.jsx';
 const Page = () => (
   <div className="w-screen h-full flex items-center justify-center bg-white">
     <img src="/Test.jpg" alt="Coming Soon" className="w-full h-full object-contain" />
@@ -71,7 +72,7 @@ const App = () => {
       <Route path="/awards" element={<Awards />} />
       <Route path="/services/placement" element={<Placement_Support/>} />
       <Route path="/services/internship" element={<Internship_Programs />} />
-      <Route path="/services/training" element={<Page title="Training" />} />
+      <Route path="/services/training" element={< RedirectAicl />} />
       <Route path="/services/coe" element={<COE />} />
       <Route path="/services/edutech" element={<Edutech_Platform/>} />
       <Route path="/services/codechef" element={<CodeChef/>} />
