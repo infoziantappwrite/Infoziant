@@ -52,17 +52,18 @@ const Page = () => (
 const App = () => {
   
   const fetchData = async () => {
-    // Replace with your actual data fetching logic (e.g., API call)
-    const response = await fetch('https://api.example.com/data');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
+
+    return new Promise((resolve) => {
+
+      setTimeout(() => {
+        resolve({ success: true });
+      }, 1500);
+    });
   };
   return (
     <Router>
        <ScrollToTop />
-       <Loader fetchData={fetchData}>
+      <Loader fetchData={fetchData}>
       <Header />
       <Routes>
       <Route path="/" element={<Home/>} />
