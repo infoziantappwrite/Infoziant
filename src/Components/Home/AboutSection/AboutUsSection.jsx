@@ -8,6 +8,7 @@ import img4 from "../../../assests/Images/HomeAbout/9.png";
 import img5 from "../../../assests/Images/HomeAbout/5.png";
 import img6 from "../../../assests/Images/HomeAbout/11.png";
 import img7 from "../../../assests/Images/HomeAbout/12.png";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const imagePositions = [
   {
@@ -106,7 +107,7 @@ const AboutUsSection = () => (
         </h3> */}
 
         <p className="text-gray-700 text-base md:text-lg max-w-3xl mb-8">
-          Founded by seasoned tech leaders from global firms like{" "}
+          Founded in 2015 by seasoned tech leaders from global firms like{" "}
           <span className="text-blue-600 font-medium">Symantec, McAfee, and EMC</span>, we've grown
           into a trusted partner for institutions and industries empowering students, enabling
           careers, and delivering impactful digital solutions.
@@ -120,9 +121,25 @@ const AboutUsSection = () => (
 
         <p className="text-gray-700 text-base md:text-lg max-w-3xl">
           With end-to-end solutions in{" "}
-          <span className="text-blue-600 font-medium">education, tech, and talent</span>, we
+          <span className="text-blue-600 font-medium">Education, Tech, and Talent</span>, we
           collaborate to nurture future professionals all under one roof.
         </p>
+
+        <div className="flex items-center gap-6 text-gray-700 mt-4 text-base md:text-lg">
+  <div className="flex items-center gap-2">
+  <FaMapMarkerAlt className="text-blue-500" />
+    <span>India</span>
+  </div>
+  <div className="flex items-center gap-2">
+  <FaMapMarkerAlt className="text-blue-500" />
+    <span>USA</span>
+  </div>
+  <div className="flex items-center gap-2">
+  <FaMapMarkerAlt className="text-blue-500" />
+    <span>UAE</span>
+  </div>
+</div>
+
 
         <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-teal-400 to-blue-600 rounded-full"></div>
       </motion.div>
@@ -206,3 +223,5 @@ const AboutUsSection = () => (
 );
 
 export default AboutUsSection;
+
+// India USA UAE 
