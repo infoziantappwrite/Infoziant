@@ -8,6 +8,7 @@ import sampleGif4 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChoose
 import sampleGif5 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmReporting2.png';
 import sampleGif6 from '../../../../assests/Images/Ourservice/GenAI/LLMWhyChooseUs/llmComprehensive1.png';
 
+
 const items = [
   {
     title: 'AI Specialists',
