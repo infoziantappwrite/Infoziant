@@ -15,6 +15,7 @@ import Portfolio from "../Cyber/portfolio";
 import WhyInfoziant from '../Cyber/WhyInfoziant';
 import OurProducts from './OurProducts/OurProducts';
 import HallofFames from '../Pages/HallofFames';
+import InnovativeTech from './Services1/InnovativeTech';
 
 
 
@@ -31,7 +32,8 @@ const Home = () => {
     <>
         <Banner />
         <SectionTwo/>
-        <ExpertiseSection />
+        <InnovativeTech />
+        {/* <ExpertiseSection /> */}
         <WhyInfoziant />
         <Partnership />
         <Accreditation />
