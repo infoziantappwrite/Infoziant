@@ -1,40 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import { TrendingUp } from "lucide-react";
-const slides = [
-  {
-    heading: "Transforming Talent & Technology with Grade-A Skilling and Digital Solutions",
-    text: "We deliver impact at every step",
-  },
-  {
-    heading: "Transforming Talent & Technology with Grade-A Skilling and Digital Solutions",
-    text: "We deliver impact at every step",
-  },
+import React, { useEffect, useRef } from "react";
+import TypingHeroSection from "./TypingHeroSection";
 
-];
  
 const Banner = () => {
-  const [index, setIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setIndex((i) => (i + 1) % slides.length);
-        setTimeout(() => setIsAnimating(false), 100);
-      }, 500);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5; // Slowed video
+      videoRef.current.playbackRate = 0.5; 
     }
   }, []);
-
-  const { heading, text } = slides[index];
 
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center">
@@ -45,7 +23,7 @@ const Banner = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover brightness-75 saturate-150"
+        className="absolute inset-0 w-full h-full object-cover brightness-90 saturate-150"
       >
         <source
           src="https://cdn.pixabay.com/video/2024/02/23/201735-916310640_large.mp4"
@@ -56,10 +34,10 @@ const Banner = () => {
 
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80 z-0" />
 
 
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-7xl w-full mx-auto">
+      {/* <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 max-w-7xl w-full mx-auto">
         <h1
           className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-snug  text-center transition-all duration-700 ${isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
             }`}
@@ -101,9 +79,8 @@ const Banner = () => {
             Discover More
           </button>
         </div>
-      </div>
-
-
+      </div> */}
+      <TypingHeroSection/>
 
     </section>
   );
