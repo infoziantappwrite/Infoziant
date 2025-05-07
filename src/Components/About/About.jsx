@@ -12,6 +12,7 @@ import ServicesSection from "../Home/Services1/ServicesSection";
 import StatsScroller from "../Home/Stats/StatsScroller";
 import Testimonials1 from './components/Testimonialsc2c';
 import CollegeClients from '../Home/Clients/CollegeClients';
+import ExpertiseSection from '../Home/ExpertiseSection/ExpertiseSection.jsx';
 
 
 
@@ -29,8 +30,10 @@ const About = () => {
         <AboutBanner></AboutBanner>
         
         <AboutUsSection></AboutUsSection>
-        <InnovativeTech></InnovativeTech>
         <Achievements></Achievements>
+        <ExpertiseSection />
+        {/* <InnovativeTech></InnovativeTech> */}
+    
         
         <AppreciatedBy></AppreciatedBy>
         <Testimonials></Testimonials>
