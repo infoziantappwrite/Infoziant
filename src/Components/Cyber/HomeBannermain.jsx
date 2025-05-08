@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 import "../css/HomeBanner.css";
-import { TrendingUp, Code2, Settings, BugPlay, ShieldCheck, ArrowDown, ArrowRight } from "lucide-react";
+import { TrendingUp, Code2, Settings, BugPlay, ShieldCheck, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import img1 from "./scan/Banner1.gif";
-import img2 from "./scan/Banner21.gif";
-import img3 from "./scan/Banners.gif";
+import img2 from "./scan/Bannerrobo.gif";
+import img3 from "./scan/Bannertest1.gif";
 import img4 from "./scan/Banner6.gif";
-import img6 from "../../assests/Images/Cyber/ai-scan.png";
-import img7 from "../../assests/Images/Cyber/seamless_integrations.png";
-import img8 from "../../assests/Images/Cyber/vulnerability_detectors.png";
-import img9 from "../../assests/Images/Cyber/audit_report.png";
+import img6 from "./scan/11.png";
+import img7 from "./scan/44.png";
+import img8 from "./scan/22.png";
+import img9 from "./scan/33.png";
 import lock from "./scan/icons8-lock-14.png"
 
 
@@ -30,7 +30,7 @@ export default function HomeBanner() {
 
 
   const words = ["Digital Solutions...", "Digital Solutions...", "Digital Solutions..."];
-  const imgWords = ["1.Discover & Crawl", "2.Assess", "3.Detect Risk", "4.Resolve"];
+  const imgWords = ["1.CodeChef", "2.Training & Upskilling", "3.Placement & Internship", "4.Edutech "];
   const steps = [
     { title: "Develop", icon: <Code2 className="w-5 h-5 text-white" /> },
     { title: "Automate", icon: <Settings className="w-5 h-5 text-white" /> },
@@ -166,12 +166,11 @@ export default function HomeBanner() {
                       style={{ marginTop: "-2px" }}
                     />
                     <span className="text-md" style={{ textTransform: "none" }}>
-      tection
-    </span>
+                      tection
+                    </span>
                   </span>{" "}
                   at Every Step
                 </span>
-
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
             </div>
@@ -279,16 +278,19 @@ export default function HomeBanner() {
           </li>
           {/* image animation ends */}
         </ul>
+        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent drop-shadow-sm mt-80 lg:mt-0 mb-4">
+          Campus to Corporate Services
+        </h2>
         {/* functionalities starts */}
-        <ul className="func" ref={ref5}>
+        <ul className="func text-center" ref={ref5}>
           <motion.li
             initial="hidden"
             animate={inView5 ? "visible" : "hidden"}
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <img src={img6} alt="AI" className="func-img" /><br />
-            <h3>AI Powered Scanning</h3>
+            <img src={img6} alt="AI" className="func-img max-h-[250px]" /><br />
+            <h3>CodeChef</h3>
           </motion.li>
 
           <motion.li
@@ -297,8 +299,8 @@ export default function HomeBanner() {
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <img src={img7} alt="Seamless Integrations" className="func-img" /><br />
-            <h3>Seamless Integrations</h3>
+            <img src={img7} alt="Seamless Integrations" className="func-img max-h-[250px]" /><br />
+            <h3>Training & Upskilling</h3>
           </motion.li>
 
           <motion.li
@@ -307,8 +309,8 @@ export default function HomeBanner() {
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <img src={img8} alt="274+" className="func-img" /><br />
-            <h3>274+ Vulnerability Detectors</h3>
+            <img src={img8} alt="274+" className="func-img max-h-[200px]" /><br />
+            <h3>Placement & Internship</h3>
           </motion.li>
 
           <motion.li
@@ -317,8 +319,8 @@ export default function HomeBanner() {
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <img src={img9} alt="GAR" className="func-img" /><br />
-            <h3>Generate Audit Reports</h3>
+            <img src={img9} alt="GAR" className="func-img max-h-[200px]" /><br />
+            <h3>Edutech Solutions</h3>
           </motion.li>
         </ul>
         {/* functionalities ends */}
