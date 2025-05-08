@@ -1,39 +1,42 @@
 import { motion } from "framer-motion";
 import "../css/HomeBanner.css";
-import { TrendingUp } from "lucide-react";
+import { TrendingUp, Code2, Settings, BugPlay, ShieldCheck, ArrowDown, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import img1 from "./scan/Banner1.gif";
 import img2 from "./scan/Banner21.gif";
-import img3 from "./scan/Banner7.gif";
+import img3 from "./scan/Banners.gif";
 import img4 from "./scan/Banner6.gif";
-
 import img6 from "../../assests/Images/Cyber/ai-scan.png";
 import img7 from "../../assests/Images/Cyber/seamless_integrations.png";
 import img8 from "../../assests/Images/Cyber/vulnerability_detectors.png";
 import img9 from "../../assests/Images/Cyber/audit_report.png";
-
+import lock from "./scan/icons8-lock-14.png"
 
 
 
 
 export default function HomeBanner() {
-  // intersection observer start
 
   const { ref: ref5, inView: inView5 } = useInView({
     triggerOnce: false,
     threshold: 0.2,
   });
 
-  // Animation variants for the list items
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
-  // intersection observer end
+
 
   const words = ["Digital Solutions...", "Digital Solutions...", "Digital Solutions..."];
   const imgWords = ["1.Discover & Crawl", "2.Assess", "3.Detect Risk", "4.Resolve"];
+  const steps = [
+    { title: "Develop", icon: <Code2 className="w-5 h-5 text-white" /> },
+    { title: "Automate", icon: <Settings className="w-5 h-5 text-white" /> },
+    { title: "Test", icon: <BugPlay className="w-5 h-5 text-white" /> },
+    { title: "Secure", icon: <ShieldCheck className="w-5 h-5 text-white" /> },
+  ];
   const images = [img1, img2, img3, img4];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,11 +46,27 @@ export default function HomeBanner() {
   const [typingSpeed, setTypingSpeed] = useState(150);
   const [scanningLine, setScanningLine] = useState(true);
   const [progressLoader, setProgressLoader] = useState(true);
-  const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const toggleForm = () => {
-    setIsFormOpen(!isFormOpen); // Toggle form visibility
-  };
+  const [visibleSteps, setVisibleSteps] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (visibleSteps < steps.length) {
+        setVisibleSteps((prev) => prev + 1); // Show next step
+      } else {
+        // Wait for 3 seconds, then reset to start over
+        setTimeout(() => setVisibleSteps(1), 3000);
+      }
+    }, 1000); // 1 second delay for each step
+
+    return () => clearTimeout(timer);
+  }, [visibleSteps]);
+
+
+
+
+
+
 
   useEffect(() => {
     const handleTyping = () => {
@@ -134,30 +153,45 @@ export default function HomeBanner() {
             <br />
             <div className="max-w-2xl w-full text-center md:text-left">
               <div
-                className={`mt-4 flex items-center justify-center md:justify-start gap-2 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 transition-all duration-700 delay-100`}
+                className="mt-4 flex items-center justify-center md:justify-start gap-2 text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 transition-all duration-700 delay-100"
               >
-                <span className="capitalize">We Deliver Impact at Every Step</span>
+                <span className="capitalize flex items-center gap-1 flex-wrap">
+                  We Deliver Cyber{" "}
+                  <span className="whitespace-nowrap flex items-center">
+                    Pr
+                    <img
+                      src={lock}
+                      alt="lock icon"
+                      className="inline-block w-3 h-4 sm:w-4 sm:h-5"
+                      style={{ marginTop: "-2px" }}
+                    />
+                    <span className="text-md" style={{ textTransform: "none" }}>
+      tection
+    </span>
+                  </span>{" "}
+                  at Every Step
+                </span>
+
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
             </div>
+
             <br />
-            <div
-              className={`mt-6 sm:mt-8 transition-all duration-700 delay-200`}
-            >
-              <button
-                className="px-5 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-600 text-white font-semibold rounded-full shadow-lg hover:shadow-cyan-500/50 transform hover:scale-105 transition-all duration-300"
-                onClick={() => {
-                  const section = document.getElementById("services-section");
-                  if (section) section.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Discover More
-              </button>
+            <div className="mt-6 sm:mt-8 flex flex-wrap justify-center md:justify-start items-center gap-3">
+              {steps.slice(0, visibleSteps).map((step, index) => (
+                <div key={index} className="flex items-center gap-2 animate-fade-in">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 rounded-lg text-white shadow-lg transition-all duration-500 w-fit">
+                    {step.icon}
+                    <span className="text-sm sm:text-base font-medium">{step.title}</span>
+                  </div>
+                  {index < visibleSteps - 1 && (
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  )}
+                </div>
+              ))}
             </div>
 
           </motion.li>
-
-          {/* image animation starts */}
 
           <li className="anm-img">
             <motion.div
@@ -226,7 +260,7 @@ export default function HomeBanner() {
                   </motion.div>
                   {/* progress */}
                   <ul className="helo">
-                    
+
                     <li>
                       <div
                         className={
