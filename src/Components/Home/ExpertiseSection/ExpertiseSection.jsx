@@ -184,16 +184,10 @@ const ExpertiseSection = () => {
 
     const prev = () => setSelected((prev) => (prev > 0 ? prev - 1 : slides.length - 1));
     const next = () => setSelected((prev) => (prev + 1) % slides.length);
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setSelected((prev) => (prev + 1) % slides.length);
-    //     }, 4000);
 
-    //     return () => clearInterval(interval);
-    // }, [slides.length]);
 
     return (
-        <section className="bg-white py-10 px-6 md:px-12">
+        <section id="services-section" className="bg-white py-10 px-6 md:px-12">
             <div className="text-center md:mb-16 mb-4">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-transparent bg-clip-text">
                     Our Expertise

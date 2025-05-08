@@ -86,7 +86,7 @@ const InnovativeTech = () => {
 
   return (
     <section
-      id="tech-section"
+      id="services-section"
       ref={ref}
      className="relative bg-gradient-to-r from-[#0a192f] via-[#112240] to-[#1a365d] text-white py-20 px-4"
     >
