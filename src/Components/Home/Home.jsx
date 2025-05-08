@@ -28,7 +28,7 @@ const Home = () => {
     <>
        
         <HomeBanner />
-        <SectionTwo/>
+        
         <ExpertiseSection />
         <WhyInfoziant />
         <Partnership />
