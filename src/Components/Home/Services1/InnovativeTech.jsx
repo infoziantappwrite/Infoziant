@@ -77,7 +77,7 @@ const services = [
     title: "Training & Placement",
     highlights: [
       "Latest Tech Skill Training",
-      "18000+ Happy Students"
+      "Curated Drives with Top Recruiters"
     ],
     icon: <UsersRound size={32} color="#4ee4e4" />,
     link: "/services/tech-talent",
