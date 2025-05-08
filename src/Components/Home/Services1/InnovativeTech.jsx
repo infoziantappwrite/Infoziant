@@ -24,7 +24,7 @@ import Images6 from "./Images/CTC.jpg";
 
 const services = [
   {
-    title: "Cybersecurity Services",
+    title: "Cybersecurity",
     highlights: [
       "24×7 Monitoring & Incident Response",
       "Reliable Audit Reports"
@@ -69,12 +69,12 @@ const services = [
       "In-demand programming languages",
       "Gain practical, job-ready skills"
     ],
-    icon: <UsersRound size={32} color="#4ee4e4" />,
+    icon: <BadgeCheck size={32} color="#4ee4e4" />,
     link: "/services/codechef-training",
     image: Images5
   },
   {
-    title: "Campus-to-Corporate Services",
+    title: "Campus-to-Corporate",
     highlights: [
       "Companies offering CTCs up to ₹1.02 Cr",
       "18000+ Happy Students"
@@ -96,6 +96,19 @@ const InnovativeTech = () => {
       ref={ref}
       className="relative bg-gray-50 py-20 px-4 sm:px-6"
     >
+
+<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-blue-500 opacity-5"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-teal-400 opacity-5"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-purple-500 opacity-5"></div>
+
+         {/* Additional Bubbles */}
+  <div className="absolute top-20 right-1/3 w-28 h-28 rounded-full bg-blue-500 opacity-5"></div>
+  <div className="absolute bottom-20 left-1/5 w-36 h-36 rounded-full bg-blue-500 opacity-5"></div>
+  <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-blue-500 opacity-5"></div>
+  <div className="absolute bottom-1/3 right-1/2 w-24 h-24 rounded-full bg-blue-500 opacity-5"></div>
+       
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -178,6 +191,7 @@ const InnovativeTech = () => {
   <motion.button
     className="mt-4 inline-flex items-center text-teal-300 font-medium group-hover:text-white transition-colors"
     whileHover={{ x: 5 }}
+    onClick={() => navigate(service.link)}
   >
     Learn More
     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
