@@ -64,19 +64,19 @@ const services = [
     image: Images4
   },
   {
-    title: "CodeChef Training",
+    title: "CodeChef",
     highlights: [
       "In-demand programming languages",
-      "Gain practical, job-ready skills"
+      "Global level Hackathons"
     ],
     icon: <BadgeCheck size={32} color="#4ee4e4" />,
     link: "/services/codechef-training",
     image: Images5
   },
   {
-    title: "Campus-to-Corporate",
+    title: "Training & Internship",
     highlights: [
-      "Companies offering CTCs up to ₹1.02 Cr",
+      "Latest Tech Skill Training",
       "18000+ Happy Students"
     ],
     icon: <UsersRound size={32} color="#4ee4e4" />,

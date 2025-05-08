@@ -278,52 +278,7 @@ export default function HomeBanner() {
           </li>
           {/* image animation ends */}
         </ul>
-        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent drop-shadow-sm mt-80 lg:mt-0 mb-4">
-          Campus to Corporate Services
-        </h2>
-        {/* functionalities starts */}
-        <ul className="func text-center" ref={ref5}>
-          <motion.li
-            initial="hidden"
-            animate={inView5 ? "visible" : "hidden"}
-            variants={itemVariants}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <img src={img6} alt="AI" className="func-img max-h-[250px]" /><br />
-            <h3>CodeChef</h3>
-          </motion.li>
-
-          <motion.li
-            initial="hidden"
-            animate={inView5 ? "visible" : "hidden"}
-            variants={itemVariants}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <img src={img7} alt="Seamless Integrations" className="func-img max-h-[250px]" /><br />
-            <h3>Training & Upskilling</h3>
-          </motion.li>
-
-          <motion.li
-            initial="hidden"
-            animate={inView5 ? "visible" : "hidden"}
-            variants={itemVariants}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <img src={img8} alt="274+" className="func-img max-h-[200px]" /><br />
-            <h3>Placement & Internship</h3>
-          </motion.li>
-
-          <motion.li
-            initial="hidden"
-            animate={inView5 ? "visible" : "hidden"}
-            variants={itemVariants}
-            transition={{ duration: 0.6, delay: 0.7 }}
-          >
-            <img src={img9} alt="GAR" className="func-img max-h-[200px]" /><br />
-            <h3>Edutech Solutions</h3>
-          </motion.li>
-        </ul>
-        {/* functionalities ends */}
+        
       </section>
 
 
