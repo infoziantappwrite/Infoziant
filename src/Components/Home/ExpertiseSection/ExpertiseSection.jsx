@@ -189,11 +189,17 @@ const ExpertiseSection = () => {
     return (
         <section id="services-section" className="bg-white py-10 px-6 md:px-12">
             <div className="text-center md:mb-16 mb-4">
-                <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-transparent bg-clip-text">
-                    Our Expertise
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 text-transparent bg-clip-text">
+                OUR CORE SERVICES
                 </h2>
                 <div className="w-16 h-1 mx-auto bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500 rounded mt-2 mb-4" />
-                <p className="text-lg text-gray-600">Scaling Digital Growth Across Sectors</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Innovative Tech & Business Services
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Comprehensive tech services to secure, build, test, and scale your business.
+          </p>
+                {/* <p className="text-lg text-gray-600">Scaling Digital Growth Across Sectors</p> */}
             </div>
             <div className="flex flex-col md:flex-row gap-8 ">
                 <div className="md:w-1/3 relative hidden md:block ">
