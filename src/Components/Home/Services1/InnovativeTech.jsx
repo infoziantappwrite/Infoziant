@@ -20,7 +20,7 @@ import Images2 from "./Images/webApp.jpg";
 import Images3 from "./Images/AiML.webp";
 import Images4 from "./Images/Testing.webp";
 import Images5 from "./Images/CodeChef1.jpg";
-import Images6 from "./Images/training-placement.jpg";
+import Images6 from "./Images/trainin.jpg";
 
 const services = [
   {
