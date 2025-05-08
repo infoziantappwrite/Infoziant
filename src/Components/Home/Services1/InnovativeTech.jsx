@@ -70,7 +70,7 @@ const services = [
       "Global level Hackathons"
     ],
     icon: <BadgeCheck size={32} color="#4ee4e4" />,
-    link: "/services/codechef-training",
+    link: "/services/codechef",
     image: Images5
   },
   {

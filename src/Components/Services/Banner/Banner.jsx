@@ -49,7 +49,7 @@ const Banner = () => {
 
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight">
               <span className="block bg-gradient-to-r pb-6 from-teal-300 to-blue-500 bg-clip-text text-transparent">
-                Web & App Solutions
+                Web & App Development
               </span>
             </h1>
 
