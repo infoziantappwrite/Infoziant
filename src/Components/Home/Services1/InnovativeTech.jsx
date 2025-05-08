@@ -74,7 +74,7 @@ const services = [
     image: Images5
   },
   {
-    title: "Training & Internship",
+    title: "Training & Placement",
     highlights: [
       "Latest Tech Skill Training",
       "18000+ Happy Students"

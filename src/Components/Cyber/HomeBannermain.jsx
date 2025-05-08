@@ -31,12 +31,12 @@ export default function HomeBanner() {
 
   const words = ["Digital Solutions...", "Digital Solutions...", "Digital Solutions..."];
   const imgWords = ["1.CodeChef", "2.Training & Upskilling", "3.Placement & Internship", "4.Edutech "];
-  const steps = [
-    { title: "Develop", icon: <Code2 className="w-5 h-5 text-white" /> },
-    { title: "Automate", icon: <Settings className="w-5 h-5 text-white" /> },
-    { title: "Test", icon: <BugPlay className="w-5 h-5 text-white" /> },
-    { title: "Secure", icon: <ShieldCheck className="w-5 h-5 text-white" /> },
-  ];
+  // const steps = [
+  //   { title: "Develop", icon: <Code2 className="w-5 h-5 text-white" /> },
+  //   { title: "Automate", icon: <Settings className="w-5 h-5 text-white" /> },
+  //   { title: "Test", icon: <BugPlay className="w-5 h-5 text-white" /> },
+  //   { title: "Secure", icon: <ShieldCheck className="w-5 h-5 text-white" /> },
+  // ];
   const images = [img1, img2, img3, img4];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,18 +49,18 @@ export default function HomeBanner() {
 
   const [visibleSteps, setVisibleSteps] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (visibleSteps < steps.length) {
-        setVisibleSteps((prev) => prev + 1); // Show next step
-      } else {
-        // Wait for 3 seconds, then reset to start over
-        setTimeout(() => setVisibleSteps(1), 3000);
-      }
-    }, 1000); // 1 second delay for each step
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (visibleSteps < steps.length) {
+  //       setVisibleSteps((prev) => prev + 1); // Show next step
+  //     } else {
+  //       // Wait for 3 seconds, then reset to start over
+  //       setTimeout(() => setVisibleSteps(1), 3000);
+  //     }
+  //   }, 1000); // 1 second delay for each step
 
-    return () => clearTimeout(timer);
-  }, [visibleSteps]);
+  //   return () => clearTimeout(timer);
+  // }, [visibleSteps]);
 
 
 
@@ -176,7 +176,7 @@ export default function HomeBanner() {
             </div>
 
             <br />
-            <div className="mt-6 sm:mt-8 flex flex-wrap justify-center md:justify-start items-center gap-3">
+            {/* <div className="mt-6 sm:mt-8 flex flex-wrap justify-center md:justify-start items-center gap-3">
               {steps.slice(0, visibleSteps).map((step, index) => (
                 <div key={index} className="flex items-center gap-2 animate-fade-in">
                   <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-600 rounded-lg text-white shadow-lg transition-all duration-500 w-fit">
@@ -188,7 +188,7 @@ export default function HomeBanner() {
                   )}
                 </div>
               ))}
-            </div>
+            </div> */}
 
           </motion.li>
 
