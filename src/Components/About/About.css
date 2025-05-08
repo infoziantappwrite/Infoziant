@@ -177,7 +177,6 @@
   margin-bottom: 30px;
 }
  
-/* Ensure achievements wrap on smaller screens */
 .about-achievements-section .achievement {
   display: inline-block;
   margin: 0 40px;
@@ -207,7 +206,7 @@
  
 }
  
-/* Media Queries for Responsiveness */
+
 @media (max-width: 1200px) {
   .about-achievements-section h2 {
       font-size: 2.2rem;
@@ -261,7 +260,7 @@
  
   .about-achievements-section .achievement {
       margin: 0 10px;
-      display: block; /* Stack the achievements vertically on small screens */
+      display: block; 
       margin-bottom: 20px;
   }
  

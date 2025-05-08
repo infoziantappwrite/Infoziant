@@ -1,13 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sampleImg from "./sample.jpg";
-import { ChevronRight } from "lucide-react";
+import { 
+  ChevronRight,
+  FileSpreadsheet,
+  Network,
+  Bot,
+  Settings,
+  MessageSquare,
+  LayoutDashboard
+} from "lucide-react";
 
 const innovations = [
   {
     name: "Fillo",
     desc: "Excel utility for dynamic test data handling.",
-    img: sampleImg,
+    icon: <FileSpreadsheet size={28} />,
     color: "bg-gradient-to-r from-purple-500 to-pink-600",
     hoverGradient: "from-purple-600 to-pink-700",
     iconColor: "text-purple-500",
@@ -16,7 +23,7 @@ const innovations = [
   {
     name: "VisGrid",
     desc: "Visual no-code test flow builder.",
-    img: sampleImg,
+    icon: <Network size={28} />,
     color: "bg-gradient-to-r from-indigo-500 to-blue-600",
     hoverGradient: "from-indigo-600 to-blue-700",
     iconColor: "text-indigo-500",
@@ -25,7 +32,7 @@ const innovations = [
   {
     name: "Robotil",
     desc: "RPA test support utility for robotic workflows.",
-    img: sampleImg,
+    icon: <Bot size={28} />,
     color: "bg-gradient-to-r from-emerald-500 to-teal-600",
     hoverGradient: "from-emerald-500 to-teal-600",
     iconColor: "text-emerald-500",
@@ -34,7 +41,7 @@ const innovations = [
   {
     name: "Weldree",
     desc: "Deployment config automation for test envs.",
-    img: sampleImg,
+    icon: <Settings size={28} />,
     color: "bg-gradient-to-r from-orange-500 to-yellow-600",
     hoverGradient: "from-orange-500 to-yellow-600",
     iconColor: "text-orange-500",
@@ -43,7 +50,7 @@ const innovations = [
   {
     name: "Gyra",
     desc: "Slack-integrated test reporting bot.",
-    img: sampleImg,
+    icon: <MessageSquare size={28} />,
     color: "bg-gradient-to-r from-cyan-500 to-blue-600",
     hoverGradient: "from-cyan-500 to-blue-600",
     iconColor: "text-cyan-500",
@@ -52,7 +59,7 @@ const innovations = [
   {
     name: "Tester Companion",
     desc: "Interactive dashboards for QA insights.",
-    img: sampleImg,
+    icon: <LayoutDashboard size={28} />,
     color: "bg-gradient-to-r from-lime-500 to-emerald-600",
     hoverGradient: "from-lime-500 to-emerald-600",
     iconColor: "text-lime-500",
@@ -96,8 +103,8 @@ const OurInnovationsPage = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.hoverGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}></div>
 
                 <div className="flex items-start space-x-5 relative z-10">
-                  <div className="w-14 h-14 bg-white rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
-                    <img src={item.img} alt={item.name} className="w-full h-full object-cover rounded-xl" />
+                  <div className={`w-14 h-14 bg-white rounded-xl shadow-inner flex items-center justify-center ${item.iconColor}`}>
+                    {item.icon}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-white group-hover:text-white">
@@ -108,8 +115,6 @@ const OurInnovationsPage = () => {
                     </p>
                   </div>
                 </div>
-
-                
               </div>
 
               {/* Bottom Line */}
@@ -117,17 +122,6 @@ const OurInnovationsPage = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-20"
-        >
-          {/* Optional CTA can be added here */}
-        </motion.div>
       </div>
     </section>
   );

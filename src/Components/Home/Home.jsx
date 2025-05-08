@@ -12,6 +12,8 @@ import WhyInfoziant from '../Cyber/WhyInfoziant';
 import OurProducts from './OurProducts/OurProducts';
 import HallofFames from '../Pages/HallofFames';
 import HomeBanner from "../Cyber/HomeBannermain"
+import InnovativeTech from './Services1/InnovativeTech';
+
 
 
 
@@ -28,8 +30,9 @@ const Home = () => {
     <>
        
         <HomeBanner />
-        <SectionTwo/>
-        <ExpertiseSection />
+       
+        <InnovativeTech />
+      
         <WhyInfoziant />
         <Partnership />
         <Accreditation />
