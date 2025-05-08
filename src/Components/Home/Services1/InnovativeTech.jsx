@@ -80,7 +80,7 @@ const services = [
       "Curated Drives with Top Recruiters"
     ],
     icon: <UsersRound size={32} color="#4ee4e4" />,
-    link: "/services/tech-talent",
+    link: "/services/placement",
     image: Images6
   }
 ];
