@@ -7,10 +7,7 @@ import img1 from "./scan/Banner1.gif";
 import img2 from "./scan/Bannerrobo.gif";
 import img3 from "./scan/Bannertest1.gif";
 import img4 from "./scan/Banner6.gif";
-import img6 from "./scan/11.png";
-import img7 from "./scan/44.png";
-import img8 from "./scan/22.png";
-import img9 from "./scan/33.png";
+import img5 from "../../assests/Images/Cyber/scan-gif-2.gif";
 import lock from "./scan/icons8-lock-14.png"
 
 
@@ -30,14 +27,14 @@ export default function HomeBanner() {
 
 
   const words = ["Digital Solutions...", "Digital Solutions...", "Digital Solutions..."];
-  const imgWords = ["1.CodeChef", "2.Training & Upskilling", "3.Placement & Internship", "4.Edutech "];
+  const imgWords = ["1.CodeChef", "2.Training & Upskilling", "3.Placement & Internship", "4.Edutech ", "5.Cyber Security"];
   // const steps = [
   //   { title: "Develop", icon: <Code2 className="w-5 h-5 text-white" /> },
   //   { title: "Automate", icon: <Settings className="w-5 h-5 text-white" /> },
   //   { title: "Test", icon: <BugPlay className="w-5 h-5 text-white" /> },
   //   { title: "Secure", icon: <ShieldCheck className="w-5 h-5 text-white" /> },
   // ];
-  const images = [img1, img2, img3, img4];
+  const images = [img1, img2, img3, img5,img4];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -47,20 +44,7 @@ export default function HomeBanner() {
   const [scanningLine, setScanningLine] = useState(true);
   const [progressLoader, setProgressLoader] = useState(true);
 
-  const [visibleSteps, setVisibleSteps] = useState(0);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (visibleSteps < steps.length) {
-  //       setVisibleSteps((prev) => prev + 1); // Show next step
-  //     } else {
-  //       // Wait for 3 seconds, then reset to start over
-  //       setTimeout(() => setVisibleSteps(1), 3000);
-  //     }
-  //   }, 1000); // 1 second delay for each step
-
-  //   return () => clearTimeout(timer);
-  // }, [visibleSteps]);
 
 
 
@@ -134,17 +118,17 @@ export default function HomeBanner() {
 
 
             <motion.h1
-              className="typing-anm"
+              className="typing-anm "
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
             >
               Transforming Technology <br />
-              <span className="stroke-text text-transparent block mt-4">
+              <span className="stroke-text text-transparent block mt-1">
                 with Next-Gen
               </span>
               <div>
-                <h3 className="highlight">
+                <h3 className="highlight text-3xl lg:text-6xl pb-4 mt-2">
                   {displayedText}
                   <span className="span-highlight">|</span>
                 </h3>
