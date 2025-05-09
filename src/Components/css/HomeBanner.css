@@ -621,6 +621,9 @@ font-weight: 600;
 
 
 @media (max-width: 480px){
+  .homeBanner-main{
+    min-height: 110dvh;
+  }
   .home-ul{
     display: block;
     margin-top: 0;
@@ -654,7 +657,7 @@ font-weight: 600;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 0%;
+    margin-top: 70%;
     gap: 20px; /* Add spacing between items */
   }
 
@@ -756,7 +759,7 @@ font-weight: 600;
 
 @media (max-width: 400px){
   .func{
-    margin-top: 0%;
+    margin-top: 100%;
   }
 
 }
