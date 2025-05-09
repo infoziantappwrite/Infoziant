@@ -485,3 +485,122 @@
     }
   }
   
+
+  @media (min-width: 401px) and (max-width: 768px) {
+  .services-section-sl {
+    display: none;
+  }
+
+  .services-section-mobile-sl {
+    display: block;
+    padding: 4% 5%;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    text-align: center;
+  }
+
+  .services-p-sl {
+    font-size: 16px;
+    line-height: 26px;
+    width: 90%;
+    margin: 0 auto 30px;
+  }
+
+  .service-li-m-sl {
+    border: 1px solid rgb(173, 170, 170);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #111;
+  }
+
+  .service-li-m-sl h1 {
+    background: linear-gradient(90deg, #15F5BA, #0066ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .service-li-m-sl p {
+    color: rgb(213 210 210);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+ .service-img-m-sl {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 15px; /* Centers the image horizontally */
+    border-radius: 8px;
+    display: block; /* Makes the image a block-level element */
+}
+
+
+  .bt-h1,
+  .head-1,
+  .sso-h1 {
+    font-size: 22px;
+  }
+
+  .bt-p,
+  .sso-card-1 p,
+  .sso-card-2 p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .sso-cards {
+    display: block;
+    padding: 3%;
+  }
+
+  .sso-card-1,
+  .sso-card-2 {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 8px;
+  }
+
+  .sso-card-1 h2,
+  .sso-card-2 h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .sl-points {
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid;
+    border-image: linear-gradient(90deg, #15F5BA, #0066ff);
+    border-image-slice: 1;
+  }
+
+  .sl-points h3 {
+    font-size: 20px;
+  }
+
+  .sl-points p {
+    font-size: 15px;
+  }
+
+  .service-banner {
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .sb-intro {
+    padding: 5%;
+    text-align: center;
+  }
+
+  .sb-intro h1 {
+    font-size: 22px;
+  }
+
+  .sb-intro p {
+    font-size: 16px;
+  }
+}
