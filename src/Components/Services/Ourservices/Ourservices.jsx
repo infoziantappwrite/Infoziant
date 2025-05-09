@@ -62,7 +62,7 @@ const OurServices = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-3 grid-cols-1 sm:grid-cols-2">
+<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-10 sm:justify-items-center">
           <AnimatePresence>
             {services.slice(0, 3).map((service, i) => (
               <motion.div

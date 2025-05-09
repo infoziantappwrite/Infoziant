@@ -133,6 +133,15 @@
       font-size: 14px; /* Further reduced address and desc size */
       line-height: 30px;
   }
+  .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
 }
 
 @media (max-width: 480px) {
@@ -152,6 +161,15 @@
       font-size: 12px; /* Further reduced address and desc size */
       line-height: 24px;
   }
+  .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
 }
 
 
@@ -208,6 +226,15 @@
     .sb-intro p {
       font-size: 18px;
     }
+    .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
   }
   
   /* Small Devices (phones, 576px and below) */
@@ -229,6 +256,15 @@
     .sb-intro p {
       font-size: 16px;
     }
+    .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
   }
   
   /* Extra Small Devices (400px and below) */
@@ -250,4 +286,13 @@
     .sb-intro p {
       font-size: 15px;
     }
+    .contact-container-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(194, 191, 191);
+    background: linear-gradient(200deg, #00ffbb32, #415afc3b);
+}
   }
