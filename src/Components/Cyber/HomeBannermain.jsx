@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import "../css/HomeBanner.css";
-import { TrendingUp, Code2, Settings, BugPlay, ShieldCheck, ArrowRight } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import img1 from "./scan/Banner1.gif";
-import img2 from "./scan/Bannerrobo.gif";
-import img3 from "./scan/Bannertest1.gif";
+import img2 from "./scan/Banner2.gif";
+import img3 from "./scan/Banner3.gif";
 import img4 from "./scan/Banner6.gif";
 import img5 from "../../assests/Images/Cyber/scan-gif-2.gif";
 import lock from "./scan/icons8-lock-14.png"
